@@ -1,0 +1,16 @@
+{
+  "name": "karma",
+  "version": "0.0.1",
+  "authors": [
+    "Peter.W"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "angular": "~1.4.5",
+    "angular-mocks": "~1.4.5",
+    "jasmine-core": "jasmine#~2.3.4"
+  }
+}

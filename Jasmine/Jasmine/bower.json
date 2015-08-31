@@ -1,0 +1,23 @@
+{
+  "name": "Jasmine Test",
+  "version": "0.0.1",
+  "authors": [
+    "Peter"
+  ],
+  "description": "My playground of jasmine test",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jasmine": "~2.3.4"
+  }
+}

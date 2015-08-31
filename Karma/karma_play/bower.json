@@ -1,0 +1,19 @@
+{
+  "name": "karma)play",
+  "version": "0.0.1",
+  "authors": [
+    "Peter.W"
+  ],
+  "description": "karma first play",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.4"
+  }
+}

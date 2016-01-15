@@ -1,0 +1,30 @@
+{
+  "name": "yuyan",
+  "homepage": "https://github.com/sitedisks/Lib",
+  "authors": [
+    "Peter.W"
+  ],
+  "description": "yuyan geo chat",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "geo",
+    "chat",
+    "ip",
+    "free",
+    "no-matter-how"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-google-maps": "~2.2.1"
+  }
+}

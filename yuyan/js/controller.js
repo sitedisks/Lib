@@ -1,43 +1,31 @@
 (function(){
 	'use strict';
 	
-	angular.module('yuyanApp').controller('mainCtl', ['$scope', '$http', 'uiGmapGoogleMapApi', 'endpoint',
-		function($scope, $http, uiGmapGoogleMapApi, endpoint){
+	angular.module('yuyanApp').controller('mainCtl', ['$scope', '$http', '$timeout', 'uiGmapGoogleMapApi', 'endpoint',
+		function($scope, $http, $timeout, uiGmapGoogleMapApi, endpoint){
 			
-			// get the IP
-			var ipaddress = null;
-			$http.get(endpoint.ipaddress).then(
-				function(response){
-					//success
-					var ipaddress = response.data;
-					toastr.success("Your IP address: " + ipaddress);
-				}, 
-				function(response){
-					//error
-					
-				}
-			);
+			$scope.clocation = null;
+			doMap();
+			getLocation();
 			
+			doDom(); // resolve dom/promise
+			function doDom(){
+				$timeout(function(){
+					if($scope.clocation)
+					{
+						$timeout(function(){
+							doMarker();
+						},1000);
+						
+					} else {
+						doDom();
+					}
+				});
+			}
 			
-			uiGmapGoogleMapApi.then(function(maps) {
-				
-				//fix of lodash.js
-				if( typeof _.contains === 'undefined' ) {
-					_.contains = _.includes;
-				}
-				if( typeof _.object === 'undefined' ) {
-					_.object = _.zipObject;
-				}
-				  
-				$scope.map = { 
-					center: { latitude: 45, longitude: -73 }, 
-					zoom: 8,
-					options: { scrollwheel: true},
-					control: {}
-				};
-				
+			function doMarker(){
 				//single marker
-				$scope.marker = {id: 0, coords: { latitude: 45, longitude: -73 }};
+				$scope.marker = {id: 6, coords: { latitude: $scope.clocation.latitude, longitude: $scope.clocation.longitude }};
 				
 				//multiple markers
 				$scope.markers = [
@@ -45,10 +33,52 @@
 					{id: 1, coords: { latitude: 46, longitude: -72 }, info: "marker2"},
 					{id: 2, coords: { latitude: 47, longitude: -71 }, info: "marker3"}
 				];
-				
-			})
-		
+			}
 			
+			function doMap(){
+			
+				uiGmapGoogleMapApi.then(function(maps) {
+
+					lodashFix();
+					//geocoder.geocode({});
+					var lat = -37.8140000, lng = 144.9633200; // default melbourne 
+					$scope.map = { 
+						center: { latitude: lat, longitude: lng }, 
+						zoom: 12,
+						options: { scrollwheel: true},
+						control: {}
+					};
+	
+				});
+			}
+			
+			function getLocation(){
+				$http.get(endpoint.ipaddress).then(
+					function(response){
+						// toastr.success("Your IP address: " + ipaddress);
+						$http.get(endpoint.geoip + response.data).then(function(response){
+							$scope.clocation = response.data;
+							var fulladd =  $scope.clocation.city + ", " + $scope.clocation.region_code + " " + $scope.clocation.country_name;
+							toastr.success("You are at <b>" + fulladd + "</b>");
+						}, function(response){
+							toastr.error("Cannot get Location.");
+						});
+					}, 
+					function(response){
+						//error
+						toastr.error("Cannot get your Ip Address.");
+					}
+				);
+				
+			}
+			
+			function lodashFix(){
+				//fix of lodash.js
+				if( typeof _.contains === 'undefined' )
+					_.contains = _.includes;
+				if( typeof _.object === 'undefined' ) 
+					_.object = _.zipObject;
+			}
 		
 	}]);
 	

@@ -25,6 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-google-maps": "~2.2.1"
+    "angular-google-maps": "~2.2.1",
+    "toastr": "~2.1.2"
   }
 }

@@ -1,8 +1,23 @@
 (function(){
 	'use strict';
 	
-	angular.module('yuyanApp').controller('mainCtl', ['$scope', 'uiGmapGoogleMapApi', 
-		function($scope, uiGmapGoogleMapApi){
+	angular.module('yuyanApp').controller('mainCtl', ['$scope', '$http', 'uiGmapGoogleMapApi', 'endpoint',
+		function($scope, $http, uiGmapGoogleMapApi, endpoint){
+			
+			// get the IP
+			var ipaddress = null;
+			$http.get(endpoint.ipaddress).then(
+				function(response){
+					//success
+					var ipaddress = response.data;
+					toastr.success("Your IP address: " + ipaddress);
+				}, 
+				function(response){
+					//error
+					
+				}
+			);
+			
 			
 			uiGmapGoogleMapApi.then(function(maps) {
 				

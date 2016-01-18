@@ -1,10 +1,13 @@
 (function(){
 	'use strict';
 	
-	angular.module('yuyanApp').controller('mainCtl', ['$scope', '$http', '$timeout', 'uiGmapGoogleMapApi', 'endpoint',
-		function($scope, $http, $timeout, uiGmapGoogleMapApi, endpoint){
+	angular.module('yuyanApp').controller('mainCtl', ['$scope', '$http', '$timeout', '$uibModal', 'uiGmapGoogleMapApi', 'endpoint',
+		function($scope, $http, $timeout, $uibModal, uiGmapGoogleMapApi, endpoint){
 			
 			$scope.clocation = null;
+			
+			$scope.clickMe = clickMe;
+			
 			doMap();
 			getLocation();
 			
@@ -70,6 +73,23 @@
 					}
 				);
 				
+			}
+			
+			// functions
+			function clickMe(){
+				var modalInstance = $uibModal.open({
+				  animation: true,
+				  templateUrl: 'templates/modal.html',
+				  controller: 'modalCtrl',
+				  size: 'lg',
+				  resolve: {}
+				});
+				
+				modalInstance.result.then(function(){
+					
+				},function(){
+					// dismissed log
+				});
 			}
 			
 			function lodashFix(){

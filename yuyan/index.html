@@ -9,14 +9,14 @@
 	<body data-ng-app="yuyanApp">
 	
 	<div data-ng-controller="mainCtl" data-ng-cloak>
-		<button class="btn btn-default" data-ng-click="clickMe()">Click me</button>
+		<!-- <button class="btn btn-default" data-ng-click="clickMe()">Click me</button> -->
 		<ui-gmap-google-map center="map.center" zoom="map.zoom" options="map.options" control="map.control">
 			<ui-gmap-marker coords="marker.coords" options="marker.options" idkey="marker.id" events="marker.events" data-ng-if="marker">
 				<ui-gmap-window>
 					<div>IP: {{clocation.ip}} <br/>
 					{{clocation.city}}, {{clocation.region_name}} {{clocation.country_code}} {{clocation.zip_code}}
 					<br/>
-					<button class="btn btn-default" data-ng-click="clickMe()">Click me</button>
+					<button class="btn btn-default" data-ng-click="$parent.clickMe()">Click me</button>
 					</div>
 				</ui-gmap-window>
 			</ui-gmap-marker>

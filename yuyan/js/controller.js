@@ -1,7 +1,20 @@
 (function(){
 	'use strict';
 	
-	angular.module('yuyanApp').controller('mainCtl', ['$scope', '$http', '$timeout', '$uibModal', 'uiGmapGoogleMapApi', 'endpoint',
+	angular.module('yuyanApp')
+	
+		.controller('controlCtrl' ['$scope', function($scope){
+			$scope.controlText = 'I\'m a custom control';
+			$scope.danger = false;
+			$scope.controlClick = function () {
+				$scope.danger = !$scope.danger;
+				alert('custom control clicked!');
+			};
+		
+		}])
+	
+	
+		.controller('mainCtl', ['$scope', '$http', '$timeout', '$uibModal', 'uiGmapGoogleMapApi', 'endpoint',
 		function($scope, $http, $timeout, $uibModal, uiGmapGoogleMapApi, endpoint){
 			
 			$scope.clocation = null;
@@ -51,7 +64,7 @@
 						options: { scrollwheel: true},
 						control: {}
 					};
-	
+					
 				});
 			}
 			

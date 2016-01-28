@@ -1,0 +1,56 @@
+<html>
+	<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/toastr/toastr.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/survey.css">
+	</head>
+	<body data-ng-app="yuyanApp">
+
+    <div class="container pad20" data-ng-controller="surveyCtrl">
+
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h1 ng-non-bindable class="text-center"><strong>{{chorice}}</strong></h1>
+          <h3 class="text-center">You have a <code>chorice</code>!</h3>
+          <blockquote>
+            <p>Your one click choice of Survey, Questionary, Data collection, Test, Games and more.</p>
+          </blockquote>
+          <hr />
+
+          <form>
+            <div class="form-group">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Your First Chorice">
+                <div class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></div>
+                <div class="input-group-addon"><i class="glyphicon glyphicon-check"></i></div>
+                <div class="input-group-addon"><i class="glyphicon glyphicon-record"></i></div>
+              </div>
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  	<script src="bower_components/toastr/toastr.min.js"></script>
+  	<script src="bower_components/lodash/dist/lodash.min.js"></script>
+  	<script src="bower_components/angular/angular.min.js"></script>
+  	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+  	<script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+  	<script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+
+    <!-- yuyan app -->
+    <script src="js/app.js"></script>
+    <script src="js/constant.js"></script>
+    <script src="js/factory.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/directives.js"></script>
+
+    <script src="js/survey/survey.controller.js"></script>
+	</body>
+</html>

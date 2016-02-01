@@ -20,30 +20,36 @@
           <hr />
 
 					<div data-ng-repeat="q in questions">
-						<h2>
-						<div class="btn-group" role="group">
+						<h2>{{q.Question}}</h2>
+						<!--<div class="btn-group" role="group">
 							<button class="btn btn-secondary">
 								<i class="glyphicon glyphicon-check"></i>
 							</button>
 							<button class="btn btn-secondary">
 								<i class="glyphicon glyphicon-record"></i>
-							</button>
+							</button>-->
+
+							<div data-ng-repeat="i in items">
+								<h4>{{i}}</h4>
+							</div>
+
+
 						</div>
-						{{q.Question}}
-						</h2>
+
+						<form name="questionForm">
+							<div class="form-group has-success">
+								<input type="text" class="form-control input-lg" name="questionInput" placeholder="Your First Chorice" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required novalidate />
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-success btn-lg btn-block" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()"><i class="glyphicon glyphicon-plus"></i> Add Rice</button>
+							</div>
+						</form>
+
+
 					</div>
 
-          <form name="questionForm">
-						invalid: {{questionForm.questionInput.$invalid}}
-						pristine: {{questionForm.questionInput.$pristine}}
-            <div class="form-group">
-              <div class="input-group">
-                <input type="text" class="form-control" name="questionInput" placeholder="Your First Chorice" data-ng-model="question" data-ng-minlength="5" data-ng-maxlength="200" required novalidate>
-                <div class="input-group-addon" data-ng-disabled="questionForm.questionInput.$invalid" data-ng-click="addQuestion()"><i class="glyphicon glyphicon-plus"></i></div>
-              </div>
 
-            </div>
-          </form>
+
 
         </div>
       </div>

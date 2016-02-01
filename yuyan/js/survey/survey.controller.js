@@ -25,16 +25,18 @@
 		}
 	  ]
 	};
-	
+
 	$scope.questions = [];
 	$scope.items = [];
-	
+
 	$scope.question = '';
 	$scope.addQuestion = addQuestion;
-		
-	
+
+		//$scope.questionForm.$valid
+
 	var qOrder = 1;
 	function addQuestion(){
+  
 		$scope.questions.push({ Question: $scope.question, QuestionOrder: qOrder++ });
 	}
 

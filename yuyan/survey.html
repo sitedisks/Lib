@@ -19,13 +19,27 @@
           </blockquote>
           <hr />
 
-          <form>
+					<div data-ng-repeat="q in questions">
+						<h2>
+						<div class="btn-group" role="group">
+							<button class="btn btn-secondary">
+								<i class="glyphicon glyphicon-check"></i>
+							</button>
+							<button class="btn btn-secondary">
+								<i class="glyphicon glyphicon-record"></i>
+							</button>
+						</div>
+						{{q.Question}}
+						</h2>
+					</div>
+
+          <form name="questionForm">
+						invalid: {{questionForm.questionInput.$invalid}}
+						pristine: {{questionForm.questionInput.$pristine}}
             <div class="form-group">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Your First Chorice">
-                <div class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></div>
-                <div class="input-group-addon"><i class="glyphicon glyphicon-check"></i></div>
-                <div class="input-group-addon"><i class="glyphicon glyphicon-record"></i></div>
+                <input type="text" class="form-control" name="questionInput" placeholder="Your First Chorice" data-ng-model="question" data-ng-minlength="5" data-ng-maxlength="200" required novalidate>
+                <div class="input-group-addon" data-ng-disabled="questionForm.questionInput.$invalid" data-ng-click="addQuestion()"><i class="glyphicon glyphicon-plus"></i></div>
               </div>
 
             </div>

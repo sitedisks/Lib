@@ -32,7 +32,14 @@
 							<div data-ng-repeat="i in items">
 								<h4>{{i}}</h4>
 							</div>
-
+							<form name="itemForm">
+								<div class="form-group has-success">
+									<input type="text" class="form-control" name="itemInput" placeholder="Item" data-ng-model="item" data-ng-minlength="3" data-ng-maxlength="200" required novalidate />
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-success btn-block" data-ng-disabled="itemForm.$invalid" data-ng-click="addItem()"><i class="glyphicon glyphicon-plus"></i> Add Item</button>
+								</div>
+							</form>
 
 						</div>
 
@@ -41,7 +48,7 @@
 								<input type="text" class="form-control input-lg" name="questionInput" placeholder="Your First Chorice" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required novalidate />
 							</div>
 							<div class="form-group">
-								<button type="submit" class="btn btn-success btn-lg btn-block" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()"><i class="glyphicon glyphicon-plus"></i> Add Rice</button>
+								<button type="submit" class="btn btn-success btn-lg btn-block" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()"><i class="glyphicon glyphicon-plus"></i> Add Question</button>
 							</div>
 						</form>
 

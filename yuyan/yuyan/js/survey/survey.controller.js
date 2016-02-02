@@ -26,19 +26,45 @@
             ]
         };
 
-        $scope.questions = [];
-        $scope.items = [];
+        $scope.dtoQuestions = [];
+    
 
-        $scope.question = '';
         $scope.addQuestion = addQuestion;
+        $scope.addItem = addItem;
 
-        //$scope.questionForm.$valid
+        
 
-        var qOrder = 1;
+        $scope.QID = 1;
         function addQuestion() {
 
-            $scope.questions.push({ Question: $scope.question, QuestionOrder: qOrder++ });
+
+            var question = {
+                QuestionId: $scope.QID,
+                Question: $scope.question,
+                QuestionType: 1,
+                dtoItems: []
+            };
+
+            $scope.dtoQuestions.push(question);
+            $scope.question = "";
         }
+
+       
+        function addItem(QID) {
+
+            var item = {
+                QuestionId: QID,
+                ItemDescription: $scope.item
+            };
+
+            angular.forEach($scope.dtoQuestions, function (question) {
+                if (question.QuestionId == QID)
+                    question.dtoItems.push(item);
+            });
+
+            $scope.item = "";
+        }
+
 
     }]);
 

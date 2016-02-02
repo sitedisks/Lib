@@ -3,7 +3,7 @@
 
     angular.module('yuyanApp')
 
-		.controller('controlCtrl'['$scope', function ($scope) {
+		.controller('controlCtrl', ['$scope', function ($scope) {
 		    $scope.controlText = 'I\'m a custom control';
 		    $scope.danger = false;
 		    $scope.controlClick = function () {

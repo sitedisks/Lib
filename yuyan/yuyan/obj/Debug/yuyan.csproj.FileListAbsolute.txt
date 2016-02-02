@@ -1,0 +1,6 @@
+C:\Lib\yuyan\yuyan\bin\yuyan.dll.config
+C:\Lib\yuyan\yuyan\bin\yuyan.dll
+C:\Lib\yuyan\yuyan\bin\yuyan.pdb
+C:\Lib\yuyan\yuyan\obj\Debug\yuyan.csprojResolveAssemblyReference.cache
+C:\Lib\yuyan\yuyan\obj\Debug\yuyan.dll
+C:\Lib\yuyan\yuyan\obj\Debug\yuyan.pdb

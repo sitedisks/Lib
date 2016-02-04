@@ -1,6 +1,14 @@
 .pad20 {
-  padding: 20px;
+    padding: 20px;
 }
+
 .hrx {
-  padding-top: 60px;
+    padding-top: 60px;
 }
+
+.force-line .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+

@@ -27,29 +27,31 @@
         };
         $scope.placeholder = 'Your First Question';
         $scope.dtoQuestions = [];
+        $scope.DefaultQuestionType = 1;
+        $scope.QID = 0;
+        $scope.showAddItem = false;
+
+        $scope.disableNext = true;
 
         $scope.addQuestion = addQuestion;
         $scope.addItem = addItem;
-        $scope.showAddItem = false;
-        $scope.showAddQuestion = true;
-
-        $scope.QID = 0;
+        $scope.nextQuestion = nextQuestion;
+    
         function addQuestion() {
             $scope.QID++;
             var question = {
                 QuestionId: $scope.QID,
                 Question: $scope.question,
-                QuestionType: 1,
+                QuestionType: $scope.DefaultQuestionType,
                 dtoItems: []
             };
 
             $scope.dtoQuestions.push(question);
             $scope.question = "";
             $scope.showAddItem = true;
-            $scope.showAddQuestion = false;
+   
             $scope.placeholder = 'Your Next Question';
         }
-
 
         function addItem(QID) {
 
@@ -63,9 +65,10 @@
                     question.dtoItems.push(item);
                     if (question.dtoItems.length >= 6) {
                         $scope.showAddItem = false;
+                    
                     }
                     if (question.dtoItems.length >= 2) {
-                        $scope.showAddQuestion = true;
+                        $scope.disableNext = false;
                     }
                 }
             });
@@ -75,7 +78,10 @@
 
         }
 
-
+        function nextQuestion() {
+            $scope.showAddItem = false;
+            $scope.disableNext = true;
+        }
     }]);
 
 })();

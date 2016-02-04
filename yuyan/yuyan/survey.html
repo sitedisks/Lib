@@ -20,32 +20,67 @@
                 </blockquote>
                 <hr />-->
 
-                <!--qID: {{QID}}-->
                 <div data-ng-repeat="q in dtoQuestions">
-                    <h2>{{q.Question}}</h2>
-                    <div data-ng-repeat="i in q.dtoItems">
-                        <h4><input type="checkbox" /> {{i.ItemDescription}}</h4>
-                    </div>
+                    <h2>{{q.QuestionId}}. {{q.Question}}</h2>
+                    <form>
+                        <div data-ng-repeat="i in q.dtoItems">
+                            <h4>
+                                <input type="checkbox" data-ng-if="q.QuestionType==1" />
+                                <input type="radio" name="i.QuestionId" data-ng-if="q.QuestionType==2" />
+                                {{i.ItemDescription}}
+                            </h4>
+                        </div>
+                    </form>
                 </div>
 
-                <form name="itemForm" class="form-inline" data-ng-show="showAddItem">
-                    <!--<i class="fa fa-check-square-o"></i>-->
-                    <div class="form-group has-success">
-                        <input type="checkbox" />
-                        <input type="text" class="form-control input-sm" name="itemInput" placeholder="some item" data-ng-model="item" data-ng-minlength="3" data-ng-maxlength="150" required novalidate />
-                    </div>
-                    <button type="submit" class="btn btn-success btn-sm" data-ng-disabled="itemForm.$invalid" data-ng-click="addItem(QID)"><i class="glyphicon glyphicon-plus"></i> Add</button>
-                </form>
+                <div data-ng-show="showAddItem">
+                    <form name="itemForm" class="force-line">
+                        <!--<i class="fa fa-check-square-o"></i>-->
+                        <div class="form-group has-success has-feedback">
+                            <!--<input type="checkbox" />-->
+                            <input type="text" class="form-control input-sm" name="itemInput" placeholder="some item" data-ng-model="item" data-ng-minlength="3" data-ng-maxlength="150" required novalidate />
+                            <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType==1"></span>
+                            <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType==2"></span>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm" data-ng-disabled="itemForm.$invalid" data-ng-click="addItem(QID)"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                    </form>
+                    <button class="btn btn-default btn-lg">Preview</button>
+                    <button class="btn btn-default btn-lg" data-ng-disabled="disableNext" data-ng-click="nextQuestion()">Next Question &raquo;</button>
+                </div>
 
-                <form name="questionForm" data-ng-show="showAddQuestion">
-                    <div class="form-group has-success">
-                        <input type="text" class="form-control input-lg" name="questionInput" placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required novalidate />
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-success btn-lg btn-block" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()"><i class="glyphicon glyphicon-plus"></i> Add Question</button>
-                    </div>
-                </form>
+                <div data-ng-show="!showAddItem">
+                    <form name="questionForm">
+                        <div class="form-group has-success has-feedback">
+                            <label class="control-label" for="Intquestion">Question?</label>
+                            <input type="text" id="Intquestion" class="form-control input-lg" name="questionInput" placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required novalidate />
+                            <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType==1"></span>
+                            <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType==2"></span>
+                        </div>
+                        <div class="form-group">
+                            <!--<button class="btn btn-success btn-lg btn-block" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()">
+                                <i class="glyphicon glyphicon-plus"></i> Add Question
+                            </button>-->
 
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-success btn-lg" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()">
+                                    <i class="glyphicon glyphicon-plus"></i> Add Question
+                                </button>
+                                <button type="button" class="btn btn-success btn-lg" uib-dropdown-toggle>
+                                    <span data-ng-if="DefaultQuestionType==1"><i class="glyphicon glyphicon-check"></i> Multiple</span>
+                                    <span data-ng-if="DefaultQuestionType==2"><i class="glyphicon glyphicon-record"></i> Single</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul uib-dropdown-menu role="menu" aria-labelledby="split-button">
+                                    <li role="menuitem" data-ng-click="DefaultQuestionType = 1"><a href="#"><i class="glyphicon glyphicon-check"></i> Checkbox - Multiple Choice</a></li>
+                                    <li role="menuitem" data-ng-click="DefaultQuestionType = 2"><a href="#"><i class="glyphicon glyphicon-record"></i> Option - Single Choice</a></li>
+                                    <li class="divider"></li>
+                                    <li role="menuitem"><a href="#"><i class="glyphicon glyphicon-question-sign"></i> FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <hr />
                 <div class="well">
                     {{dtoQuestions | json}}
                 </div>

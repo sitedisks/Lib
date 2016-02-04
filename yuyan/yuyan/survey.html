@@ -35,31 +35,26 @@
 
                 <div data-ng-show="showAddItem">
                     <form name="itemForm" class="force-line">
-                        <!--<i class="fa fa-check-square-o"></i>-->
                         <div class="form-group has-success has-feedback">
-                            <!--<input type="checkbox" />-->
                             <input type="text" class="form-control input-sm" name="itemInput" placeholder="some item" data-ng-model="item" data-ng-minlength="3" data-ng-maxlength="150" required novalidate />
                             <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType==1"></span>
                             <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType==2"></span>
                         </div>
                         <button type="submit" class="btn btn-success btn-sm" data-ng-disabled="itemForm.$invalid" data-ng-click="addItem(QID)"><i class="glyphicon glyphicon-plus"></i> Add</button>
                     </form>
-                    <button class="btn btn-default btn-lg">Preview</button>
+                    <button class="btn btn-default btn-lg" data-ng-click="previewSurvey()">Preview</button>
                     <button class="btn btn-default btn-lg" data-ng-disabled="disableNext" data-ng-click="nextQuestion()">Next Question &raquo;</button>
                 </div>
-
+                <br />
                 <div data-ng-show="!showAddItem">
                     <form name="questionForm">
                         <div class="form-group has-success has-feedback">
-                            <label class="control-label" for="Intquestion">Question?</label>
-                            <input type="text" id="Intquestion" class="form-control input-lg" name="questionInput" placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required novalidate />
+                            <label class="control-label" for="IntQuestion">{{IntQuestion}}</label>
+                            <input type="text" id="IntQuestion" class="form-control input-lg" name="questionInput" placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required novalidate />
                             <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType==1"></span>
                             <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType==2"></span>
                         </div>
                         <div class="form-group">
-                            <!--<button class="btn btn-success btn-lg btn-block" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()">
-                                <i class="glyphicon glyphicon-plus"></i> Add Question
-                            </button>-->
 
                             <div class="btn-group" uib-dropdown>
                                 <button type="button" class="btn btn-success btn-lg" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()">
@@ -81,21 +76,12 @@
                     </form>
                 </div>
                 <hr />
-                <div class="well">
+                <!--<div class="well">
                     {{dtoQuestions | json}}
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
-
-    <!--<div class="btn-group" role="group">
-                    <button class="btn btn-secondary">
-                        <i class="glyphicon glyphicon-check"></i>
-                    </button>
-                    <button class="btn btn-secondary">
-                        <i class="glyphicon glyphicon-record"></i>
-                    </button>-->
-
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/toastr/toastr.min.js"></script>
@@ -113,5 +99,6 @@
     <script src="js/directives.js"></script>
 
     <script src="js/survey/survey.controller.js"></script>
+    <script src="templates/previewModalCtrl.js"></script>
 </body>
 </html>

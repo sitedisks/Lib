@@ -21,10 +21,16 @@
                 <hr />
 
                 <!--{{dtoQuestions | json}}-->
-                <div class="btn-group btn-group-sm pull-right" >
-                    <button type="button" class="btn btn-link">Reset</button>
-                    <button type="button" class="btn btn-default" data-ng-click="previewSurvey()">Preview</button>
-                    <button type="button" class="btn btn-link">Save</button>
+                <div class="btn-group btn-group-sm pull-right">
+                    <button type="button" class="btn btn-link">
+                        <i class="glyphicon glyphicon-trash"></i> Reset
+                    </button>
+                    <button type="button" class="btn btn-link" data-ng-click="previewSurvey()">
+                        <i class="glyphicon glyphicon-eye-open"></i> Preview
+                    </button>
+                    <button type="button" class="btn btn-link">
+                        <i class="glyphicon glyphicon-floppy-disk"></i> Save
+                    </button>
                 </div>
 
                 <div data-ng-repeat="q in dtoQuestions">
@@ -49,7 +55,7 @@
                         </div>
                         <button type="submit" class="btn btn-success btn-sm" data-ng-disabled="itemForm.$invalid" data-ng-click="addItem(QID)"><i class="glyphicon glyphicon-plus"></i> Add</button>
                     </form>
-                 
+
                     <!--<button class="btn btn-info btn-lg" data-ng-click="previewSurvey()">Preview</button>-->
                     <button class="btn btn-link pull-right" data-ng-show="!disableNext" data-ng-disabled="disableNext" data-ng-click="nextQuestion()">Next Question &raquo;</button>
                 </div>
@@ -83,8 +89,8 @@
                         </div>
                     </form>
                 </div>
-                
-              
+
+
             </div>
         </div>
     </div>
@@ -93,8 +99,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <br/>
-                    <p class="text-muted pull-right">Login>></p>
+                    <br />
+                    <p class="text-center">
+                        <button class="btn btn-link"><i class="glyphicon glyphicon-chevron-right"></i> login</button>
+                        <button class="btn btn-link"><i class="glyphicon glyphicon-user"></i> register</button>
+                    </p>
                 </div>
             </div>
         </div>

@@ -560,6 +560,8 @@
     <Content Include="survey.html" />
     <Content Include="templates\modal.html" />
     <Content Include="templates\modalCtrl.js" />
+    <Content Include="templates\previewModal.html" />
+    <Content Include="templates\previewModalCtrl.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

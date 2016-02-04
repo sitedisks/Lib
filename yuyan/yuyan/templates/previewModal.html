@@ -1,8 +1,30 @@
 ﻿<div class="modal-header">
-    <h3 class="modal-title">Survey</h3>
+    <h2 class="modal-title">{{survey.Title}}</h2>
 </div>
 <div class="modal-body">
-    <div>{{survey | json}}</div>
+
+    <div class="row">
+
+        <div data-ng-repeat="q in survey.dtoQuestions">
+            <div class="col-xs-12">
+                <h3>{{q.QuestionId}}. {{q.Question}}</h3>
+            </div>
+            <div class="col-xs-11 col-xs-offset-1">
+                <form>
+                    <div data-ng-repeat="i in q.dtoItems">
+                        <h4>
+                            <input type="checkbox" name="i.QuestionId" data-ng-if="q.QuestionType==1" />
+                            <input type="radio" name="i.QuestionId" data-ng-if="q.QuestionType==2" />
+                            {{i.ItemDescription}}
+                        </h4>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" type="button" data-ng-click="ok()">OK</button>

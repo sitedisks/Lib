@@ -13,32 +13,23 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
 
-                <h1 ng-non-bindable class="text-center"><strong>{{chorice}}</strong></h1>
+                <!--<h1 ng-non-bindable class="text-center"><strong>{{chorice}}</strong></h1>
                 <h3 class="text-center">You have a <code>chorice</code>!</h3>
                 <blockquote>
                     <p>Your one click choice of Survey, Questionary, Data collection, Test, Games and more.</p>
                 </blockquote>
-                <hr />
+                <hr />-->
 
-                qID: {{QID}}
+                <!--qID: {{QID}}-->
                 <div data-ng-repeat="q in dtoQuestions">
                     <h2>{{q.Question}}</h2>
-                    <!--<div class="btn-group" role="group">
-                    <button class="btn btn-secondary">
-                        <i class="glyphicon glyphicon-check"></i>
-                    </button>
-                    <button class="btn btn-secondary">
-                        <i class="glyphicon glyphicon-record"></i>
-                    </button>-->
                     <div data-ng-repeat="i in q.dtoItems">
-
                         <h4><input type="checkbox" /> {{i.ItemDescription}}</h4>
                     </div>
                 </div>
 
-                <form name="itemForm" class="form-inline">
+                <form name="itemForm" class="form-inline" data-ng-show="showAddItem">
                     <!--<i class="fa fa-check-square-o"></i>-->
-                    
                     <div class="form-group has-success">
                         <input type="checkbox" />
                         <input type="text" class="form-control input-sm" name="itemInput" placeholder="some item" data-ng-model="item" data-ng-minlength="3" data-ng-maxlength="150" required novalidate />
@@ -46,9 +37,9 @@
                     <button type="submit" class="btn btn-success btn-sm" data-ng-disabled="itemForm.$invalid" data-ng-click="addItem(QID)"><i class="glyphicon glyphicon-plus"></i> Add</button>
                 </form>
 
-                <form name="questionForm">
+                <form name="questionForm" data-ng-show="showAddQuestion">
                     <div class="form-group has-success">
-                        <input type="text" class="form-control input-lg" name="questionInput" placeholder="Your First Chorice" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required novalidate />
+                        <input type="text" class="form-control input-lg" name="questionInput" placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required novalidate />
                     </div>
                     <div class="form-group">
                         <button class="btn btn-success btn-lg btn-block" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()"><i class="glyphicon glyphicon-plus"></i> Add Question</button>
@@ -61,6 +52,15 @@
             </div>
         </div>
     </div>
+
+    <!--<div class="btn-group" role="group">
+                    <button class="btn btn-secondary">
+                        <i class="glyphicon glyphicon-check"></i>
+                    </button>
+                    <button class="btn btn-secondary">
+                        <i class="glyphicon glyphicon-record"></i>
+                    </button>-->
+
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/toastr/toastr.min.js"></script>

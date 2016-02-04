@@ -10,6 +10,7 @@
         $scope.QID = 0;
         $scope.showAddItem = false;
         $scope.disableNext = true;
+        //$scope.showControllbtn = false;
 
         $scope.addQuestion = addQuestion;
         $scope.addItem = addItem;

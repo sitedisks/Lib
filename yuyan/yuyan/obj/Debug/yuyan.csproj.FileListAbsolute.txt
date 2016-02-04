@@ -3,3 +3,4 @@ C:\Lib\yuyan\yuyan\bin\yuyan.dll
 C:\Lib\yuyan\yuyan\bin\yuyan.pdb
 C:\Lib\yuyan\yuyan\obj\Debug\yuyan.dll
 C:\Lib\yuyan\yuyan\obj\Debug\yuyan.pdb
+C:\Lib\yuyan\yuyan\obj\Debug\yuyan.csprojResolveAssemblyReference.cache

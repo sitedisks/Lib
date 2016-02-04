@@ -51,8 +51,8 @@
                         <div class="form-group has-success has-feedback">
                             <label class="control-label" for="IntQuestion">{{IntQuestion}}</label>
                             <input type="text" id="IntQuestion" class="form-control input-lg" name="questionInput" placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required novalidate />
-                            <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType==1"></span>
-                            <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType==2"></span>
+                            <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType == 1"></span>
+                            <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType == 2"></span>
                         </div>
                         <div class="form-group">
 
@@ -76,9 +76,7 @@
                     </form>
                 </div>
                 <hr />
-                <!--<div class="well">
-                    {{dtoQuestions | json}}
-                </div>-->
+
             </div>
         </div>
     </div>

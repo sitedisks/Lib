@@ -547,6 +547,7 @@
     <Content Include="bower_components\toastr\toastr.js" />
     <Content Include="bower_components\toastr\toastr.min.css" />
     <Content Include="bower_components\toastr\toastr.min.js" />
+    <Content Include="css\gapcss.css" />
     <Content Include="css\main.css" />
     <Content Include="css\survey.css" />
     <Content Include="index.html" />
@@ -562,6 +563,8 @@
     <Content Include="templates\modalCtrl.js" />
     <Content Include="templates\previewModal.html" />
     <Content Include="templates\previewModalCtrl.js" />
+    <Content Include="templates\userModal.html" />
+    <Content Include="templates\userModalCtrl.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

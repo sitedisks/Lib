@@ -2,7 +2,7 @@
     'use strict';
     angular.module('yuyanApp').controller('surveyCtrl',
     ['$scope', '$uibModal', function ($scope, $uibModal) {
-   
+
         $scope.placeholder = 'Your First Question';
         $scope.IntQuestion = 'Question:';
         $scope.dtoQuestions = [];
@@ -16,7 +16,9 @@
         $scope.addItem = addItem;
         $scope.nextQuestion = nextQuestion;
         $scope.previewSurvey = previewSurvey;
-    
+        $scope.userLogin = userLogin;
+        $scope.userRegister = userRegister;
+
         function addQuestion() {
             $scope.QID++;
             var question = {
@@ -28,6 +30,7 @@
 
             $scope.dtoQuestions.push(question);
             $scope.question = "";
+            $scope.item = "";
             $scope.showAddItem = true;
             $scope.placeholder = 'Your Next Question';
             $scope.IntQuestion = 'Next Question:';
@@ -55,6 +58,11 @@
             $scope.item = "";
         }
 
+        function nextQuestion() {
+            $scope.showAddItem = false;
+            $scope.disableNext = true;
+        }
+
         function previewSurvey() {
             var modalInstance = $uibModal.open({
                 animation: true,
@@ -75,12 +83,46 @@
             });
         }
 
-        function nextQuestion() {
-            $scope.showAddItem = false;
-            $scope.disableNext = true;
+        function userLogin() {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: 'templates/userModal.html',
+                controller: 'userModalCtrl',
+                size: 'md',
+                resolve: {
+                    mode: function () {
+                        return 'login';
+                    }
+                }
+            });
+
+            modalInstance.result.then(function () {
+
+            }, function () {
+                // dismissed log
+            });
         }
 
-       
+        function userRegister() {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: 'templates/userModal.html',
+                controller: 'userModalCtrl',
+                size: 'md',
+                resolve: {
+                    mode: function () {
+                        return 'register';
+                    }
+                }
+            });
+
+            modalInstance.result.then(function () {
+
+            }, function () {
+                // dismissed log
+            });
+        }
+
     }]);
 
 })();

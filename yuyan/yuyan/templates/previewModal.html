@@ -1,10 +1,14 @@
-﻿<div class="modal-header">
+﻿<!--<div class="modal-header">
     <h2 class="modal-title">{{survey.Title}}</h2>
-</div>
+</div>-->
 <div class="modal-body">
-
+    <button type="button" class="close" data-ng-click="cancel()">&times;</button>
+    <br class="xs-10" />
     <div class="row">
-
+        <div class="col-xs-12">
+            <h3 class="modal-title">{{survey.Title}}</h3>
+        </div>
+       
         <div data-ng-repeat="q in survey.dtoQuestions">
             <div class="col-xs-12">
                 <h3>{{q.QuestionId}}. {{q.Question}}</h3>
@@ -26,7 +30,7 @@
     </div>
 
 </div>
-<div class="modal-footer">
+<!--<div class="modal-footer">
     <button class="btn btn-primary" type="button" data-ng-click="ok()">OK</button>
     <button class="btn btn-warning" type="button" data-ng-click="cancel()">Cancel</button>
-</div>
+</div>-->

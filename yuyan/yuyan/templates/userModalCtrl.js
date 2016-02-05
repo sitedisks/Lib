@@ -6,6 +6,8 @@
 
             $scope.mode = mode;
 
+            $scope.userObj = {};
+
             $scope.ok = function () {
                 $uibModalInstance.close();
             };

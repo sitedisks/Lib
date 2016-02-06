@@ -10,12 +10,17 @@
     <form name="userForm" novalidate>
         <div class="form-group has-feedback"
              data-ng-class="{'has-success':userForm.userEmail.$valid || userForm.userEmail.$pristine,
-                'has-error':userForm.userEmail.$invalid && !userForm.userEmail.$pristine}">
+                'has-error':!userAvailable || (userForm.userEmail.$invalid && !userForm.userEmail.$pristine)}">
             <label class="control-label" for="userEmail">Email address</label>
-            <input type="email" class="form-control input-lg" id="userEmail" name="userEmail" data-ng-model="userObj.Email" placeholder="Email" required>
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <input type="email" class="form-control input-lg" id="userEmail" name="userEmail" data-ng-model="userObj.Email" 
+                   data-ng-change="checkUser()" data-ng-blur="checkUser()" placeholder="Email" required>
+            <span class="glyphicon glyphicon-envelope form-control-feedback" data-ng-if="!checking"></span>
+            <span class="glyphicon glyphicon-refresh form-control-feedback" data-ng-if="checking"></span>
             <div data-ng-messages="userForm.userEmail.$error" data-ng-show="userForm.userEmail.$dirty">
                 <div data-ng-messages-include="templates/messages.html"></div>
+            </div>
+            <div class="custom_messages" data-ng-show="!userAvailable">
+                <div><span class="glyphicon glyphicon-exclamation-sign"></span> User email existed</div>
             </div>
         </div>
         <div class="form-group has-success has-feedback"
@@ -45,7 +50,7 @@
 
 </div>
 <div class="modal-footer">
-    <button type="submit" class="btn btn-link pull-right" ng-disabled="userForm.$invalid" data-ng-click="ok()">
+    <button type="submit" class="btn btn-link pull-right" ng-disabled="userForm.$invalid || !userAvailable" data-ng-click="ok()">
         <i class="glyphicon" ng-class="{'glyphicon-log-in': mode=='login', 'glyphicon-user': mode=='register'}"></i>&nbsp;{{mode}} &raquo;
     </button>
 </div>

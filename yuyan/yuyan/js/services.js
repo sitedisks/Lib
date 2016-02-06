@@ -8,12 +8,17 @@
         var surveyAPI = endpoint.localAPI + 'surveys';
         
         var service = {
+            userCheckSvc: userCheckSvc,
             userLoginSvc: userLoginSvc,
             userRegisterSvc: userRegisterSvc,
             surveyGetByIdSvc: surveyGetByIdSvc
         };
 
         return service;
+
+        function userCheckSvc() {
+            return $resource(userAPI + '/check');
+        }
 
         function userLoginSvc() {
             return $resource(userAPI + '/login');

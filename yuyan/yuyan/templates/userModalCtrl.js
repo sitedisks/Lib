@@ -13,7 +13,7 @@
             };
 
             $scope.ok = function () {
-                $uibModalInstance.close();
+                $uibModalInstance.close($scope.userObj);
             };
 
             $scope.cancel = function () {

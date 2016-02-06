@@ -1,1 +1,1 @@
-angular.module('yuyanApp', ['ui.bootstrap', 'uiGmapgoogle-maps', 'ngMessages']);
+angular.module('yuyanApp', ['ui.bootstrap', 'uiGmapgoogle-maps', 'ngResource', 'ngMessages']);

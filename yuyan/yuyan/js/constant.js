@@ -3,7 +3,8 @@
 
     angular.module('yuyanApp').constant("endpoint", {
         "ipaddress": "http://www.lowata.com.au/tohowapi/ipaddress",
-        "geoip": "http://freegeoip.net/json/"
+        "geoip": "http://freegeoip.net/json/",
+        "localAPI": "http://localhost:5613/"
     });
 
     //http://www.lowata.com.au/tohowapi/ipaddress

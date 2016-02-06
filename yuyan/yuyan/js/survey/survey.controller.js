@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('yuyanApp').controller('surveyCtrl',
-    ['$scope', '$uibModal', function ($scope, $uibModal) {
+    ['$scope', '$uibModal', 'yuyanAPISvc', function ($scope, $uibModal, yuyanAPISvc) {
 
         $scope.placeholder = 'Your First Question';
         $scope.IntQuestion = 'Question:';
@@ -96,7 +96,10 @@
                 }
             });
 
-            modalInstance.result.then(function () {
+            modalInstance.result.then(function (userObj) {
+
+                // api to login
+                var u = userObj;
 
             }, function () {
                 // dismissed log
@@ -116,7 +119,15 @@
                 }
             });
 
-            modalInstance.result.then(function () {
+            modalInstance.result.then(function (userObj) {
+
+                // api to register
+                var u = userObj;
+
+                yuyanAPISvc.userRegisterSvc().save(userObj,
+                    function (data) {
+                        var newUser = data;
+                    });
 
             }, function () {
                 // dismissed log

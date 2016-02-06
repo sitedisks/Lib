@@ -98,6 +98,9 @@
     <Content Include="bower_components\angular-messages\angular-messages.js" />
     <Content Include="bower_components\angular-messages\angular-messages.min.js" />
     <Content Include="bower_components\angular-messages\index.js" />
+    <Content Include="bower_components\angular-resource\angular-resource.js" />
+    <Content Include="bower_components\angular-resource\angular-resource.min.js" />
+    <Content Include="bower_components\angular-resource\index.js" />
     <Content Include="bower_components\angular-simple-logger\.bower.json" />
     <Content Include="bower_components\angular-simple-logger\.bowerrc" />
     <Content Include="bower_components\angular-simple-logger\.gitignore" />
@@ -253,6 +256,11 @@
     <Content Include="bower_components\angular-messages\bower.json" />
     <Content Include="bower_components\angular-messages\package.json" />
     <Content Include="bower_components\angular-messages\README.md" />
+    <Content Include="bower_components\angular-resource\.bower.json" />
+    <Content Include="bower_components\angular-resource\angular-resource.min.js.map" />
+    <Content Include="bower_components\angular-resource\bower.json" />
+    <Content Include="bower_components\angular-resource\package.json" />
+    <Content Include="bower_components\angular-resource\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -564,7 +572,7 @@
     <Content Include="js\constant.js" />
     <Content Include="js\controller.js" />
     <Content Include="js\directives.js" />
-    <Content Include="js\factory.js" />
+    <Content Include="js\services.js" />
     <Content Include="js\survey\survey.controller.js" />
     <Content Include="survey.html" />
     <Content Include="templates\messages.html" />

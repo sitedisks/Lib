@@ -28,6 +28,7 @@
     "angular-google-maps": "~2.2.1",
     "toastr": "~2.1.2",
     "angular-bootstrap": "~1.0.3",
-    "bootstrap": "~3.3.6"
+    "bootstrap": "~3.3.6",
+    "angular-messages": "^1.5.0"
   }
 }

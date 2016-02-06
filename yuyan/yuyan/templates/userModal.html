@@ -1,22 +1,36 @@
 ﻿<div class="modal-body">
     <button type="button" class="close" data-ng-click="cancel()">&times;</button>
+  
+    <div class="text-center text-success"><h3><i class="glyphicon" ng-class="{'glyphicon-log-in': mode=='login', 'glyphicon-user': mode=='register'}"></i> {{mode}}</h3></div>
     <br class="xs-10" />
-    <form novalidate>
+    <form name="userForm" novalidate>
         <div class="form-group has-success has-feedback">
             <label class="control-label" for="userEmail">Email address</label>
-            <input type="email" class="form-control input-lg" id="userEmail" placeholder="Email" required>
+            <input type="email" class="form-control input-lg" id="userEmail" name="userEmail" data-ng-model="userObj.Email" placeholder="Email" required>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <div data-ng-messages="userForm.userEmail.$error" data-ng-show="userForm.userEmail.$dirty">
+                <div data-ng-messages-include="templates/messages.html"></div>
+            </div>
         </div>
         <div class="form-group has-success has-feedback">
             <label class="control-label" for="userPassword">Password</label>
-            <input type="password" class="form-control input-lg" id="userPassword" placeholder="Password" required>
+            <input type="password" class="form-control input-lg" id="userPassword" name="userPassword" data-ng-model="userObj.Password" 
+                   data-ng-minlength="6" placeholder="Password" required>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            <div data-ng-messages="userForm.userPassword.$error" data-ng-show="userForm.userPassword.$dirty">
+                <div data-ng-messages-include="templates/messages.html"></div>
+            </div>
         </div>
-        <div class="form-group has-success has-feedback">
-            <label class="control-label" for="ConfirmUserPassword">Confirm Password</label>
-            <input type="password" class="form-control input-lg" id="ConfirmUserPassword" placeholder="Password" required>
+        <div data-ng-show="mode=='register'" class="form-group has-success has-feedback">
+            <label class="control-label" for="userConfirmPassword">Confirm Password</label>
+            <input type="password" class="form-control input-lg" id="userConfirmPassword" name="userConfirmPassword"
+                   data-ng-model="userObj.PasswordConfirm" placeholder="Confirm Password" compare-to="userObj.Password" required>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            <div data-ng-messages="userForm.userConfirmPassword.$error" data-ng-show="userForm.userConfirmPassword.$dirty">
+                <div data-ng-messages-include="templates/messages.html"></div>
+            </div>
         </div>
+    
     </form>
 
 </div>

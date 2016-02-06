@@ -6,7 +6,11 @@
 
             $scope.mode = mode;
 
-            $scope.userObj = {};
+            $scope.userObj = {
+                Email: '',
+                Password: '',
+                PasswordConfirm: ''
+            };
 
             $scope.ok = function () {
                 $uibModalInstance.close();

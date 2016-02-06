@@ -95,6 +95,9 @@
     <Content Include="bower_components\angular-google-maps\spec\coffee\helpers\helper.polyline.spec.coffee" />
     <Content Include="bower_components\angular-google-maps\spec\coffee\helpers\initiator.coffee" />
     <Content Include="bower_components\angular-google-maps\spec\js\.keep" />
+    <Content Include="bower_components\angular-messages\angular-messages.js" />
+    <Content Include="bower_components\angular-messages\angular-messages.min.js" />
+    <Content Include="bower_components\angular-messages\index.js" />
     <Content Include="bower_components\angular-simple-logger\.bower.json" />
     <Content Include="bower_components\angular-simple-logger\.bowerrc" />
     <Content Include="bower_components\angular-simple-logger\.gitignore" />
@@ -245,6 +248,11 @@
     <Content Include="bower_components\toastr\toastr.js.map" />
     <Content Include="bower_components\toastr\toastr.less" />
     <Content Include="bower_components\toastr\toastr.scss" />
+    <Content Include="bower_components\angular-messages\.bower.json" />
+    <Content Include="bower_components\angular-messages\angular-messages.min.js.map" />
+    <Content Include="bower_components\angular-messages\bower.json" />
+    <Content Include="bower_components\angular-messages\package.json" />
+    <Content Include="bower_components\angular-messages\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -559,6 +567,7 @@
     <Content Include="js\factory.js" />
     <Content Include="js\survey\survey.controller.js" />
     <Content Include="survey.html" />
+    <Content Include="templates\messages.html" />
     <Content Include="templates\modal.html" />
     <Content Include="templates\modalCtrl.js" />
     <Content Include="templates\previewModal.html" />

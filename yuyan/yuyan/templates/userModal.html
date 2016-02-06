@@ -1,10 +1,16 @@
 ﻿<div class="modal-body">
     <button type="button" class="close" data-ng-click="cancel()">&times;</button>
-  
-    <div class="text-center text-success"><h3><i class="glyphicon" ng-class="{'glyphicon-log-in': mode=='login', 'glyphicon-user': mode=='register'}"></i> {{mode}}</h3></div>
+
+    <div class="text-center text-success">
+        <h3>
+            <i class="glyphicon" ng-class="{'glyphicon-log-in': mode=='login', 'glyphicon-user': mode=='register'}"></i> {{mode}}
+        </h3>
+    </div>
     <br class="xs-10" />
     <form name="userForm" novalidate>
-        <div class="form-group has-success has-feedback">
+        <div class="form-group has-feedback"
+             data-ng-class="{'has-success':userForm.userEmail.$valid || userForm.userEmail.$pristine,
+                'has-error':userForm.userEmail.$invalid && !userForm.userEmail.$pristine}">
             <label class="control-label" for="userEmail">Email address</label>
             <input type="email" class="form-control input-lg" id="userEmail" name="userEmail" data-ng-model="userObj.Email" placeholder="Email" required>
             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -12,16 +18,20 @@
                 <div data-ng-messages-include="templates/messages.html"></div>
             </div>
         </div>
-        <div class="form-group has-success has-feedback">
+        <div class="form-group has-success has-feedback"
+             data-ng-class="{'has-success':userForm.userPassword.$valid || userForm.userPassword.$pristine,
+                'has-error': userForm.userPassword.$invalid && !userForm.userPassword.$pristine}">
             <label class="control-label" for="userPassword">Password</label>
-            <input type="password" class="form-control input-lg" id="userPassword" name="userPassword" data-ng-model="userObj.Password" 
+            <input type="password" class="form-control input-lg" id="userPassword" name="userPassword" data-ng-model="userObj.Password"
                    data-ng-minlength="6" placeholder="Password" required>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             <div data-ng-messages="userForm.userPassword.$error" data-ng-show="userForm.userPassword.$dirty">
                 <div data-ng-messages-include="templates/messages.html"></div>
             </div>
         </div>
-        <div data-ng-show="mode=='register'" class="form-group has-success has-feedback">
+        <div class="form-group has-feedback" data-ng-show="mode=='register'"
+             data-ng-class="{'has-success':userForm.userConfirmPassword.$valid || userForm.userConfirmPassword.$pristine,
+                'has-error':userForm.userConfirmPassword.$invalid && !userForm.userConfirmPassword.$pristine}">
             <label class="control-label" for="userConfirmPassword">Confirm Password</label>
             <input type="password" class="form-control input-lg" id="userConfirmPassword" name="userConfirmPassword"
                    data-ng-model="userObj.PasswordConfirm" placeholder="Confirm Password" compare-to="userObj.Password" required>
@@ -30,12 +40,12 @@
                 <div data-ng-messages-include="templates/messages.html"></div>
             </div>
         </div>
-    
+
     </form>
 
 </div>
 <div class="modal-footer">
-    <button type="submit" class="btn btn-link pull-right" data-ng-click="ok()">
+    <button type="submit" class="btn btn-link pull-right" ng-disabled="userForm.$invalid" data-ng-click="ok()">
         <i class="glyphicon" ng-class="{'glyphicon-log-in': mode=='login', 'glyphicon-user': mode=='register'}"></i>&nbsp;{{mode}} &raquo;
     </button>
 </div>

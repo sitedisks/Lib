@@ -95,6 +95,11 @@
     <Content Include="bower_components\angular-google-maps\spec\coffee\helpers\helper.polyline.spec.coffee" />
     <Content Include="bower_components\angular-google-maps\spec\coffee\helpers\initiator.coffee" />
     <Content Include="bower_components\angular-google-maps\spec\js\.keep" />
+    <Content Include="bower_components\angular-local-storage\demo\demo-app.js" />
+    <Content Include="bower_components\angular-local-storage\demo\demo-style.css" />
+    <Content Include="bower_components\angular-local-storage\demo\demo.html" />
+    <Content Include="bower_components\angular-local-storage\dist\angular-local-storage.js" />
+    <Content Include="bower_components\angular-local-storage\dist\angular-local-storage.min.js" />
     <Content Include="bower_components\angular-messages\angular-messages.js" />
     <Content Include="bower_components\angular-messages\angular-messages.min.js" />
     <Content Include="bower_components\angular-messages\index.js" />
@@ -261,6 +266,16 @@
     <Content Include="bower_components\angular-resource\bower.json" />
     <Content Include="bower_components\angular-resource\package.json" />
     <Content Include="bower_components\angular-resource\README.md" />
+    <Content Include="bower_components\angular-local-storage\.bower.json" />
+    <Content Include="bower_components\angular-local-storage\.bowerrc" />
+    <Content Include="bower_components\angular-local-storage\.gitattributes" />
+    <Content Include="bower_components\angular-local-storage\.gitignore" />
+    <Content Include="bower_components\angular-local-storage\.travis.yml" />
+    <Content Include="bower_components\angular-local-storage\bower.json" />
+    <Content Include="bower_components\angular-local-storage\CHANGELOG.md" />
+    <Content Include="bower_components\angular-local-storage\LICENSE" />
+    <Content Include="bower_components\angular-local-storage\package.json" />
+    <Content Include="bower_components\angular-local-storage\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -568,6 +583,7 @@
     <Content Include="css\survey.css" />
     <Content Include="index.html" />
     <Content Include="js\app.js" />
+    <Content Include="js\authInterceptor.js" />
     <Content Include="js\config.js" />
     <Content Include="js\constant.js" />
     <Content Include="js\controller.js" />

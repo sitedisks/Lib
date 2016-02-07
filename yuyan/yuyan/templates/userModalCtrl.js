@@ -13,8 +13,7 @@
                 $scope.ok = ok;
                 $scope.cancel = cancel;
                 $scope.checkUser = checkUser;
-
-
+                $scope.dupPassword = dupPassword;
 
                 $scope.userObj = {
                     Email: '',
@@ -51,6 +50,12 @@
                         }
                     }
 
+                }
+
+                function dupPassword() {
+                    if (mode == 'login') {
+                        $scope.userObj.PasswordConfirm = $scope.userObj.Password;
+                    }
                 }
 
             }]);

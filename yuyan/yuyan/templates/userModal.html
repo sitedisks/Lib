@@ -28,7 +28,7 @@
                 'has-error': userForm.userPassword.$invalid && !userForm.userPassword.$pristine}">
             <label class="control-label" for="userPassword">Password</label>
             <input type="password" class="form-control input-lg" id="userPassword" name="userPassword" data-ng-model="userObj.Password"
-                   data-ng-minlength="6" placeholder="Password" required>
+                   data-ng-minlength="6" data-ng-change="dupPassword()" placeholder="Password" required>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             <div data-ng-messages="userForm.userPassword.$error" data-ng-show="userForm.userPassword.$dirty">
                 <div data-ng-messages-include="templates/messages.html"></div>

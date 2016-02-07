@@ -1,23 +1,30 @@
 (function () {
     'use strict';
     angular.module('yuyanApp').controller('surveyCtrl',
-    ['$scope', '$uibModal', 'yuyanAPISvc', function ($scope, $uibModal, yuyanAPISvc) {
+    ['$scope', '$uibModal', 'localStorageService', 'yuyanAPISvc', function ($scope, $uibModal,localStorageService, yuyanAPISvc) {
 
-        $scope.placeholder = 'Your First Question';
-        $scope.IntQuestion = 'Question:';
-        $scope.dtoQuestions = [];
-        $scope.DefaultQuestionType = 1;
-        $scope.QID = 0;
-        $scope.showAddItem = false;
-        $scope.disableNext = true;
-        //$scope.showControllbtn = false;
+        $scope.placeholder;
+        $scope.IntQuestion;
+        $scope.dtoQuestions;
+        $scope.DefaultQuestionType;
+        $scope.QID;
+        $scope.showAddItem;
+        $scope.disableNext;
+        $scope.showFooter = false;
+        $scope.isLogin = false;
+     
 
         $scope.addQuestion = addQuestion;
         $scope.addItem = addItem;
         $scope.nextQuestion = nextQuestion;
         $scope.previewSurvey = previewSurvey;
         $scope.userLogin = userLogin;
+        $scope.userLogout = userLogout;
         $scope.userRegister = userRegister;
+        $scope.reset = reset;
+
+        reset();
+        checkSession();
 
         function addQuestion() {
             $scope.QID++;
@@ -97,13 +104,32 @@
             });
 
             modalInstance.result.then(function (userObj) {
-
-                // api to login
-                var u = userObj;
+                yuyanAPISvc.userLoginSvc().save(userObj,
+                    function (data) {
+                        localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
+                        toastr.success('Welcome back!', data.Email);
+                        $scope.isLogin = true;
+                    }, function (data) {
+                        // failed to login
+                        toastr.error(data.data, data.statusText);
+                    });
 
             }, function () {
                 // dismissed log
             });
+        }
+
+        function userLogout() {
+            var localSessionToken = localStorageService.get('authorizationData');
+            if (localSessionToken) {
+                yuyanAPISvc.userLogoutSvc().remove({sessionId:localSessionToken.token},
+                    function (data) {
+                        toastr.success('See ya later!');
+                        $scope.isLogin = false;
+                    }, function (data) {
+                        toastr.error('Failed logout.', data.statusText);
+                    });
+            }
         }
 
         function userRegister() {
@@ -120,10 +146,6 @@
             });
 
             modalInstance.result.then(function (userObj) {
-
-                // api to register
-                var u = userObj;
-
                 yuyanAPISvc.userRegisterSvc().save(userObj,
                     function (data) {
                         var newUser = data;
@@ -132,6 +154,31 @@
             }, function () {
                 // dismissed log
             });
+        }
+
+        function reset() {
+            $scope.placeholder = 'Your First Question';
+            $scope.IntQuestion = 'Question:';
+            $scope.dtoQuestions = [];
+            $scope.DefaultQuestionType = 1;
+            $scope.QID = 0;
+            $scope.showAddItem = false;
+            $scope.disableNext = true;
+        }
+
+        function checkSession() {
+            var localSessionToken = localStorageService.get('authorizationData');
+            if (localSessionToken) {
+                yuyanAPISvc.sessionCheckSvc().get({ sessionId: localSessionToken.token },
+                    function (data) {
+                        $scope.showFooter = true;
+                        if (data.SessionId) {
+                            $scope.isLogin = true;
+                        }
+                    }, function (data) {
+                        $scope.showFooter = true;
+                    });
+            }
         }
 
     }]);

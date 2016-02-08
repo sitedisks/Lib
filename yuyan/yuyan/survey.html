@@ -30,7 +30,7 @@
                         <button type="button" class="btn btn-link" data-ng-click="previewSurvey()">
                             <i class="glyphicon glyphicon-eye-open"></i> Preview
                         </button>
-                        <button type="button" class="btn btn-link" data-ng-click="userLogin()">
+                        <button type="button" class="btn btn-link" data-ng-click="saveSurvey()">
                             <i class="glyphicon glyphicon-floppy-disk"></i> Save
                         </button>
                     </div>
@@ -101,7 +101,7 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <br class="xs-10" />
-                        <p class="text-center" data-ng-show="showFooter">
+                        <p class="text-center">
                             <button type="button" class="btn btn-link" data-ng-click="userLogout()" data-ng-if="isLogin">
                                 <i class="glyphicon glyphicon-log-out"></i>&nbsp;logout
                             </button>
@@ -133,10 +133,12 @@
     <script src="js/constant.js"></script>
     <script src="js/services.js"></script>
     <script src="js/config.js"></script>
+    <script src="js/authInterceptor.js"></script>
     <script src="js/directives.js"></script>
 
     <script src="js/survey/survey.controller.js"></script>
     <script src="templates/previewModalCtrl.js"></script>
     <script src="templates/userModalCtrl.js"></script>
+    <script src="templates/userWizardCtrl.js"></script>
 </body>
 </html>

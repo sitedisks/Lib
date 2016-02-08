@@ -13,6 +13,7 @@
             userLoginSvc: userLoginSvc,
             userLogoutSvc: userLogoutSvc,
             userRegisterSvc: userRegisterSvc,
+            surveySaveSvc: surveySaveSvc,
             surveyGetByIdSvc: surveyGetByIdSvc
         };
 
@@ -36,6 +37,10 @@
 
         function userRegisterSvc() {
             return $resource(userAPI + '/register');
+        }
+
+        function surveySaveSvc() {
+            return $resource(surveyAPI);
         }
 
         function surveyGetByIdSvc() {

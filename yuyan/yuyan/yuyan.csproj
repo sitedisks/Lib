@@ -598,6 +598,8 @@
     <Content Include="templates\previewModalCtrl.js" />
     <Content Include="templates\userModal.html" />
     <Content Include="templates\userModalCtrl.js" />
+    <Content Include="templates\userWizard.html" />
+    <Content Include="templates\userWizardCtrl.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

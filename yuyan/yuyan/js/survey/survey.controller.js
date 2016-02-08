@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('yuyanApp').controller('surveyCtrl',
-    ['$scope', '$uibModal', 'localStorageService', 'yuyanAPISvc', function ($scope, $uibModal,localStorageService, yuyanAPISvc) {
+    ['$scope', '$uibModal', 'localStorageService', 'yuyanAPISvc', function ($scope, $uibModal, localStorageService, yuyanAPISvc) {
 
         $scope.placeholder;
         $scope.IntQuestion;
@@ -10,14 +10,14 @@
         $scope.QID;
         $scope.showAddItem;
         $scope.disableNext;
-        $scope.showFooter = false;
         $scope.isLogin = false;
-     
+
 
         $scope.addQuestion = addQuestion;
         $scope.addItem = addItem;
         $scope.nextQuestion = nextQuestion;
         $scope.previewSurvey = previewSurvey;
+        $scope.saveSurvey = saveSurvey;
         $scope.userLogin = userLogin;
         $scope.userLogout = userLogout;
         $scope.userRegister = userRegister;
@@ -90,6 +90,50 @@
             });
         }
 
+        function saveSurvey() {
+
+            var localSessionToken = localStorageService.get('authorizationData');
+
+            if (localSessionToken) {
+                // check the session expire
+                // then prompt user login then 
+            }
+            else {
+                // popup wizard
+
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'templates/userWizard.html',
+                    controller: 'userWizardCtrl',
+                    size: 'md'
+                });
+
+                modalInstance.result.then(function () {
+
+                }, function () {
+                    // dismissed log
+                });
+            }
+
+
+            var survey = {
+                Title: "Gieiht",
+                ShortDesc: "This is for preview only",
+                LongDesc: "Please register to access full functions",
+                UserId: "",
+                dtoQuestions: $scope.dtoQuestions
+            };
+
+            /*
+            yuyanAPISvc.surveySaveSvc().save(survey,
+                function (data) {
+                    toastr.success("Survey Saved!");
+                    reset();
+                }, function (data) {
+                    toastr.error("Save Survey Error");
+            });*/
+        }
+
         function userLogin() {
             var modalInstance = $uibModal.open({
                 animation: true,
@@ -122,8 +166,9 @@
         function userLogout() {
             var localSessionToken = localStorageService.get('authorizationData');
             if (localSessionToken) {
-                yuyanAPISvc.userLogoutSvc().remove({sessionId:localSessionToken.token},
+                yuyanAPISvc.userLogoutSvc().remove({ sessionId: localSessionToken.token },
                     function (data) {
+                        localStorageService.remove('authorizationData');
                         toastr.success('See ya later!');
                         $scope.isLogin = false;
                     }, function (data) {
@@ -171,12 +216,12 @@
             if (localSessionToken) {
                 yuyanAPISvc.sessionCheckSvc().get({ sessionId: localSessionToken.token },
                     function (data) {
-                        $scope.showFooter = true;
+
                         if (data.SessionId) {
                             $scope.isLogin = true;
                         }
                     }, function (data) {
-                        $scope.showFooter = true;
+
                     });
             }
         }

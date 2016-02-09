@@ -10,9 +10,10 @@
         $scope.QID;
         $scope.showAddItem;
         $scope.disableNext;
+        $scope.disableController;
         $scope.isLogin = false;
 
-
+        $scope.toggleType = toggleType;
         $scope.addQuestion = addQuestion;
         $scope.addItem = addItem;
         $scope.nextQuestion = nextQuestion;
@@ -25,6 +26,17 @@
 
         reset();
         checkSession();
+
+        function toggleType() {
+            if ($scope.DefaultQuestionType == 1) {
+                $scope.DefaultQuestionType = 2;
+                $scope.placeholder = 'Start Your First Question - Single option';
+            }
+            else {
+                $scope.DefaultQuestionType = 1;
+                $scope.placeholder = 'Start Your First Question - Multiple choice';
+            }
+        }
 
         function addQuestion() {
             $scope.QID++;
@@ -63,6 +75,7 @@
             });
 
             $scope.item = "";
+            $scope.disableController = false;
         }
 
         function nextQuestion() {
@@ -101,20 +114,8 @@
             else {
                 // popup wizard
 
-                var modalInstance = $uibModal.open({
-                    animation: true,
-                    templateUrl: 'templates/userWizard.html',
-                    controller: 'userWizardCtrl',
-                    size: 'md'
-                });
-
-                modalInstance.result.then(function () {
-
-                }, function () {
-                    // dismissed log
-                });
+                userLogin();
             }
-
 
             var survey = {
                 Title: "Gieiht",
@@ -202,13 +203,14 @@
         }
 
         function reset() {
-            $scope.placeholder = 'Your First Question';
+            $scope.placeholder = 'Start Your First Question - Multiple choice';
             $scope.IntQuestion = 'Question:';
             $scope.dtoQuestions = [];
             $scope.DefaultQuestionType = 1;
             $scope.QID = 0;
             $scope.showAddItem = false;
             $scope.disableNext = true;
+            $scope.disableController = true;
         }
 
         function checkSession() {
@@ -224,6 +226,10 @@
 
                     });
             }
+        }
+
+        function surveyTitle(){
+            
         }
 
     }]);

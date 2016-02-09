@@ -1,7 +1,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>CHORICE - Quick &and; Easy Survey</title>
+    <title>CHORICE - Quick and Easy Survey</title>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bower_components/toastr/toastr.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -22,15 +22,15 @@
                         <p>Create online survey, questionary, data collection, test... Quick & Easy.</p>
                     </blockquote>
                     <hr />
-                    <!--{{dtoQuestions | json}}-->
+                    <!--{{disableController | json}}-->
                     <div class="btn-group btn-group-sm pull-right">
-                        <button type="button" class="btn btn-link" data-ng-click="reset()">
+                        <button type="button" class="btn btn-link" data-ng-click="reset()" data-ng-disabled="disableController">
                             <i class="glyphicon glyphicon-trash"></i> Reset
                         </button>
-                        <button type="button" class="btn btn-link" data-ng-click="previewSurvey()">
+                        <button type="button" class="btn btn-link" data-ng-click="previewSurvey()" data-ng-disabled="disableController">
                             <i class="glyphicon glyphicon-eye-open"></i> Preview
                         </button>
-                        <button type="button" class="btn btn-link" data-ng-click="saveSurvey()">
+                        <button type="button" class="btn btn-link" data-ng-click="saveSurvey()" data-ng-disabled="disableController">
                             <i class="glyphicon glyphicon-floppy-disk"></i> Save
                         </button>
                     </div>
@@ -76,17 +76,22 @@
                                     <button type="button" class="btn btn-success" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()">
                                         <i class="glyphicon glyphicon-plus"></i> Add Question
                                     </button>
-                                    <button type="button" class="btn btn-success" uib-dropdown-toggle>
+                                    <button type="button" class="btn btn-success" data-ng-click="toggleType()">
+                                        <span data-ng-if="DefaultQuestionType==1"><i class="glyphicon glyphicon-check"></i> Checkbox</span>
+                                        <span data-ng-if="DefaultQuestionType==2"><i class="glyphicon glyphicon-record"></i> Option</span>
+                                    </button>
+
+                                    <!--<button type="button" class="btn btn-success" uib-dropdown-toggle>
                                         <span data-ng-if="DefaultQuestionType==1"><i class="glyphicon glyphicon-check"></i> Multiple</span>
                                         <span data-ng-if="DefaultQuestionType==2"><i class="glyphicon glyphicon-record"></i> Single</span>
                                         <span class="caret"></span>
                                     </button>
                                     <ul uib-dropdown-menu role="menu" aria-labelledby="split-button">
-                                        <li role="menuitem" data-ng-click="DefaultQuestionType = 1"><a href="#"><i class="glyphicon glyphicon-check"></i> Checkbox - Multiple Choice</a></li>
-                                        <li role="menuitem" data-ng-click="DefaultQuestionType = 2"><a href="#"><i class="glyphicon glyphicon-record"></i> Option - Single Choice</a></li>
+                                        <li role="menuitem" data-ng-click="DefaultQuestionType = 1"><a href="#"><i class="glyphicon glyphicon-check"></i> Checkbox</a></li>
+                                        <li role="menuitem" data-ng-click="DefaultQuestionType = 2"><a href="#"><i class="glyphicon glyphicon-record"></i> Option</a></li>
                                         <li class="divider"></li>
                                         <li role="menuitem"><a href="#"><i class="glyphicon glyphicon-question-sign"></i> FAQ</a></li>
-                                    </ul>
+                                    </ul>-->
                                 </div>
                             </div>
                         </form>

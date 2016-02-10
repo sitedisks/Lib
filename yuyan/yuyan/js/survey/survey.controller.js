@@ -110,11 +110,12 @@
             if (localSessionToken) {
                 // check the session expire
                 // then prompt user login then 
+                
             }
             else {
                 // popup wizard
-
-                userLogin();
+                surveyTitle();
+                //userLogin();
             }
 
             var survey = {
@@ -218,8 +219,7 @@
             if (localSessionToken) {
                 yuyanAPISvc.sessionCheckSvc().get({ sessionId: localSessionToken.token },
                     function (data) {
-
-                        if (data.SessionId) {
+                        if (data.SessionId && data.IsActive) {
                             $scope.isLogin = true;
                         }
                     }, function (data) {
@@ -229,7 +229,23 @@
         }
 
         function surveyTitle(){
-            
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: 'templates/surveyModal.html',
+                controller: 'surveyModalCtrl',
+                size: 'md',
+                resolve: {
+                    surveyQuestions: function () {
+                        return $scope.dtoQuestions;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function () {
+
+            }, function () {
+                // dismissed log
+            });
         }
 
     }]);

@@ -1,0 +1,19 @@
+﻿<div class="modal-body">
+    <button type="button" class="close" data-ng-click="cancel()">&times;</button>
+
+    <br class="xs-10" />
+    <form name="wizardForm" novalidate>
+        <div class="form-group has-success has-feedback">
+            <label class="control-label" for="surveyTitle">Survey Title</label>
+            <input type="text" class="form-control input-lg" id="surveyTitle" name="surveyTitle" placeholder="Title" required />
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+
+    </form>
+</div>
+<div class="modal-footer">
+
+    <button type="submit" class="btn btn-link pull-right" data-ng-click="surveyNext()">
+        <i class="glyphicon glyphicon-arrow-right"></i> Next &raquo;
+    </button>
+</div>

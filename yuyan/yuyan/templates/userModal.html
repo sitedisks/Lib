@@ -49,20 +49,18 @@
     
         <div class="from-group" ng-show="mode=='register'">
             <span class="text-success">Already has account? </span>
-            <button type="button" class="btn btn-success" data-ng-click="mode='login'"><i class="glyphicon glyphicon-log-in"></i> Login</button>
+            <button type="button" class="btn btn-success btn-sm" data-ng-click="mode='login'"><i class="glyphicon glyphicon-log-in"></i> Login</button>
         </div>
 
         <div class="from-group" ng-show="mode=='login'">
             <span class="text-success">Don't have account yet? Register first: </span>
-            <button type="button" class="btn btn-success" data-ng-click="mode='register'"><i class="glyphicon glyphicon-user"></i> Register</button>
+            <button type="button" class="btn btn-success btn-sm" data-ng-click="mode='register'"><i class="glyphicon glyphicon-user"></i> Register</button>
         </div>
 
     </form>
 
 </div>
 <div class="modal-footer">
-
-   
     <button type="submit" class="btn btn-link pull-right" ng-disabled="userForm.$invalid || !userAvailable" data-ng-click="ok()">
         <i class="glyphicon" ng-class="{'glyphicon-log-in': mode=='login', 'glyphicon-user': mode=='register'}"></i>&nbsp;{{mode}} &raquo;
     </button>

@@ -596,6 +596,8 @@
     <Content Include="templates\modalCtrl.js" />
     <Content Include="templates\previewModal.html" />
     <Content Include="templates\previewModalCtrl.js" />
+    <Content Include="templates\surveyModal.html" />
+    <Content Include="templates\surveyModalCtrl.js" />
     <Content Include="templates\userModal.html" />
     <Content Include="templates\userModalCtrl.js" />
     <Content Include="templates\userWizard.html" />

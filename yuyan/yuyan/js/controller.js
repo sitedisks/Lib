@@ -1,117 +1,78 @@
-(function () {
+﻿(function () {
     'use strict';
-
-    angular.module('yuyanApp')
-
-		.controller('controlCtrl', ['$scope', function ($scope) {
-		    $scope.controlText = 'I\'m a custom control';
-		    $scope.danger = false;
-		    $scope.controlClick = function () {
-		        $scope.danger = !$scope.danger;
-		        alert('custom control clicked!');
-		    };
-
-		}])
+    angular.module('yuyanApp').controller('masterCtrl', ['$scope', '$uibModal', 'localStorageService', 'yuyanAPISvc',
+        function ($scope, $uibModal, localStorageService, yuyanAPISvc) {
+            $scope.userLogin = userLogin;
+            $scope.userLogout = userLogout;
+            $scope.userRegister = userRegister;
 
 
-		.controller('mainCtl', ['$scope', '$http', '$timeout', '$uibModal', 'uiGmapGoogleMapApi', 'endpoint',
-		function ($scope, $http, $timeout, $uibModal, uiGmapGoogleMapApi, endpoint) {
+            function userLogin() {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'templates/userModal.html',
+                    controller: 'userModalCtrl',
+                    size: 'md',
+                    resolve: {
+                        mode: function () {
+                            return 'login';
+                        }
+                    }
+                });
 
-		    $scope.clocation = null;
+                modalInstance.result.then(function (userObj) {
+                    yuyanAPISvc.userLoginSvc().save(userObj,
+                        function (data) {
+                            localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
+                            toastr.success('Welcome back!', data.Email);
+                            $scope.isLogin = true;
+                        }, function (data) {
+                            // failed to login
+                            toastr.error(data.data, data.statusText);
+                        });
 
-		    $scope.clickMe = clickMe;
+                }, function () {
+                    // dismissed log
+                });
+            }
 
-		    doMap();
-		    getLocation();
+            function userLogout() {
+                var localSessionToken = localStorageService.get('authorizationData');
+                if (localSessionToken) {
+                    yuyanAPISvc.userLogoutSvc().remove({ sessionId: localSessionToken.token },
+                        function (data) {
+                            localStorageService.remove('authorizationData');
+                            toastr.success('See ya later!');
+                            $scope.isLogin = false;
+                        }, function (data) {
+                            toastr.error('Failed logout.', data.statusText);
+                        });
+                }
+            }
 
-		    doDom(); // resolve dom/promise
-		    function doDom() {
-		        $timeout(function () {
-		            if ($scope.clocation) {
-		                $timeout(function () {
-		                    doMarker();
-		                }, 1000);
+            function userRegister() {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'templates/userModal.html',
+                    controller: 'userModalCtrl',
+                    size: 'md',
+                    resolve: {
+                        mode: function () {
+                            return 'register';
+                        }
+                    }
+                });
 
-		            } else {
-		                doDom();
-		            }
-		        });
-		    }
+                modalInstance.result.then(function (userObj) {
+                    yuyanAPISvc.userRegisterSvc().save(userObj,
+                        function (data) {
+                            var newUser = data;
+                        });
 
-		    function doMarker() {
-		        //single marker
-		        $scope.marker = { id: 6, coords: { latitude: $scope.clocation.latitude, longitude: $scope.clocation.longitude } };
+                }, function () {
+                    // dismissed log
+                });
+            }
 
-		        //multiple markers
-		        $scope.markers = [
-					{ id: 0, coords: { latitude: 45, longitude: -73 }, info: "marker1" },
-					{ id: 1, coords: { latitude: 46, longitude: -72 }, info: "marker2" },
-					{ id: 2, coords: { latitude: 47, longitude: -71 }, info: "marker3" }
-		        ];
-		    }
-
-		    function doMap() {
-
-		        uiGmapGoogleMapApi.then(function (maps) {
-
-		            lodashFix();
-		            //geocoder.geocode({});
-		            var lat = -37.8140000, lng = 144.9633200; // default melbourne 
-		            $scope.map = {
-		                center: { latitude: lat, longitude: lng },
-		                zoom: 12,
-		                options: { scrollwheel: true },
-		                control: {}
-		            };
-
-		        });
-		    }
-
-		    function getLocation() {
-		        $http.get(endpoint.ipaddress).then(
-					function (response) {
-					    // toastr.success("Your IP address: " + ipaddress);
-					    $http.get(endpoint.geoip + response.data).then(function (response) {
-					        $scope.clocation = response.data;
-					        var fulladd = $scope.clocation.city + ", " + $scope.clocation.region_code + " " + $scope.clocation.country_name;
-					        toastr.success("You are at <b>" + fulladd + "</b>");
-					    }, function (response) {
-					        toastr.error("Cannot get Location.");
-					    });
-					},
-					function (response) {
-					    //error
-					    toastr.error("Cannot get your Ip Address.");
-					}
-				);
-
-		    }
-
-		    // functions
-		    function clickMe() {
-		        var modalInstance = $uibModal.open({
-		            animation: true,
-		            templateUrl: 'templates/modal.html',
-		            controller: 'modalCtrl',
-		            size: 'lg',
-		            resolve: {}
-		        });
-
-		        modalInstance.result.then(function () {
-
-		        }, function () {
-		            // dismissed log
-		        });
-		    }
-
-		    function lodashFix() {
-		        //fix of lodash.js
-		        if (typeof _.contains === 'undefined')
-		            _.contains = _.includes;
-		        if (typeof _.object === 'undefined')
-		            _.object = _.zipObject;
-		    }
-
-		}]);
-
+        }]);
 })();

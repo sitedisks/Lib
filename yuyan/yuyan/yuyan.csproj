@@ -106,9 +106,6 @@
     <Content Include="bower_components\angular-resource\angular-resource.js" />
     <Content Include="bower_components\angular-resource\angular-resource.min.js" />
     <Content Include="bower_components\angular-resource\index.js" />
-    <Content Include="bower_components\angular-route\angular-route.js" />
-    <Content Include="bower_components\angular-route\angular-route.min.js" />
-    <Content Include="bower_components\angular-route\index.js" />
     <Content Include="bower_components\angular-simple-logger\.bower.json" />
     <Content Include="bower_components\angular-simple-logger\.bowerrc" />
     <Content Include="bower_components\angular-simple-logger\.gitignore" />
@@ -128,6 +125,19 @@
     <Content Include="bower_components\angular-simple-logger\scripts\publish" />
     <Content Include="bower_components\angular-simple-logger\spec\logger.spec.coffee" />
     <Content Include="bower_components\angular-simple-logger\src\logger.coffee" />
+    <Content Include="bower_components\angular-ui-router\release\angular-ui-router.js" />
+    <Content Include="bower_components\angular-ui-router\release\angular-ui-router.min.js" />
+    <Content Include="bower_components\angular-ui-router\src\common.js" />
+    <Content Include="bower_components\angular-ui-router\src\resolve.js" />
+    <Content Include="bower_components\angular-ui-router\src\state.js" />
+    <Content Include="bower_components\angular-ui-router\src\stateDirectives.js" />
+    <Content Include="bower_components\angular-ui-router\src\stateFilters.js" />
+    <Content Include="bower_components\angular-ui-router\src\templateFactory.js" />
+    <Content Include="bower_components\angular-ui-router\src\urlMatcherFactory.js" />
+    <Content Include="bower_components\angular-ui-router\src\urlRouter.js" />
+    <Content Include="bower_components\angular-ui-router\src\view.js" />
+    <Content Include="bower_components\angular-ui-router\src\viewDirective.js" />
+    <Content Include="bower_components\angular-ui-router\src\viewScroll.js" />
     <Content Include="bower_components\angular\.bower.json" />
     <Content Include="bower_components\angular\angular.min.js.gzip" />
     <Content Include="bower_components\angular\angular.min.js.map" />
@@ -279,11 +289,12 @@
     <Content Include="bower_components\angular-local-storage\LICENSE" />
     <Content Include="bower_components\angular-local-storage\package.json" />
     <Content Include="bower_components\angular-local-storage\README.md" />
-    <Content Include="bower_components\angular-route\.bower.json" />
-    <Content Include="bower_components\angular-route\angular-route.min.js.map" />
-    <Content Include="bower_components\angular-route\bower.json" />
-    <Content Include="bower_components\angular-route\package.json" />
-    <Content Include="bower_components\angular-route\README.md" />
+    <Content Include="bower_components\angular-ui-router\.bower.json" />
+    <Content Include="bower_components\angular-ui-router\bower.json" />
+    <Content Include="bower_components\angular-ui-router\CHANGELOG.md" />
+    <Content Include="bower_components\angular-ui-router\CONTRIBUTING.md" />
+    <Content Include="bower_components\angular-ui-router\LICENSE" />
+    <Content Include="bower_components\angular-ui-router\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -586,12 +597,13 @@
     <Content Include="bower_components\toastr\toastr.js" />
     <Content Include="bower_components\toastr\toastr.min.css" />
     <Content Include="bower_components\toastr\toastr.min.js" />
+    <Content Include="components\map\map.html" />
     <Content Include="components\survey\survey.html" />
     <Content Include="css\gapcss.css" />
     <Content Include="css\main.css" />
     <Content Include="css\survey.css" />
     <Content Include="js\controller.js" />
-    <Content Include="map.html" />
+    <Content Include="map\map.html" />
     <Content Include="js\app.js" />
     <Content Include="js\authInterceptor.js" />
     <Content Include="js\config.js" />

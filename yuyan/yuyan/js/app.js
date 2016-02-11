@@ -1,6 +1,6 @@
 angular.module('yuyanApp', [
     'ui.bootstrap',
-    'ngRoute',
+    'ui.router',
     'LocalStorageModule',
     'uiGmapgoogle-maps',
     'ngResource',

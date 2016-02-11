@@ -14,7 +14,7 @@
 		}])
 
 
-		.controller('mainCtl', ['$scope', '$http', '$timeout', '$uibModal', 'uiGmapGoogleMapApi', 'endpoint',
+		.controller('mapCtrl', ['$scope', '$http', '$timeout', '$uibModal', 'uiGmapGoogleMapApi', 'endpoint',
 		function ($scope, $http, $timeout, $uibModal, uiGmapGoogleMapApi, endpoint) {
 
 		    $scope.clocation = null;

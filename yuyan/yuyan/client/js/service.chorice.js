@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict';
-    angular.module('choriceApp').service('choriceSvc', ['$resource', 'endpoint',
+    angular.module('choriceApp').service('choriceAPISvc', ['$resource', 'endpoint',
         function ($resource, endpoint) {
             var clientAPI = endpoint.localAPI + 'client';
 

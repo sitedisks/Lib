@@ -1,52 +1,53 @@
 (function () {
     'use strict';
 
-    angular.module('yuyanApp').service('yuyanAPISvc', ['$resource', 'endpoint', function ($resource, endpoint) {
-        
-        // endpoint.localAPI: http://localhost:5613/
-        var userAPI = endpoint.localAPI + 'users';
-        var surveyAPI = endpoint.localAPI + 'surveys';
-        
-        var service = {
-            sessionCheckSvc: sessionCheckSvc,
-            userCheckSvc: userCheckSvc,
-            userLoginSvc: userLoginSvc,
-            userLogoutSvc: userLogoutSvc,
-            userRegisterSvc: userRegisterSvc,
-            surveySaveSvc: surveySaveSvc,
-            surveyGetByIdSvc: surveyGetByIdSvc
-        };
+    angular.module('yuyanApp').service('yuyanAPISvc', ['$resource', 'endpoint',
+        function ($resource, endpoint) {
 
-        return service;
+            // endpoint.localAPI: http://localhost:5613/
+            var userAPI = endpoint.localAPI + 'users';
+            var surveyAPI = endpoint.localAPI + 'surveys';
 
-        function sessionCheckSvc() {
-            return $resource(userAPI + '/status');
-        }
+            var service = {
+                sessionCheckSvc: sessionCheckSvc,
+                userCheckSvc: userCheckSvc,
+                userLoginSvc: userLoginSvc,
+                userLogoutSvc: userLogoutSvc,
+                userRegisterSvc: userRegisterSvc,
+                surveySaveSvc: surveySaveSvc,
+                surveyGetByIdSvc: surveyGetByIdSvc
+            };
 
-        function userCheckSvc() {
-            return $resource(userAPI + '/check');
-        }
+            return service;
 
-        function userLoginSvc() {
-            return $resource(userAPI + '/login');
-        }
+            function sessionCheckSvc() {
+                return $resource(userAPI + '/status');
+            }
 
-        function userLogoutSvc() {
-            return $resource(userAPI + '/logout');
-        }
+            function userCheckSvc() {
+                return $resource(userAPI + '/check');
+            }
 
-        function userRegisterSvc() {
-            return $resource(userAPI + '/register');
-        }
+            function userLoginSvc() {
+                return $resource(userAPI + '/login');
+            }
 
-        function surveySaveSvc() {
-            return $resource(surveyAPI);
-        }
+            function userLogoutSvc() {
+                return $resource(userAPI + '/logout');
+            }
 
-        function surveyGetByIdSvc() {
-            return $resource(surveyAPI + '/:surveyId', { surveyId: '@id' });
-        }
+            function userRegisterSvc() {
+                return $resource(userAPI + '/register');
+            }
 
-    }]);
+            function surveySaveSvc() {
+                return $resource(surveyAPI);
+            }
+
+            function surveyGetByIdSvc() {
+                return $resource(surveyAPI + '/:surveyId', { surveyId: '@id' });
+            }
+
+        }]);
 
 })();

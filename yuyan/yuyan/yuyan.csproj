@@ -295,6 +295,10 @@
     <Content Include="bower_components\angular-ui-router\CONTRIBUTING.md" />
     <Content Include="bower_components\angular-ui-router\LICENSE" />
     <Content Include="bower_components\angular-ui-router\README.md" />
+    <Content Include="client\components\chorice.html" />
+    <Content Include="client\index.html" />
+    <Content Include="client\js\app.chorice.js" />
+    <Content Include="client\js\config.chorice.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -597,13 +601,17 @@
     <Content Include="bower_components\toastr\toastr.js" />
     <Content Include="bower_components\toastr\toastr.min.css" />
     <Content Include="bower_components\toastr\toastr.min.js" />
+    <Content Include="client\js\constant.chorice.js" />
+    <Content Include="client\js\controller.chorice.js" />
+    <Content Include="client\js\service.chorice.js" />
+    <Content Include="components\client\client.html" />
     <Content Include="components\map\map.html" />
     <Content Include="components\survey\survey.html" />
     <Content Include="css\gapcss.css" />
     <Content Include="css\main.css" />
     <Content Include="css\survey.css" />
+    <Content Include="js\client\client.controller.js" />
     <Content Include="js\controller.js" />
-    <Content Include="map\map.html" />
     <Content Include="js\app.js" />
     <Content Include="js\authInterceptor.js" />
     <Content Include="js\config.js" />

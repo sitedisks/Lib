@@ -1,0 +1,25 @@
+{
+  "name": "Google material design",
+  "homepage": "https://github.com/sitedisks/Lib",
+  "authors": [
+    "Peter Wang"
+  ],
+  "description": "test",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-animate": "^1.5.0",
+    "angular-aria": "^1.5.0",
+    "angular-messages": "^1.5.0",
+    "angular-material": "^1.0.5"
+  }
+}

@@ -1,0 +1,92 @@
+<html lang="en" >
+<head>
+  <!-- Angular Material style sheet -->
+  <!-- <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css"> -->
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css" />
+</head>
+<body ng-app="BlankApp" ng-cloak>
+<div layout="row">
+  <div flex>First item in row</div>
+  <div flex>Second item in row</div>
+</div>
+<div layout="column">
+  <div flex>First item in column</div>
+  <div flex>Second item in column</div>
+</div>
+  <div>
+    <fieldset class="standard">
+      <legend>Using <code>ng-model</code></legend>
+      <div layout="column" layout-wrap layout-gt-sm="row" >
+        <div flex-xs="50" flex="33">
+          <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+            Checkbox 1: {{ data.cb1 }}
+          </md-checkbox>
+        </div>
+        <div flex-xs="50" flex="33">
+          <div layout-xs="column" flex-xs="100">
+            <md-checkbox
+              ng-model="data.cb2"
+              aria-label="Checkbox 2"
+              ng-true-value="'yup'"
+              ng-false-value="'nope'"
+              class="md-warn md-align-top-left" flex>
+            Checkbox 2 (md-warn)  <br/>
+            <span class="ipsum">
+              Duis placerat lectus et justo mollis, nec sodales orci congue. Vestibulum semper non urna ac suscipit.
+              Vestibulum tempor, ligula id laoreet hendrerit, massa augue iaculis magna,
+              sit amet dapibus tortor ligula non nibh.
+            </span>
+            <br/>
+            {{ data.cb2 }}
+          </md-checkbox>
+          </div>
+        </div>
+        <div flex-xs="50" flex="33">
+          <md-checkbox ng-disabled="false" aria-label="Disabled checkbox" ng-model="data.cb3">
+            Checkbox: Disabled
+          </md-checkbox>
+        </div>
+        <div flex-xs="50" flex="33">
+          <md-checkbox ng-disabled="true" aria-label="Disabled checked checkbox" ng-model="data.cb4" ng-init="data.cb4=true">
+            Checkbox: Disabled, Checked
+          </md-checkbox>
+        </div>
+        <div flex-xs="50" flex="33">
+		
+          <md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="data.cb5" class="md-primary">
+            Checkbox (md-primary): No Ink
+          </md-checkbox>
+        </div>
+		<div flex-xs="50" flex="33">sdfsf</div>
+      </div>
+    </fieldset>
+  </div>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
+  <script src="bower_components/angular/angular.min.js"></script>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script> -->
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script> -->
+  <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script> -->
+  <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script> -->
+  <script src="bower_components/angular-material/angular-material.min.js"></script>
+
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">
+    /**
+     * You must include the dependency on 'ngMaterial'
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
+
+</body>
+</html>
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
+-->

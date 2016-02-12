@@ -607,6 +607,7 @@
     <Content Include="components\client\client.html" />
     <Content Include="components\map\map.html" />
     <Content Include="components\survey\survey.html" />
+    <Content Include="css\build.css" />
     <Content Include="css\gapcss.css" />
     <Content Include="css\main.css" />
     <Content Include="css\survey.css" />

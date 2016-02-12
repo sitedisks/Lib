@@ -5,13 +5,18 @@
 
             var tokenUrl = $stateParams.tokenUrl;
 
-            //JfSoWRnSEKKeSWh421wjw
+            $scope.loading = true;
 
             choriceAPISvc.surveyRetreiveSvc().get({ urltoken: tokenUrl },
                 function (data) {
                     $scope.survey = data;
+                    $scope.loading = false;
+                    //toastr.success('You don!');
                 },
-                function (data) { });
+                function (data) {
+                    toastr.error('Error load Survey');
+                    $scope.loading = false;
+                });
 
         }]);
 

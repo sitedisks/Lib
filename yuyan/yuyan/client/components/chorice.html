@@ -1,19 +1,24 @@
-﻿<form name="survey">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <h2>{{survey.Title}}</h2>
-            <h4>{{survey.ShortDesc}}</h4>
-            <h5>{{survey.LongDesc}}</h5>
-            <div class="form-group" data-ng-repeat="q in survey.dtoQuestions">
-                <h3>
-                    {{q.QuestionOrder}} {{q.Question}}
-                </h3>
-                <div style="padding-left: 40px;" data-ng-repeat="i in q.dtoItems" data-ng-class="{'checkbox checkbox-success':q.QuestionType==1, 'radio radio-success':q.QuestionType==2}">
-                    <input type="checkbox" name="question{{i.QuestionId}}" id="item{{i.QuestionItemId}}" data-ng-if="q.QuestionType==1" />
-                    <input type="radio" name="question{{i.QuestionId}}" id="item{{i.QuestionItemId}}" data-ng-if="q.QuestionType==2" />
-                    <label for="item{{i.QuestionItemId}}">{{i.ItemDescription}}</label>
+﻿<div class="text-center text-success" style="margin-top: 30px; font-size:48px" data-ng-show="loading">
+    <i class="fa fa-spinner fa-pulse"></i>
+</div>
+<div data-ng-show="!loading">
+    <form name="survey">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>{{survey.Title}}</h2>
+                <h4>{{survey.ShortDesc}}</h4>
+                <h5>{{survey.LongDesc}}</h5>
+                <div class="form-group" data-ng-repeat="q in survey.dtoQuestions">
+                    <h3>
+                        {{q.QuestionOrder}} {{q.Question}}
+                    </h3>
+                    <div style="padding-left: 40px;" data-ng-repeat="i in q.dtoItems" data-ng-class="{'checkbox checkbox-success':q.QuestionType==1, 'radio radio-success':q.QuestionType==2}">
+                        <input type="checkbox" name="question{{i.QuestionId}}" id="item{{i.QuestionItemId}}" data-ng-if="q.QuestionType==1" />
+                        <input type="radio" name="question{{i.QuestionId}}" id="item{{i.QuestionItemId}}" data-ng-if="q.QuestionType==2" />
+                        <label for="item{{i.QuestionItemId}}">{{i.ItemDescription}}</label>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>

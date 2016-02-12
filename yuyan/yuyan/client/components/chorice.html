@@ -2,6 +2,7 @@
     <i class="fa fa-spinner fa-pulse"></i>
 </div>
 <div data-ng-show="!loading">
+    {{survey|json}}
     <form name="survey">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -17,6 +18,10 @@
                         <input type="radio" name="question{{i.QuestionId}}" id="item{{i.QuestionItemId}}" data-ng-if="q.QuestionType==2" />
                         <label for="item{{i.QuestionItemId}}">{{i.ItemDescription}}</label>
                     </div>
+                </div>
+
+                <div>
+                    <button type="button" class="btn btn-success">Submit</button>
                 </div>
             </div>
         </div>

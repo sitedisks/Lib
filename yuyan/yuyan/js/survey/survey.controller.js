@@ -9,6 +9,7 @@
             $scope.dtoQuestions;
             $scope.DefaultQuestionType;
             $scope.QID;
+            $scope.IID;
             $scope.showAddItem;
             $scope.disableNext;
             $scope.disableController;
@@ -54,8 +55,9 @@
             }
 
             function addItem(QID) {
-
+                $scope.IID++;
                 var item = {
+                    QuestionItemId: $scope.IID,
                     QuestionId: QID,
                     ItemDescription: $scope.item
                 };
@@ -140,6 +142,7 @@
                 $scope.dtoQuestions = [];
                 $scope.DefaultQuestionType = 1;
                 $scope.QID = 0;
+                $scope.IID = 0;
                 $scope.showAddItem = false;
                 $scope.disableNext = true;
                 $scope.disableController = true;

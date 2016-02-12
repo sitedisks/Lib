@@ -3,11 +3,15 @@
     angular.module('choriceApp').controller('choriceCtrl', ['$scope', '$stateParams', 'choriceAPISvc',
         function ($scope, $stateParams, choriceAPISvc) {
 
-            $scope.url = $stateParams.tokenUrl;
+            var tokenUrl = $stateParams.tokenUrl;
 
             //JfSoWRnSEKKeSWh421wjw
 
-            choriceAPISvc
+            choriceAPISvc.surveyRetreiveSvc().get({ urltoken: tokenUrl },
+                function (data) {
+                    $scope.survey = data;
+                },
+                function (data) { });
 
         }]);
 

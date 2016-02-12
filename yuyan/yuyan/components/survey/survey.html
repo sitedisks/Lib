@@ -21,19 +21,19 @@
         </div>
 
         <div data-ng-repeat="q in dtoQuestions">
-            <h2 class="break-word">{{q.QuestionId}}. {{q.Question}}</h2>
-            <form>
-                <div data-ng-repeat="i in q.dtoItems">
-                    <h4 class="break-word">
-                        <input type="checkbox" data-ng-if="q.QuestionType==1" />
-                        <input type="radio" name="i.QuestionId" data-ng-if="q.QuestionType==2" />
-                        {{i.ItemDescription}}
-                    </h4>
-                </div>
-            </form>
+            <h3 class="break-word">{{q.QuestionId}}. {{q.Question}}</h3>
+
+            <div style="padding-left: 40px;" data-ng-repeat="i in q.dtoItems" data-ng-class="{'checkbox checkbox-success':q.QuestionType==1, 'radio radio-success':q.QuestionType==2}">
+
+                <input type="checkbox" name="question{{i.QuestionId}}" id="item{{i.QuestionItemId}}" data-ng-if="q.QuestionType==1" />
+                <input type="radio" name="question{{i.QuestionId}}" id="item{{i.QuestionItemId}}" data-ng-if="q.QuestionType==2" />
+                <label class="break-word" for="item{{i.QuestionItemId}}">{{i.ItemDescription}}</label>
+
+            </div>
+
         </div>
 
-        <div data-ng-show="showAddItem">
+        <div style="padding-left: 20px;" data-ng-show="showAddItem">
             <form name="itemForm" class="force-line" novalidate>
                 <div class="form-group has-success has-feedback">
                     <input type="text" class="form-control input-sm" name="itemInput" placeholder="some item" data-ng-model="item" data-ng-minlength="3" data-ng-maxlength="150" required />

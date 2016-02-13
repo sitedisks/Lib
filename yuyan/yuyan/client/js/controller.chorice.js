@@ -5,15 +5,44 @@
 
             var tokenUrl = $stateParams.tokenUrl;
 
+            /*  location:
+            {city: "Balwyn"
+            country_code: "AU"
+            country_name: "Australia"
+            ip: "115.64.103.98"
+            latitude: -37.8117
+            longitude: 145.081
+            metro_code: 0
+            region_code: "VIC"
+            region_name: "Victoria"
+            time_zone: "Australia/Melbourne"
+            zip_code: "3103"}
+            */
+            var location;
+
+            $scope.APIMini = 3;
+            $scope.APIresolved = 0;
+
             $scope.loading = true;
             $scope.radioChecked = radioChecked;
 
             $http.get(endpoint.ipaddress).then(
                 function (response) {
+                    $scope.APIresolved++;
                     var ip = response.data;
-
+                   
+                    $http.get(endpoint.geoip + ip).then(
+                        function (response) {
+                            $scope.APIresolved++;
+                            location = response.data;
+                        },
+                        function (response) {
+                            $scope.APIresolved++;
+                            toastr.error("Cannot get location.");
+                        });
 
                 }, function (response) {
+                    $scope.APIresolved++;
                     toastr.error("Cannot get your Ip Address.");
                 });
 

@@ -1,12 +1,22 @@
 ﻿(function () {
     'use strict';
-    angular.module('choriceApp').controller('choriceCtrl', ['$scope', '$stateParams', 'choriceAPISvc',
-        function ($scope, $stateParams, choriceAPISvc) {
+    angular.module('choriceApp').controller('choriceCtrl', ['$scope', '$http', '$stateParams', 'choriceAPISvc', 'endpoint',
+        function ($scope, $http, $stateParams, choriceAPISvc, endpoint) {
 
             var tokenUrl = $stateParams.tokenUrl;
 
             $scope.loading = true;
             $scope.radioChecked = radioChecked;
+
+            $http.get(endpoint.ipaddress).then(
+                function (response) {
+                    var ip = response.data;
+
+
+                }, function (response) {
+                    toastr.error("Cannot get your Ip Address.");
+                });
+
 
             choriceAPISvc.surveyRetreiveSvc().get({ urltoken: tokenUrl },
                 function (data) {

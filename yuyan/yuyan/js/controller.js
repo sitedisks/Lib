@@ -7,7 +7,7 @@
             $scope.userRegister = userRegister;
 
 
-            function userLogin() {
+            function userLogin(survey) {
                 var modalInstance = $uibModal.open({
                     animation: true,
                     templateUrl: 'templates/userModal.html',
@@ -21,15 +21,37 @@
                 });
 
                 modalInstance.result.then(function (userObj) {
-                    yuyanAPISvc.userLoginSvc().save(userObj,
-                        function (data) {
-                            localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
-                            toastr.success('Welcome back!', data.Email);
-                            $scope.isLogin = true;
-                        }, function (data) {
-                            // failed to login
-                            toastr.error(data.data, data.statusText);
-                        });
+                    if (userObj.Mode == 'login') {
+
+                        yuyanAPISvc.userLoginSvc().save(userObj,
+                           function (data) {
+                               localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
+                               toastr.success('Welcome back!', data.Email);
+                               $scope.isLogin = true;
+
+                               if (survey)
+                               {
+                                   survey.UserId = data.UserId;
+                                   saveSurvey(survey);
+                               }
+
+                           }, function (data) {
+                               // failed to login
+                               toastr.error(data.data, data.statusText);
+                           });
+
+                    } else if (userObj.Mode == 'register') {
+
+                        yuyanAPISvc.userRegisterSvc().save(userObj,
+                          function (data) {
+                           
+                              if (survey) {
+                                  survey.UserId = data.UserId;
+                                  saveSurvey(survey);
+                              } 
+
+                          });
+                    }
 
                 }, function () {
                     // dismissed log
@@ -64,14 +86,40 @@
                 });
 
                 modalInstance.result.then(function (userObj) {
-                    yuyanAPISvc.userRegisterSvc().save(userObj,
-                        function (data) {
-                            var newUser = data;
-                        });
+                    if (userObj.mode == 'login') {
+
+                        yuyanAPISvc.userLoginSvc().save(userObj,
+                           function (data) {
+                               localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
+                               toastr.success('Welcome back!', data.Email);
+                               $scope.isLogin = true;
+                           }, function (data) {
+                               // failed to login
+                               toastr.error(data.data, data.statusText);
+                           });
+
+                    } else if (userObj.mode == 'register') {
+
+                        yuyanAPISvc.userRegisterSvc().save(userObj,
+                          function (data) {
+                              var newUser = data;
+                          });
+                    }
 
                 }, function () {
                     // dismissed log
                 });
+            }
+
+            function saveSurvey(survey) {
+                yuyanAPISvc.surveySaveSvc().save(survey,
+                           function (data) {
+                               toastr.success("Survey Saved!");
+                               $scope.$broadcast('reset');
+                               //reset();
+                           }, function (data) {
+                               toastr.error("Save Survey Error");
+                           });
             }
 
         }]);

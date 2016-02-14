@@ -2,18 +2,20 @@
     <button type="button" class="close" data-ng-click="cancel()">&times;</button>
 
     <br class="xs-10" />
-    <form name="wizardForm" novalidate>
+    <form name="surveyForm" novalidate>
         <div class="form-group has-success has-feedback">
             <label class="control-label" for="surveyTitle">Survey Title</label>
-            <input type="text" class="form-control input-lg" id="surveyTitle" name="surveyTitle" placeholder="Title" required />
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <input type="text" class="form-control input-lg" id="surveyTitle" name="surveyTitle" data-ng-model="survey.Title" placeholder="Title" required />
+            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
         </div>
-
+        <div class="form-group has-success">
+            <textarea class="form-control" data-ng-model="survey.ShortDesc" placeholder="Short Description" rows="3"></textarea>
+        </div>
     </form>
 </div>
 <div class="modal-footer">
-
-    <button type="submit" class="btn btn-link pull-right" data-ng-click="surveyNext()">
-        <i class="glyphicon glyphicon-arrow-right"></i> Next &raquo;
+    <button type="button" class="btn btn-link pull-right" data-ng-disabled="surveyForm.$invalid" data-ng-click="ok()" >
+        <span data-ng-show="loggedIn"><i class="glyphicon glyphicon-floppy-disk"></i> Save &raquo;</span>
+        <span data-ng-show="!loggedIn"><i class="glyphicon glyphicon-arrow-right"></i> Next &raquo;</span>
     </button>
 </div>

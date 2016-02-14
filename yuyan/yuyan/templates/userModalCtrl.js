@@ -15,11 +15,10 @@
                 $scope.checkUser = checkUser;
                 $scope.dupPassword = dupPassword;
 
-                $scope.userObj = {
-                    Email: '',
-                    Password: '',
-                    PasswordConfirm: ''
-                };
+                $scope.userObj = userObjInit();
+
+                $scope.switchToLogin = switchToLogin;
+                $scope.switchToRegister = switchToRegister;
 
                 function ok() {
                     $uibModalInstance.close($scope.userObj);
@@ -31,7 +30,7 @@
 
                 function checkUser() {
                     $scope.userAvailable = true;
-                    if (mode == 'register' && $scope.userForm.userEmail.$valid) {
+                    if ($scope.mode == 'register' && $scope.userForm.userEmail.$valid) {
                         if ($scope.userObj.Email.length > 4) {
                             $scope.checking = true;
                             $timeout(function () {
@@ -53,8 +52,29 @@
                 }
 
                 function dupPassword() {
-                    if (mode == 'login') {
+                    if ($scope.mode == 'login') {
                         $scope.userObj.PasswordConfirm = $scope.userObj.Password;
+                    }
+                }
+
+                function switchToLogin() {
+                    $scope.mode = 'login';
+
+                    $scope.userObj = userObjInit();
+                }
+
+                function switchToRegister() {
+                    $scope.mode = 'register';
+
+                    $scope.userObj = userObjInit();
+                }
+
+                function userObjInit() {
+                    return {
+                        Email: '',
+                        Password: '',
+                        PasswordConfirm: '',
+                        Mode: $scope.mode
                     }
                 }
 

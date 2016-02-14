@@ -5,13 +5,18 @@
             var clientAPI = endpoint.localAPI + 'client';
 
             var service = {
-                surveyRetreiveSvc: surveyRetreiveSvc
+                surveyRetreiveSvc: surveyRetreiveSvc,
+                surveySaveSvc: surveySaveSvc
             };
 
             return service;
 
             function surveyRetreiveSvc() {
                 return $resource(clientAPI + '/:urltoken', { urltoken: '@url' });
+            }
+
+            function surveySaveSvc() {
+                return $resource(clientAPI);
             }
         }]);
 })();

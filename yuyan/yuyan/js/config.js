@@ -1,10 +1,10 @@
 (function () {
     'use strict';
 
-    angular.module('yuyanApp').config(['$httpProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider',
-        function ($httpProvider, $urlRouterProvider, $stateProvider, $locationProvider) {
+    angular.module('yuyanApp').config(['$httpProvider', '$urlRouterProvider', '$stateProvider', '$locationProvider', 'cfpLoadingBarProvider',
+        function ($httpProvider, $urlRouterProvider, $stateProvider, $locationProvider, cfpLoadingBarProvider) {
             $httpProvider.interceptors.push('authInterceptorSvc'); // Set the global $http interceptor - http header
-
+            cfpLoadingBarProvider.includeSpinner = false;  // angular loading bar no spinner
             
             $urlRouterProvider.otherwise("/");
             $stateProvider

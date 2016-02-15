@@ -13,6 +13,7 @@
             $scope.showAddItem;
             $scope.disableNext;
             $scope.disableController;
+            $rootScope.progressing;
             $rootScope.isLogin = false;
 
             $scope.toggleType = toggleType;
@@ -142,6 +143,7 @@
                 $scope.showAddItem = false;
                 $scope.disableNext = true;
                 $scope.disableController = true;
+                $rootScope.progressing = false;
             }
 
             function checkSession() {
@@ -185,12 +187,15 @@
                             dtoQuestions: $scope.dtoQuestions
                         };
 
+                        $rootScope.progressing = true;
+
                         yuyanAPISvc.surveySaveSvc().save(survey,
                             function (data) {
                                 toastr.success("Survey Saved!");
                                 reset();
                             }, function (data) {
                                 toastr.error("Save Survey Error");
+                                reset();
                             });
                     }
                     else {

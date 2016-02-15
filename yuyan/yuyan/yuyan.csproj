@@ -95,6 +95,14 @@
     <Content Include="bower_components\angular-google-maps\spec\coffee\helpers\helper.polyline.spec.coffee" />
     <Content Include="bower_components\angular-google-maps\spec\coffee\helpers\initiator.coffee" />
     <Content Include="bower_components\angular-google-maps\spec\js\.keep" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.css" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.js" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.min.css" />
+    <Content Include="bower_components\angular-loading-bar\build\loading-bar.min.js" />
+    <Content Include="bower_components\angular-loading-bar\Gruntfile.js" />
+    <Content Include="bower_components\angular-loading-bar\index.js" />
+    <Content Include="bower_components\angular-loading-bar\src\loading-bar.css" />
+    <Content Include="bower_components\angular-loading-bar\src\loading-bar.js" />
     <Content Include="bower_components\angular-local-storage\demo\demo-app.js" />
     <Content Include="bower_components\angular-local-storage\demo\demo-style.css" />
     <Content Include="bower_components\angular-local-storage\demo\demo.html" />
@@ -339,6 +347,12 @@
     <Content Include="bower_components\font-awesome\scss\_rotated-flipped.scss" />
     <Content Include="bower_components\font-awesome\scss\_stacked.scss" />
     <Content Include="bower_components\font-awesome\scss\_variables.scss" />
+    <Content Include="bower_components\angular-loading-bar\.bower.json" />
+    <Content Include="bower_components\angular-loading-bar\bower.json" />
+    <Content Include="bower_components\angular-loading-bar\CHANGELOG.md" />
+    <Content Include="bower_components\angular-loading-bar\LICENSE" />
+    <Content Include="bower_components\angular-loading-bar\package.json" />
+    <Content Include="bower_components\angular-loading-bar\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

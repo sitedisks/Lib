@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
-    angular.module('yuyanApp').controller('masterCtrl', ['$scope', '$uibModal', 'localStorageService', 'yuyanAPISvc',
-        function ($scope, $uibModal, localStorageService, yuyanAPISvc) {
+    angular.module('yuyanApp').controller('masterCtrl', ['$scope', '$rootScope', '$uibModal', 'localStorageService', 'yuyanAPISvc',
+        function ($scope, $rootScope, $uibModal, localStorageService, yuyanAPISvc) {
             $scope.userLogin = userLogin;
             $scope.userLogout = userLogout;
             $scope.userRegister = userRegister;
@@ -31,6 +31,7 @@
 
                                if (survey)
                                {
+                                   $rootScope.progressing = true;
                                    survey.UserId = data.UserId;
                                    saveSurvey(survey);
                                }
@@ -46,6 +47,7 @@
                           function (data) {
                            
                               if (survey) {
+                                  $rootScope.progressing = true;
                                   survey.UserId = data.UserId;
                                   saveSurvey(survey);
                               } 
@@ -119,6 +121,7 @@
                                //reset();
                            }, function (data) {
                                toastr.error("Save Survey Error");
+                               $scope.$broadcast('reset');
                            });
             }
 

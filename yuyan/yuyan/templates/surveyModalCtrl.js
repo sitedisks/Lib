@@ -6,6 +6,7 @@
             function ($scope, $uibModalInstance, loggedIn) {
 
                 $scope.loggedIn = loggedIn;
+                $scope.isCollapsed = true;
 
                 $scope.survey = {
                     Title: '',

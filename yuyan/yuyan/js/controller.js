@@ -151,6 +151,9 @@
                         function (data) {
                             if (data.SessionId && data.IsActive) {
                                 $rootScope.isLogin = true;
+                            } else {
+                                // session exipred
+                                localStorageService.remove('authorizationData');
                             }
                         }, function (data) {
                             toastr.error('User Session Check failed. Please refresh.');

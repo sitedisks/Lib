@@ -1,6 +1,5 @@
 ﻿<div class="row">
     <div class="col-md-8 col-md-offset-2">
-
         <h1 ng-non-bindable class="text-center"><strong>{{chorice}}</strong></h1>
         <h3 class="text-center">You have a <code>Choice</code>!</h3>
         <blockquote>
@@ -24,6 +23,7 @@
                     <i class="glyphicon glyphicon-floppy-disk"></i> Save
                 </button>
             </div>
+            <div class="clearfix"></div>
 
             <div data-ng-repeat="q in dtoQuestions">
                 <h3 class="break-word">{{q.QuestionId}}. {{q.Question}}</h3>
@@ -35,7 +35,6 @@
                     <label class="break-word" for="item{{i.QuestionItemId}}">{{i.ItemDescription}}</label>
 
                 </div>
-
             </div>
 
             <div style="padding-left: 20px;" data-ng-show="showAddItem">
@@ -50,13 +49,17 @@
 
                 <!--<button class="btn btn-info btn-lg" data-ng-click="previewSurvey()">Preview</button>-->
                 <button class="btn btn-link pull-right" data-ng-show="!disableNext" data-ng-disabled="disableNext" data-ng-click="nextQuestion()">Next Question &raquo;</button>
+                <div class="clearfix"></div>
             </div>
+
             <br />
+
             <div data-ng-show="!showAddItem">
                 <form name="questionForm" novalidate>
                     <div class="form-group has-success has-feedback">
                         <label class="control-label" for="IntQuestion">{{IntQuestion}}</label>
-                        <input type="text" id="IntQuestion" class="form-control input-lg" name="questionInput" placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required />
+                        <input type="text" class="form-control input-lg" id="IntQuestion" name="questionInput"
+                               placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required />
                         <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType == 1"></span>
                         <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType == 2"></span>
                     </div>
@@ -72,16 +75,16 @@
                             </button>
 
                             <!--<button type="button" class="btn btn-success" uib-dropdown-toggle>
-                            <span data-ng-if="DefaultQuestionType==1"><i class="glyphicon glyphicon-check"></i> Multiple</span>
-                            <span data-ng-if="DefaultQuestionType==2"><i class="glyphicon glyphicon-record"></i> Single</span>
-                            <span class="caret"></span>
-                        </button>
-                        <ul uib-dropdown-menu role="menu" aria-labelledby="split-button">
-                            <li role="menuitem" data-ng-click="DefaultQuestionType = 1"><a href="#"><i class="glyphicon glyphicon-check"></i> Checkbox</a></li>
-                            <li role="menuitem" data-ng-click="DefaultQuestionType = 2"><a href="#"><i class="glyphicon glyphicon-record"></i> Option</a></li>
-                            <li class="divider"></li>
-                            <li role="menuitem"><a href="#"><i class="glyphicon glyphicon-question-sign"></i> FAQ</a></li>
-                        </ul>-->
+                                <span data-ng-if="DefaultQuestionType==1"><i class="glyphicon glyphicon-check"></i> Multiple</span>
+                                <span data-ng-if="DefaultQuestionType==2"><i class="glyphicon glyphicon-record"></i> Single</span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul uib-dropdown-menu role="menu" aria-labelledby="split-button">
+                                <li role="menuitem" data-ng-click="DefaultQuestionType = 1"><a href="#"><i class="glyphicon glyphicon-check"></i> Checkbox</a></li>
+                                <li role="menuitem" data-ng-click="DefaultQuestionType = 2"><a href="#"><i class="glyphicon glyphicon-record"></i> Option</a></li>
+                                <li class="divider"></li>
+                                <li role="menuitem"><a href="#"><i class="glyphicon glyphicon-question-sign"></i> FAQ</a></li>
+                            </ul>-->
                         </div>
                     </div>
                 </form>

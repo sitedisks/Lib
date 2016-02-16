@@ -14,8 +14,8 @@
             $scope.disableNext;
             $scope.disableController;
             $rootScope.progressing;
-            $rootScope.isLogin = false;
 
+            // functions
             $scope.toggleType = toggleType;
             $scope.addQuestion = addQuestion;
             $scope.addItem = addItem;
@@ -24,13 +24,15 @@
             $scope.saveSurvey = saveSurvey;
             $scope.reset = reset;
 
+            // initial call
             reset();
-            checkSession();
 
+            // broadcast on
             $scope.$on('reset', function (event, args) {
                 reset();
             });
 
+            // function implements:
             function toggleType() {
                 if ($scope.DefaultQuestionType == 1) {
                     $scope.DefaultQuestionType = 2;
@@ -116,7 +118,6 @@
                     yuyanAPISvc.sessionCheckSvc().get({ sessionId: localSessionToken.token },
                         function (data) {
                             if (data.SessionId && data.IsActive) {
-                                //$rootScope.isLogin = true;
                                 surveyTitle(data.UserId);
                             } else {
                                 surveyTitle();
@@ -128,7 +129,7 @@
                 else {
                     // no session token, not login yet
                     surveyTitle();
-           
+
                 }
 
             }
@@ -144,20 +145,6 @@
                 $scope.disableNext = true;
                 $scope.disableController = true;
                 $rootScope.progressing = false;
-            }
-
-            function checkSession() {
-                var localSessionToken = localStorageService.get('authorizationData');
-                if (localSessionToken) {
-                    yuyanAPISvc.sessionCheckSvc().get({ sessionId: localSessionToken.token },
-                        function (data) {
-                            if (data.SessionId && data.IsActive) {
-                                $rootScope.isLogin = true;
-                            }
-                        }, function (data) {
-                            toastr.error('User Session Check failed. Please refresh.');
-                        });
-                }
             }
 
             function surveyTitle(userId) {

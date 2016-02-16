@@ -1,11 +1,14 @@
 ﻿(function () {
     'use strict';
-    angular.module('yuyanApp').controller('masterCtrl', ['$scope', '$rootScope', '$uibModal', 'localStorageService', 'yuyanAPISvc',
-        function ($scope, $rootScope, $uibModal, localStorageService, yuyanAPISvc) {
+    angular.module('yuyanApp').controller('masterCtrl', ['$scope', '$rootScope', '$state', '$uibModal', 'localStorageService', 'yuyanAPISvc',
+        function ($scope, $rootScope, $state, $uibModal, localStorageService, yuyanAPISvc) {
             $scope.userLogin = userLogin;
             $scope.userLogout = userLogout;
             $scope.userRegister = userRegister;
+            $scope.goManagement = goManagement;
+            $rootScope.isLogin = false;
 
+            checkSession();
 
             function userLogin(survey) {
                 var modalInstance = $uibModal.open({
@@ -125,6 +128,10 @@
                 });
             }
 
+            function goManagement() {
+                $state.go('manage');
+            }
+
             function saveSurvey(survey) {
                 yuyanAPISvc.surveySaveSvc().save(survey,
                            function (data) {
@@ -135,6 +142,20 @@
                                toastr.error("Save Survey Error");
                                $scope.$broadcast('reset');
                            });
+            }
+
+            function checkSession() {
+                var localSessionToken = localStorageService.get('authorizationData');
+                if (localSessionToken) {
+                    yuyanAPISvc.sessionCheckSvc().get({ sessionId: localSessionToken.token },
+                        function (data) {
+                            if (data.SessionId && data.IsActive) {
+                                $rootScope.isLogin = true;
+                            }
+                        }, function (data) {
+                            toastr.error('User Session Check failed. Please refresh.');
+                        });
+                }
             }
 
         }]);

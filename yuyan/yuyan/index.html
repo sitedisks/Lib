@@ -10,16 +10,26 @@
     <link rel="stylesheet" type="text/css" href="css/build.css" />
     <link rel="stylesheet" type="text/css" href="css/survey.css" />
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-  
+
 </head>
 <body data-ng-app="yuyanApp" data-ng-cloak>
-    
+
     <div data-ng-controller="masterCtrl">
-      
+
         <div class="container pad20">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 ng-non-bindable class="text-center"><strong>{{chorice}}</strong></h1>
+                    <h3 class="text-center">You have a <code>Choice</code>!</h3>
+                    <blockquote>
+                        <p>Create online survey, questionary, data collection, test... Quick & Easy.</p>
+                    </blockquote>
+                    <hr />
+
+                </div>
+            </div>
 
             <div ui-view></div>
-
         </div>
 
         <footer class="footer">
@@ -28,8 +38,8 @@
                     <div class="col-md-8 col-md-offset-2">
                         <br class="xs-10" />
                         <p class="text-center">
-                            <button type="button" class="btn btn-link" data-ng-click="" data-ng-if="isLogin">
-                                <i class="glyphicon glyphicon-menu-hamburger"></i>&nbsp;Manage
+                            <button type="button" class="btn btn-link" data-ng-click="goManagement()" data-ng-if="isLogin">
+                                <i class="glyphicon glyphicon-th-list"></i>&nbsp;Management
                             </button>
                             <button type="button" class="btn btn-link" data-ng-click="userLogout()" data-ng-if="isLogin">
                                 <i class="glyphicon glyphicon-log-out"></i>&nbsp;logout
@@ -71,6 +81,7 @@
 
     <script src="js/survey/survey.controller.js"></script>
     <script src="js/client/client.controller.js"></script>
+    <script src="js/manage/manage.controller.js"></script>
     <script src="js/map/map.controller.js"></script>
     <script src="templates/previewModalCtrl.js"></script>
     <script src="templates/userModalCtrl.js"></script>

@@ -14,6 +14,12 @@
                     controller: "surveyCtrl"
                 })
 
+                .state("manage", {
+                    url: "/manage",
+                    templateUrl: "/components/manage/manage.html",
+                    controller: "manageCtrl"
+                })
+
                 .state("clientsurvey", {
                     url: "/q/:tokenUrl",
                     templateUrl: "/components/client/client.html",

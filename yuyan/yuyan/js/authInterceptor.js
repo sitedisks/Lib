@@ -32,7 +32,13 @@
             // Intercept 401s and redirect you to login
             var _responseError = function (rejection) {
                 if (rejection.status === 401)
+                {
                     //$location.path('/');
+                }
+                else if (rejection.status === 404) {
+                    //$location.path('/');
+                }
+                    
 
                 return $q.reject(rejection);
             }

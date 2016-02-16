@@ -45,13 +45,20 @@
 
                         yuyanAPISvc.userRegisterSvc().save(userObj,
                           function (data) {
-                           
-                              if (survey) {
+                              localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
+                              toastr.success('Welcome to Chorice!', data.Email);
+                              $scope.isLogin = true;
+
+                              if (survey)
+                              {
                                   $rootScope.progressing = true;
                                   survey.UserId = data.UserId;
                                   saveSurvey(survey);
                               } 
 
+                          }, function (data) {
+                              // failed to login
+                              toastr.error(data.data, data.statusText);
                           });
                     }
 
@@ -88,7 +95,7 @@
                 });
 
                 modalInstance.result.then(function (userObj) {
-                    if (userObj.mode == 'login') {
+                    if (userObj.Mode == 'login') {
 
                         yuyanAPISvc.userLoginSvc().save(userObj,
                            function (data) {
@@ -100,11 +107,16 @@
                                toastr.error(data.data, data.statusText);
                            });
 
-                    } else if (userObj.mode == 'register') {
+                    } else if (userObj.Mode == 'register') {
 
                         yuyanAPISvc.userRegisterSvc().save(userObj,
                           function (data) {
-                              var newUser = data;
+                              localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
+                              toastr.success('Welcome to Chorice!', data.Email);
+                              $scope.isLogin = true;
+                          }, function (data) {
+                              // failed to register
+                              toastr.error(data.data, data.statusText);
                           });
                     }
 

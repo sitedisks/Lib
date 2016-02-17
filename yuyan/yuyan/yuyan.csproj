@@ -678,6 +678,7 @@
     <Content Include="js\services.js" />
     <Content Include="js\survey\survey.controller.js" />
     <Content Include="index.html" />
+    <Content Include="js\toastr.option.js" />
     <Content Include="templates\messages.html" />
     <Content Include="templates\modal.html" />
     <Content Include="templates\modalCtrl.js" />

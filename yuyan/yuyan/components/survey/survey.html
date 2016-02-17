@@ -34,7 +34,7 @@
             <div style="padding-left: 20px;" data-ng-show="showAddItem">
                 <form name="itemForm" class="force-line" novalidate>
                     <div class="form-group has-success has-feedback">
-                        <input type="text" class="form-control input-sm" name="itemInput" placeholder="some item" data-ng-model="item" data-ng-minlength="3" data-ng-maxlength="150" required />
+                        <input type="text" class="form-control input-sm" name="itemInput" placeholder="some item" data-ng-model="item" data-ng-minlength="1" data-ng-maxlength="150" required />
                         <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType==1"></span>
                         <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType==2"></span>
                     </div>
@@ -50,9 +50,16 @@
 
             <div data-ng-show="!showAddItem">
                 <form name="questionForm" novalidate>
-                    <div class="form-group has-success has-feedback">
+                    <div class="form-group has-success has-feedback hidden-xs">
                         <label class="control-label" for="IntQuestion">{{IntQuestion}}</label>
                         <input type="text" class="form-control input-lg" id="IntQuestion" name="questionInput"
+                               placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required />
+                        <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType == 1"></span>
+                        <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType == 2"></span>
+                    </div>
+                    <div class="form-group has-success has-feedback hidden-sm hidden-md hidden-lg">
+                        <label class="control-label" for="IntQuestion">{{IntQuestion}}</label>
+                        <input type="text" class="form-control" id="IntQuestion" name="questionInput"
                                placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required />
                         <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType == 1"></span>
                         <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType == 2"></span>

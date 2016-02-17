@@ -15,7 +15,8 @@
                 userLogoutSvc: userLogoutSvc,
                 userRegisterSvc: userRegisterSvc,
                 surveySaveSvc: surveySaveSvc,
-                surveyGetByIdSvc: surveyGetByIdSvc
+                surveyGetByIdSvc: surveyGetByIdSvc,
+                surveyGetBySession: surveyGetBySession
             };
 
             return service;
@@ -48,6 +49,9 @@
                 return $resource(surveyAPI + '/:surveyId', { surveyId: '@id' });
             }
 
+            function surveyGetBySession() {
+                return $resource(surveyAPI + '/all');
+            }
         }]);
 
 })();

@@ -7,11 +7,10 @@
             $scope.APIMini = 1;
             $scope.APIResolved = 0;
 
+            // functions
             $scope.goHome = goHome;
+            $scope.previewSurvey = previewSurvey;
 
-            function goHome() {
-                $state.go('survey');
-            }
 
             yuyanAPISvc.surveyGetBySession().query({},
                 function (data) {
@@ -20,6 +19,28 @@
                 }, function (data) {
                     toastr.error('Failed to retreive survey. Please refresh.');
                 });
+
+            function goHome() {
+                $state.go('survey');
+            }
+
+            function previewSurvey(survey) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'templates/previewModal.html',
+                    controller: 'previewModalCtrl',
+                    size: 'md',
+                    resolve: {
+                        survey: survey
+                    }
+                });
+
+                modalInstance.result.then(function () {
+
+                }, function () {
+                    // dismissed log
+                });
+            }
 
         }]);
 

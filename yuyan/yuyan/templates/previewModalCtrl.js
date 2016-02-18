@@ -2,16 +2,10 @@
     'use strict';
 
     angular.module('yuyanApp')
-		.controller('previewModalCtrl', ['$scope', '$uibModalInstance', 'surveyQuestions',
-			function ($scope, $uibModalInstance, surveyQuestions) {
+		.controller('previewModalCtrl', ['$scope', '$uibModalInstance', 'survey',
+			function ($scope, $uibModalInstance, survey) {
 
-			    $scope.survey = {
-			        Title: "Preview Survey",
-			        ShortDesc: "This is for preview only",
-			        LongDesc: "Please register to access full functions",
-			        UserId: "",
-			        dtoQuestions: surveyQuestions
-			    };
+			    $scope.survey = survey;
 
 			    $scope.ok = function () {
 			        $uibModalInstance.close();

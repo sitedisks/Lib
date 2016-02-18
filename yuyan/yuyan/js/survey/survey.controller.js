@@ -91,15 +91,20 @@
             }
 
             function previewSurvey() {
+                var survey = {
+                    Title: "Preview",
+                    ShortDesc: "Survey Preview",
+                    LongDesc: "Register to access full functions",
+                    dtoQuestions: $scope.dtoQuestions
+                };
+
                 var modalInstance = $uibModal.open({
                     animation: true,
                     templateUrl: 'templates/previewModal.html',
                     controller: 'previewModalCtrl',
                     size: 'md',
                     resolve: {
-                        surveyQuestions: function () {
-                            return $scope.dtoQuestions;
-                        }
+                        survey: survey
                     }
                 });
 

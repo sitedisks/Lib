@@ -6,12 +6,30 @@
 
         <div>
             <div class="text-center text-primary" style="margin-top: 30px;" data-ng-show="APIMini > APIResolved">
-               
+
                 <br />
                 <i class="fa fa-spinner fa-pulse" style="font-size:48px"></i>
             </div>
             <div data-ng-show="APIMini <= APIResolved">
-                {{surveys | json}}
+                <!--{{surveys | json}}-->
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr class="text-success">
+                                <th>Title</th>
+                                <th class="hidden-xs">URL</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="s in surveys">
+                                <td>{{s.Title}}</td>
+                                <td class="hidden-xs">{{s.URLToken}}</td>
+                                <td><button type="button" class="btn btn-success">Action</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

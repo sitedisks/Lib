@@ -1,8 +1,8 @@
 (function () {
     'use strict';
     angular.module('yuyanApp').controller('surveyCtrl',
-    ['$scope', '$rootScope', '$uibModal', 'localStorageService', 'yuyanAPISvc',
-        function ($scope, $rootScope, $uibModal, localStorageService, yuyanAPISvc) {
+    ['$scope', '$rootScope', '$uibModal', '$translate', 'localStorageService', 'yuyanAPISvc',
+        function ($scope, $rootScope, $uibModal, $translate, localStorageService, yuyanAPISvc) {
 
             $scope.placeholder;
             $scope.IntQuestion;

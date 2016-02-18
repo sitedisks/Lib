@@ -28,13 +28,13 @@
                         <tbody>
                             <tr data-ng-repeat="s in surveys">
                                 <td><a data-ng-click="previewSurvey(s)">{{s.Title}}</a></td>
-                                <td class="text-center"><span class="badge">{{s.dtoQuestions.length}}</span></td>
+                                <td class="text-center"><span class="badge alert-info">{{s.dtoQuestions.length}}</span></td>
                                 <td class="text-center"><span class="badge alert-success">24</span></td>
-                                <td class="text-center"><span class="badge alert-info">4</span></td>
+                                <td class="text-center"><span class="badge alert-danger">4</span></td>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span></button>
+                                    <button type="button" class="btn btn-link btn-sm"><i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span></button>
                                     <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-remove"></i> <span class="hidden-xs hidden-sm">Delete</span></button>
-                                    <button type="button" class="btn btn-info btn-sm"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm">Share</span></button>
+                                    <button type="button" class="btn btn-link btn-sm"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm">Share</span></button>
                                 </td>
                             </tr>
                         </tbody>

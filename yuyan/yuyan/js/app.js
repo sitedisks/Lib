@@ -4,6 +4,7 @@ angular.module('yuyanApp', [
     'LocalStorageModule',
     'angular-loading-bar',
     'uiGmapgoogle-maps',
+    'pascalprecht.translate',
     'ngResource',
     'ngMessages'
 ]);

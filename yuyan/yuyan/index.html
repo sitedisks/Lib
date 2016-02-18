@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="bower_components/toastr/toastr.min.css" />
     <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="bower_components/angular-loading-bar/src/loading-bar.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/flag-icon-css/css/flag-icon.min.css" />
     <link rel="stylesheet" type="text/css" href="css/gapcss.css" />
     <link rel="stylesheet" type="text/css" href="css/build.css" />
     <link rel="stylesheet" type="text/css" href="css/survey.css" />
@@ -15,8 +16,12 @@
 <body data-ng-app="yuyanApp" data-ng-cloak>
 
     <div data-ng-controller="masterCtrl">
-
-        <div class="container pad20">
+        <div class="btn-group pull-right">
+            <button type="button" class="btn btn-link btn-sm" ng-click="changeLanguage('en')"><span class="flag-icon flag-icon-gb"></span></button>
+            <button type="button" class="btn btn-link btn-sm" ng-click="changeLanguage('cn')"><span class="flag-icon flag-icon-cn"></span></button>
+        </div>
+        <div class="clearfix"></div>
+        <div class="container">
             <div class="row text-center">
                 <div class="col-md-8 col-md-offset-2">
                     <div class="hidden-xs hidden-sm">
@@ -75,6 +80,7 @@
     <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
     <script src="bower_components/angular-loading-bar/src/loading-bar.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.min.js"></script>
     <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="js/toastr.option.js"></script>
     <!-- yuyan app -->
@@ -82,6 +88,7 @@
     <script src="js/constant.js"></script>
     <script src="js/services.js"></script>
     <script src="js/config.js"></script>
+    <script src="js/config.translate.js"></script>
     <script src="js/controller.js"></script>
     <script src="js/authInterceptor.js"></script>
     <script src="js/directives.js"></script>

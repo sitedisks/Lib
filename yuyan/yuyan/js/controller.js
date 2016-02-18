@@ -1,11 +1,12 @@
 ﻿(function () {
     'use strict';
-    angular.module('yuyanApp').controller('masterCtrl', ['$scope', '$rootScope', '$state', '$uibModal', 'localStorageService', 'yuyanAPISvc',
-        function ($scope, $rootScope, $state, $uibModal, localStorageService, yuyanAPISvc) {
+    angular.module('yuyanApp').controller('masterCtrl', ['$scope', '$rootScope', '$state', '$translate', '$uibModal', 'localStorageService', 'yuyanAPISvc',
+        function ($scope, $rootScope, $state, $translate, $uibModal, localStorageService, yuyanAPISvc) {
             $scope.userLogin = userLogin;
             $scope.userLogout = userLogout;
             $scope.userRegister = userRegister;
             $scope.goManagement = goManagement;
+            $scope.changeLanguage = changeLanguage;
             $rootScope.isLogin = false;
 
             checkSession();
@@ -32,8 +33,7 @@
                                toastr.success('Welcome back!', data.Email);
                                $scope.isLogin = true;
 
-                               if (survey)
-                               {
+                               if (survey) {
                                    $rootScope.progressing = true;
                                    survey.UserId = data.UserId;
                                    saveSurvey(survey);
@@ -52,12 +52,11 @@
                               toastr.success('Welcome to Chorice!', data.Email);
                               $scope.isLogin = true;
 
-                              if (survey)
-                              {
+                              if (survey) {
                                   $rootScope.progressing = true;
                                   survey.UserId = data.UserId;
                                   saveSurvey(survey);
-                              } 
+                              }
 
                           }, function (data) {
                               // failed to login
@@ -160,6 +159,10 @@
                         });
                 }
             }
+
+            function changeLanguage(langKey) {
+                $translate.use(langKey);
+            };
 
         }]);
 })();

@@ -34,6 +34,8 @@
     "angular-local-storage": "^0.2.3",
     "angular-ui-router": "^0.2.18",
     "font-awesome": "fontawesome#^4.5.0",
-    "angular-loading-bar": "^0.8.0"
+    "angular-loading-bar": "^0.8.0",
+    "angular-translate": "^2.9.1",
+    "flag-icon-css": "^1.2.0"
   }
 }

@@ -58,8 +58,15 @@
                     }
                 });
 
-                modalInstance.result.then(function () {
-
+                modalInstance.result.then(function (survey) {
+                    yuyanAPISvc.surveyCrudSvc().remove({ surveyId: survey.SurveyId },
+                        function (data) {
+                            toastr.success("Survey Deleted!");
+                            $scope.APIResolved--;
+                            suveryListInit();
+                        }, function (data) {
+                            toastr.error("Remove Survey Error, please try again.");
+                        });
                 }, function () {
                     // dismissed log
                 });

@@ -8,7 +8,7 @@
                 $scope.survey = survey;
 
                 $scope.ok = function () {
-                    $uibModalInstance.close();
+                    $uibModalInstance.close(survey);
                 };
 
                 $scope.cancel = function () {

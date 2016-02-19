@@ -1,17 +1,35 @@
 ﻿<div class="modal-body">
     <button type="button" class="close" data-ng-click="cancel()">&times;</button>
 
-    {{survey | json}}
-
-    <div class="form-group has-feedback">
-
-        <label class="control-label" for="userEmail">Email address</label>
-        <input />
+    <br class="xs-10" />
+    <div class="text-center text-success" data-ng-show="saving">
+        <br />
+        <i class="fa fa-spinner fa-pulse" style="font-size:48px"></i>
     </div>
+    <div data-ng-show="!saving">
+        <form name="surveyForm" novalidate>
+            <div class="form-group has-success has-feedback">
+
+                <label class="control-label" for="surveyTitle">Survey Title</label>
+                <input type="text" class="form-control input-lg" id="surveyTitle" name="surveyTitle"
+                       data-ng-model="survey.Title" placeholder="Title" required />
+                <span class="fa fa-quote-right form-control-feedback"></span>
+            </div>
+            <div class="form-group has-success">
+                <label class="control-label" for="surveyShortDesc">Short Description</label>
+                <textarea class="form-control" id="surveyShortDesc" data-ng-model="survey.ShortDesc" placeholder="Short Description" rows="3"></textarea>
+            </div>
+            <div class="form-group has-success">
+                <label class="control-label" for="surveyLongDesc">Long Description</label>
+                <textarea class="form-control" id="surveyLongDesc" data-ng-model="survey.LongDesc" placeholder="Long Description" rows="5"></textarea>
+            </div>
+        </form>
+    </div>
+
 </div>
 <div class="modal-footer">
     <div class="pull-right">
-        <button type="button" class="btn btn-primary btn-sm" data-ng-click="ok()">
+        <button type="button" class="btn btn-primary btn-sm" data-ng-disabled="surveyForm.$invalid" data-ng-click="ok()">
             <i class="glyphicon glyphicon-floppy-save"></i> Save
         </button>
         <button type="button" class="btn btn-link btn-sm" data-ng-click="cancel()">

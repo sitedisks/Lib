@@ -14,8 +14,7 @@
                 userLoginSvc: userLoginSvc,
                 userLogoutSvc: userLogoutSvc,
                 userRegisterSvc: userRegisterSvc,
-                surveySaveSvc: surveySaveSvc,
-                surveyGetByIdSvc: surveyGetByIdSvc,
+                surveyCrudSvc: surveyCrudSvc,
                 surveyGetBySession: surveyGetBySession
             };
 
@@ -41,12 +40,9 @@
                 return $resource(userAPI + '/register');
             }
 
-            function surveySaveSvc() {
-                return $resource(surveyAPI);
-            }
-
-            function surveyGetByIdSvc() {
-                return $resource(surveyAPI + '/:surveyId', { surveyId: '@id' });
+            // survey
+            function surveyCrudSvc() {
+                return $resource(surveyAPI + '/:surveyId', { surveyId: '@id' }, { update: { method: 'PUT' } });
             }
 
             function surveyGetBySession() {

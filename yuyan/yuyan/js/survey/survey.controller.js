@@ -181,7 +181,7 @@
 
                         $rootScope.progressing = true;
 
-                        yuyanAPISvc.surveySaveSvc().save(survey,
+                        yuyanAPISvc.surveyCrudSvc().save(survey,
                             function (data) {
                                 toastr.success("Survey Saved!");
                                 reset();

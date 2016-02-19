@@ -13,13 +13,17 @@
             $scope.deleteSurvey = deleteSurvey;
             $scope.addEditSurvey = addEditSurvey;
 
-            yuyanAPISvc.surveyGetBySession().query({},
-                function (data) {
-                    $scope.APIResolved++;
-                    $scope.surveys = data;
-                }, function (data) {
-                    toastr.error('Failed to retreive survey. Please refresh.');
-                });
+            suveryListInit();
+
+            function suveryListInit() {
+                yuyanAPISvc.surveyGetBySession().query({},
+                  function (data) {
+                      $scope.APIResolved++;
+                      $scope.surveys = data;
+                  }, function (data) {
+                      toastr.error('Failed to retreive survey. Please refresh.');
+                  });
+            }
 
             function goHome() {
                 $state.go('survey');
@@ -78,12 +82,13 @@
                     controller: 'addEditSurveyCtrl',
                     size: 'md',
                     resolve: {
-                        survey: survey
+                        survey: angular.copy(survey)
                     }
                 });
 
-                modalInstance.result.then(function () {
-
+                modalInstance.result.then(function (data) {
+                    $scope.APIResolved--;
+                    suveryListInit();
                 }, function () {
                     // dismissed log
                 });

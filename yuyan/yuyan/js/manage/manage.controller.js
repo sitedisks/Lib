@@ -61,8 +61,32 @@
                 });
             }
 
-            function addEditSurvey() {
+            function addEditSurvey(survey) {
 
+                if (!survey) {
+                    // empty survey then
+                    survey = {
+                        Title: '',
+                        ShortDesc: '',
+                        LongDesc: ''
+                    };
+                }
+
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'components/manage/modal/addEditSurvey.html',
+                    controller: 'addEditSurveyCtrl',
+                    size: 'md',
+                    resolve: {
+                        survey: survey
+                    }
+                });
+
+                modalInstance.result.then(function () {
+
+                }, function () {
+                    // dismissed log
+                });
             }
 
         }]);

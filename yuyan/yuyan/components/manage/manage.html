@@ -11,7 +11,7 @@
             </div>
             <div data-ng-show="APIMini <= APIResolved">
 
-                <button type="button" class="btn btn-link btn-lg pull-right"><i class="glyphicon glyphicon-plus"></i> Add Survey</button>
+                <button type="button" class="btn btn-link btn-lg pull-right" data-ng-click="addEditSurvey()"><i class="glyphicon glyphicon-plus"></i> Add Survey</button>
                 <div class="clearfix"></div>
 
                 <div class="table-responsive">
@@ -27,12 +27,12 @@
                         </thead>
                         <tbody>
                             <tr data-ng-repeat="s in surveys">
-                                <td><small><a data-ng-click="previewSurvey(s)">{{s.Title}}</a> &nbsp;<span class="label label-warning">{{s.dtoQuestions.length}}</span></small></td>
+                                <td><small><a data-ng-click="previewSurvey(s)">{{s.Title}}</a> &nbsp;<span class="label label-warning">{{s.dtoQuestions.length}} <i class="fa fa-list-ol"></i></span></small></td>
                                 <!--<td class="text-center"><span class="badge alert-info">{{s.dtoQuestions.length}}</span></td>-->
                                 <td class="text-center"><span class="badge alert-success">24</span></td>
                                 <td class="text-center"><span class="badge alert-info">4</span></td>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-link btn-sm"><i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span></button>
+                                    <button type="button" class="btn btn-link btn-sm" data-ng-click="addEditSurvey(s)"><i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span></button>
                                     <button type="button" class="btn btn-link btn-sm"><i class="fa fa-pie-chart"></i> <span class="hidden-xs hidden-sm">Report</span></button>
                                     <button type="button" class="btn btn-link btn-sm"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm">Share</span></button>
                                     <button type="button" class="btn btn-danger btn-sm" data-ng-click="deleteSurvey(s)"><i class="fa fa-remove"></i> <span class="hidden-xs hidden-sm">Delete</span></button>

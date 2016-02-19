@@ -1,0 +1,22 @@
+﻿<div class="modal-body">
+    <button type="button" class="close" data-ng-click="cancel()">&times;</button>
+
+    {{survey | json}}
+
+    <div class="form-group has-feedback">
+
+        <label class="control-label" for="userEmail">Email address</label>
+        <input />
+    </div>
+</div>
+<div class="modal-footer">
+    <div class="pull-right">
+        <button type="button" class="btn btn-primary btn-sm" data-ng-click="ok()">
+            <i class="glyphicon glyphicon-floppy-save"></i> Save
+        </button>
+        <button type="button" class="btn btn-link btn-sm" data-ng-click="cancel()">
+            Cancel
+        </button>
+    </div>
+    <div class="clearfix"></div>
+</div>

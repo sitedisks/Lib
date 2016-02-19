@@ -10,7 +10,8 @@
             // functions
             $scope.goHome = goHome;
             $scope.previewSurvey = previewSurvey;
-
+            $scope.deleteSurvey = deleteSurvey;
+            $scope.addEditSurvey = addEditSurvey;
 
             yuyanAPISvc.surveyGetBySession().query({},
                 function (data) {
@@ -40,6 +41,28 @@
                 }, function () {
                     // dismissed log
                 });
+            }
+
+            function deleteSurvey(survey) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'components/manage/modal/deleteSurvey.html',
+                    controller: 'deleteSurveyCtrl',
+                    size: 'md',
+                    resolve: {
+                        survey: survey
+                    }
+                });
+
+                modalInstance.result.then(function () {
+
+                }, function () {
+                    // dismissed log
+                });
+            }
+
+            function addEditSurvey() {
+
             }
 
         }]);

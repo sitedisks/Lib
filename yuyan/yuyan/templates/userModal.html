@@ -61,8 +61,10 @@
 
 </div>
 <div class="modal-footer">
-    <button type="submit" class="btn btn-link pull-right" ng-disabled="userForm.$invalid || !userAvailable" data-ng-click="ok()">
-        <i class="glyphicon" ng-class="{'glyphicon-log-in': mode=='login', 'glyphicon-user': mode=='register'}"></i>&nbsp;{{mode}} &raquo;
-    </button>
+    <div class="pull-right">
+        <button type="submit" class="btn btn-link" ng-disabled="userForm.$invalid || !userAvailable" data-ng-click="ok()">
+            <i class="glyphicon" ng-class="{'glyphicon-log-in': mode=='login', 'glyphicon-user': mode=='register'}"></i>&nbsp;{{mode}} &raquo;
+        </button>
+    </div>
     <div class="clearfix"></div>
 </div>

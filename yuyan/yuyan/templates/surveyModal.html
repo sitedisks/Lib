@@ -18,9 +18,11 @@
     </form>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-link pull-right" data-ng-disabled="surveyForm.$invalid" data-ng-click="ok()" >
-        <span data-ng-show="loggedIn"><i class="glyphicon glyphicon-floppy-disk"></i> Save &raquo;</span>
-        <span data-ng-show="!loggedIn"><i class="glyphicon glyphicon-arrow-right"></i> Next &raquo;</span>
-    </button>
+    <div class="pull-right">
+        <button type="button" class="btn btn-link" data-ng-disabled="surveyForm.$invalid" data-ng-click="ok()">
+            <span data-ng-show="loggedIn"><i class="glyphicon glyphicon-floppy-disk"></i> Save &raquo;</span>
+            <span data-ng-show="!loggedIn"><i class="glyphicon glyphicon-arrow-right"></i> Next &raquo;</span>
+        </button>
+    </div>
     <div class="clearfix"></div>
 </div>

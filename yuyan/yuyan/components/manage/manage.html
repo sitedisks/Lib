@@ -27,7 +27,12 @@
                         </thead>
                         <tbody>
                             <tr data-ng-repeat="s in surveys">
-                                <td><small><a data-ng-click="previewSurvey(s)">{{s.Title}}</a> &nbsp;<span class="label label-warning">{{s.dtoQuestions.length}} <i class="fa fa-list-ol"></i></span></small></td>
+                                <td>
+                                    <small>
+                                        <a data-ng-click="previewSurvey(s)">{{s.Title}}</a> &nbsp;
+                                        <span class="label label-warning" data-ng-click="goQuestion(s)">{{s.dtoQuestions.length}} <i class="fa fa-list-ol"></i></span>
+                                    </small>
+                                </td>
                                 <!--<td class="text-center"><span class="badge alert-info">{{s.dtoQuestions.length}}</span></td>-->
                                 <td class="text-center"><span class="badge alert-success">24</span></td>
                                 <td class="text-center"><span class="badge alert-info">4</span></td>

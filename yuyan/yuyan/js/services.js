@@ -41,12 +41,28 @@
             }
 
             // survey
-            function surveyCrudSvc() {
-                return $resource(surveyAPI + '/:surveyId', { surveyId: '@id' }, { update: { method: 'PUT' } });
-            }
-
             function surveyGetBySession() {
                 return $resource(surveyAPI + '/all');
+            }
+
+            function surveyCrudSvc() {
+                return $resource(surveyAPI + '/:surveyId',
+                    { surveyId: '@sid' },
+                    { update: { method: 'PUT' } });
+            }
+
+            // queston 
+            function questionCrubSvc() {
+                return $resource(surveyAPI + '/:surveyId/questions/:questionId',
+                    { surveyId: '@sid', questionId: '@qid' },
+                    { update: { method: 'PUT' } })
+            }
+
+            // item
+            function itemCrubSvc() {
+                return $resource(surveyAPI + '/:surveyId/questions/:questionId/items/:itemId',
+                    { surveyId: '@sid', questionId: '@qid', itemId: '@iid' },
+                    { update: { method: 'PUT' } })
             }
         }]);
 

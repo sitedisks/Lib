@@ -1,0 +1,59 @@
+﻿<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <button type="button" class="btn btn-link" data-ng-click="goHome()">
+            &laquo; Home
+        </button>
+        <span class="text-primary"> | </span>
+        <button type="button" class="btn btn-link" data-ng-click="goSurvey()">
+             {{survey.Title}}
+        </button>
+
+        <div>
+            <div class="text-center text-primary" style="margin-top: 30px;" data-ng-show="APIMini > APIResolved">
+                <br />
+                <i class="fa fa-spinner fa-pulse" style="font-size:48px"></i>
+            </div>
+            <div data-ng-show="APIMini <= APIResolved">
+                <button type="button" class="btn btn-link btn-lg pull-right" data-ng-click="addEditQuestion()"><i class="glyphicon glyphicon-plus"></i> Add Question</button>
+                <div class="clearfix"></div>
+                <hr />
+                <!--{{survey}}-->
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <tr class="text-primary">
+                                <th style="width: 40%">Quesiton</th>
+                                <th style="width: 10%" class="hidden-xs">Order</th>
+                                <th style="width: 10%" class="text-center">Type</th>
+                                <th style="width: 40%" class="text-center"><i class="fa fa-cogs"></i> Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-repeat="q in survey.dtoQuestions | orderBy: q.QuestionOrder">
+                                <td>
+                                    <small>
+                                        <a href="#">{{q.Question}}</a> &nbsp;
+                                        <span class="label label-warning">{{q.dtoItems.length}} <i class="fa fa-list-ol"></i></span>
+                                    </small>
+                                </td>
+                                <td class="hidden-xs">
+                                    <span class="badge alert-info">{{q.QuestionOrder}}</span>
+                                </td>
+                                <td class="text-center text-primary">
+                                    <i class="glyphicon glyphicon-check" data-ng-if="q.QuestionType == 1"></i>
+                                    <i class="glyphicon glyphicon-record" data-ng-if="q.QuestionType == 2"></i>
+                                </td>
+                                <td class="text-center">
+                                    
+                                    <button type="button" class="btn btn-link btn-sm" data-ng-click="addEditQuestion(q)"><i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span></button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-ng-click="deleteQuestion(q)"><i class="fa fa-remove"></i> <span class="hidden-xs hidden-sm">Delete</span></button>
+                                    <button type="button" class="btn btn-link btn-sm pull-right"><i class="fa fa-bars"></i> <span class="hidden-xs hidden-sm"></span></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

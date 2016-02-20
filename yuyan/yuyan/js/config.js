@@ -20,6 +20,15 @@
                     controller: "manageCtrl"
                 })
 
+                .state("question", {
+                    url: "/question",
+                    templateUrl: "/components/manage/manage.question.html",
+                    controller: "manageQuestionCtrl",
+                    params: {
+                        survey: null
+                    }
+                })
+
                 .state("clientsurvey", {
                     url: "/q/:tokenUrl",
                     templateUrl: "/components/client/client.html",

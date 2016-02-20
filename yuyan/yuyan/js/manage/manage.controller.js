@@ -9,6 +9,7 @@
 
             // functions
             $scope.goHome = goHome;
+            $scope.goQuestion = goQuestion;
             $scope.previewSurvey = previewSurvey;
             $scope.deleteSurvey = deleteSurvey;
             $scope.addEditSurvey = addEditSurvey;
@@ -27,6 +28,10 @@
 
             function goHome() {
                 $state.go('survey');
+            }
+
+            function goQuestion(survey) {
+                $state.go('question', { survey: survey }, { location: false });
             }
 
             function previewSurvey(survey) {

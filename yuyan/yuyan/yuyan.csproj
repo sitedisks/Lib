@@ -1189,7 +1189,10 @@
     <Content Include="client\js\service.chorice.js" />
     <Content Include="components\client\client.html" />
     <Content Include="components\manage\manage.html" />
+    <Content Include="components\manage\manage.question.html" />
+    <Content Include="components\manage\modal\addEditQuestion.html" />
     <Content Include="components\manage\modal\addEditSurvey.html" />
+    <Content Include="components\manage\modal\deleteQuestion.html" />
     <Content Include="components\manage\modal\deleteSurvey.html" />
     <Content Include="components\map\map.html" />
     <Content Include="components\survey\survey.html" />
@@ -1205,7 +1208,10 @@
     <Content Include="js\config.js" />
     <Content Include="js\constant.js" />
     <Content Include="js\manage\manage.controller.js" />
+    <Content Include="js\manage\manage.question.controller.js" />
+    <Content Include="js\manage\modal\addEditQuestion.js" />
     <Content Include="js\manage\modal\addEditSurvey.js" />
+    <Content Include="js\manage\modal\deleteQuestion.js" />
     <Content Include="js\manage\modal\deleteSurvey.js" />
     <Content Include="js\map\map.controller.js" />
     <Content Include="js\directives.js" />

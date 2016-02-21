@@ -42,9 +42,10 @@
             }
 
             function addEditQuestion(question) {
-                if (question)
+                if (!question)
                 {
                     question = {
+                        QuestionType: 1,
                         Question: '',
                         dtoItems: []
                     };

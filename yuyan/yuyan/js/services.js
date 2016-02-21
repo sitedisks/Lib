@@ -15,7 +15,8 @@
                 userLogoutSvc: userLogoutSvc,
                 userRegisterSvc: userRegisterSvc,
                 surveyCrudSvc: surveyCrudSvc,
-                surveyGetBySession: surveyGetBySession
+                surveyGetBySession: surveyGetBySession,
+                questionCrudSvc: questionCrudSvc
             };
 
             return service;
@@ -52,14 +53,14 @@
             }
 
             // queston 
-            function questionCrubSvc() {
+            function questionCrudSvc() {
                 return $resource(surveyAPI + '/:surveyId/questions/:questionId',
                     { surveyId: '@sid', questionId: '@qid' },
                     { update: { method: 'PUT' } })
             }
 
             // item
-            function itemCrubSvc() {
+            function itemCrudSvc() {
                 return $resource(surveyAPI + '/:surveyId/questions/:questionId/items/:itemId',
                     { surveyId: '@sid', questionId: '@qid', itemId: '@iid' },
                     { update: { method: 'PUT' } })

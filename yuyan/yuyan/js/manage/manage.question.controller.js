@@ -4,10 +4,10 @@
     angular.module('yuyanApp').controller('manageQuestionCtrl', ['$scope', '$rootScope', '$stateParams', '$state', '$uibModal', 'yuyanAPISvc',
         function ($scope, $rootScope, $stateParams, $state, $uibModal, yuyanAPISvc) {
 
+            $scope.survey = $stateParams.survey;
             $scope.APIMini = 1;
             $scope.APIResolved = 1;
-
-            $scope.survey = $stateParams.survey;
+            var survey = $scope.survey;
 
             // functions
             $scope.goHome = goHome;
@@ -30,12 +30,20 @@
                     controller: 'deleteQuestionCtrl',
                     size: 'md',
                     resolve: {
-                        question: angular.copy(question)
+                        question: question
                     }
                 });
 
-                modalInstance.result.then(function (data) {
+                modalInstance.result.then(function (question) {
+                    var dd = question;
+                    yuyanAPISvc.questionCrudSvc().remove({ surveyId: question.SurveyId, questionId: question.QuestionId },
+                        function (data) {
 
+
+                            toastr.success("Survey Deleted!");
+                        }, function (data) {
+
+                        });
                 }, function () {
                     // dismissed log
                 });
@@ -45,6 +53,7 @@
                 if (!question)
                 {
                     question = {
+                        SurveyId: $scope.survey.SurveyId,
                         QuestionType: 1,
                         Question: '',
                         dtoItems: []
@@ -62,11 +71,35 @@
                 });
 
                 modalInstance.result.then(function (data) {
-                
+                    // renew UI dom
+
+                    var isNew = true;
+                    // refresh the survey dtoQuestions
+                    angular.forEach($scope.survey.dtoQuestions, function (q) {
+                        if (q.QuestionId == data.QuestionId) {
+                            q.Question = data.Question;
+                            q.IsActive = data.IsActive;
+                            q.IsDeleted = data.IsDeleted;
+                            q.QuestionId = data.QuestionId;
+                            q.QuestionOrder = data.QuestionOrder;
+                            q.QuestionType = data.QuestionType;
+                            q.dtoItems = data.dtoItems;
+                            q.SurveyId = data.SurveyId;
+
+                            isNew = false;
+                        }
+                    });
+
+                    if (isNew) {
+                        $scope.survey.dtoQuestions.push(data);
+                    }
+
+
                 }, function () {
                     // dismissed log
                 });
             }
+
 
         }]);
 })();

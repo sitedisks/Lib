@@ -29,7 +29,7 @@
                         yuyanAPISvc.surveyCrudSvc().save($scope.survey,
                            function (data) {
                                $scope.saving = false;
-                               toastr.success("Survey Saved!");
+                               toastr.success("Survey Added!");
                                $uibModalInstance.close(data);
                            },
                            function (data) {

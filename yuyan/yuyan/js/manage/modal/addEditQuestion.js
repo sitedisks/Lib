@@ -14,7 +14,7 @@
                 $scope.addItem = addItem;
                 $scope.removeItem = removeItem;
 
-                
+
                 if (question.dtoItems.length >= 2)
                     $scope.isItemCountValid = true;
 
@@ -47,11 +47,36 @@
                     if ($scope.question.dtoItems.length < 2 || $scope.question.dtoItems.length >= 6)
                         $scope.isItemCountValid = false;
                     else
-                        $scope.isItemCountValid = true; 
+                        $scope.isItemCountValid = true;
                 }
- 
+
                 $scope.ok = function () {
-                    $scope.saving = true;  
+                    $scope.saving = true;
+
+                    if ($scope.question.QuestionId) {
+                        //update
+                        yuyanAPISvc.questionCrudSvc().update({ surveyId: $scope.question.SurveyId, questionId: $scope.question.QuestionId }, $scope.question,
+                            function (data) {
+                                $scope.saving = false;
+                                toastr.success("Question Updated!");
+                                $uibModalInstance.close(data);
+                            }, function (data) {
+                                $scope.saving = false;
+                                toastr.error("Save Question Error, please try again.");
+                            });
+                    } else {
+                        //save
+                        yuyanAPISvc.questionCrudSvc().save({ surveyId: $scope.question.SurveyId }, $scope.question,
+                            function (data) {
+                                $scope.saving = false;
+                                toastr.success("Question Added!");
+                                $uibModalInstance.close(data);
+                            }, function (data) {
+                                $scope.saving = false;
+                                toastr.error("Save Question Error, please try again.");
+                            });
+                    }
+
                 }
 
 

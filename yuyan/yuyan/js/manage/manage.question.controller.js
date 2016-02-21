@@ -24,6 +24,7 @@
             }
 
             function deleteQuestion(question) {
+                //$scope.deleteQuestion = null;
                 var modalInstance = $uibModal.open({
                     animation: true,
                     templateUrl: 'components/manage/modal/deleteQuestion.html',
@@ -35,10 +36,11 @@
                 });
 
                 modalInstance.result.then(function (question) {
-                    var dd = question;
+                    $scope.deleteQuestion = question;
                     yuyanAPISvc.questionCrudSvc().remove({ surveyId: question.SurveyId, questionId: question.QuestionId },
                         function (data) {
-
+                            var index = $scope.survey.dtoQuestions.indexOf($scope.deleteQuestion);
+                            $scope.survey.dtoQuestions.splice(index, 1);
 
                             toastr.success("Survey Deleted!");
                         }, function (data) {

@@ -2,13 +2,13 @@
     <button type="button" class="close" data-ng-click="cancel()">&times;</button>
     <br class="xs-10" />
 
-    <div class="text-center text-success" data-ng-show="saving">
+    <div class="text-center text-primary" data-ng-show="saving">
         <br />
         <i class="fa fa-spinner fa-pulse" style="font-size:48px"></i>
     </div>
     <div data-ng-show="!saving">
 
-        {{question | json}}
+        <!--{{question | json}}-->
      
         <form name="questionForm" novalidate>
 
@@ -22,7 +22,7 @@
                     <label class="btn" data-ng-class="{'btn-success': question.QuestionType==1, 'btn-default': question.QuestionType==2}" 
                            ng-model="question.QuestionType" uib-btn-radio="1"><i class="glyphicon glyphicon-check"></i> Checkbox</label>
                     <label class="btn" data-ng-class="{'btn-success': question.QuestionType==2, 'btn-default': question.QuestionType==1}" 
-                           ng-model="question.QuestionType" uib-btn-radio="2"><i class="glyphicon glyphicon-record"></i> Radio Button</label>
+                           ng-model="question.QuestionType" uib-btn-radio="2"><i class="glyphicon glyphicon-record"></i> Radio</label>
                 </div>
             </div>
 

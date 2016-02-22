@@ -5,7 +5,7 @@
         </button>
         <span class="text-primary"> | </span>
         <button type="button" class="btn btn-link" data-ng-click="goSurvey()">
-             {{survey.Title}}
+             Survey
         </button>
 
         <div>
@@ -14,30 +14,41 @@
                 <i class="fa fa-spinner fa-pulse" style="font-size:48px"></i>
             </div>
             <div data-ng-show="APIMini <= APIResolved">
-                <button type="button" class="btn btn-link btn-lg pull-right" data-ng-click="addEditQuestion()"><i class="glyphicon glyphicon-plus"></i> Add Question</button>
+                <h2 class="text-primary">{{survey.Title}}</h2>
+                <button type="button" class="btn btn-link btn-lg pull-right" data-ng-click="addEditQuestion()" data-ng-show="survey.dtoQuestions.length>0"><i class="glyphicon glyphicon-plus"></i> Add Question</button>
                 <div class="clearfix"></div>
                 <hr />
                 <!--{{survey}}-->
-                <div class="table-responsive">
+                <div data-ng-show="survey.dtoQuestions.length<=0">
+                    <button type="button" class="btn btn-link btn-lg" data-ng-click="addEditQuestion()"><i class="glyphicon glyphicon-plus"></i> Add First Question</button>
+                </div>
+                <div class="table-responsive" data-ng-show="survey.dtoQuestions.length>0">
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr class="text-primary">
-                                <th style="width: 40%">Quesiton</th>
-                                <th style="width: 10%" class="hidden-xs">Order</th>
+                                <!--<th style="width: 10%" class="hidden-xs"></th>-->
+                                <th style="width: 50%">Quesiton</th>
                                 <th style="width: 10%" class="text-center">Type</th>
                                 <th style="width: 40%" class="text-center"><i class="fa fa-cogs"></i> Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr data-ng-repeat="q in survey.dtoQuestions | orderBy: q.QuestionOrder">
-                                <td>
-                                    <small>
-                                        <a href="#">{{q.Question}}</a> &nbsp;
-                                        <span class="label label-warning">{{q.dtoItems.length}} <i class="fa fa-list-ol"></i></span>
-                                    </small>
-                                </td>
-                                <td class="hidden-xs">
+                                <!--<td class="hidden-xs">
                                     <span class="badge alert-info">{{q.QuestionOrder}}</span>
+                                </td>-->
+                                <td class="text-primary">
+                                    <small>
+                                        <span ng-click="q.isCollapsed = !q.isCollapsed"><span class="badge alert-info">{{q.QuestionOrder}}</span> {{q.Question}}</span> &nbsp;
+                                        <span class="label label-success">{{q.dtoItems.length}}</span>
+                                    </small>
+                                    <div uib-collapse="!q.isCollapsed">
+                                        <div style="padding-left:40px;" data-ng-repeat="i in q.dtoItems" data-ng-class="{'checkbox checkbox-success': q.QuestionType==1, 'radio radio-success': q.QuestionType==2}">
+                                            <input type="checkbox" name="question{{i.QuestionId}}" id="item{{i.ItemOrder}}" data-ng-if="q.QuestionType==1" />
+                                            <input type="radio" name="question{{i.QuestionId}}" id="item{{i.ItemOrder}}" data-ng-if="q.QuestionType==2" />
+                                            <label class="break-word" for="item{{i.ItemOrder}}"><small>{{i.ItemDescription}}</small></label>
+                                        </div>
+                                    </div>
                                 </td>
                                 <td class="text-center text-primary">
                                     <i class="glyphicon glyphicon-check" data-ng-if="q.QuestionType == 1"></i>
@@ -47,7 +58,7 @@
                                     
                                     <button type="button" class="btn btn-link btn-sm" data-ng-click="addEditQuestion(q)"><i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span></button>
                                     <button type="button" class="btn btn-danger btn-sm" data-ng-click="deleteQuestion(q)"><i class="fa fa-remove"></i> <span class="hidden-xs hidden-sm">Delete</span></button>
-                                    <button type="button" class="btn btn-link btn-sm pull-right"><i class="fa fa-bars"></i> <span class="hidden-xs hidden-sm"></span></button>
+                                    <!--<button type="button" class="btn btn-link btn-sm pull-right"><i class="fa fa-bars"></i> <span class="hidden-xs hidden-sm"></span></button>-->
                                 </td>
                             </tr>
                         </tbody>

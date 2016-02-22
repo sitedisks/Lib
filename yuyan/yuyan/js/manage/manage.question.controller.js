@@ -36,10 +36,16 @@
                 });
 
                 modalInstance.result.then(function (question) {
-                    $scope.deleteQuestion = question;
+                 
                     yuyanAPISvc.questionCrudSvc().remove({ surveyId: question.SurveyId, questionId: question.QuestionId },
                         function (data) {
-                            var index = $scope.survey.dtoQuestions.indexOf($scope.deleteQuestion);
+                         
+                            var index = 0;
+                            angular.forEach($scope.survey.dtoQuestions, function (q, key) {
+                                if (q.QuestionId == question.QuestionId)
+                                    index = key;
+                            });
+
                             $scope.survey.dtoQuestions.splice(index, 1);
 
                             toastr.success("Survey Deleted!");

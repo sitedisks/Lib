@@ -36,11 +36,11 @@
             function toggleType() {
                 if ($scope.DefaultQuestionType == 1) {
                     $scope.DefaultQuestionType = 2;
-                    $scope.placeholder = 'Start Your First Question - Single option';
+             
                 }
                 else {
                     $scope.DefaultQuestionType = 1;
-                    $scope.placeholder = 'Start Your First Question - Multiple choice';
+                  
                 }
             }
 
@@ -57,7 +57,7 @@
                 $scope.question = "";
                 $scope.item = "";
                 $scope.showAddItem = true;
-                $scope.placeholder = 'Your Next Question';
+           
                 $scope.IntQuestion = 'Next Question:';
             }
 
@@ -140,7 +140,7 @@
             }
 
             function reset() {
-                $scope.placeholder = 'Start Your First Question - Multiple choice';
+                $scope.placeholder = 'Question';
                 $scope.IntQuestion = 'Question:';
                 $scope.dtoQuestions = [];
                 $scope.DefaultQuestionType = 1;

@@ -14,6 +14,12 @@
             $scope.deleteSurvey = deleteSurvey;
             $scope.addEditSurvey = addEditSurvey;
 
+            // pagination 
+            $scope.bigTotalItems = 180;
+            $scope.bigCurrentPage = 4;
+            $scope.maxSize = 3;
+
+
             suveryListInit();
 
             function suveryListInit() {

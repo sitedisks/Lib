@@ -7,7 +7,8 @@
             $scope.userRegister = userRegister;
             $scope.goManagement = goManagement;
             $scope.changeLanguage = changeLanguage;
-            $rootScope.isLogin = false;
+            $rootScope.isLogin = null;
+            $rootScope.sessionChecking = false;
 
             checkSession();
 
@@ -25,10 +26,16 @@
                 });
 
                 modalInstance.result.then(function (userObj) {
+
+                    $rootScope.sessionChecking = true;
+
                     if (userObj.Mode == 'login') {
 
                         yuyanAPISvc.userLoginSvc().save(userObj,
                            function (data) {
+
+                               $rootScope.sessionChecking = false;
+
                                localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
                                toastr.success('Welcome back!', data.Email);
                                $scope.isLogin = true;
@@ -41,6 +48,7 @@
 
                            }, function (data) {
                                // failed to login
+                               $rootScope.sessionChecking = false;
                                toastr.error(data.data, data.statusText);
                            });
 
@@ -48,6 +56,9 @@
 
                         yuyanAPISvc.userRegisterSvc().save(userObj,
                           function (data) {
+
+                              $rootScope.sessionChecking = false;
+
                               localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
                               toastr.success('Welcome to Chorice!', data.Email);
                               $scope.isLogin = true;
@@ -60,6 +71,7 @@
 
                           }, function (data) {
                               // failed to login
+                              $rootScope.sessionChecking = false;
                               toastr.error(data.data, data.statusText);
                           });
                     }
@@ -72,12 +84,22 @@
             function userLogout() {
                 var localSessionToken = localStorageService.get('authorizationData');
                 if (localSessionToken) {
+
+                    $rootScope.sessionChecking = true;
+
                     yuyanAPISvc.userLogoutSvc().remove({ sessionId: localSessionToken.token },
                         function (data) {
+
+                            $rootScope.sessionChecking = false;
+
                             localStorageService.remove('authorizationData');
                             toastr.success('See ya later!');
                             $scope.isLogin = false;
+
+                            $state.go('survey');
+
                         }, function (data) {
+                            $rootScope.sessionChecking = false;
                             toastr.error('Failed logout.', data.statusText);
                         });
                 }
@@ -97,15 +119,22 @@
                 });
 
                 modalInstance.result.then(function (userObj) {
+
+                    $rootScope.sessionChecking = true;
+
                     if (userObj.Mode == 'login') {
 
                         yuyanAPISvc.userLoginSvc().save(userObj,
                            function (data) {
+
+                               $rootScope.sessionChecking = false;
+
                                localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
                                toastr.success('Welcome back!', data.Email);
                                $scope.isLogin = true;
                            }, function (data) {
                                // failed to login
+                               $rootScope.sessionChecking = false;
                                toastr.error(data.data, data.statusText);
                            });
 
@@ -113,11 +142,15 @@
 
                         yuyanAPISvc.userRegisterSvc().save(userObj,
                           function (data) {
+
+                              $rootScope.sessionChecking = false;
+
                               localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
                               toastr.success('Welcome to Chorice!', data.Email);
                               $scope.isLogin = true;
                           }, function (data) {
                               // failed to register
+                              $rootScope.sessionChecking = false;
                               toastr.error(data.data, data.statusText);
                           });
                     }
@@ -144,17 +177,26 @@
             }
 
             function checkSession() {
+          
                 var localSessionToken = localStorageService.get('authorizationData');
                 if (localSessionToken) {
+
+                    $rootScope.sessionChecking = true;
+
                     yuyanAPISvc.sessionCheckSvc().get({ sessionId: localSessionToken.token },
                         function (data) {
+                            $rootScope.sessionChecking = false;
                             if (data.SessionId && data.IsActive) {
                                 $rootScope.isLogin = true;
                             } else {
                                 // session exipred
+                                $rootScope.isLogin = false;
                                 localStorageService.remove('authorizationData');
                             }
                         }, function (data) {
+
+                            $rootScope.sessionChecking = false;
+
                             toastr.error('User Session Check failed. Please refresh.');
                         });
                 }

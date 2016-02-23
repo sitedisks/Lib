@@ -23,13 +23,20 @@
             suveryListInit();
 
             function suveryListInit() {
-                yuyanAPISvc.surveyGetBySession().query({},
-                  function (data) {
-                      $scope.APIResolved++;
-                      $scope.surveys = data;
-                  }, function (data) {
-                      toastr.error('Failed to retreive survey. Please refresh.');
-                  });
+
+                if (!$rootScope.isLogin) {
+                    $state.go('survey');
+                } else {
+
+                    yuyanAPISvc.surveyGetBySession().query({},
+                      function (data) {
+                          $scope.APIResolved++;
+                          $scope.surveys = data;
+                      }, function (data) {
+                          toastr.error('Failed to retreive survey. Please refresh.');
+                      });
+                }
+
             }
 
             function goHome() {

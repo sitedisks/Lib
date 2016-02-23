@@ -10,6 +10,7 @@
 
             var service = {
                 sessionCheckSvc: sessionCheckSvc,
+                isAuthenticated: isAuthenticated,
                 userCheckSvc: userCheckSvc,
                 userLoginSvc: userLoginSvc,
                 userLogoutSvc: userLogoutSvc,
@@ -23,6 +24,10 @@
 
             function sessionCheckSvc() {
                 return $resource(userAPI + '/status');
+            }
+
+            function isAuthenticated() {
+
             }
 
             function userCheckSvc() {

@@ -48,6 +48,7 @@
                 $scope.QID++;
                 var question = {
                     QuestionId: $scope.QID,
+                    QuestionOrder: $scope.QID,
                     Question: $scope.question,
                     QuestionType: $scope.DefaultQuestionType,
                     dtoItems: []
@@ -64,7 +65,8 @@
             function addItem(QID) {
                 $scope.IID++;
                 var item = {
-                    QuestionItemId: $scope.IID,
+                    //QuestionItemId: $scope.IID,
+                    ItemOrder: $scope.IID,
                     QuestionId: QID,
                     ItemDescription: $scope.item
                 };
@@ -93,8 +95,8 @@
             function previewSurvey() {
                 var survey = {
                     Title: "Preview",
-                    ShortDesc: "Survey Preview",
-                    LongDesc: "Register to access full functions",
+                    ShortDesc: "* Survey Preview",
+                    LongDesc: "* Register to access full functions",
                     dtoQuestions: $scope.dtoQuestions
                 };
 

@@ -17,7 +17,8 @@
                 .state("manage", {
                     url: "/manage",
                     templateUrl: "/components/manage/manage.html",
-                    controller: "manageCtrl"
+                    controller: "manageCtrl",
+                    onEnter: function () { }
                 })
 
                 .state("question", {

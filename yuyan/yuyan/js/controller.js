@@ -6,7 +6,7 @@
             $scope.userLogout = userLogout;
             $scope.goManagement = goManagement;
             $scope.changeLanguage = changeLanguage;
-            //$rootScope.isLogin = null;
+            $rootScope.isLogin = null;
             $rootScope.sessionChecking = false;
 
             checkSession();
@@ -37,7 +37,7 @@
 
                                localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
                                toastr.success('Welcome back!', data.Email);
-                               //$rootScope.isLogin = true;
+                               $rootScope.isLogin = true;
                                yuyanAuthSvc.isLogin = true;
 
                                if (survey) {
@@ -66,7 +66,7 @@
 
                               localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
                               toastr.success('Welcome to Chorice!', data.Email);
-                              //$rootScope.isLogin = true;
+                              $rootScope.isLogin = true;
                               yuyanAuthSvc.isLogin = true;
 
                               if (survey) {
@@ -102,7 +102,7 @@
 
                             localStorageService.remove('authorizationData');
                             toastr.success('See ya later!');
-                            //$rootScope.isLogin = false;
+                            $rootScope.isLogin = false;
                             yuyanAuthSvc.isLogin = false;
 
                             $state.go('survey');
@@ -142,11 +142,11 @@
                         function (data) {
                             $rootScope.sessionChecking = false;
                             if (data.SessionId && data.IsActive) {
-                                //$rootScope.isLogin = true;
+                                $rootScope.isLogin = true;
                                 yuyanAuthSvc.isLogin = true;
                             } else {
                                 // session exipred
-                                //$rootScope.isLogin = false;
+                                $rootScope.isLogin = false;
                                 yuyanAuthSvc.isLogin = false;
                                 localStorageService.remove('authorizationData');
                             }

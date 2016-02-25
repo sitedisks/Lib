@@ -1,8 +1,8 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('yuyanApp').controller('manageCtrl', ['$scope', '$rootScope', '$state', '$uibModal', 'yuyanAPISvc',
-        function ($scope, $rootScope, $state, $uibModal, yuyanAPISvc) {
+    angular.module('yuyanApp').controller('manageCtrl', ['$scope', '$rootScope', '$state', '$uibModal', 'yuyanAPISvc', 'yuyanAuthSvc',
+        function ($scope, $rootScope, $state, $uibModal, yuyanAPISvc, yuyanAuthSvc) {
 
             $scope.APIMini = 1;
             $scope.APIResolved = 0;
@@ -24,7 +24,7 @@
 
             function suveryListInit() {
 
-                if (!$rootScope.isLogin) {
+                if (!yuyanAuthSvc.isLogin) {
                     $state.go('survey');
                 } else {
 

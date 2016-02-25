@@ -1216,6 +1216,7 @@
     <Content Include="js\map\map.controller.js" />
     <Content Include="js\directives.js" />
     <Content Include="js\services.js" />
+    <Content Include="js\services.auth.js" />
     <Content Include="js\survey\survey.controller.js" />
     <Content Include="index.html" />
     <Content Include="js\toastr.option.js" />

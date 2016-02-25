@@ -200,7 +200,7 @@
                             dtoQuestions: $scope.dtoQuestions
                         };
 
-                        $scope.$parent.userLogin(survey);
+                        $scope.$parent.userLogin('login', survey);
                     }
 
 

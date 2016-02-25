@@ -1,18 +1,17 @@
 ﻿(function () {
     'use strict';
-    angular.module('yuyanApp').controller('masterCtrl', ['$scope', '$rootScope', '$state', '$translate', '$uibModal', 'localStorageService', 'yuyanAPISvc',
-        function ($scope, $rootScope, $state, $translate, $uibModal, localStorageService, yuyanAPISvc) {
+    angular.module('yuyanApp').controller('masterCtrl', ['$scope', '$rootScope', '$state', '$translate', '$uibModal', 'localStorageService', 'yuyanAPISvc', 'yuyanAuthSvc',
+        function ($scope, $rootScope, $state, $translate, $uibModal, localStorageService, yuyanAPISvc, yuyanAuthSvc) {
             $scope.userLogin = userLogin;
             $scope.userLogout = userLogout;
-            $scope.userRegister = userRegister;
             $scope.goManagement = goManagement;
             $scope.changeLanguage = changeLanguage;
-            $rootScope.isLogin = null;
+            //$rootScope.isLogin = null;
             $rootScope.sessionChecking = false;
 
             checkSession();
 
-            function userLogin(survey) {
+            function userLogin(mode, survey) {
                 var modalInstance = $uibModal.open({
                     animation: true,
                     templateUrl: 'templates/userModal.html',
@@ -20,7 +19,7 @@
                     size: 'md',
                     resolve: {
                         mode: function () {
-                            return 'login';
+                            return mode;
                         }
                     }
                 });
@@ -38,12 +37,15 @@
 
                                localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
                                toastr.success('Welcome back!', data.Email);
-                               $scope.isLogin = true;
+                               //$rootScope.isLogin = true;
+                               yuyanAuthSvc.isLogin = true;
 
                                if (survey) {
                                    $rootScope.progressing = true;
                                    survey.UserId = data.UserId;
                                    saveSurvey(survey);
+                               } else {
+                                   $state.go('manage');
                                }
 
                            }, function (data) {
@@ -54,6 +56,9 @@
 
                     } else if (userObj.Mode == 'register') {
 
+
+
+
                         yuyanAPISvc.userRegisterSvc().save(userObj,
                           function (data) {
 
@@ -61,12 +66,15 @@
 
                               localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
                               toastr.success('Welcome to Chorice!', data.Email);
-                              $scope.isLogin = true;
+                              //$rootScope.isLogin = true;
+                              yuyanAuthSvc.isLogin = true;
 
                               if (survey) {
                                   $rootScope.progressing = true;
                                   survey.UserId = data.UserId;
                                   saveSurvey(survey);
+                              } else {
+                                  $state.go('manage');
                               }
 
                           }, function (data) {
@@ -94,7 +102,8 @@
 
                             localStorageService.remove('authorizationData');
                             toastr.success('See ya later!');
-                            $scope.isLogin = false;
+                            //$rootScope.isLogin = false;
+                            yuyanAuthSvc.isLogin = false;
 
                             $state.go('survey');
 
@@ -103,61 +112,6 @@
                             toastr.error('Failed logout.', data.statusText);
                         });
                 }
-            }
-
-            function userRegister() {
-                var modalInstance = $uibModal.open({
-                    animation: true,
-                    templateUrl: 'templates/userModal.html',
-                    controller: 'userModalCtrl',
-                    size: 'md',
-                    resolve: {
-                        mode: function () {
-                            return 'register';
-                        }
-                    }
-                });
-
-                modalInstance.result.then(function (userObj) {
-
-                    $rootScope.sessionChecking = true;
-
-                    if (userObj.Mode == 'login') {
-
-                        yuyanAPISvc.userLoginSvc().save(userObj,
-                           function (data) {
-
-                               $rootScope.sessionChecking = false;
-
-                               localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
-                               toastr.success('Welcome back!', data.Email);
-                               $scope.isLogin = true;
-                           }, function (data) {
-                               // failed to login
-                               $rootScope.sessionChecking = false;
-                               toastr.error(data.data, data.statusText);
-                           });
-
-                    } else if (userObj.Mode == 'register') {
-
-                        yuyanAPISvc.userRegisterSvc().save(userObj,
-                          function (data) {
-
-                              $rootScope.sessionChecking = false;
-
-                              localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
-                              toastr.success('Welcome to Chorice!', data.Email);
-                              $scope.isLogin = true;
-                          }, function (data) {
-                              // failed to register
-                              $rootScope.sessionChecking = false;
-                              toastr.error(data.data, data.statusText);
-                          });
-                    }
-
-                }, function () {
-                    // dismissed log
-                });
             }
 
             function goManagement() {
@@ -169,6 +123,7 @@
                            function (data) {
                                toastr.success("Survey Saved!");
                                $scope.$broadcast('reset');
+                               $state.go('manage');
                                //reset();
                            }, function (data) {
                                toastr.error("Save Survey Error");
@@ -177,7 +132,7 @@
             }
 
             function checkSession() {
-          
+
                 var localSessionToken = localStorageService.get('authorizationData');
                 if (localSessionToken) {
 
@@ -187,10 +142,12 @@
                         function (data) {
                             $rootScope.sessionChecking = false;
                             if (data.SessionId && data.IsActive) {
-                                $rootScope.isLogin = true;
+                                //$rootScope.isLogin = true;
+                                yuyanAuthSvc.isLogin = true;
                             } else {
                                 // session exipred
-                                $rootScope.isLogin = false;
+                                //$rootScope.isLogin = false;
+                                yuyanAuthSvc.isLogin = false;
                                 localStorageService.remove('authorizationData');
                             }
                         }, function (data) {

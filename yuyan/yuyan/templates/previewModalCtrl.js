@@ -7,6 +7,8 @@
 
 			    $scope.survey = survey;
 
+			    $scope.shareLink = location.host + '/client/#/' + survey.URLToken;
+
 			    $scope.ok = function () {
 			        $uibModalInstance.close();
 			    };

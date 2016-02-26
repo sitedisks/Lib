@@ -1223,7 +1223,7 @@
     <Content Include="js\authInterceptor.js" />
     <Content Include="js\config.js" />
     <Content Include="js\constant.js" />
-    <Content Include="js\manage\manage.controller.js" />
+    <Content Include="js\manage\manage.survey.controller.js" />
     <Content Include="js\manage\manage.question.controller.js" />
     <Content Include="js\manage\modal\addEditQuestion.js" />
     <Content Include="js\manage\modal\addEditSurvey.js" />

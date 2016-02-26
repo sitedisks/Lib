@@ -6,7 +6,7 @@
 
             $translateProvider
                 .translations('en', {
-                    'HELLO_TEXT': 'Hello World!'
+                    "TEXT_CHORICE": "chorice"
                 });
 
             $translateProvider.useStaticFilesLoader({

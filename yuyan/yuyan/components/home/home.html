@@ -56,7 +56,7 @@
                             <span data-ng-show="DefaultQuestionType==1"><i class="glyphicon glyphicon-check"></i> Checkbox</span>
                             <span data-ng-show="DefaultQuestionType==2"><i class="glyphicon glyphicon-record"></i> Radio</span>
                         </span>
-                     
+
                         <input type="text" class="form-control input-lg" id="IntQuestion" name="questionInput"
                                placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required />
                         <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType == 1"></span>
@@ -75,12 +75,13 @@
                                 <i class="glyphicon glyphicon-plus"></i> Add Question
                             </button>
                         </div>
-                        <!--<span class="btn-group btn-group-sm">
-                            <label class="btn btn-sm" data-ng-class="{'btn-success': DefaultQuestionType==1, 'btn-default': DefaultQuestionType==2}"
+                        <!--<span class="btn-group btn-group-xs pull-right" style="padding-left:10px;">
+                            <label class="btn" data-ng-class="{'btn-success': DefaultQuestionType==1, 'btn-default': DefaultQuestionType==2}"
                                    ng-model="DefaultQuestionType" uib-btn-radio="1"><i class="glyphicon glyphicon-check"></i>Checkbox</label>
-                            <label class="btn btn-sm" data-ng-class="{'btn-success': DefaultQuestionType==2, 'btn-default': DefaultQuestionType==1}"
+                            <label class="btn" data-ng-class="{'btn-success': DefaultQuestionType==2, 'btn-default': DefaultQuestionType==1}"
                                    ng-model="DefaultQuestionType" uib-btn-radio="2"><i class="glyphicon glyphicon-record"></i>Radio</label>
                         </span>-->
+                        <div class="clearfix"></div>
                     </div>
                 </form>
             </div>

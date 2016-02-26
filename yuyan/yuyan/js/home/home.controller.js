@@ -65,8 +65,8 @@
             function addItem(QID) {
                 $scope.IID++;
                 var item = {
-                    //QuestionItemId: $scope.IID,
-                    ItemOrder: $scope.IID,
+                    QuestionItemId: $scope.IID,
+                    //ItemOrder: $scope.IID,
                     QuestionId: QID,
                     ItemDescription: $scope.item
                 };

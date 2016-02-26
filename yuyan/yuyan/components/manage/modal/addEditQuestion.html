@@ -14,11 +14,11 @@
 
             <div class="form-group has-success">
 
-                <lable class="control-label"><strong>Question Type: </strong></lable>
+                <lable class="control-label"><strong>Question Type </strong></lable>
                 
                 <!--<span class="text-success" data-ng-if="question.QuestionType==1">multiple choice</span>
                 <span class="text-success" data-ng-if="question.QuestionType==2">single choice</span>-->
-                <div class="btn-group">
+                <div class="btn-group btn-group-xs" style="padding-left:10px;">
                     <label class="btn" data-ng-class="{'btn-success': question.QuestionType==1, 'btn-default': question.QuestionType==2}" 
                            ng-model="question.QuestionType" uib-btn-radio="1"><i class="glyphicon glyphicon-check"></i> Checkbox</label>
                     <label class="btn" data-ng-class="{'btn-success': question.QuestionType==2, 'btn-default': question.QuestionType==1}" 
@@ -35,7 +35,7 @@
             </div>
            
             <div class="form-group has-success">
-                <lable class="control-label"><strong>Question Items: </strong></lable>
+                <lable class="control-label"><strong>Question Items </strong></lable>
                 <div class="clearfix"></div>
            
                 <div class="row">

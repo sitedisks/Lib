@@ -1225,7 +1225,7 @@
     <Content Include="js\directives.js" />
     <Content Include="js\services.js" />
     <Content Include="js\services.auth.js" />
-    <Content Include="js\survey\survey.controller.js" />
+    <Content Include="js\home\home.controller.js" />
     <Content Include="index.html" />
     <Content Include="js\toastr.option.js" />
     <Content Include="templates\messages.html" />

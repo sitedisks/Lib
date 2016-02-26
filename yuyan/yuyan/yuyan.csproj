@@ -64,6 +64,12 @@
     <Content Include="bower_components\angular-bootstrap\bower.json" />
     <Content Include="bower_components\angular-bootstrap\package.json" />
     <Content Include="bower_components\angular-bootstrap\README.md" />
+    <Content Include="bower_components\angular-cookies\.bower.json" />
+    <Content Include="bower_components\angular-cookies\angular-cookies.js" />
+    <Content Include="bower_components\angular-cookies\angular-cookies.min.js" />
+    <Content Include="bower_components\angular-cookies\bower.json" />
+    <Content Include="bower_components\angular-cookies\index.js" />
+    <Content Include="bower_components\angular-cookies\README.md" />
     <Content Include="bower_components\angular-google-maps\.bower.json" />
     <Content Include="bower_components\angular-google-maps\.travis.yml" />
     <Content Include="bower_components\angular-google-maps\bower.json" />
@@ -890,6 +896,8 @@
     <Content Include="bower_components\angular-translate-loader-static-files\bower.json" />
     <Content Include="bower_components\angular-translate-loader-static-files\package.json" />
     <Content Include="bower_components\angular-translate-loader-static-files\README.md" />
+    <Content Include="bower_components\angular-cookies\angular-cookies.min.js.map" />
+    <Content Include="bower_components\angular-cookies\package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

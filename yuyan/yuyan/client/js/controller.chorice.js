@@ -76,6 +76,9 @@
             choriceAPISvc.surveyRetreiveSvc().get({ urltoken: tokenUrl },
                 function (data) {
                     $scope.APIResolved++;
+
+                    // store the visited cookie
+
                     if (data) {
                         angular.forEach(data.dtoQuestions, function (q) {
 

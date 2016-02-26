@@ -133,6 +133,8 @@
     <Content Include="bower_components\angular-simple-logger\scripts\publish" />
     <Content Include="bower_components\angular-simple-logger\spec\logger.spec.coffee" />
     <Content Include="bower_components\angular-simple-logger\src\logger.coffee" />
+    <Content Include="bower_components\angular-translate-loader-static-files\angular-translate-loader-static-files.js" />
+    <Content Include="bower_components\angular-translate-loader-static-files\angular-translate-loader-static-files.min.js" />
     <Content Include="bower_components\angular-translate\angular-translate.js" />
     <Content Include="bower_components\angular-translate\angular-translate.min.js" />
     <Content Include="bower_components\angular-ui-router\release\angular-ui-router.js" />
@@ -882,6 +884,12 @@
     <Content Include="bower_components\flag-icon-css\sass\flag-icon-more.scss" />
     <Content Include="bower_components\flag-icon-css\sass\flag-icon.scss" />
     <Content Include="bower_components\flag-icon-css\sass\variables.scss" />
+    <Content Include="data\locale-en.json" />
+    <Content Include="data\locale-cn.json" />
+    <Content Include="bower_components\angular-translate-loader-static-files\.bower.json" />
+    <Content Include="bower_components\angular-translate-loader-static-files\bower.json" />
+    <Content Include="bower_components\angular-translate-loader-static-files\package.json" />
+    <Content Include="bower_components\angular-translate-loader-static-files\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

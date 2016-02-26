@@ -8,15 +8,15 @@
             
             $urlRouterProvider.otherwise("/");
             $stateProvider
-                .state("survey", {
+                .state("home", {
                     url: "/",
-                    templateUrl: "/components/survey/survey.html",
+                    templateUrl: "/components/home/home.html",
                     controller: "surveyCtrl"
                 })
 
-                .state("manage", {
+                .state("survey", {
                     url: "/manage",
-                    templateUrl: "/components/manage/manage.html",
+                    templateUrl: "/components/manage/manage.survey.html",
                     controller: "manageCtrl",
                     onEnter: function () { }
                 })

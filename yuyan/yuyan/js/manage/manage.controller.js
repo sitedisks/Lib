@@ -25,7 +25,7 @@
             function suveryListInit() {
 
                 if (!yuyanAuthSvc.isLogin) {
-                    $state.go('survey');
+                    $state.go('home');
                 } else {
 
                     yuyanAPISvc.surveyGetBySession().query({},
@@ -40,7 +40,7 @@
             }
 
             function goHome() {
-                $state.go('survey');
+                $state.go('home');
             }
 
             function goQuestion(survey) {

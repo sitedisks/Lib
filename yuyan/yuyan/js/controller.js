@@ -4,6 +4,7 @@
         function ($scope, $rootScope, $state, $translate, $uibModal, localStorageService, yuyanAPISvc, yuyanAuthSvc) {
             $scope.userLogin = userLogin;
             $scope.userLogout = userLogout;
+            $scope.goHome = goHome;
             $scope.goManagement = goManagement;
             $scope.changeLanguage = changeLanguage;
             $rootScope.isLogin = null;
@@ -45,7 +46,7 @@
                                    survey.UserId = data.UserId;
                                    saveSurvey(survey);
                                } else {
-                                   $state.go('manage');
+                                   $state.go('survey', {}, { location: false });
                                }
 
                            }, function (data) {
@@ -74,7 +75,7 @@
                                   survey.UserId = data.UserId;
                                   saveSurvey(survey);
                               } else {
-                                  $state.go('manage');
+                                  $state.go('survey', {}, { location: false });
                               }
 
                           }, function (data) {
@@ -105,7 +106,7 @@
                             $rootScope.isLogin = false;
                             yuyanAuthSvc.isLogin = false;
 
-                            $state.go('survey');
+                            $state.go('home');
 
                         }, function (data) {
                             $rootScope.sessionChecking = false;
@@ -114,8 +115,12 @@
                 }
             }
 
+            function goHome() {
+                $state.go('home');
+            }
+
             function goManagement() {
-                $state.go('manage');
+                $state.go('survey', {}, { location: false });
             }
 
             function saveSurvey(survey) {
@@ -123,7 +128,7 @@
                            function (data) {
                                toastr.success("Survey Saved!");
                                $scope.$broadcast('reset');
-                               $state.go('manage');
+                               $state.go('survey', {}, { location: false });
                                //reset();
                            }, function (data) {
                                toastr.error("Save Survey Error");

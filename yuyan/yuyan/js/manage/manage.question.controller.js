@@ -16,11 +16,11 @@
             $scope.addEditQuestion = addEditQuestion;
 
             function goHome() {
-                $state.go('survey');
+                $state.go('home');
             }
 
             function goSurvey() {
-                $state.go('manage');
+                $state.go('survey', {}, { location: false });
             }
 
             function deleteQuestion(question) {

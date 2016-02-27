@@ -828,6 +828,7 @@
     <Content Include="bower_components\angular-ui-router\LICENSE" />
     <Content Include="bower_components\angular-ui-router\README.md" />
     <Content Include="client\components\chorice.html" />
+    <Content Include="client\components\chorice.page.html" />
     <Content Include="client\index.html" />
     <Content Include="client\js\app.chorice.js" />
     <Content Include="client\js\config.chorice.js" />
@@ -890,6 +891,8 @@
     <Content Include="bower_components\flag-icon-css\sass\flag-icon-more.scss" />
     <Content Include="bower_components\flag-icon-css\sass\flag-icon.scss" />
     <Content Include="bower_components\flag-icon-css\sass\variables.scss" />
+    <None Include="client\js\controller.chorice.back" />
+    <Content Include="client\js\controller.page.chorice.js" />
     <Content Include="data\locale-en.json" />
     <Content Include="data\locale-cn.json" />
     <Content Include="bower_components\angular-translate-loader-static-files\.bower.json" />

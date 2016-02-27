@@ -11,6 +11,12 @@
                 	url: "/:tokenUrl",
                 	templateUrl: "/client/components/chorice.html",
                 	controller: "choriceCtrl"
+                })
+
+                .state("choricepage", {
+                    url: "/page/:tokenUrl",
+                    templateUrl: "/client/components/chorice.page.html",
+                    controller: "choricePageCtrl"
                 });
 
         	//$locationProvider.html5Mode({

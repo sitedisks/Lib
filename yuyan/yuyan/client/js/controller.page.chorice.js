@@ -1,23 +1,32 @@
 ﻿(function () {
     'use strict';
-    angular.module('choriceApp').controller('choriceCtrl', ['$scope', '$http', '$log', '$stateParams', 'choriceAPISvc', 'endpoint',
+    angular.module('choriceApp').controller('choricePageCtrl', ['$scope', '$http', '$log', '$stateParams', 'choriceAPISvc', 'endpoint',
         function ($scope, $http, $log, $stateParams, choriceAPISvc, endpoint) {
 
             var tokenUrl = $stateParams.tokenUrl;
-            var location;
-
+          
             $scope.APIMini = 1;
             $scope.APIResolved = 0;
             $scope.submitSuccess = false;
-            $scope.ip;
-            $scope.geo_city = null;
-            $scope.geo_state = null;
-            $scope.geo_country = null;
+            $scope.googleGeo = {
+                geo_city: null,
+                geo_state: null,
+                geo_country: null
+            };
+            $scope.page = 1;
+            $scope.questionCount = 0;
+
+            //$scope.geo_city = null;
+            //$scope.geo_state = null;
+            //$scope.geo_country = null;
 
             // function register
             $scope.radioChecked = radioChecked;
             $scope.submitSurvey = submitSurvey;
             $scope.backHome = backHome;
+            $scope.pageOrder = pageOrder;
+            $scope.prePage = prePage;
+            $scope.nextPage = nextPage;
 
             // --------- start use geolocation API ------------
             if (navigator && navigator.geolocation) {
@@ -40,9 +49,9 @@
                 geocoder.geocode({ latLng: latlng }, function (results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         if (results[1]) {
-                            $scope.geo_city = results[1].address_components[0].long_name;
-                            $scope.geo_state = results[1].address_components[1].long_name;
-                            $scope.geo_country = results[1].address_components[2].long_name;
+                            $scope.googleGeo.geo_city = results[1].address_components[0].long_name;
+                            $scope.googleGeo.geo_state = results[1].address_components[1].long_name;
+                            $scope.googleGeo.geo_country = results[1].address_components[2].long_name;
 
                         } else {
                             $log.warn("No results found");
@@ -61,6 +70,7 @@
                     // store the visited cookie
 
                     if (data) {
+                        $scope.questionCount = data.dtoQuestions.length;
                         angular.forEach(data.dtoQuestions, function (q) {
 
                             if (q.dtoItems.length > 0) {
@@ -101,9 +111,9 @@
                 var surveyClient = {
                     IPAddress: $scope.ip,
                     SurveyId: $scope.survey.SurveyId,
-                    City: $scope.geo_city,
-                    State: $scope.geo_state,
-                    Country: $scope.geo_country,
+                    City: $scope.googleGeo.geo_city,
+                    State: $scope.googleGeo.geo_state,
+                    Country: $scope.googleGeo.geo_country,
                     dtoClientAnswers: dtoClientAnswers
                 };
 
@@ -117,6 +127,21 @@
                         toastr.error('Suvry Submit Failed. Please fresh the page.');
                     });
 
+            }
+
+            function pageOrder(question) {
+                if (question.QuestionOrder == $scope.page)
+                    return true;
+                else
+                    return false;
+            }
+
+            function prePage() {
+                $scope.page--;
+            }
+
+            function nextPage() {
+                $scope.page++;
             }
 
             function backHome() {

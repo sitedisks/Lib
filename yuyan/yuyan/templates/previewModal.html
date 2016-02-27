@@ -4,14 +4,15 @@
 <div class="modal-body">
     <button type="button" class="close" data-ng-click="cancel()">&times;</button>
 
-
     <br class="xs-10" />
+
+    <div data-ng-if="survey.URLToken">
+        <code><a data-ng-href="http://{{shareLink}}" target="_blank">Share: {{shareLink}}</a></code>
+        <code><a data-ng-href="http://{{sharePageLink}}" target="_blank">Share (pagination): {{sharePageLink}}</a></code>
+    </div>
     <div class="well">
         <div class="container">
-            <div data-ng-if="survey.URLToken">
-                <code><a data-ng-href="http://{{shareLink}}" target="_blank">Share link: {{shareLink}}</a></code>
-            </div>
-       
+
             <h2>{{survey.Title}}</h2>
             <h4>{{survey.ShortDesc}}</h4>
             <h5>{{survey.LongDesc}}</h5>
@@ -28,10 +29,10 @@
 
         </div>
 
-       
         <br class="xs-10" />
         
     </div>
+
     <br class="xs-10" />
 
 </div>

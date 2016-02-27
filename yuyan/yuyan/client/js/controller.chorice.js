@@ -6,9 +6,10 @@
             var tokenUrl = $stateParams.tokenUrl;
             var location;
 
-            $scope.APIMini = 3;
+            $scope.APIMini = 1;
             $scope.APIResolved = 0;
             $scope.submitSuccess = false;
+            $scope.ip;
             $scope.geo_city = null;
             $scope.geo_state = null;
             $scope.geo_country = null;
@@ -51,13 +52,14 @@
                 });
             }
             // ----------- end geolocation API ----------------
-
+            /*
             $http.get(endpoint.ipaddress).then(
                 function (response) {
                     $scope.APIResolved++;
-                    var ip = response.data;
+                    $scope.ip = response.data;
 
-                    $http.get(endpoint.geoip + ip).then(
+                  
+                    $http.get(endpoint.geoip + $scope.ip).then(
                         function (response) {
                             $scope.APIResolved++;
                             location = response.data;
@@ -66,12 +68,14 @@
                             $scope.APIResolved++;
                             toastr.error("Cannot get location.");
                         });
+                        
+
 
                 }, function (response) {
                     $scope.APIResolved++;
                     toastr.error("Cannot get your Ip Address.");
                 });
-
+            */
 
             choriceAPISvc.surveyRetreiveSvc().get({ urltoken: tokenUrl },
                 function (data) {
@@ -117,12 +121,31 @@
                     });
                 });
 
+                // do we need to get geoIP?
+                /*
+                $http.get(endpoint.geoip + $scope.ip).then(
+                    function (response) {
+                        $scope.APIResolved++;
+                        location = response.data;
+                    },
+                    function (response) {
+                        $scope.APIResolved++;
+                        toastr.error("Cannot get location.");
+                    });
+                    */
+                /*
+                {"as":"AS18250 Pacific Wireless Pty Ltd","city":"Mulgrave","country":"Australia","countryCode":"AU","isp":"Pacific Wireless Pty","lat":-37.9167,"lon":145.2,"org":"Pacific Wireless Pty","query":"202.134.40.162","region":"VIC","regionName":"Victoria","status":"success","timezone":"Australia/Melbourne","zip":"3170"}
+                */
+
                 var surveyClient = {
-                    IPAddress: location.ip,
+                    IPAddress: $scope.ip,
                     SurveyId: $scope.survey.SurveyId,
-                    City: $scope.geo_city ? $scope.geo_city : location.city,
-                    State: $scope.geo_state ? $scope.geo_state : location.region_name,
-                    Country: $scope.geo_country ? $scope.geo_country : location.country_name,
+                    //City: $scope.geo_city ? $scope.geo_city : location.city,
+                    //State: $scope.geo_state ? $scope.geo_state : location.regionName,
+                    //Country: $scope.geo_country ? $scope.geo_country : location.country,
+                    City: $scope.geo_city,
+                    State: $scope.geo_state,
+                    Country: $scope.geo_country,
                     dtoClientAnswers: dtoClientAnswers
                 };
 

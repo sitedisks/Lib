@@ -15,8 +15,9 @@
             $scope.addEditSurvey = addEditSurvey;
 
             // pagination 
-            $scope.bigTotalItems = 180;
-            $scope.bigCurrentPage = 4;
+            $scope.row = 5;
+            $scope.totalItems = 180;
+            $scope.currentPage = 1;
             $scope.maxSize = 3;
 
 

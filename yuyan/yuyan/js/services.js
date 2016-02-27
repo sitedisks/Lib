@@ -17,6 +17,7 @@
                 userRegisterSvc: userRegisterSvc,
                 surveyCrudSvc: surveyCrudSvc,
                 surveyGetBySession: surveyGetBySession,
+                surveyCountBySession: surveyCountBySession,
                 questionCrudSvc: questionCrudSvc
             };
 
@@ -49,6 +50,10 @@
             // survey
             function surveyGetBySession() {
                 return $resource(surveyAPI + '/all');
+            }
+
+            function surveyCountBySession() {
+                return $resource(surveyAPI + '/count');
             }
 
             function surveyCrudSvc() {

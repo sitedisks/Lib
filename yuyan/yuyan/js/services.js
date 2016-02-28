@@ -4,9 +4,8 @@
     angular.module('yuyanApp').service('yuyanAPISvc', ['$resource', 'endpoint',
         function ($resource, endpoint) {
 
-            // endpoint.localAPI: http://localhost:5613/
-            var userAPI = endpoint.localAPI + 'users';
-            var surveyAPI = endpoint.localAPI + 'surveys';
+            var userAPI = endpoint.LiveAPI + 'users';
+            var surveyAPI = endpoint.LiveAPI + 'surveys';
 
             var service = {
                 sessionCheckSvc: sessionCheckSvc,

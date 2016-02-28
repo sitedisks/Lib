@@ -44,7 +44,7 @@
                 }
 
                 function ItemCountValid() {
-                    if ($scope.question.dtoItems.length < 2 || $scope.question.dtoItems.length >= 6)
+                    if ($scope.question.dtoItems.length < 2 || $scope.question.dtoItems.length > 6)
                         $scope.isItemCountValid = false;
                     else
                         $scope.isItemCountValid = true;

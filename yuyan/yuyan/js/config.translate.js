@@ -16,5 +16,6 @@
 
             $translateProvider.preferredLanguage('en');
             $translateProvider.forceAsyncReload(true);
+            $translateProvider.useSanitizeValueStrategy('escape');
         }]);
 })();

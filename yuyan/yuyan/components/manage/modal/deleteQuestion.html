@@ -7,7 +7,12 @@
 
     <div class="form-group">
         <h3>{{question.Question}}</h3>
-   
+        <!--{{question}}-->
+        <div style="padding-left:40px;" data-ng-repeat="i in question.dtoItems" data-ng-class="{'checkbox checkbox-success': question.QuestionType==1, 'radio radio-success': question.QuestionType==2}">
+            <input type="checkbox" name="question{{i.QuestionId}}" id="item{{i.ItemOrder}}" data-ng-if="question.QuestionType==1" />
+            <input type="radio" name="question{{i.QuestionId}}" id="item{{i.ItemOrder}}" data-ng-if="question.QuestionType==2" />
+            <label class="break-word" for="item{{i.ItemOrder}}"><small>{{i.ItemDescription}}</small></label>
+        </div>
     </div>
 </div>
 <div class="modal-footer">

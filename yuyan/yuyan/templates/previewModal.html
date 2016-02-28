@@ -6,10 +6,6 @@
 
     <br class="xs-10" />
 
-    <div data-ng-if="survey.URLToken">
-        <code><a data-ng-href="http://{{shareLink}}" target="_blank">Share: {{shareLink}}</a></code>
-        <code><a data-ng-href="http://{{sharePageLink}}" target="_blank">Share (pagination): {{sharePageLink}}</a></code>
-    </div>
     <div class="well">
         <div class="container">
 
@@ -21,7 +17,7 @@
                     <span class="badge alert-success" style="font-size:16px">{{q.QuestionOrder}}</span> {{q.Question}}
                 </h3>
                 <div style="padding-left: 40px;" data-ng-repeat="i in q.dtoItems" data-ng-class="{'checkbox checkbox-success':q.QuestionType==1, 'radio radio-success':q.QuestionType==2}">
-                    <input type="checkbox" name="question{{i.QuestionId}}" id="item{{i.ItemOrder}}" data-ng-if="q.QuestionType==1" />
+                    <input type="checkbox" name="question{{i.QuestionId}}" id="item{{i.QuestionItemId}}" data-ng-if="q.QuestionType==1" />
                     <input type="radio" name="question{{i.QuestionId}}" id="item{{i.QuestionItemId}}" data-ng-if="q.QuestionType==2" />
                     <label for="item{{i.QuestionItemId}}">{{i.ItemDescription}}</label>
                 </div>
@@ -30,7 +26,14 @@
         </div>
 
         <br class="xs-10" />
-        
+
+    </div>
+    <div data-ng-if="survey.URLToken && survey.dtoQuestions.length>0">
+        <code><a data-ng-href="http://{{shareLink}}" target="_blank">Share: {{survey.URLToken}}</a></code>
+
+    </div>
+    <div data-ng-if="survey.URLToken && survey.dtoQuestions.length>0">
+        <code><a data-ng-href="http://{{sharePageLink}}" target="_blank">Page: page/{{survey.URLToken}}</a></code>
     </div>
 
     <br class="xs-10" />

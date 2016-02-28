@@ -9,7 +9,8 @@
 
     "TEXT_CHORICE": "潮米",
     "TEXT_QUESTION": "问题",
-    "TEXT_HEAD_INTRO": "分享调查问卷, 测验亦或数据收集 - 方便并快捷",
+    "TEXT_ADD_QUESTION": "添加问题",
+    "TEXT_HEAD_INTRO": "方便并快捷地分享调查问卷, 测验亦或进行数据收集",
 
     "BTN_TEXT_EN": "英文",
     "BTN_TEXT_CN": "中文"

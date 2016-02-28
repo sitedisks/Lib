@@ -4,8 +4,6 @@
     ['$scope', '$rootScope', '$uibModal', '$translate', 'localStorageService', 'yuyanAPISvc',
         function ($scope, $rootScope, $uibModal, $translate, localStorageService, yuyanAPISvc) {
 
-            $scope.placeholder;
-            $scope.IntQuestion;
             $scope.dtoQuestions;
             $scope.DefaultQuestionType;
             $scope.QID;
@@ -58,8 +56,6 @@
                 $scope.question = "";
                 $scope.item = "";
                 $scope.showAddItem = true;
-           
-                $scope.IntQuestion = 'Next Question:';
             }
 
             function addItem(QID) {
@@ -142,8 +138,6 @@
             }
 
             function reset() {
-                $scope.placeholder = 'Question';
-                $scope.IntQuestion = 'Question:';
                 $scope.dtoQuestions = [];
                 $scope.DefaultQuestionType = 1;
                 $scope.QID = 0;

@@ -51,28 +51,28 @@
             <div data-ng-show="!showAddItem">
                 <form name="questionForm" novalidate>
                     <div class="form-group has-success has-feedback hidden-xs">
-                        <label class="control-label" for="IntQuestion">{{IntQuestion}}</label>
+                        <label class="control-label" for="IntQuestion">{{'TEXT_QUESTION' | translate}}</label>
                         <span class="label label-info" data-ng-click="toggleType()" tooltip-placement="top-left" uib-tooltip="Click to toggle checkbox or radio button.">
                             <span data-ng-show="DefaultQuestionType==1"><i class="glyphicon glyphicon-check"></i> Checkbox</span>
                             <span data-ng-show="DefaultQuestionType==2"><i class="glyphicon glyphicon-record"></i> Radio</span>
                         </span>
 
                         <input type="text" class="form-control input-lg" id="IntQuestion" name="questionInput"
-                               placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required />
+                               placeholder="{{'TEXT_QUESTION' | translate}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required />
                         <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType == 1"></span>
                         <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType == 2"></span>
                     </div>
                     <div class="form-group has-success has-feedback hidden-sm hidden-md hidden-lg">
-                        <label class="control-label" for="IntQuestion">{{IntQuestion}}</label>
+                        <label class="control-label" for="IntQuestion">{{'TEXT_QUESTION' | translate}}</label>
                         <input type="text" class="form-control" id="IntQuestion" name="questionInput"
-                               placeholder="{{placeholder}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required />
+                               placeholder="{{'TEXT_QUESTION' | translate}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required />
                         <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType == 1"></span>
                         <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType == 2"></span>
                     </div>
                     <div class="form-group">
                         <div class="btn-group" uib-dropdown>
                             <button type="button" class="btn btn-success" data-ng-disabled="questionForm.$invalid" data-ng-click="addQuestion()">
-                                <i class="glyphicon glyphicon-plus"></i> Add Question
+                                <i class="glyphicon glyphicon-plus"></i> {{'TEXT_ADD_QUESTION' | translate}}
                             </button>
                         </div>
                         <!--<span class="btn-group btn-group-xs pull-right" style="padding-left:10px;">

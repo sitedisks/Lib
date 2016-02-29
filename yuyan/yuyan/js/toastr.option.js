@@ -5,4 +5,4 @@
     "hideDuration": "1000",
     "timeOut": "5000",
     "extendedTimeOut": "1000"
-}
+};

@@ -13,16 +13,40 @@ gulp.task('default', function() {
 
 /* dist build */
 gulp.task('copyindex', function(){
-	return gulp.src('index_build.html')
+	return gulp.src('index_dist.html')
 		.pipe($.rename('index.html'))
 		.pipe(gulp.dest('dist'));
 });
 
-// gulp.task('tohowfiles',function(){
-	// return gulp.src('app/**/*.html')
-		// .pipe(gulp.dest('dist/app'));
+gulp.task('copydata', function(){
+	return gulp.src('data/**/*')
+		.pipe(gulp.dest('dist/data'));
 	
-// });
+});
+
+gulp.task('copytemplate', function(){
+	return gulp.src('templates/**/*.html')
+		.pipe(gulp.dest('dist/templates'));
+	
+});
+
+gulp.task('copycomponents', function(){
+	return gulp.src('components/**/*.html')
+		.pipe(gulp.dest('dist/components'));
+	
+});
+
+gulp.task('flag', function(){
+	return gulp.src('bower_components/flag-icon-css/flags/**/*')
+		.pipe(gulp.dest('dist/flags'));
+	
+});
+
+gulp.task('fonts', function(){
+	return gulp.src(['bower_components/bootstrap/fonts/**/*', 'bower_components/font-awesome/fonts/**/*'])
+		.pipe(gulp.dest('dist/fonts'));
+	
+});
 
 gulp.task('choricecss', function(){
 	return gulp.src(['bower_components/bootstrap/dist/css/bootstrap.min.css'
@@ -53,7 +77,7 @@ gulp.task('ngCodes', function(){
 		,'bower_components/angular-messages/angular-messages.min.js'])
 		.pipe($.if('*.js', $.concat('ngCodes.js'))) 
 		.pipe($.uglify())
-		.pipe(gulp.dest('dist/js'));
+		.pipe(gulp.dest('dist/bower_components'));
 });
 
 gulp.task('choricejs', function(){
@@ -62,7 +86,6 @@ gulp.task('choricejs', function(){
 		.pipe($.uglify())
 		.pipe(gulp.dest('dist/js'));	
 });
-
 
 gulp.task('clean', function(done) {
   del(['dist'], done);
@@ -94,18 +117,6 @@ gulp.task('copycomponents_debug', function(){
 	
 });
 
-gulp.task('choricecss_debug', function(){
-	return gulp.src(['bower_components/bootstrap/dist/css/bootstrap.min.css'
-		,'bower_components/toastr/toastr.min.css'
-		,'bower_components/font-awesome/css/font-awesome.min.css'
-		,'bower_components/angular-loading-bar/src/loading-bar.css'
-		,'bower_components/flag-icon-css/css/flag-icon.min.css'
-		,'css/gapcss.css', 'css/build.css', 'css/survey.css', 'css/main.css'])
-		// .pipe($.concat('choricecss.css'))
-		// .pipe($.minifyCss())
-		.pipe(gulp.dest('debug/css'));	
-});
-
 gulp.task('flag_debug', function(){
 	return gulp.src('bower_components/flag-icon-css/flags/**/*')
 		.pipe(gulp.dest('debug/flags'));
@@ -116,6 +127,18 @@ gulp.task('fonts_debug', function(){
 	return gulp.src(['bower_components/bootstrap/fonts/**/*', 'bower_components/font-awesome/fonts/**/*'])
 		.pipe(gulp.dest('debug/fonts'));
 	
+});
+
+gulp.task('choricecss_debug', function(){
+	return gulp.src(['bower_components/bootstrap/dist/css/bootstrap.min.css'
+		,'bower_components/toastr/toastr.min.css'
+		,'bower_components/font-awesome/css/font-awesome.min.css'
+		,'bower_components/angular-loading-bar/src/loading-bar.css'
+		,'bower_components/flag-icon-css/css/flag-icon.min.css'
+		,'css/gapcss.css', 'css/build.css', 'css/survey.css', 'css/main.css'])
+		// .pipe($.concat('choricecss.css'))
+		// .pipe($.minifyCss())
+		.pipe(gulp.dest('debug/css'));	
 });
 
 gulp.task('ngCodes_debug', function(){
@@ -149,7 +172,7 @@ gulp.task('clean_debug', function(done) {
   del(['debug'], done);
 });
 
-gulp.task('build', ['clean', 'tohowindex', 'config', 'fonts', 'tohowfiles', 'tohowcss', 'tohowjs', 'appjs', 'img'], function() {
+gulp.task('build', ['clean', 'copyindex', 'copydata', 'copytemplate', 'copycomponents', 'choricecss', 'flag', 'fonts', 'ngCodes', 'choricejs'], function() {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

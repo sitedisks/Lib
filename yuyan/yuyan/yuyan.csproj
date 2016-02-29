@@ -1219,6 +1219,8 @@
     <Content Include="css\gapcss.css" />
     <Content Include="css\main.css" />
     <Content Include="css\survey.css" />
+    <Content Include="index_debug.html" />
+    <Content Include="index_dist.html" />
     <Content Include="js\client\client.controller.js" />
     <Content Include="js\config.translate.js" />
     <Content Include="js\controller.js" />

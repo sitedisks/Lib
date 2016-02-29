@@ -70,6 +70,30 @@ gulp.task('clean', function(done) {
 
 
 /* debug */
+gulp.task('copyindex_debug', function(){
+	return gulp.src('index_debug.html')
+		.pipe($.rename('index.html'))
+		.pipe(gulp.dest('debug'));
+});
+
+gulp.task('copydata_debug', function(){
+	return gulp.src('data/**/*')
+		.pipe(gulp.dest('debug/data'));
+	
+});
+
+gulp.task('copytemplate_debug', function(){
+	return gulp.src('templates/**/*.html')
+		.pipe(gulp.dest('debug/templates'));
+	
+});
+
+gulp.task('copycomponents_debug', function(){
+	return gulp.src('components/**/*.html')
+		.pipe(gulp.dest('debug/components'));
+	
+});
+
 gulp.task('choricecss_debug', function(){
 	return gulp.src(['bower_components/bootstrap/dist/css/bootstrap.min.css'
 		,'bower_components/toastr/toastr.min.css'
@@ -80,6 +104,18 @@ gulp.task('choricecss_debug', function(){
 		// .pipe($.concat('choricecss.css'))
 		// .pipe($.minifyCss())
 		.pipe(gulp.dest('debug/css'));	
+});
+
+gulp.task('flag_debug', function(){
+	return gulp.src('bower_components/flag-icon-css/flags/**/*')
+		.pipe(gulp.dest('debug/flags'));
+	
+});
+
+gulp.task('fonts_debug', function(){
+	return gulp.src(['bower_components/bootstrap/fonts/**/*', 'bower_components/font-awesome/fonts/**/*'])
+		.pipe(gulp.dest('debug/fonts'));
+	
 });
 
 gulp.task('ngCodes_debug', function(){
@@ -117,6 +153,6 @@ gulp.task('build', ['clean', 'tohowindex', 'config', 'fonts', 'tohowfiles', 'toh
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
-gulp.task('debug', ['clean_debug', 'choricecss_debug', 'ngCodes_debug', 'choricejs_debug'], function() {
+gulp.task('debug', ['clean_debug', 'copyindex_debug', 'copydata_debug', 'copytemplate_debug', 'copycomponents_debug', 'choricecss_debug', 'flag_debug', 'fonts_debug', 'ngCodes_debug', 'choricejs_debug'], function() {
   return gulp.src('debug/**/*').pipe($.size({title: 'build', gzip: true}));
 });

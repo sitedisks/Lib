@@ -7,12 +7,12 @@
         </h3>
     </div>
     <br class="xs-10" />
-    <form name="userForm" novalidate>
+    <form name="userForm" data-ng-submit novalidate>
         <div class="form-group has-feedback"
              data-ng-class="{'has-success':userForm.userEmail.$valid || userForm.userEmail.$pristine,
                 'has-error':!userAvailable || (userForm.userEmail.$invalid && !userForm.userEmail.$pristine)}">
             <label class="control-label" for="userEmail">Email address</label>
-            <input type="email" class="form-control input-lg" id="userEmail" name="userEmail" data-ng-model="userObj.Email" 
+            <input type="email" class="form-control input-lg" id="userEmail" name="userEmail" data-ng-model="userObj.Email" autofocus="autofocus"
                    data-ng-change="checkUser()" data-ng-blur="checkUser()" placeholder="Email" required>
             <span class="glyphicon glyphicon-envelope form-control-feedback" data-ng-if="!checking"></span>
             <span class="glyphicon glyphicon-refresh form-control-feedback" data-ng-if="checking"></span>
@@ -46,7 +46,6 @@
             </div>
         </div>
 
-    
         <div class="from-group" ng-show="mode=='register'">
             <span class="text-success">Already has account? </span>
             <button type="button" class="btn btn-link btn-sm" data-ng-click="switchToLogin()"><i class="glyphicon glyphicon-log-in"></i> Login</button>
@@ -56,6 +55,8 @@
             <span class="text-success">Don't have account yet? Register first: </span>
             <button type="button" class="btn btn-link btn-sm" data-ng-click="switchToRegister()"><i class="glyphicon glyphicon-user"></i> Register</button>
         </div>
+
+        <button type="submit" class="btn btn-link" ng-disabled="userForm.$invalid || !userAvailable" data-ng-click="ok()" style="opacity:0;"></button>
 
     </form>
 

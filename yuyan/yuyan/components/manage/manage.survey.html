@@ -11,10 +11,14 @@
             </div>
             <div data-ng-show="APIMini <= APIResolved">
 
-                <button type="button" class="btn btn-link btn-lg pull-right" data-ng-click="addEditSurvey()"><i class="glyphicon glyphicon-plus"></i> Add Survey</button>
+                <button type="button" class="btn btn-link btn-lg pull-right" data-ng-click="addEditSurvey()" data-ng-show="surveys.length>0"><i class="glyphicon glyphicon-plus"></i> Add Survey</button>
                 <div class="clearfix"></div>
                 <hr />
-                <div class="table-responsive">
+                <div data-ng-show="surveys.length<=0">
+                    <button type="button" class="btn btn-link btn-lg" data-ng-click="addEditSurvey()"><i class="glyphicon glyphicon-plus"></i> Add First Survey</button>
+                </div>
+
+                <div class="table-responsive" data-ng-show="surveys.length>0">
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr class="text-primary">
@@ -50,9 +54,8 @@
                 <div class="text-center">
                     <!--total: {{totalItems}}, current: {{currentPage}}
                     APIResolved: {{APIResolved}}, APIMini: {{APIMini}}-->
-                    <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"
+                    <uib-pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" data-ng-show="surveys.length>0"
                                     previous-text="&lsaquo;" next-text="&rsaquo;" boundary-link-numbers="true"></uib-pagination>
-                    <!--<uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" boundary-link-numbers="true"></uib-pagination>-->
                 </div>
             </div>
         </div>

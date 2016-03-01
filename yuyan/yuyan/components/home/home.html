@@ -57,7 +57,7 @@
                             <span data-ng-show="DefaultQuestionType==2"><i class="glyphicon glyphicon-record"></i> Radio</span>
                         </span>
 
-                        <input type="text" class="form-control input-lg" id="IntQuestion" name="questionInput"
+                        <input type="text" class="form-control input-lg" id="IntQuestion" name="questionInput" autofocus="autofocus"
                                placeholder="{{'TEXT_QUESTION' | translate}}" data-ng-model="question" data-ng-minlength="3" data-ng-maxlength="200" required />
                         <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType == 1"></span>
                         <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType == 2"></span>

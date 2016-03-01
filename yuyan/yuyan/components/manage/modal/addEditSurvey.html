@@ -7,11 +7,11 @@
         <i class="fa fa-spinner fa-pulse" style="font-size:48px"></i>
     </div>
     <div data-ng-show="!saving">
-        <form name="surveyForm" novalidate>
+        <form name="surveyForm" data-ng-submit novalidate>
             <div class="form-group has-success has-feedback">
 
                 <label class="control-label" for="surveyTitle">Survey Title</label>
-                <input type="text" class="form-control input-lg" id="surveyTitle" name="surveyTitle"
+                <input type="text" class="form-control input-lg" id="surveyTitle" name="surveyTitle" autofocus="autofocus"
                        data-ng-model="survey.Title" placeholder="Title" required />
                 <span class="fa fa-quote-right form-control-feedback"></span>
             </div>
@@ -23,13 +23,15 @@
                 <label class="control-label" for="surveyLongDesc">Long Description</label>
                 <textarea class="form-control" id="surveyLongDesc" data-ng-model="survey.LongDesc" placeholder="Long Description" rows="5"></textarea>
             </div>
+
+            <button type="submit" class="btn btn-primary btn-sm" data-ng-disabled="surveyForm.$invalid" data-ng-click="ok()" style="opacity:0;"></button>
         </form>
     </div>
 
 </div>
 <div class="modal-footer">
     <div class="pull-right">
-        <button type="button" class="btn btn-primary btn-sm" data-ng-disabled="surveyForm.$invalid" data-ng-click="ok()">
+        <button type="submit" class="btn btn-primary btn-sm" data-ng-disabled="surveyForm.$invalid" data-ng-click="ok()">
             <i class="glyphicon glyphicon-floppy-save"></i> Save
         </button>
         <button type="button" class="btn btn-link btn-sm" data-ng-click="cancel()">

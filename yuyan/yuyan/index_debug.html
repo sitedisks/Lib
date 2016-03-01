@@ -22,47 +22,14 @@
         </div>
         <div class="clearfix"></div>
         <div class="container">
-            <div class="row text-center">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="hidden-xs hidden-sm">
-                        <h1 data-ng-click="goHome()"><strong><span>&#x7B;&#x7B;</span>{{'TEXT_CHORICE' | translate}}<span>&#x7D;&#x7D;</span></strong></h1>
-                        <h3>You have a <code>Choice</code>!</h3>
-                    </div>
-                    <div class="hidden-md hidden-lg">
-                        <h2 data-ng-click="goHome()"><strong><span>&#x7B;&#x7B;</span>{{'TEXT_CHORICE' | translate}}<span>&#x7D;&#x7D;</span></strong></h2>
-                        <h4>You have a <code>Choice</code>!</h4>
-                    </div>
-                    <blockquote class="hidden-xs">
-                        <p>{{'TEXT_HEAD_INTRO' | translate}}</p>
-                    </blockquote>
-                    <hr />
-                </div>
-            </div>
+            <div data-ng-include="'templates/header.html'"></div>
 
             <div ui-view></div>
         </div>
 
         <footer class="footer">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <br class="xs-10" />
-                        <p class="text-center" data-ng-show="!sessionChecking">
-                            <button type="button" class="btn btn-link" data-ng-click="goManagement()" data-ng-if="isLogin">
-                                <i class="glyphicon glyphicon-th-list"></i>&nbsp;{{'BTN_MANAGE' | translate}}
-                            </button>
-                            <button type="button" class="btn btn-link" data-ng-click="userLogout()" data-ng-if="isLogin">
-                                <i class="glyphicon glyphicon-log-out"></i>&nbsp;{{'BTN_LOGOUT' | translate}}
-                            </button>
-                            <button type="button" class="btn btn-link" data-ng-click="userLogin('login')" data-ng-if="!isLogin">
-                                <i class="glyphicon glyphicon-log-in"></i>&nbsp;{{'BTN_LOGIN' | translate}}
-                            </button>
-                            <button type="button" class="btn btn-link" data-ng-click="userLogin('register')" data-ng-if="!isLogin">
-                                <i class="glyphicon glyphicon-user"></i>&nbsp;{{'BTN_REGISTER' | translate}}
-                            </button>
-                        </p>
-                    </div>
-                </div>
+                <div data-ng-include="'templates/footer.html'"></div>
             </div>
         </footer>
 

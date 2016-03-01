@@ -1243,6 +1243,8 @@
     <Content Include="js\home\home.controller.js" />
     <Content Include="index.html" />
     <Content Include="js\toastr.option.js" />
+    <Content Include="templates\footer.html" />
+    <Content Include="templates\header.html" />
     <Content Include="templates\messages.html" />
     <Content Include="templates\modal.html" />
     <Content Include="templates\modalCtrl.js" />

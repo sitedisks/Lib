@@ -830,6 +830,8 @@
     <Content Include="client\components\chorice.html" />
     <Content Include="client\components\chorice.page.html" />
     <Content Include="client\index.html" />
+    <Content Include="client\index_debug.html" />
+    <Content Include="client\index_dist.html" />
     <Content Include="client\js\app.chorice.js" />
     <Content Include="client\js\config.chorice.js" />
     <Content Include="bower_components\font-awesome\.bower.json" />

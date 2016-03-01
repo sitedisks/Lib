@@ -44,7 +44,8 @@ gulp.task('flag', function(){
 
 gulp.task('fonts', function(){
 	return gulp.src(['bower_components/bootstrap/fonts/**/*', 'bower_components/font-awesome/fonts/**/*'])
-		.pipe(gulp.dest('dist/fonts'));
+		.pipe(gulp.dest('dist/fonts'))
+		.pipe(gulp.dest('dist/client/fonts'));;
 	
 });
 
@@ -87,6 +88,48 @@ gulp.task('choricejs', function(){
 		.pipe(gulp.dest('dist/js'));	
 });
 
+gulp.task('copyClientindex', function(){
+	return gulp.src('client/index_dist.html')
+		.pipe($.rename('index.html'))
+		.pipe(gulp.dest('dist/client'));
+	
+});
+
+gulp.task('copyClientcomponents', function(){
+	return gulp.src('client/components/**/*.html')
+		.pipe(gulp.dest('dist/client/components'));
+});
+
+gulp.task('choriceClientcss', function(){
+	return gulp.src(['bower_components/bootstrap/dist/css/bootstrap.min.css'
+		,'bower_components/font-awesome/css/font-awesome.min.css'
+		,'bower_components/toastr/toastr.min.css',
+		,'css/build.css', 'css/gapcss.css'])
+		.pipe($.concat('choriceClient.css'))
+		.pipe($.minifyCss())
+		.pipe(gulp.dest('dist/client/css'));
+	
+});
+
+gulp.task('ngCodesClient', function(){
+	return gulp.src(['bower_components/jquery/dist/jquery.min.js'
+		,'bower_components/toastr/toastr.min.js'
+		,'bower_components/angular/angular.min.js'
+		,'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'
+		,'bower_components/angular-resource/angular-resource.min.js'
+		,'bower_components/angular-ui-router/release/angular-ui-router.min.js'])
+		.pipe($.if('*.js', $.concat('ngCodesClient.js'))) 
+		.pipe($.uglify())
+		.pipe(gulp.dest('dist/client/bower_components'));
+});
+
+gulp.task('choriceClientjs', function(){
+	return gulp.src(['client/js/**/*.js'])
+		.pipe($.if('*.js', $.concat('choriceClient.js'))) 
+		.pipe($.uglify())
+		.pipe(gulp.dest('dist/client/js'));	
+});
+
 gulp.task('clean', function(done) {
   del(['dist'], done);
 });
@@ -125,8 +168,8 @@ gulp.task('flag_debug', function(){
 
 gulp.task('fonts_debug', function(){
 	return gulp.src(['bower_components/bootstrap/fonts/**/*', 'bower_components/font-awesome/fonts/**/*'])
-		.pipe(gulp.dest('debug/fonts'));
-	
+		.pipe(gulp.dest('debug/fonts'))
+		.pipe(gulp.dest('debug/client/fonts'));
 });
 
 gulp.task('choricecss_debug', function(){
@@ -168,14 +211,54 @@ gulp.task('choricejs_debug', function(){
 		.pipe(gulp.dest('debug/js'));	
 });
 
+gulp.task('copyClientindex_debug', function(){
+	return gulp.src('client/index_debug.html')
+		.pipe($.rename('index.html'))
+		.pipe(gulp.dest('debug/client'));
+	
+});
+
+gulp.task('copyClientcomponents_debug', function(){
+	return gulp.src('client/components/**/*.html')
+		.pipe(gulp.dest('debug/client/components'));
+});
+
+gulp.task('choriceClientcss_debug', function(){
+	return gulp.src(['bower_components/bootstrap/dist/css/bootstrap.min.css'
+		,'bower_components/font-awesome/css/font-awesome.min.css'
+		,'bower_components/toastr/toastr.min.css',
+		,'css/build.css', 'css/gapcss.css'])
+		.pipe(gulp.dest('debug/client/css'));
+	
+});
+
+gulp.task('ngCodesClient_debug', function(){
+	return gulp.src(['bower_components/jquery/dist/jquery.min.js'
+		,'bower_components/toastr/toastr.min.js'
+		,'bower_components/angular/angular.min.js'
+		,'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'
+		,'bower_components/angular-resource/angular-resource.min.js'
+		,'bower_components/angular-ui-router/release/angular-ui-router.min.js'])
+		.pipe(gulp.dest('debug/client/bower_components'));
+});
+
+gulp.task('choriceClientjs_debug', function(){
+	return gulp.src(['client/js/**/*.js'])
+		// .pipe($.if('*.js', $.concat('choricejs.js'))) 
+		// .pipe($.uglify())
+		.pipe(gulp.dest('debug/client/js'));	
+});
+
 gulp.task('clean_debug', function(done) {
   del(['debug'], done);
 });
 
-gulp.task('build', ['clean', 'copyindex', 'copydata', 'copytemplate', 'copycomponents', 'choricecss', 'flag', 'fonts', 'ngCodes', 'choricejs'], function() {
+
+
+gulp.task('build', ['clean', 'copyindex', 'copydata', 'copytemplate', 'copycomponents', 'choricecss', 'flag', 'fonts', 'ngCodes', 'choricejs', 'copyClientindex', 'copyClientcomponents', 'choriceClientcss', 'ngCodesClient', 'choriceClientjs'], function() {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
-gulp.task('debug', ['clean_debug', 'copyindex_debug', 'copydata_debug', 'copytemplate_debug', 'copycomponents_debug', 'choricecss_debug', 'flag_debug', 'fonts_debug', 'ngCodes_debug', 'choricejs_debug'], function() {
-  return gulp.src('debug/**/*').pipe($.size({title: 'build', gzip: true}));
+gulp.task('debug', ['clean_debug', 'copyindex_debug', 'copydata_debug', 'copytemplate_debug', 'copycomponents_debug', 'choricecss_debug', 'flag_debug', 'fonts_debug', 'ngCodes_debug', 'choricejs_debug', 'copyClientindex_debug', 'copyClientcomponents_debug', 'choriceClientcss_debug', 'ngCodesClient_debug', 'choriceClientjs_debug'], function() {
+  return gulp.src('debug/**/*').pipe($.size({title: 'debug', gzip: true}));
 });

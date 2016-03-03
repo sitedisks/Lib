@@ -1221,6 +1221,8 @@
     <Content Include="css\gapcss.css" />
     <Content Include="css\main.css" />
     <Content Include="css\survey.css" />
+    <Content Include="img\chorice-logo.jpg" />
+    <Content Include="img\QRcode.png" />
     <Content Include="index_debug.html" />
     <Content Include="index_dist.html" />
     <Content Include="js\client\client.controller.js" />

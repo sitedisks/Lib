@@ -91,16 +91,21 @@
                 $scope.APIMini = 1;
                 $scope.APIResolved = 0;
                 var dtoClientAnswers = [];
+                var totalScore = 0;
 
                 angular.forEach($scope.survey.dtoQuestions, function (q) {
                     angular.forEach(q.dtoItems, function (i) {
                         dtoClientAnswers.push({ QuestionId: i.QuestionId, QuestionItemId: i.QuestionItemId, IsChecked: i.IsChecked });
+                        if (i.IsChecked && i.Score!=null) {
+                            totalScore += i.Score
+                        }
                     });
                 });
 
                 var surveyClient = {
                     IPAddress: $scope.ip,
                     SurveyId: $scope.survey.SurveyId,
+                    TotalScore: totalScore,
                     City: $scope.geo_city,
                     State: $scope.geo_state,
                     Country: $scope.geo_country,

@@ -13,6 +13,7 @@
             $scope.previewSurvey = previewSurvey;
             $scope.deleteSurvey = deleteSurvey;
             $scope.addEditSurvey = addEditSurvey;
+            $scope.report = report;
 
             // pagination 
             $scope.row = 10;
@@ -139,6 +140,24 @@
                 modalInstance.result.then(function (data) {
                     //$scope.APIResolved--;
                     suveryListInit(false);
+                }, function () {
+                    // dismissed log
+                });
+            }
+
+            function report(survey) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'components/manage/modal/reportSurvey.html',
+                    controller: 'reportSurveyCtrl',
+                    size: 'md',
+                    resolve: {
+                        survey: angular.copy(survey)
+                    }
+                });
+
+                modalInstance.result.then(function (data) {
+              
                 }, function () {
                     // dismissed log
                 });

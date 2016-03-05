@@ -1,0 +1,26 @@
+﻿<div class="modal-body">
+    <button type="button" class="close" data-ng-click="cancel()">&times;</button>
+
+    <br class="xs-10" />
+
+    <div>
+        <form name="surveyForm" data-ng-submit novalidate>
+          
+            Survey:  {{survey | json}}
+            <br/>
+            survey client: {{surveyClient | json}}
+        </form>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <div class="pull-right">
+        <button type="submit" class="btn btn-primary btn-sm" data-ng-click="ok()">
+            <i class="glyphicon glyphicon-floppy-save"></i> Save
+        </button>
+        <button type="button" class="btn btn-link btn-sm" data-ng-click="cancel()">
+            Cancel
+        </button>
+    </div>
+    <div class="clearfix"></div>
+</div>

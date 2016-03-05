@@ -6,6 +6,7 @@
 
             var userAPI = endpoint.localAPI + 'users';
             var surveyAPI = endpoint.localAPI + 'surveys';
+            var reportAPI = endpoint.localAPI + 'report';
 
             var service = {
                 sessionCheckSvc: sessionCheckSvc,
@@ -17,7 +18,8 @@
                 surveyCrudSvc: surveyCrudSvc,
                 surveyGetBySession: surveyGetBySession,
                 surveyCountBySession: surveyCountBySession,
-                questionCrudSvc: questionCrudSvc
+                questionCrudSvc: questionCrudSvc,
+                surveyClientReportSvc: surveyClientReportSvc
             };
 
             return service;
@@ -65,14 +67,19 @@
             function questionCrudSvc() {
                 return $resource(surveyAPI + '/:surveyId/questions/:questionId',
                     { surveyId: '@sid', questionId: '@qid' },
-                    { update: { method: 'PUT' } })
+                    { update: { method: 'PUT' } });
             }
 
             // item
             function itemCrudSvc() {
                 return $resource(surveyAPI + '/:surveyId/questions/:questionId/items/:itemId',
                     { surveyId: '@sid', questionId: '@qid', itemId: '@iid' },
-                    { update: { method: 'PUT' } })
+                    { update: { method: 'PUT' } });
+            }
+
+            function surveyClientReportSvc() {
+                return $resource(reportAPI + '/:surveyId',
+                    { surveyId: '@sid' });
             }
         }]);
 

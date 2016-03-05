@@ -895,6 +895,7 @@
     <Content Include="bower_components\flag-icon-css\sass\variables.scss" />
     <None Include="client\js\controller.chorice.back" />
     <Content Include="client\js\controller.page.chorice.js" />
+    <Content Include="components\manage\modal\reportSurvey.html" />
     <Content Include="data\locale-en.json" />
     <Content Include="data\locale-cn.json" />
     <Content Include="bower_components\angular-translate-loader-static-files\.bower.json" />
@@ -1238,6 +1239,7 @@
     <Content Include="js\manage\modal\addEditSurvey.js" />
     <Content Include="js\manage\modal\deleteQuestion.js" />
     <Content Include="js\manage\modal\deleteSurvey.js" />
+    <Content Include="js\manage\modal\reportSurvey.js" />
     <Content Include="js\map\map.controller.js" />
     <Content Include="js\directives.js" />
     <Content Include="js\services.js" />

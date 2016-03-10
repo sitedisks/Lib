@@ -2,11 +2,11 @@
     <button type="button" class="close" data-ng-click="cancel()">&times;</button>
 
     <br class="xs-10" />
-    <div class="text-center text-primary" data-ng-show="saving">
+    <!--<div class="text-center text-primary" data-ng-show="saving">
         <br />
         <i class="fa fa-refresh fa-spin" style="font-size:48px"></i>
-    </div>
-    <div data-ng-show="!saving">
+    </div>-->
+    <div>
         <form name="surveyForm" data-ng-submit novalidate>
             <div class="form-group has-success has-feedback">
 
@@ -31,8 +31,8 @@
 </div>
 <div class="modal-footer">
     <div class="pull-right">
-        <button type="submit" class="btn btn-primary btn-sm" data-ng-disabled="surveyForm.$invalid" data-ng-click="ok()">
-            <i class="glyphicon glyphicon-floppy-save"></i> Save
+        <button type="submit" class="btn btn-primary btn-sm" data-ng-disabled="surveyForm.$invalid || saving" data-ng-click="ok()">
+            <i data-ng-show="!saving" class="glyphicon glyphicon-floppy-save"></i><i data-ng-show="saving" class="fa fa-refresh fa-spin"></i> Save
         </button>
         <button type="button" class="btn btn-link btn-sm" data-ng-click="cancel()">
             Cancel

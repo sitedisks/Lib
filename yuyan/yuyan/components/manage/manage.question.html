@@ -44,7 +44,7 @@
                                             <span class="label label-success">{{q.dtoItems.length}}</span>
                                         </span>
                                     </small>
-                                    <div uib-collapse="!q.isCollapsed">
+                                    <div uib-collapse="q.isCollapsed">
                                         <div style="padding-left:40px;" data-ng-repeat="i in q.dtoItems" data-ng-class="{'checkbox checkbox-success': q.QuestionType==1, 'radio radio-success': q.QuestionType==2}">
                                             <input type="checkbox" name="question{{i.QuestionId}}" id="item{{i.ItemOrder}}" data-ng-if="q.QuestionType==1" />
                                             <input type="radio" name="question{{i.QuestionId}}" id="item{{i.ItemOrder}}" data-ng-if="q.QuestionType==2" />

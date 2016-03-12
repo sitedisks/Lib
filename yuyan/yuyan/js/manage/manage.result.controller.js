@@ -31,7 +31,38 @@
                 $state.go('survey', {}, { location: false });
             }
 
-            function deleteResult() { }
+            function deleteResult(result) {
+                var modalInstance = $uibModal.open({
+                    animation: true,
+                    templateUrl: 'components/manage/modal/deleteResult.html',
+                    controller: 'deleteResultCtrl',
+                    size: 'md',
+                    resolve: {
+                        result: result
+                    }
+                });
+
+                modalInstance.result.then(function (result) {
+
+                    yuyanAPISvc.surveyResultCrudSvc().remove({ surveyId: result.SurveyId, resultId: result.SurveyResultId },
+                        function (data) {
+
+                            var index = 0;
+                            angular.forEach($scope.results, function (r, key) {
+                                if (r.SurveyResultId == result.SurveyResultId)
+                                    index = key;
+                            });
+
+                            $scope.results.splice(index, 1);
+
+                            toastr.success("Result Deleted!");
+                        }, function (data) {
+
+                        });
+                }, function () {
+                    // dismissed log
+                });
+            }
 
             function addEditResult(result) {
                 if (!result) {

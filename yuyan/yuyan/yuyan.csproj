@@ -897,6 +897,7 @@
     <Content Include="client\js\controller.page.chorice.js" />
     <Content Include="components\manage\manage.result.html" />
     <Content Include="components\manage\modal\addEditResult.html" />
+    <Content Include="components\manage\modal\deleteResult.html" />
     <Content Include="components\manage\modal\reportSurvey.html" />
     <Content Include="data\locale-en.json" />
     <Content Include="data\locale-cn.json" />
@@ -1242,6 +1243,7 @@
     <Content Include="js\manage\modal\addEditResult.js" />
     <Content Include="js\manage\modal\addEditSurvey.js" />
     <Content Include="js\manage\modal\deleteQuestion.js" />
+    <Content Include="js\manage\modal\deleteResult.js" />
     <Content Include="js\manage\modal\deleteSurvey.js" />
     <Content Include="js\manage\modal\reportSurvey.js" />
     <Content Include="js\map\map.controller.js" />

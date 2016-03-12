@@ -68,7 +68,7 @@
                 if (!result) {
                     result = {
                         MinScore: 0,
-                        MaxScore: 360,
+                        MaxScore: 100,
                         SurveyId: $scope.survey.SurveyId,
                         Title: '',
                         Description: ''

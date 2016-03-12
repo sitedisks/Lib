@@ -55,6 +55,7 @@ gulp.task('choricecss', function(){
 		,'bower_components/font-awesome/css/font-awesome.min.css'
 		,'bower_components/angular-loading-bar/src/loading-bar.css'
 		,'bower_components/flag-icon-css/css/flag-icon.min.css'
+		,'bower_components/angularjs-slider/dist/rzslider.css'
 		,'css/gapcss.css', 'css/build.css', 'css/survey.css', 'css/main.css'])
 		.pipe($.concat('choricecss.css'))
 		.pipe($.minifyCss())
@@ -75,7 +76,8 @@ gulp.task('ngCodes', function(){
 		,'bower_components/angular-loading-bar/src/loading-bar.js'
 		,'bower_components/angular-translate/angular-translate.min.js'
 		,'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js'
-		,'bower_components/angular-messages/angular-messages.min.js'])
+		,'bower_components/angular-messages/angular-messages.min.js'
+		,'bower_components/angularjs-slider/dist/rzslider.min.js'])
 		.pipe($.if('*.js', $.concat('ngCodes.js'))) 
 		.pipe($.uglify())
 		.pipe(gulp.dest('dist/bower_components'));
@@ -178,6 +180,7 @@ gulp.task('choricecss_debug', function(){
 		,'bower_components/font-awesome/css/font-awesome.min.css'
 		,'bower_components/angular-loading-bar/src/loading-bar.css'
 		,'bower_components/flag-icon-css/css/flag-icon.min.css'
+		,'bower_components/angularjs-slider/dist/rzslider.css'
 		,'css/gapcss.css', 'css/build.css', 'css/survey.css', 'css/main.css'])
 		// .pipe($.concat('choricecss.css'))
 		// .pipe($.minifyCss())
@@ -198,7 +201,8 @@ gulp.task('ngCodes_debug', function(){
 		,'bower_components/angular-loading-bar/src/loading-bar.js'
 		,'bower_components/angular-translate/angular-translate.min.js'
 		,'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js'
-		,'bower_components/angular-messages/angular-messages.min.js'])
+		,'bower_components/angular-messages/angular-messages.min.js'
+		,'bower_components/angularjs-slider/dist/rzslider.min.js'])
 		// .pipe($.if('*.js', $.concat('ngCodes.js'))) 
 		// .pipe($.uglify())
 		.pipe(gulp.dest('debug/bower_components'));

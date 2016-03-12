@@ -2,13 +2,24 @@
     'use strict';
 
     angular.module('yuyanApp')
-        .controller('addEditResultCtrl', ['$scope', '$uibModalInstance', 'result', 'localStorageService', 'yuyanAPISvc',
-            function ($scope, $uibModalInstance, result, localStorageService, yuyanAPISvc) {
+        .controller('addEditResultCtrl', ['$scope', '$uibModalInstance', '$timeout', 'result', 'localStorageService', 'yuyanAPISvc',
+            function ($scope, $uibModalInstance, $timeout, result, localStorageService, yuyanAPISvc) {
 
                 $scope.saving = false;
 
                 $scope.result = result;
 
+                $timeout(function () {
+                    $scope.slider = {
+                        options: {
+                            floor: 0,
+                            ceil: 100,
+                            step: 10,
+                            showTicksValues: false
+                        }
+                    };
+                }, 100);
+        
                 $scope.ok = function () {
                     $scope.saving = true;
 

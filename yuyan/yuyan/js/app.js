@@ -6,7 +6,8 @@ angular.module('yuyanApp', [
     'uiGmapgoogle-maps',
     'pascalprecht.translate',
     'ngResource',
-    'ngMessages'
+    'ngMessages',
+    'rzModule'
 ]);
 
 angular.module('yuyanApp').run(['$rootScope', 'localStorageService', 'yuyanAPISvc', 'yuyanAuthSvc',

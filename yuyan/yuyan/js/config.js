@@ -30,6 +30,15 @@
                     }
                 })
 
+                .state("result", {
+                    url: "/result",
+                    templateUrl: "/components/manage/manage.result.html",
+                    controller: "manageResultCtrl",
+                    params: {
+                        survey: null
+                    }
+                })
+
                 .state("clientsurvey", {
                     url: "/q/:tokenUrl",
                     templateUrl: "/components/client/client.html",

@@ -10,6 +10,7 @@
             // functions
             $scope.goHome = goHome;
             $scope.goQuestion = goQuestion;
+            $scope.goResult = goResult;
             $scope.previewSurvey = previewSurvey;
             $scope.deleteSurvey = deleteSurvey;
             $scope.addEditSurvey = addEditSurvey;
@@ -55,7 +56,7 @@
             }
 
             function surveyRetreive(page, isInit) {
-                yuyanAPISvc.surveyGetBySession().query({ page: page, row: $scope.row },
+                yuyanAPISvc.surveyCrudSvc().query({ page: page, row: $scope.row },
                       function (data) {
                           if(isInit)
                             $scope.APIResolved++;
@@ -71,6 +72,10 @@
 
             function goQuestion(survey) {
                 $state.go('question', { survey: survey }, { location: false });
+            }
+
+            function goResult(survey) {
+                $state.go('result', { survey: survey }, { location: false });
             }
 
             function previewSurvey(survey) {

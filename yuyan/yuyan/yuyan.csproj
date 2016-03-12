@@ -895,6 +895,8 @@
     <Content Include="bower_components\flag-icon-css\sass\variables.scss" />
     <None Include="client\js\controller.chorice.back" />
     <Content Include="client\js\controller.page.chorice.js" />
+    <Content Include="components\manage\manage.result.html" />
+    <Content Include="components\manage\modal\addEditResult.html" />
     <Content Include="components\manage\modal\reportSurvey.html" />
     <Content Include="data\locale-en.json" />
     <Content Include="data\locale-cn.json" />
@@ -1233,9 +1235,11 @@
     <Content Include="js\authInterceptor.js" />
     <Content Include="js\config.js" />
     <Content Include="js\constant.js" />
+    <Content Include="js\manage\manage.result.controller.js" />
     <Content Include="js\manage\manage.survey.controller.js" />
     <Content Include="js\manage\manage.question.controller.js" />
     <Content Include="js\manage\modal\addEditQuestion.js" />
+    <Content Include="js\manage\modal\addEditResult.js" />
     <Content Include="js\manage\modal\addEditSurvey.js" />
     <Content Include="js\manage\modal\deleteQuestion.js" />
     <Content Include="js\manage\modal\deleteSurvey.js" />

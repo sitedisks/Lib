@@ -9,28 +9,32 @@
             var reportAPI = endpoint.localAPI + 'report';
 
             var service = {
+                // user
                 sessionCheckSvc: sessionCheckSvc,
                 isAuthenticated: isAuthenticated,
                 userCheckSvc: userCheckSvc,
                 userLoginSvc: userLoginSvc,
                 userLogoutSvc: userLogoutSvc,
                 userRegisterSvc: userRegisterSvc,
+                // survey
                 surveyCrudSvc: surveyCrudSvc,
-                surveyGetBySession: surveyGetBySession,
                 surveyCountBySession: surveyCountBySession,
+                // question
                 questionCrudSvc: questionCrudSvc,
+                // result
+                surveyResultCrudSvc: surveyResultCrudSvc,
+                // report
                 surveyClientReportSvc: surveyClientReportSvc
             };
 
             return service;
 
+            // user
             function sessionCheckSvc() {
                 return $resource(userAPI + '/status');
             }
 
-            function isAuthenticated() {
-
-            }
+            function isAuthenticated() { }
 
             function userCheckSvc() {
                 return $resource(userAPI + '/check');
@@ -49,10 +53,6 @@
             }
 
             // survey
-            function surveyGetBySession() {
-                return $resource(surveyAPI + '/all');
-            }
-
             function surveyCountBySession() {
                 return $resource(surveyAPI + '/count');
             }
@@ -63,20 +63,28 @@
                     { update: { method: 'PUT' } });
             }
 
-            // queston 
+            // survey queston 
             function questionCrudSvc() {
                 return $resource(surveyAPI + '/:surveyId/questions/:questionId',
                     { surveyId: '@sid', questionId: '@qid' },
                     { update: { method: 'PUT' } });
             }
 
-            // item
+            // survey result
+            function surveyResultCrudSvc() {
+                return $resource(surveyAPI + '/:surveyId/results/:resultId',
+                    { surveyId: '@sid', resultId: '@rid' },
+                    { update: { method: 'PUT' } });
+            }
+
+            // survey item
             function itemCrudSvc() {
                 return $resource(surveyAPI + '/:surveyId/questions/:questionId/items/:itemId',
                     { surveyId: '@sid', questionId: '@qid', itemId: '@iid' },
                     { update: { method: 'PUT' } });
             }
 
+            // report
             function surveyClientReportSvc() {
                 return $resource(reportAPI + '/:surveyId',
                     { surveyId: '@sid' });

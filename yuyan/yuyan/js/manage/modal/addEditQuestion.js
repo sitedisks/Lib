@@ -2,8 +2,8 @@
     'use strick';
 
     angular.module('yuyanApp')
-        .controller('addEditQuestionCtrl', ['$scope', '$uibModalInstance', 'question', 'localStorageService', 'yuyanAPISvc',
-            function ($scope, $uibModalInstance, question, localStorageService, yuyanAPISvc) {
+        .controller('addEditQuestionCtrl', ['$scope', '$uibModalInstance', 'question', 'yuyanAPISvc',
+            function ($scope, $uibModalInstance, question, yuyanAPISvc) {
 
                 $scope.saving = false;
 

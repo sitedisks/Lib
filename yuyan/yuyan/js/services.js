@@ -24,7 +24,8 @@
                 // result
                 surveyResultCrudSvc: surveyResultCrudSvc,
                 // report
-                surveyClientReportSvc: surveyClientReportSvc
+                surveyClientReportSvc: surveyClientReportSvc,
+                surveyClientAnswerDicSvc: surveyClientAnswerDicSvc
             };
 
             return service;
@@ -88,6 +89,11 @@
             function surveyClientReportSvc() {
                 return $resource(reportAPI + '/:surveyId',
                     { surveyId: '@sid' });
+            }
+
+            function surveyClientAnswerDicSvc() {
+                return $resource(reportAPI + '/:surveyId/answerdic',
+                     { surveyId: '@sid' });
             }
         }]);
 

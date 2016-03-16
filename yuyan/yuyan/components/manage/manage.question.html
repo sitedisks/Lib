@@ -15,21 +15,21 @@
             </div>
             <div data-ng-show="APIMini <= APIResolved">
                 <h2 class="text-primary">{{survey.Title}}</h2>
-                <button type="button" class="btn btn-link btn-lg pull-right" data-ng-click="addEditQuestion()" data-ng-show="survey.dtoQuestions.length>0"><i class="glyphicon glyphicon-plus"></i> Add Question</button>
+                <button type="button" class="btn btn-link btn-lg pull-right" data-ng-click="addEditQuestion()" data-ng-show="survey.dtoQuestions.length>0"><i class="glyphicon glyphicon-plus"></i> {{'BTN_ADD' | translate}} {{'TEXT_QUESTION' | translate}}</button>
                 <div class="clearfix"></div>
                 <hr />
                 <!--{{survey}}-->
                 <div data-ng-show="survey.dtoQuestions.length<=0">
-                    <button type="button" class="btn btn-link btn-lg" data-ng-click="addEditQuestion()"><i class="glyphicon glyphicon-plus"></i> Add First Question</button>
+                    <button type="button" class="btn btn-link btn-lg" data-ng-click="addEditQuestion()"><i class="glyphicon glyphicon-plus"></i> {{'BTN_ADD' | translate}} {{'TEXT_FIRST' | translate}} {{'TEXT_QUESTION' | translate}}</button>
                 </div>
                 <div class="table-responsive" data-ng-show="survey.dtoQuestions.length>0">
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr class="text-primary">
                                 <!--<th style="width: 10%" class="hidden-xs"></th>-->
-                                <th style="width: 50%">Quesiton</th>
-                                <th style="width: 10%" class="text-center hidden-xs">Type</th>
-                                <th style="width: 40%" class="text-center"><i class="fa fa-cogs"></i> Action</th>
+                                <th style="width: 50%">{{'TEXT_QUESTION' | translate}}</th>
+                                <th style="width: 10%" class="text-center hidden-xs">{{'TEXT_TYPE' | translate}}</th>
+                                <th style="width: 40%" class="text-center"><i class="fa fa-cogs"></i> {{'BTN_MANAGE' | translate}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -58,8 +58,8 @@
                                 </td>
                                 <td class="text-center">
 
-                                    <button type="button" class="btn btn-link btn-sm" data-ng-click="addEditQuestion(q)"><i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span></button>
-                                    <button type="button" class="btn btn-danger btn-sm" data-ng-click="deleteQuestion(q)"><i class="fa fa-remove"></i> <span class="hidden-xs hidden-sm">Delete</span></button>
+                                    <button type="button" class="btn btn-link btn-sm" data-ng-click="addEditQuestion(q)"><i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">{{'TEXT_EDIT' | translate}}</span></button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-ng-click="deleteQuestion(q)"><i class="fa fa-remove"></i> <span class="hidden-xs hidden-sm">{{'TEXT_DELETE' | translate}}</span></button>
                                     <!--<button type="button" class="btn btn-link btn-sm pull-right"><i class="fa fa-bars"></i> <span class="hidden-xs hidden-sm"></span></button>-->
                                     <button type="button" class="btn btn-link btn-sm pull-right hidden-xs" data-ng-click="q.isCollapsed = !q.isCollapsed">
                                         <i class="fa fa-chevron-left" data-ng-show="!q.isCollapsed"></i>

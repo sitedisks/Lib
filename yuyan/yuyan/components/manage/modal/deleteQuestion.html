@@ -2,7 +2,7 @@
     <button type="button" class="close" data-ng-click="cancel()">&times;</button>
 
     <div class="form-group">
-        <label>Delete Confirm?</label>
+        <label>{{'TEXT_DELETE' | translate}} {{'BTN_CONFIRM' | translate}}?</label>
     </div>
 
     <div class="form-group">
@@ -18,10 +18,10 @@
 <div class="modal-footer">
     <div class="pull-right">
         <button type="button" class="btn btn-danger btn-sm" data-ng-click="ok()">
-            <i class="glyphicon glyphicon-remove"></i> Confirm
+            <i class="glyphicon glyphicon-remove"></i> {{'BTN_CONFIRM' | translate}}
         </button>
         <button type="button" class="btn btn-link btn-sm" data-ng-click="cancel()">
-            Cancel
+            {{'BTN_CANCEL' | translate}}
         </button>
     </div>
     <div class="clearfix"></div>

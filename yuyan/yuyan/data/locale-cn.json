@@ -6,11 +6,16 @@
     "BTN_LOGOUT": "注销",
     "BTN_REGISTER": "注册",
     "BTN_MANAGE": "管理",
+    "BTN_HOME": "首页",
+    "BTN_SURVEY": "调查",
 
     "TEXT_CHORICE": "潮米",
     "TEXT_QUESTION": "问题",
     "TEXT_ADD_QUESTION": "添加问题",
     "TEXT_HEAD_INTRO": "方便快捷地分享并收集调查问卷数据, 小测验，或大数据统计",
+    "TEXT_EMAIL": "电子邮件",
+    "TEXT_PASS": "登陆密码",
+    "TEXT_LOGIN_PROMPT": "还未有账户? 免费注册:",
 
     "BTN_TEXT_EN": "英文",
     "BTN_TEXT_CN": "中文"

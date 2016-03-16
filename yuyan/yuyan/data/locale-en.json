@@ -6,11 +6,16 @@
     "BTN_LOGOUT": "Logout",
     "BTN_REGISTER": "Register",
     "BTN_MANAGE": "Management",
+    "BTN_HOME": "Home",
+    "BTN_SURVEY": "Survey",
 
     "TEXT_CHORICE": "chorice",
     "TEXT_QUESTION": "Question",
     "TEXT_ADD_QUESTION": "Add Question",
     "TEXT_HEAD_INTRO": "Create online survey, questionary, data collection, test... Quick & Easy.",
+    "TEXT_EMAIL": "Email address",
+    "TEXT_PASS": "Password",
+    "TEXT_LOGIN_PROMPT": "Don't have account yet? Register first:",
 
     "BTN_TEXT_EN": "English",
     "BTN_TEXT_CN": "Chinese"

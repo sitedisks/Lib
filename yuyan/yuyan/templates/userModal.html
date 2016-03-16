@@ -11,7 +11,7 @@
         <div class="form-group has-feedback"
              data-ng-class="{'has-success':userForm.userEmail.$valid || userForm.userEmail.$pristine,
                 'has-error':!userAvailable || (userForm.userEmail.$invalid && !userForm.userEmail.$pristine)}">
-            <label class="control-label" for="userEmail">Email address</label>
+            <label class="control-label" for="userEmail">{{'TEXT_EMAIL' | translate}}</label>
             <input type="email" class="form-control input-lg" id="userEmail" name="userEmail" data-ng-model="userObj.Email" autofocus="autofocus"
                    data-ng-change="checkUser()" data-ng-blur="checkUser()" placeholder="Email" required>
             <span class="glyphicon glyphicon-envelope form-control-feedback" data-ng-if="!checking"></span>
@@ -26,7 +26,7 @@
         <div class="form-group has-success has-feedback"
              data-ng-class="{'has-success':userForm.userPassword.$valid || userForm.userPassword.$pristine,
                 'has-error': userForm.userPassword.$invalid && !userForm.userPassword.$pristine}">
-            <label class="control-label" for="userPassword">Password</label>
+            <label class="control-label" for="userPassword">{{'TEXT_PASS' | translate}}</label>
             <input type="password" class="form-control input-lg" id="userPassword" name="userPassword" data-ng-model="userObj.Password"
                    data-ng-minlength="6" data-ng-change="dupPassword()" placeholder="Password" required>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
@@ -52,7 +52,7 @@
         </div>
 
         <div class="from-group" ng-show="mode=='login'">
-            <span class="text-success">Don't have account yet? Register first: </span>
+            <span class="text-success">{{'TEXT_LOGIN_PROMPT' | translate}} </span>
             <button type="button" class="btn btn-link btn-sm" data-ng-click="switchToRegister()"><i class="glyphicon glyphicon-user"></i> Register</button>
         </div>
 

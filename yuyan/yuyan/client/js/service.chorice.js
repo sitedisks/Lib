@@ -2,7 +2,7 @@
     'use strict';
     angular.module('choriceApp').service('choriceAPISvc', ['$resource', 'endpoint',
         function ($resource, endpoint) {
-            var clientAPI = endpoint.localAPI + 'client';
+            var clientAPI = endpoint.LiveAPI + 'client';
 
             var service = {
                 surveyRetreiveSvc: surveyRetreiveSvc,

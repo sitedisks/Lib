@@ -7,6 +7,7 @@
 
                 $scope.mode = mode;
 
+                $scope.saving = false;
                 $scope.checking = false;
                 $scope.userAvailable = true;
 
@@ -21,7 +22,35 @@
                 $scope.switchToRegister = switchToRegister;
 
                 function ok() {
-                    $uibModalInstance.close($scope.userObj);
+
+                    $scope.saving = true;
+
+                    if ($scope.userObj.Mode == 'login') {
+
+                        yuyanAPISvc.userLoginSvc().save($scope.userObj,
+                           function (data) {
+                               $scope.saving = false;
+                               $uibModalInstance.close(data);
+                           }, function (error) {
+                               // failed to login
+                               $scope.saving = false;
+                               toastr.error(error.data, error.statusText);
+
+                           });
+
+                    } else if ($scope.userObj.Mode == 'register') {
+
+                        yuyanAPISvc.userRegisterSvc().save($scope.userObj,
+                          function (data) {
+                              $scope.saving = false;
+                              $uibModalInstance.close(data);
+                          }, function (error) {
+                              // failed to login
+                              $scope.saving = false;
+                              toastr.error(error.data, error.statusText);
+                          });
+                    }
+
                 };
 
                 function cancel() {
@@ -40,7 +69,8 @@
                                     if (userId != undefined) {
                                         //unavailable!
                                         $scope.userAvailable = false;
-                                        $scope.userForm.userEmail.$valid = true;
+                                        if ($scope.userForm != null)
+                                            $scope.userForm.userEmail.$valid = true;
                                     } else {
                                         $scope.userAvailable = true;
                                     }

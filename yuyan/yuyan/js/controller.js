@@ -25,64 +25,23 @@
                     }
                 });
 
-                modalInstance.result.then(function (userObj) {
+                modalInstance.result.then(function (user) {
 
-                    $rootScope.sessionChecking = true;
+                    localStorageService.set('authorizationData', { token: user.CurrentSession.SessionId });
+                    if (mode == 'login')
+                        toastr.success('Welcome back!', user.Email);
+                    else
+                        toastr.success('Welcome to Chorice!', user.Email);
 
-                    if (userObj.Mode == 'login') {
+                    $rootScope.isLogin = true;
+                    yuyanAuthSvc.isLogin = true;
 
-                        yuyanAPISvc.userLoginSvc().save(userObj,
-                           function (data) {
-
-                               $rootScope.sessionChecking = false;
-
-                               localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
-                               toastr.success('Welcome back!', data.Email);
-                               $rootScope.isLogin = true;
-                               yuyanAuthSvc.isLogin = true;
-
-                               if (survey) {
-                                   $rootScope.progressing = true;
-                                   survey.UserId = data.UserId;
-                                   saveSurvey(survey);
-                               } else {
-                                   $state.go('survey', {}, { location: false });
-                               }
-
-                           }, function (data) {
-                               // failed to login
-                               $rootScope.sessionChecking = false;
-                               toastr.error(data.data, data.statusText);
-                           });
-
-                    } else if (userObj.Mode == 'register') {
-
-
-
-
-                        yuyanAPISvc.userRegisterSvc().save(userObj,
-                          function (data) {
-
-                              $rootScope.sessionChecking = false;
-
-                              localStorageService.set('authorizationData', { token: data.CurrentSession.SessionId });
-                              toastr.success('Welcome to Chorice!', data.Email);
-                              $rootScope.isLogin = true;
-                              yuyanAuthSvc.isLogin = true;
-
-                              if (survey) {
-                                  $rootScope.progressing = true;
-                                  survey.UserId = data.UserId;
-                                  saveSurvey(survey);
-                              } else {
-                                  $state.go('survey', {}, { location: false });
-                              }
-
-                          }, function (data) {
-                              // failed to login
-                              $rootScope.sessionChecking = false;
-                              toastr.error(data.data, data.statusText);
-                          });
+                    if (survey) {
+                        $rootScope.progressing = true;
+                        survey.UserId = user.UserId;
+                        saveSurvey(survey);
+                    } else {
+                        $state.go('survey', {}, { location: false });
                     }
 
                 }, function () {

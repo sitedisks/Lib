@@ -13,6 +13,7 @@
                 geo_state: null,
                 geo_country: null
             };
+            $scope.result = null;
             $scope.page = 1;
             $scope.questionCount = 0;
 
@@ -98,7 +99,7 @@
             }
 
             function submitSurvey() {
-                $scope.APIMini = 1;
+                $scope.APIMini = 2;
                 $scope.APIResolved = 0;
                 var dtoClientAnswers = [];
                 var totalScore = 0;
@@ -125,8 +126,19 @@
                 choriceAPISvc.surveySaveSvc().save(surveyClient,
                     function (data) {
                         // data is the survey dto
-                        $scope.submitSuccess = true;
                         $scope.APIResolved++;
+                        choriceAPISvc.surveyResultSvc().get(
+                            { surveyId: surveyClient.SurveyId, score: surveyClient.TotalScore },
+                            function (result) {
+
+                                $scope.APIResolved++;
+                                $scope.submitSuccess = true;
+                                $scope.result = result;
+
+                            },
+                            function (error) {
+                                toastr.error('ZZZ sleep');
+                            });
                     },
                     function (data) {
                         toastr.error('Suvry Submit Failed. Please fresh the page.');

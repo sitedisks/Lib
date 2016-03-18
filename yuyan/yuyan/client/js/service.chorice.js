@@ -6,7 +6,8 @@
 
             var service = {
                 surveyRetreiveSvc: surveyRetreiveSvc,
-                surveySaveSvc: surveySaveSvc
+                surveySaveSvc: surveySaveSvc,
+                surveyResultSvc: surveyResultSvc
             };
 
             return service;
@@ -17,6 +18,11 @@
 
             function surveySaveSvc() {
                 return $resource(clientAPI);
+            }
+
+            function surveyResultSvc() {
+                return $resource(clientAPI + '/:surveyId/:score',
+                    { surveyId: '@surveyId', score: '@score' });
             }
         }]);
 })();

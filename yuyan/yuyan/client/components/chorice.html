@@ -42,7 +42,11 @@
                     <h1 ng-non-bindable><strong>{{chorice}}</strong></h1>
                     <br class="xs-20 hidden-xs" />
                     <div class="alert alert-success" role="alert">
-                        <h3>Thanks for your participation.<!--<code><i class="fa fa-heart"></i></code>--></h3>
+                        <div data-ng-show="!result"><h3>Thanks for your participation.<!--<code><i class="fa fa-heart"></i></code>--></h3></div>
+                        <div data-ng-show="result">
+                            <h3>{{result.Title}}</h3>
+                            <h4>{{result.Description}}</h4>
+                        </div>
                     </div>
                     <div>
                         <img src="/img/QRcode.png" />

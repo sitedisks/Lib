@@ -15,6 +15,7 @@
                 geo_state: null,
                 geo_country: null
             };
+            $scope.result = null;
 
             // function register
             $scope.radioChecked = radioChecked;
@@ -90,7 +91,7 @@
             }
 
             function submitSurvey() {
-                $scope.APIMini = 1;
+                $scope.APIMini = 2;
                 $scope.APIResolved = 0;
                 var dtoClientAnswers = [];
                 var totalScore = 0;
@@ -98,7 +99,7 @@
                 angular.forEach($scope.survey.dtoQuestions, function (q) {
                     angular.forEach(q.dtoItems, function (i) {
                         dtoClientAnswers.push({ QuestionId: i.QuestionId, QuestionItemId: i.QuestionItemId, IsChecked: i.IsChecked });
-                        if (i.IsChecked && i.Score!=null) {
+                        if (i.IsChecked && i.Score != null) {
                             totalScore += i.Score
                         }
                     });
@@ -117,8 +118,19 @@
                 choriceAPISvc.surveySaveSvc().save(surveyClient,
                     function (data) {
                         // data is the survey dto
-                        $scope.submitSuccess = true;
                         $scope.APIResolved++;
+                        choriceAPISvc.surveyResultSvc().get(
+                            { surveyId: surveyClient.SurveyId, score: surveyClient.TotalScore },
+                            function (result) {
+
+                                $scope.APIResolved++;
+                                $scope.submitSuccess = true;
+                                $scope.result = result;
+                                
+                            },
+                            function (error) {
+                                toastr.error('ZZZ sleep');
+                            });
                     },
                     function (data) {
                         toastr.error('Suvry Submit Failed. Please fresh the page.');

@@ -44,9 +44,12 @@
                 </div>
                 <div class="text-center text-success" style="margin-top: 30px;" data-ng-show="submitSuccess">
                     <h1 ng-non-bindable><strong>{{chorice}}</strong></h1>
-                    <br class="xs-20" />
+                    <br class="xs-20 hidden-xs" />
                     <div class="alert alert-success" role="alert">
                         <h3>Thanks for your participation.<!--<code><i class="fa fa-heart"></i></code>--></h3>
+                    </div>
+                    <div>
+                        <img src="/img/QRcode.png" />
                     </div>
                     <br class="xs-10" />
                     <button type="button" class="btn btn-success" data-ng-click="backHome()">Home</button>

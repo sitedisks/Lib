@@ -10,9 +10,11 @@
             $scope.APIResolved = 0;
             $scope.submitSuccess = false;
             $scope.ip;
-            $scope.geo_city = null;
-            $scope.geo_state = null;
-            $scope.geo_country = null;
+            $scope.googleGeo = {
+                geo_city: null,
+                geo_state: null,
+                geo_country: null
+            };
 
             // function register
             $scope.radioChecked = radioChecked;
@@ -40,9 +42,9 @@
                 geocoder.geocode({ latLng: latlng }, function (results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         if (results[1]) {
-                            $scope.geo_city = results[1].address_components[0].long_name;
-                            $scope.geo_state = results[1].address_components[1].long_name;
-                            $scope.geo_country = results[1].address_components[2].long_name;
+                            $scope.googleGeo.geo_city = results[1].address_components[0].long_name;
+                            $scope.googleGeo.geo_state = results[1].address_components[1].long_name;
+                            $scope.googleGeo.geo_country = results[1].address_components[2].long_name;
 
                         } else {
                             $log.warn("No results found");
@@ -106,9 +108,9 @@
                     IPAddress: $scope.ip,
                     SurveyId: $scope.survey.SurveyId,
                     TotalScore: totalScore,
-                    City: $scope.geo_city,
-                    State: $scope.geo_state,
-                    Country: $scope.geo_country,
+                    City: $scope.googleGeo.geo_city,
+                    State: $scope.googleGeo.geo_state,
+                    Country: $scope.googleGeo.geo_country,
                     dtoClientAnswers: dtoClientAnswers
                 };
 

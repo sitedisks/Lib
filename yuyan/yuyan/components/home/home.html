@@ -38,11 +38,11 @@
                         <span class="glyphicon glyphicon-check form-control-feedback" data-ng-if="DefaultQuestionType==1"></span>
                         <span class="glyphicon glyphicon-record form-control-feedback" data-ng-if="DefaultQuestionType==2"></span>
                     </div>
-                    <button type="submit" class="btn btn-success btn-sm" data-ng-disabled="itemForm.$invalid" data-ng-click="addItem(QID)"><i class="glyphicon glyphicon-plus hidden-xs"></i> Add</button>
+                    <button type="submit" class="btn btn-success btn-sm" data-ng-disabled="itemForm.$invalid" data-ng-click="addItem(QID)"><i class="glyphicon glyphicon-plus hidden-xs"></i> {{'BTN_ADD' | translate}}</button>
                 </form>
 
                 <!--<button class="btn btn-info btn-lg" data-ng-click="previewSurvey()">Preview</button>-->
-                <button class="btn btn-link pull-right" data-ng-show="!disableNext" data-ng-disabled="disableNext" data-ng-click="nextQuestion()">Next Question &raquo;</button>
+                <button class="btn btn-link pull-right" data-ng-show="!disableNext" data-ng-disabled="disableNext" data-ng-click="nextQuestion()">{{'TEXT_NEXT' | translate}} {{'TEXT_QUESTION' | translate}} &raquo;</button>
                 <div class="clearfix"></div>
             </div>
 
@@ -51,10 +51,10 @@
             <div data-ng-show="!showAddItem">
                 <form name="questionForm" novalidate>
                     <div class="form-group has-success has-feedback hidden-xs">
-                        <label class="control-label" for="IntQuestion">{{'TEXT_QUESTION' | translate}}</label>
-                        <span class="label label-info" data-ng-click="toggleType()" tooltip-placement="top-left" uib-tooltip="Click to toggle checkbox or radio button.">
-                            <span data-ng-show="DefaultQuestionType==1"><i class="glyphicon glyphicon-check"></i> Checkbox</span>
-                            <span data-ng-show="DefaultQuestionType==2"><i class="glyphicon glyphicon-record"></i> Radio</span>
+                        <label class="control-label" for="IntQuestion">{{'TEXT_QUESTION' | translate}} {{'TEXT_TYPE' | translate}}</label>
+                        <span class="label label-info" data-ng-click="toggleType()" tooltip-placement="top-left" uib-tooltip="{{'TEXT_TYPETIP' | translate}}">
+                            <span data-ng-show="DefaultQuestionType==1"><i class="glyphicon glyphicon-check"></i> {{'TEXT_CHECKBOX' | translate}}</span>
+                            <span data-ng-show="DefaultQuestionType==2"><i class="glyphicon glyphicon-record"></i> {{'TEXT_RADIO' | translate}}</span>
                         </span>
 
                         <input type="text" class="form-control input-lg" id="IntQuestion" name="questionInput" autofocus="autofocus"

@@ -12,6 +12,8 @@
     "BTN_REMOVE": "Remove",
     "BTN_CANCEL": "Cancel",
     "BTN_CONFIRM": "Confirm",
+    "BTN_MORE": "More",
+    "BTN_NEXT": "Next",
 
     "TEXT_CHORICE": "chorice",
     "TEXT_FIRST": "First",
@@ -30,7 +32,8 @@
     "TEXT_EDIT": "Edit",
     "TEXT_DELETE": "Delete",
     "TEXT_QUESTIONS": "Questions",
-    "TEXT_RESULT": "Results",
+    "TEXT_RESULTS": "Results",
+    "TEXT_RESULT": "Result",
     "TEXT_REPORT": "Report",
     "TEXT_SHARE": "Share",
     "TEXT_SHORT": "Short",
@@ -39,8 +42,12 @@
     "TEXT_TYPE": "Type",
     "TEXT_CHECKBOX": "Checkbox",
     "TEXT_RADIO": "Radio",
+    "TEXT_TYPETIP": "Click to toggle checkbox or radio button.",
     "TEXT_ITEMS": "Items",
     "TEXT_ITEM": "Item",
+    "TEXT_NEXT": "Next",
+    "TEXT_SCORE": "Score",
+    "TEXT_RANGE": "Range",
 
     "BTN_TEXT_EN": "English",
     "BTN_TEXT_CN": "Chinese"

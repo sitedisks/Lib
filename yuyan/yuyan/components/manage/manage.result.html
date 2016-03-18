@@ -15,21 +15,21 @@
             </div>
             <div data-ng-show="APIMini <= APIResolved">
                 <h2 class="text-primary">{{survey.Title}}</h2>
-                <button type="button" class="btn btn-link btn-lg pull-right" data-ng-click="addEditResult()" data-ng-if="results.length<=8" data-ng-show="results.length>0"><i class="glyphicon glyphicon-plus"></i> Add Result</button>
+                <button type="button" class="btn btn-link btn-lg pull-right" data-ng-click="addEditResult()" data-ng-if="results.length<=8" data-ng-show="results.length>0"><i class="glyphicon glyphicon-plus"></i> {{'BTN_ADD' | translate}} {{'TEXT_RESULT' | translate}}</button>
                 <div class="clearfix"></div>
                 <hr />
                 <!--{{results}}-->
                 <div data-ng-show="results.length<=0">
-                    <button type="button" class="btn btn-link btn-lg" data-ng-click="addEditResult()"><i class="glyphicon glyphicon-plus"></i> Add First Result</button>
+                    <button type="button" class="btn btn-link btn-lg" data-ng-click="addEditResult()"><i class="glyphicon glyphicon-plus"></i> {{'BTN_ADD' | translate}} {{'TEXT_FIRST' | translate}} {{'TEXT_RESULT' | translate}}</button>
                 </div>
                 <div class="table-responsive" data-ng-show="results.length>0">
                     <table class="table table-hover table-striped">
                         <thead>
                             <tr class="text-primary">
                                 <th style="width: 20%">Title</th>
-                                <th style="width: 30%" class="text-center hidden-xs">Description</th>
-                                <th style="width: 20%" class="text-center hidden-xs">Score Range</th>
-                                <th style="width: 30%" class="text-center"><i class="fa fa-cogs"></i> Action</th>
+                                <th style="width: 30%" class="text-center hidden-xs">{{'TEXT_DESC' | translate}}</th>
+                                <th style="width: 20%" class="text-center hidden-xs">{{'TEXT_SCORE' | translate}} {{'TEXT_RANGE' | translate}}</th>
+                                <th style="width: 30%" class="text-center"><i class="fa fa-cogs"></i> {{'TEXT_ACTION' | translate}}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,8 +38,8 @@
                                 <td class="text-center text-primary hidden-xs">{{r.Description}}</td>
                                 <td class="text-center hidden-xs"><span class="badge alert-success">{{r.MinScore}}</span> - <span class="badge alert-danger">{{r.MaxScore}}</span></td>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-link btn-sm" data-ng-click="addEditResult(r)"><i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">Edit</span></button>
-                                    <button type="button" class="btn btn-danger btn-sm" data-ng-click="deleteResult(r)"><i class="fa fa-remove"></i> <span class="hidden-xs hidden-sm">Delete</span></button>
+                                    <button type="button" class="btn btn-link btn-sm" data-ng-click="addEditResult(r)"><i class="fa fa-edit"></i> <span class="hidden-xs hidden-sm">{{'TEXT_EDIT' | translate}}</span></button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-ng-click="deleteResult(r)"><i class="fa fa-remove"></i> <span class="hidden-xs hidden-sm">{{'TEXT_DELETE' | translate}}</span></button>
                                 </td>
                             </tr>
                         </tbody>

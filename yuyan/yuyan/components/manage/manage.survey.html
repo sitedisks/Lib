@@ -46,8 +46,8 @@
                                             <i class="fa fa-cog"></i> <span class="hidden-xs hidden-sm">{{'BTN_MANAGE' | translate}}</span> <span class="caret"></span>
                                         </button>
                                         <ul uib-dropdown-menu role="menu">
-                                            <li role="menuitem"><a href="" data-ng-click="goQuestion(s)"><i class="fa fa-list-ol"></i> {{'TEXT_QUESTION' | translate}}</a></li>
-                                            <li role="menuitem"><a href="" data-ng-click="goResult(s)"><i class="fa fa-newspaper-o"></i> {{'TEXT_RESULT' | translate}}</a></li>
+                                            <li role="menuitem"><a href="" data-ng-click="goQuestion(s)"><i class="fa fa-list-ol"></i> {{'TEXT_QUESTIONS' | translate}} <span class="label label-info">{{s.dtoQuestions.length}}</span></a></li>
+                                            <li role="menuitem"><a href="" data-ng-click="goResult(s)"><i class="fa fa-newspaper-o"></i> {{'TEXT_RESULTS' | translate}}</a></li>
                                             <li class="divider"></li>
                                             <li role="menuitem"><a href="" data-ng-click="report(s)"><i class="fa fa-bar-chart"></i> {{'TEXT_REPORT' | translate}}</a></li>
                                             <li role="menuitem"><a href=""><i class="fa fa-share"></i> {{'TEXT_SHARE' | translate}}</a></li>

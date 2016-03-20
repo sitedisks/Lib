@@ -10,8 +10,6 @@
             <div class="col-md-6 col-md-offset-3">
                 <div data-ng-show="!submitSuccess">
                     <br class="xs-30" />
-                    <uib-alert type="info" close="bCloseAlert=1" ng-hide="bCloseAlert">Radio button requires at least one selection.</uib-alert>
-                    
                     <div class="well">
                         <blockquote>
                             <h2>{{survey.Title}}</h2>
@@ -32,26 +30,28 @@
                                 <label for="item{{i.QuestionItemId}}">{{i.ItemDescription}}</label>
                             </div>
                         </div>
-
+                        <button type="button" class="btn btn-success pull-right" data-ng-disabled="surveyForm.$invalid" data-ng-click="submitSurvey()">Submit</button>
+                        <div class="clearfix"></div>
                     </div>
-                    <div>
-                        <button type="button" class="btn btn-success" data-ng-disabled="surveyForm.$invalid" data-ng-click="submitSurvey()">Submit</button>
-                    </div>
+                    
+                    <br class="xs-10" />
+                    <uib-alert type="info" close="bCloseAlert=1" ng-hide="bCloseAlert">Radio button requires at least one selection.</uib-alert>
                 </div>
                 <div class="text-center text-success" style="margin-top: 30px;" data-ng-show="submitSuccess">
                     <h1 ng-non-bindable><strong>{{chorice}}</strong></h1>
                     <br class="xs-20 hidden-xs" />
                     <div class="alert alert-success" role="alert">
-                        <div data-ng-show="!result"><h3>Thanks for your participation.<!--<code><i class="fa fa-heart"></i></code>--></h3></div>
-                        <div data-ng-show="result">
+                        <div data-ng-show="!result.SurveyResultId"><h3>Thanks for your participation.<!--<code><i class="fa fa-heart"></i></code>--></h3></div>
+                        <div data-ng-show="result.SurveyResultId">
                             <h3>{{result.Title}}</h3>
                             <h4>{{result.Description}}</h4>
                         </div>
+                        <br class="xs-10" />
                     </div>
                     <div>
-                        <img class="img-responsive" src="/img/QRcode.png" />
+                        <img class="img-responsive" style="margin: 0px auto;" src="/img/QRcode.png" />
                     </div>
-                    <br class="xs-10" />
+                   
                     <button type="button" class="btn btn-success" data-ng-click="backHome()">Home</button>
                 </div>
 

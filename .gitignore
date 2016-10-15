@@ -12,3 +12,9 @@ yuyan/yuyan.v12.suo
 yuyan/yuyan/node_modules/
 yuyan/yuyan/debug/
 yuyan/yuyan/dist/
+URF/packages/
+UnitOfWorkRepository/packages/
+URF/URF/obj/
+URF/URF/bin/
+UnitOfWorkRepository/UnitOfWorkRepository/obj/
+UnitOfWorkRepository/UnitOfWorkRepository/bin/

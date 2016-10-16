@@ -7,9 +7,14 @@
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
-    public class SurveysRepository : IRepository<tbSurvey>
+    public class SurveysRepositoryWithUow: IRepository<tbSurvey>
     {
-        private IChoriceDBContext db = new ChoriceDBContext();
+        private IChoriceDBContext db = null;
+
+        public SurveysRepositoryWithUow(IChoriceDBContext _db)
+        {
+            db = _db;
+        }
 
         public IEnumerable<tbSurvey> GetAll(Func<tbSurvey, bool> predicate = null)
         {
@@ -20,31 +25,30 @@
             return db.tbSurveys;
         }
 
-        public tbSurvey Get(Func<tbSurvey, bool> predicate) {
+        public tbSurvey Get(Func<tbSurvey, bool> predicate)
+        {
             return db.tbSurveys.FirstOrDefault(predicate);
         }
 
-        public void Add(tbSurvey entity) {
+        public void Add(tbSurvey entity)
+        {
             db.tbSurveys.Add(entity);
         }
 
         public void Attach(tbSurvey entity)
         {
             db.tbSurveys.Attach(entity);
-            //db.tbSurveys.ObjectState.Modified;
             db.Entry(entity).State = EntityState.Modified;
         }
 
-        public void Delete(tbSurvey entity) {
+        public void Delete(tbSurvey entity)
+        {
             db.tbSurveys.Remove(entity);
         }
 
-        public IQueryable<tbSurvey> Queryable() {
+        public IQueryable<tbSurvey> Queryable()
+        {
             return db.tbSurveys.AsQueryable();
-        }
-
-        internal void SaveChanges() {
-            db.SaveChanges();
         }
     }
 }

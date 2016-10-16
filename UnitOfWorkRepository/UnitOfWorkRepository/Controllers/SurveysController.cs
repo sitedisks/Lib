@@ -1,5 +1,6 @@
 ﻿namespace UnitOfWorkRepository.Controllers
 {
+    using Interface;
     using System;
     using System.Collections.Generic;
     using System.Data;
@@ -12,7 +13,7 @@
     using UnitOfWorkRepository.Models.Entity;
     public class SurveysController : Controller
     {
-        private ChoriceDBContext db = new ChoriceDBContext();
+        private IChoriceDBContext db = new ChoriceDBContext();
 
         // GET: Surveys
         public ActionResult Index()

@@ -154,8 +154,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\GenericSurveysController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SurveysController.cs" />
+    <Compile Include="Controllers\SurveysUowController.cs" />
     <Compile Include="DbContext\ChoriceDBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -165,7 +167,11 @@
     <Compile Include="Interface\IUnitOfWork.cs" />
     <Compile Include="Models\Entity\tbSurvey.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\SurveysRepository.cs" />
+    <Compile Include="Repository\SurveysRepositoryWithUow.cs" />
+    <Compile Include="UOW\UnitOfWork.cs" />
+    <Compile Include="UOW\UnitOfWorkSurvey.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -184,6 +190,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\SurveysUow\Index.cshtml" />
+    <Content Include="Views\GenericSurveys\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -206,7 +214,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>17867</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

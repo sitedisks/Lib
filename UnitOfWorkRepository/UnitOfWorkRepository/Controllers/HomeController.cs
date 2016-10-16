@@ -1,5 +1,6 @@
 ﻿namespace UnitOfWorkRepository.Controllers
 {
+    using Interface;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -10,7 +11,7 @@
 
     public class HomeController : Controller
     {
-        private SurveysRepository repo = new SurveysRepository();
+        private IRepository<tbSurvey> repo = new SurveysRepository();
 
         // GET: Home
         public ActionResult Index()

@@ -30,7 +30,8 @@
         }
 
         public void Add(TEntity entity) {
-            _dbSet.Add(entity);
+            db.Set<TEntity>().Add(entity);
+            //_dbSet.Add(entity);
         }
 
         public void Attach(TEntity entity) {
@@ -38,6 +39,8 @@
         }
 
         public void Delete(TEntity entity) {
+            //db.Entry<TEntity>(entity).State = EntityState.Deleted;
+            // What's the different?
             _dbSet.Remove(entity);
         }
 

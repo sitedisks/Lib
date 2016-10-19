@@ -36,8 +36,8 @@
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            //services.AddApplicationInsightsTelemetry(Configuration);
- 
+            services.AddApplicationInsightsTelemetry(Configuration);
+
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddReact();
             // Add framework services.
@@ -62,7 +62,7 @@
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            //app.UseApplicationInsightsExceptionTelemetry();
+            app.UseApplicationInsightsExceptionTelemetry();
 
             // Initialise ReactJS.NET. Must be before static files.
             app.UseReact(config =>

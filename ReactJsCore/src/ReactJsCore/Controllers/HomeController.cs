@@ -33,6 +33,11 @@
                     Author = "Jordan Walke",
                     Text = "This is *another* comment"
                 },
+                new CommentModel {
+                    Id =4,
+                    Author = "Peter Wang",
+                    Text = "This is Pin.IO"
+                }
             };
         }
 
@@ -43,7 +48,9 @@
         }
 
         [Route("comments")]
-        public IActionResult Comments() {
+        [System.Web.Mvc.OutputCache(Location = System.Web.UI.OutputCacheLocation.None)]
+        public IActionResult Comments()
+        {
             return Json(_comments);
         }
     }

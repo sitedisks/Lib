@@ -7,11 +7,32 @@ var data = [
 ];
 
 var CommentBox = React.createClass({
+
+    loadCommentsFromServer: function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', this.props.url, true);
+        xhr.onload = function () {
+            var data = JSON.parse(xhr.responseText);
+            this.setState({ data: data });
+        }.bind(this);
+        xhr.send();
+    },
+
+    getInitialState: function () {
+        // initial state
+        // getInitialState executes exactly once during the lifecycle of hte component and sets up the initial state of the component
+        // state are component self-contains
+        return { data: [] };
+    },
+    componentWillMount: function () {
+        this.loadCommentsFromServer();
+        //window.setInterval(this.loadCommentsFromServer, this.props.pollInterval); // what?
+    },
     render: function () {
         return (
             <div className="commentBox">
                 <h1>Comments</h1>
-                <CommentList data={this.props.data} />
+                <CommentList data={this.state.data} />
                 <CommentForm />
             </div>
             );
@@ -70,7 +91,7 @@ var CommentForm = React.createClass({
 });
 
 ReactDOM.render(
-    <CommentBox data={data } />,
-    //<CommentBox url="/comments" />,
+    //<CommentBox data={data} />,
+    <CommentBox url="/comments" pollInterval={2000} />,
     document.getElementById('content')
     );

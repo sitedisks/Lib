@@ -53,5 +53,13 @@
         {
             return Json(_comments);
         }
+
+        [Route("comments")]
+        [HttpPost]
+        public IActionResult AddComments(CommentModel comment) {
+            comment.Id = _comments.Count + 1;
+            _comments.Add(comment);
+            return Content("Success : )");
+        }
     }
 }

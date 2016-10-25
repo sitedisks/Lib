@@ -18,6 +18,13 @@ var CommentBox = React.createClass({
         xhr.send();
     },
 
+    handleCommentSubmit: function (comment) {
+        // TODO: submit to the server and refresh the list
+        var data = new FormData();
+        data.append('author', comment.author);
+        data.append('text', comment.text)
+    },
+
     getInitialState: function () {
         // initial state
         // getInitialState executes exactly once during the lifecycle of hte component and sets up the initial state of the component
@@ -33,7 +40,7 @@ var CommentBox = React.createClass({
             <div className="commentBox">
                 <h1>Comments</h1>
                 <CommentList data={this.state.data} />
-                <CommentForm />
+                <CommentForm onCommentSubmit={this.handleCommentSubmit} />
             </div>
             );
     }
@@ -80,11 +87,33 @@ var CommentList = React.createClass({
 });
 
 var CommentForm = React.createClass({
+    getInitialState: function () {
+        return { author: '', text: '' };
+    },
+    handleAuthorChange: function (e) {
+        this.setState({ author: e.target.value });
+    },
+    handleTextChange: function (e) {
+        this.setState({ text: e.target.value });
+    },
+    handleSubmit: function (e) {
+        e.preventDefault();
+        var author = this.state.author.trim();
+        var text = this.state.text.trim();
+        if (!text || !author) {
+            return;
+        }
+
+        // TODO: send request to the server
+        this.setState({ author: '', text: '' });
+    },
     render: function () {
         return (
-            <div className="commentForm">
-                <h3>Form</h3>
-                Hello, I am a CommentForm.
+            <div className="commentForm" onSubmit={this.handleSubmit}>
+                <h3>Add your comments</h3>
+                <input type="text" placeholder="Your name" value={this.state.author} onChange={this.handleAuthorChange} />
+                <input type="text" placeholder="Say something..." value={this.state.text} onChange={this.handleTextChange} />
+                <input type="submit" value="Post" />
             </div>
             )
     }

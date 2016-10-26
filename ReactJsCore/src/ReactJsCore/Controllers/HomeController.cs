@@ -48,6 +48,7 @@
         }
 
         [Route("comments")]
+        [HttpGet]
         [System.Web.Mvc.OutputCache(Location = System.Web.UI.OutputCacheLocation.None)]
         public IActionResult Comments()
         {

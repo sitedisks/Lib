@@ -22,7 +22,14 @@ var CommentBox = React.createClass({
         // TODO: submit to the server and refresh the list
         var data = new FormData();
         data.append('author', comment.author);
-        data.append('text', comment.text)
+        data.append('text', comment.text);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('post', this.props.url, true);
+        xhr.onload = function () {
+            this.loadCommentsFromServer();
+        }.bind(this);
+        xhr.send(data);
     },
 
     getInitialState: function () {
@@ -105,16 +112,18 @@ var CommentForm = React.createClass({
         }
 
         // TODO: send request to the server
+        // Here is how the you pass the variables to parent
+        this.props.onCommentSubmit({ author: author, text: text });
         this.setState({ author: '', text: '' });
     },
     render: function () {
         return (
-            <div className="commentForm" onSubmit={this.handleSubmit}>
+            <form className="commentForm" onSubmit={this.handleSubmit}>
                 <h3>Add your comments</h3>
                 <input type="text" placeholder="Your name" value={this.state.author} onChange={this.handleAuthorChange} />
                 <input type="text" placeholder="Say something..." value={this.state.text} onChange={this.handleTextChange} />
                 <input type="submit" value="Post" />
-            </div>
+            </form>
             )
     }
 });

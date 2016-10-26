@@ -34,6 +34,19 @@ var CommentBox = React.createClass({
         return { data: [] };
     },
     componentWillMount: function () {
+        /*
+        $.ajax({
+            url: this.props.url,
+            dataType: 'json',
+            cache: false,
+            success: function (data) {
+                this.setState({ data: data });
+            }.bind(this),
+            error: function (xhr, status, error) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });*/
+
         this.loadCommentsFromServer();
         //window.setInterval(this.loadCommentsFromServer, this.props.pollInterval); // what?
     },

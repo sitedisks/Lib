@@ -43,6 +43,8 @@ var CommentBox = React.createClass({
                 <h1>Comments</h1>
                 <CommentList data={this.state.data} />
                 <CommentForm onCommentSubmit={this.handleCommentSubmit} />
+                <hr/>
+                <APP/>
             </div>
             );
     }
@@ -122,6 +124,26 @@ var CommentForm = React.createClass({
             )
     }
 });
+
+
+// ---------- Basic template ---------
+var APP = React.createClass({
+    // this.props
+    // this.state
+    getDefaultProps: function () { return { txt: 'this is default props' } },
+    getInitialState: function () { return { txt: 'this is default state' } },
+    render: function () {
+        return (
+            <div>
+                <h1>Hello React</h1>
+                <p>{this.props.txt}</p>
+                <p>{this.state.txt}</p>
+            </div>
+
+        )
+    }
+});
+// -----------------------------------
 
 ReactDOM.render(
     //<CommentBox data={data} />,

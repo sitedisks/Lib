@@ -57,10 +57,10 @@
 
         [Route("comments")]
         [HttpPost]
-        public IActionResult AddComments(CommentModel comment) {
+        public IActionResult AddComment(CommentModel comment) {
             comment.Id = _comments.Count + 1;
             _comments.Add(comment);
-            return Content("Success : )");
+            return Json(_comments);
         }
     }
 }

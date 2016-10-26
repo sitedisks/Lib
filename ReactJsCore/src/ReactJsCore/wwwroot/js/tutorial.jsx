@@ -1,11 +1,4 @@
-﻿//var Remarkable = require('remarkable');
-
-var data = [
-  { id: 1, author: "Daniel Lo Nigro", text: "Hello ReactJS.NET World!" },
-  { id: 2, author: "Pete Hunt", text: "This is one comment" },
-  { id: 3, author: "Jordan Walke", text: "This is *another* comment" }
-];
-
+﻿
 var CommentBox = React.createClass({
 
     loadCommentsFromServer: function () {
@@ -27,7 +20,9 @@ var CommentBox = React.createClass({
         var xhr = new XMLHttpRequest();
         xhr.open('post', this.props.url, true);
         xhr.onload = function () {
-            this.loadCommentsFromServer();
+            //this.loadCommentsFromServer();
+            var data = JSON.parse(xhr.responseText);
+            this.setState({ data: data });
         }.bind(this);
         xhr.send(data);
     },

@@ -19,28 +19,24 @@ namespace ReactJsMvc4.Controllers
                 {
                     Id = 1,
                     Author = "Daniel Lo Nigro",
-                    Text = "Hello ReactJS.NET World!",
-                    Key = 1
+                    Text = "Hello ReactJS.NET World!"
                 },
                 new CommentModel
                 {
                     Id = 2,
                     Author = "Pete Hunt",
-                    Text = "This is one comment",
-                    Key = 2
+                    Text = "This is one comment"
                 },
                 new CommentModel
                 {
                     Id = 3,
                     Author = "Jordan Walke",
-                    Text = "This is *another* comment",
-                    Key =3
+                    Text = "This is *another* comment"
                 },
                 new CommentModel {
                     Id =4,
                     Author = "Peter Wang",
-                    Text = "This is Pin.IO",
-                    Key=4
+                    Text = "This is Pin.IO"            
                 }
             };
         }
@@ -63,7 +59,6 @@ namespace ReactJsMvc4.Controllers
         public ActionResult AddComment(CommentModel comment)
         {
             comment.Id = _comments.Count + 1;
-            comment.Key = _comments.Count + 1;
             _comments.Add(comment);
             return Json(_comments);
         }

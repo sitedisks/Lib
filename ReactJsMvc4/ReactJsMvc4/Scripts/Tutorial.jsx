@@ -74,24 +74,26 @@ var Comment = React.createClass({
     render: function () {
         return (
             <div className="comment">
-
                 <h2 className="commentAuthor">
-                    {this.props.author}
+                    { this.props.author }
                 </h2>
-                <span dangerouslySetInnerHTML={this.rawMarkup()}></span>
+                 <span dangerouslySetInnerHTML={this.rawMarkup()}></span>
             </div>
             );
     }
 });
 
 var CommentList = React.createClass({
+
+
     render: function () {
         // foreach function - map
         var commentNotes = this.props.data.map(function (item) {
             return (
-                <Comment author={item.author} key={item.key}>
-                    {item.text}
+                <Comment url="sdff" author={item.Author} key={item.Id}>
+                    {item.Text}
                 </Comment>
+
                 );
         });
 

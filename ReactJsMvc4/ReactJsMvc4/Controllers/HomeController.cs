@@ -46,7 +46,6 @@ namespace ReactJsMvc4.Controllers
             return View();
         }
 
-        [Route("comments")]
         [HttpGet]
         [System.Web.Mvc.OutputCache(Location = System.Web.UI.OutputCacheLocation.None)]
         public ActionResult Comments()
@@ -54,7 +53,6 @@ namespace ReactJsMvc4.Controllers
             return Json(_comments, JsonRequestBehavior.AllowGet);
         }
 
-        [Route("comments")]
         [HttpPost]
         public ActionResult AddComment(CommentModel comment)
         {

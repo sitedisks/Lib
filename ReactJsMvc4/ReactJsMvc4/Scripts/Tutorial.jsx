@@ -18,7 +18,7 @@ var CommentBox = React.createClass({
         data.append('text', comment.text);
 
         var xhr = new XMLHttpRequest();
-        xhr.open('post', this.props.url, true);
+        xhr.open('post', this.props.submitUrl, true);
         xhr.onload = function () {
             //this.loadCommentsFromServer();
             var data = JSON.parse(xhr.responseText);
@@ -162,6 +162,6 @@ var APP = React.createClass({
 
 ReactDOM.render(
     //<CommentBox data={data} />,
-    <CommentBox url="/home/comments" pollInterval={2000} />,
+    <CommentBox url="/home/comments" submitUrl="/home/addcomment" pollInterval={2000} />,
     document.getElementById('content')
     );

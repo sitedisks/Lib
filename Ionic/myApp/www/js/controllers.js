@@ -4,6 +4,7 @@ angular.module('starter.controllers', [])
 
   // TODO: http://stackoverflow.com/questions/26520308/phonegap-media-api-record-and-play-audio-android
   // TODO: https://www.raymondcamden.com/2015/07/27/recording-and-saving-audio-in-cordova-applications
+  // TODO: file location: http://qnimate.com/find-recorded-audio-file-location-in-cordova/
   // pure cordove style of device ready
   // document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -12,7 +13,9 @@ angular.module('starter.controllers', [])
 
   function onDeviceReady(){
 
-    var src = "/src/myrecording.mp3";
+    // /android_asset/www/test.wav
+    // var src =  'file://' + getPhoneGapPath() + "myrecording.mp3";
+    var src = '/src/myrecording.mp3';
     var mediaRec = new Media(src, onSuccess, onError);
     // do the native plugins
     $scope.message = 'Welcome to Uber Lib';
@@ -21,6 +24,12 @@ angular.module('starter.controllers', [])
     $scope.stopRecording = stopRecording;
     $scope.playRecording = playRecording;
     $scope.logDuration = logDuration;
+    $scope.showPath = showPath;
+
+    function showPath(){
+
+      $scope.message = getPhoneGapPath();
+    }
 
     function recordAudio(){
       // pure cordova
@@ -48,7 +57,9 @@ angular.module('starter.controllers', [])
 
     function playRecording(){
       $scope.message = 'play';
-      //mediaRec.play();
+      var src =  getPhoneGapPath() + "playback.wma";
+      var mediaRec = new Media(src, onSuccess, onError);
+      // mediaRec.play();
       mediaRec.release();
     }
 
@@ -59,6 +70,13 @@ angular.module('starter.controllers', [])
 
 
   }
+
+  function getPhoneGapPath() {
+      var path = window.location.pathname;
+      var sizefilename = path.length - (path.lastIndexOf("/")+1);
+      path = path.substr( path, path.length - sizefilename );
+      return path;
+  };
 
 }])
 

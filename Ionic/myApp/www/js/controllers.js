@@ -1,8 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', ['$scope', '$ionicPlatform',  function($scope, $ionicPlatform) {
-
-  $scope.message = 'Welcome to Uber Lib';
+.controller('DashCtrl', ['$scope', '$ionicPlatform', '$cordovaMedia',  function($scope, $ionicPlatform, $cordovaMedia) {
 
   // TODO: http://stackoverflow.com/questions/26520308/phonegap-media-api-record-and-play-audio-android
   // TODO: https://www.raymondcamden.com/2015/07/27/recording-and-saving-audio-in-cordova-applications
@@ -13,44 +11,53 @@ angular.module('starter.controllers', [])
   $ionicPlatform.ready(onDeviceReady);
 
   function onDeviceReady(){
-    // do the native plugins
-    recordAudio();
-  }
 
-  function recordAudio(){
-    var src = "myrecording.wav";
+    var src = "/src/myrecording.mp3";
     var mediaRec = new Media(src, onSuccess, onError);
+    // do the native plugins
+    $scope.message = 'Welcome to Uber Lib';
+    // functions register
+    $scope.recordAudio = recordAudio;
+    $scope.stopRecording = stopRecording;
+    $scope.playRecording = playRecording;
+    $scope.logDuration = logDuration;
 
-    // Record audio
-    mediaRec.startRecord();
+    function recordAudio(){
+      // pure cordova
 
-    // Stop recording after 10 sec
-            var recTime = 0;
-            var recInterval = setInterval(function() {
-                recTime = recTime + 1;
-                setAudioPosition(recTime + " sec");
-                if (recTime >= 3) {
-                    clearInterval(recInterval);
-                    mediaRec.stopRecord();
-                    mediaRec.play();
-                }
-            }, 1000);
+      // ngCordova
+      //mediaRec = $cordovaMedia.newMedia(src);
 
-  }
+      // Record audio
+      $scope.message = 'Start Recording...';
+      mediaRec.startRecord();
+    }
 
-  function onSuccess() {
-       console.log("recordAudio():Audio Success");
-  }
+    function onSuccess() {
+      $scope.message ="recordAudio():Audio Success";
+    }
 
-  function onError(error) {
-        alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
-  }
+    function onError(error) {
+      $scope.message = 'code: '    + error.code    + '\n messsage: ' + error.message + '\n';
+    }
 
-  // Set audio position
-  //
-  function setAudioPosition(position) {
-    document.getElementById('audio_position').innerHTML = position;
+    function stopRecording(){
+      $scope.message = 'stop';
+      mediaRec.stopRecord();
+    }
+
+    function playRecording(){
+      $scope.message = 'play';
+      //mediaRec.play();
+      mediaRec.release();
+    }
+
+    function logDuration(){
+      var dur = mediaRec.getDuration();
+      $scope.message = dur;
+    }
+
+
   }
 
 }])

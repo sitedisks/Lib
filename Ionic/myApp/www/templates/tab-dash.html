@@ -1,8 +1,15 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
     <h2>{{message}}</h2>
-    <p id="media">Recording audio...</p>
-    <p id="audio_position"></p>
+
+    <div>
+      <button ng-click="recordAudio()">Record</button>
+      <button ng-click="stopRecording()">Stop Record</button>
+      <button ng-click="playRecording()">Play Record</button>
+      <button ng-click="logDuration()">Log Duration</button>
+    </div>
+
+
     <p>
     This is the Ionic starter for tabs-based apps. For other starters and ready-made templates, check out the <a href="http://market.ionic.io/starters" target="_blank">Ionic Market</a>.
     </p>

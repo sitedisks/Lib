@@ -15,10 +15,12 @@ angular.module('starter.controllers', [])
 
     // /android_asset/www/test.wav
     // var src =  'file://' + getPhoneGapPath() + "myrecording.mp3";
-    var src = '/src/myrecording.mp3';
-    var mediaRec = new Media(src, onSuccess, onError);
+    var src = 'file://' + getPhoneGapPath() + 'myrecording.wav';
+    // var mediaRec = new Media('8888.mp3', onSuccess, onError);
+    // var mediaRec = $cordovaMedia.newMedia(src);
+    var mediaRec;
     // do the native plugins
-    $scope.message = 'Welcome to Uber Lib';
+    $scope.message = 'Initial Message';
     // functions register
     $scope.recordAudio = recordAudio;
     $scope.stopRecording = stopRecording;
@@ -26,48 +28,66 @@ angular.module('starter.controllers', [])
     $scope.logDuration = logDuration;
     $scope.showPath = showPath;
 
-    function showPath(){
-
-      $scope.message = getPhoneGapPath();
-    }
-
     function recordAudio(){
       // pure cordova
-
       // ngCordova
       //mediaRec = $cordovaMedia.newMedia(src);
+      mediaRec = new Media(src,
+        function(){
+          $scope.track = 'on Success';
+        }, function(err){
+          $scope.track = 'on error ' + err.code;
 
+        });
       // Record audio
       $scope.message = 'Start Recording...';
       mediaRec.startRecord();
+      $scope.track = JSON.stringify(mediaRec);
+      // setTimeout(function() {
+      //     mediaRec.stopRecord();
+      // }, 50000);
     }
 
-    function onSuccess() {
-      $scope.message ="recordAudio():Audio Success";
+    function onSuccess(e) {
+      $scope.track ="recordAudio():Audio Success.";
     }
 
     function onError(error) {
-      $scope.message = 'code: '    + error.code    + '\n messsage: ' + error.message + '\n';
+      $scope.track = 'code: '    + error.code    + '\n messsage: ' + error.message + '\n';
     }
 
     function stopRecording(){
-      $scope.message = 'stop';
+      $scope.message = 'stop ' + src;
       mediaRec.stopRecord();
+      $scope.track = JSON.stringify(mediaRec);
     }
 
     function playRecording(){
-      $scope.message = 'play';
-      var src =  getPhoneGapPath() + "playback.wma";
-      var mediaRec = new Media(src, onSuccess, onError);
+      $scope.message = 'play ' + src;
+      // var src =  getPhoneGapPath() + "playback.wma";
+      // var mediaRec = new Media(src, onSuccess, onError);
       // mediaRec.play();
+
       mediaRec.release();
     }
 
     function logDuration(){
+
       var dur = mediaRec.getDuration();
       $scope.message = dur;
     }
 
+    function logLocation(){
+      return mediaRec.getCurrentPosition();
+    }
+
+    function logAmplitude(){
+      return mediaRec.getCurrentAmplitude();
+    }
+
+    function showPath(){
+      $scope.message = getPhoneGapPath();
+    }
 
   }
 

@@ -12,11 +12,14 @@
 @if (platform == "android" || platform == "ios" || platform == "windows")
 {
     @Scripts.Render("~/cordovadist/" + platform + "/cordova.js");
+    <!-- cordova.js load the plugin by itself -->
+    <!-- load the ngCordova first then cordova.js then the rest of angular app code -->
 
     <p><a class="btn btn-primary btn-lg">Take picture &raquo;</a></p>
     <img class="media-object pull-left" />
 
     @Scripts.Render("~/cordovaApp/app.js");
+ 
 }
 else
 {

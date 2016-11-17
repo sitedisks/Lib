@@ -26,7 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>1.7</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -122,6 +122,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\cordovaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -132,6 +133,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="cordovaApp\app.js" />
+    <Content Include="cordovaApp\built\app.js" />
     <Content Include="cordovadist\android\cordova-js-src\android\nativeapiprovider.js" />
     <Content Include="cordovadist\android\cordova-js-src\android\promptbasednativeapi.js" />
     <Content Include="cordovadist\android\cordova-js-src\exec.js" />
@@ -143,38 +145,9 @@
     <Content Include="cordovadist\android\plugins\cordova-plugin-camera\www\CameraConstants.js" />
     <Content Include="cordovadist\android\plugins\cordova-plugin-camera\www\CameraPopoverHandle.js" />
     <Content Include="cordovadist\android\plugins\cordova-plugin-camera\www\CameraPopoverOptions.js" />
-    <Content Include="cordovadist\android\plugins\cordova-plugin-network-information\www\Connection.js" />
-    <Content Include="cordovadist\android\plugins\cordova-plugin-network-information\www\network.js" />
-    <Content Include="cordovadist\android\plugins\cordova-plugin-whitelist\whitelist.js" />
     <Content Include="cordovadist\android\scripts\android2.3-jscompat.js" />
     <Content Include="cordovadist\android\scripts\appBundle.js" />
     <Content Include="cordovadist\android\scripts\platformOverrides.js" />
-    <Content Include="cordovadist\ios\cordova-js-src\exec.js" />
-    <Content Include="cordovadist\ios\cordova-js-src\platform.js" />
-    <Content Include="cordovadist\ios\cordova.js" />
-    <Content Include="cordovadist\ios\cordova_plugins.js" />
-    <Content Include="cordovadist\ios\plugins\cordova-plugin-camera\www\Camera.js" />
-    <Content Include="cordovadist\ios\plugins\cordova-plugin-camera\www\CameraConstants.js" />
-    <Content Include="cordovadist\ios\plugins\cordova-plugin-camera\www\CameraPopoverOptions.js" />
-    <Content Include="cordovadist\ios\plugins\cordova-plugin-camera\www\ios\CameraPopoverHandle.js" />
-    <Content Include="cordovadist\ios\plugins\cordova-plugin-network-information\www\Connection.js" />
-    <Content Include="cordovadist\ios\plugins\cordova-plugin-network-information\www\network.js" />
-    <Content Include="cordovadist\ios\scripts\appBundle.js" />
-    <Content Include="cordovadist\windows\cordova-js-src\exec.js" />
-    <Content Include="cordovadist\windows\cordova-js-src\platform.js" />
-    <Content Include="cordovadist\windows\cordova.js" />
-    <Content Include="cordovadist\windows\cordova_plugins.js" />
-    <Content Include="cordovadist\windows\plugins\cordova-plugin-camera\src\windows\CameraProxy.js" />
-    <Content Include="cordovadist\windows\plugins\cordova-plugin-camera\www\Camera.js" />
-    <Content Include="cordovadist\windows\plugins\cordova-plugin-camera\www\CameraConstants.js" />
-    <Content Include="cordovadist\windows\plugins\cordova-plugin-camera\www\CameraPopoverHandle.js" />
-    <Content Include="cordovadist\windows\plugins\cordova-plugin-camera\www\CameraPopoverOptions.js" />
-    <Content Include="cordovadist\windows\plugins\cordova-plugin-network-information\src\windows\NetworkInfoProxy.js" />
-    <Content Include="cordovadist\windows\plugins\cordova-plugin-network-information\www\Connection.js" />
-    <Content Include="cordovadist\windows\plugins\cordova-plugin-network-information\www\network.js" />
-    <Content Include="cordovadist\windows\scripts\appBundle.js" />
-    <Content Include="cordovadist\windows\scripts\platformOverrides.js" />
-    <Content Include="cordovadist\windows\scripts\winstore-jscompat.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -185,6 +158,7 @@
     <Content Include="cordovaApp\app.js.map" />
     <Content Include="cordovaApp\tsconfig.json" />
     <Content Include="cordovaApp\tsd.json" />
+    <None Include="Properties\PublishProfiles\CordovaHostedWeb-SleevesUp - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\cordovahostedweb-starter %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\cordovahostedweb-starter %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\cordovahostedweb-starter.pubxml" />
@@ -218,11 +192,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Cordova\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Cordova\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

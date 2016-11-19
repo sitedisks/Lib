@@ -235,6 +235,7 @@
     <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\ContactOrganization.js" />
     <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\contacts.js" />
     <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\convertUtils.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-device\www\device.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

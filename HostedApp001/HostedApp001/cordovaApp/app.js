@@ -9,6 +9,11 @@
         document.addEventListener('resume', onResume, false);
         document.getElementsByClassName('btn-lg')[0].addEventListener('click', takePicture);
         $('#btnGetContacts').click(getContactList);
+        var model = device.model;
+        var uuId = device.uuid;
+        var platform = device = device.platform;
+
+        alert('device model: ' + model + ', uuid: ' + uuId + ', platform: ' + platform);
     }
 
     function onPause() {
@@ -65,8 +70,11 @@
         alert('function called');
         navigator.contacts.find(
 		[navigator.contacts.fieldType.displayName],
-		function (result) {
+		function (contacts) {
 		    alert('Get the list');
+		    for (var i = 0; i < contacts.length; i++) {
+		        $('#contactList').append('<p>' + contacts[i].displayName + '</p>');
+		    }
 		},
 		function (err) {
             alert('error: ' + err)

@@ -213,6 +213,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="cordovaApp\app.js" />
+    <Content Include="cordovaApp\app_back.js" />
     <Content Include="cordovadist\android\cordova-js-src\android\nativeapiprovider.js" />
     <Content Include="cordovadist\android\cordova-js-src\android\promptbasednativeapi.js" />
     <Content Include="cordovadist\android\cordova-js-src\exec.js" />
@@ -224,6 +225,16 @@
     <Content Include="cordovadist\android\plugins\cordova-plugin-camera\www\CameraConstants.js" />
     <Content Include="cordovadist\android\plugins\cordova-plugin-camera\www\CameraPopoverHandle.js" />
     <Content Include="cordovadist\android\plugins\cordova-plugin-camera\www\CameraPopoverOptions.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\Contact.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\ContactAddress.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\ContactError.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\ContactField.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\ContactFieldType.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\ContactFindOptions.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\ContactName.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\ContactOrganization.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\contacts.js" />
+    <Content Include="cordovadist\android\plugins\cordova-plugin-contacts\www\convertUtils.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

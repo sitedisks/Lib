@@ -67,18 +67,24 @@
     }
 
     function getContactList() {
-        alert('function called');
+        //alert('function called');
         navigator.contacts.find(
-		[navigator.contacts.fieldType.displayName],
+		[navigator.contacts.fieldType.displayName,
+            navigator.contacts.fieldType.phoneNumbers,
+		    navigator.contacts.fieldType.emails],
 		function (contacts) {
 		    alert('Get the list');
+            
 		    for (var i = 0; i < contacts.length; i++) {
-		        $('#contactList').append('<p>' + contacts[i].displayName + '</p>');
+		        if (contacts[i].displayName != null) {
+		            $('#contactList').append('<div><strong>' + contacts[i].displayName +
+                        '</strong><br/>' + JSON.stringify(contacts[i].phoneNumbers) + '</div>');
+		        }
 		    }
 		},
-		function (err) {
-            alert('error: ' + err)
-		});
+		    function (err) {
+		        alert('error: ' + err)
+		    });
 
     }
 

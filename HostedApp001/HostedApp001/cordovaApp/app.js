@@ -68,6 +68,7 @@
 
     function getContactList() {
         //alert('function called');
+        navigator.vibrate(500);
         navigator.contacts.find(
 		[navigator.contacts.fieldType.displayName,
             navigator.contacts.fieldType.phoneNumbers,

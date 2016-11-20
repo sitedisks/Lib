@@ -12,12 +12,17 @@
 
         $('#btnTakePicture').click(takePicture);
         $('#btnGetContacts').click(getContactList);
+        $('#btnTest').click(testFn);
 
         var model = device.model;
         var uuId = device.uuid;
         var platform = device = device.platform;
 
         alert('You browsing the App on device model: ' + model + ', uuid: ' + uuId + ', platform: ' + platform);
+    }
+
+    function testFn() {
+        alert("Test function called!");
     }
 
     function onPause() {
@@ -71,7 +76,7 @@
     }
 
     function getContactList() {
-        //alert('function called');
+        alert('contact function called');
         navigator.vibrate(300);
         navigator.contacts.find(
 		[navigator.contacts.fieldType.displayName,

@@ -51,6 +51,18 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/bundles/angular")
+
+    @if (ViewBag.Platform == "android" || ViewBag.Platform == "ios" || ViewBag.Platform == "windows")
+    {
+        // load the cordova only platform is android/ios/windows
+        @Scripts.Render("~/cordovadist/" + ViewBag.Platform + "/cordova.js");
+        @Scripts.Render("~/cordovaApp/app.js"); // this will be the MobileWrapper
+
+    }
+
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

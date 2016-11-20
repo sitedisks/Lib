@@ -5,20 +5,11 @@
 
 @section scripts{
 
-    @Scripts.Render("~/bundles/angular")
+    <script src="~/cordovaApp/bootStrapper.js"></script>
+    <script src="~/cordovaApp/home/homeCtrl.js"></script>
+    <script src="~/cordovaApp/contact/contactCtrl.js"></script>
+    <script src="~/cordovaApp/calendar/calendarCtrl.js"></script>
 
-<script src="~/cordovaApp/bootStrapper.js"></script>
-<script src="~/cordovaApp/home/homeCtrl.js"></script>
-<script src="~/cordovaApp/contact/contactCtrl.js"></script>
-<script src="~/cordovaApp/calendar/calendarCtrl.js"></script>
-
-    @if (platform == "android" || platform == "ios" || platform == "windows")
-    {
-        // load the cordova only platform is android/ios/windows
-        @Scripts.Render("~/cordovadist/" + platform + "/cordova.js");
-        @Scripts.Render("~/cordovaApp/app.js"); // this will be the MobileWrapper
-
-    }
 }
 
 <div class="jumbotron">
@@ -30,6 +21,7 @@
     </ul>
 
     <button class="btn btn-primary btn-lg" id="btnGetContacts">Get the contact list &raquo;</button>
+    <button class="btn btn-primary btn-lg" id="btnTest">Test Button</button>
     <div id="contactList"></div>
 </div>
 

@@ -1,1 +1,17 @@
 ﻿<h2>{{title}}</h2>
+
+<div class="container">
+
+    <button class="btn btn-primary btn-lg" data-ng-click="btnTest()">Angular Test Button</button>
+    
+    <button class="btn btn-primary btn-lg" data-ng-click="btnGetContact()">Get the contact list &raquo;</button>
+
+    <br/>
+    <div data-ng-repeat="contact in contactList">
+        <div data-ng-if="contact.displayName!=null">
+            <strong>{{contact.displayName}}</strong><br/>
+            {{contact.phoneNumbers | json}}
+        </div>
+    </div>
+
+</div>

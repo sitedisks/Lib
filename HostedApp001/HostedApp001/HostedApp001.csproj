@@ -214,6 +214,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="cordovaApp\app.js" />
     <Content Include="cordovaApp\app_back.js" />
+    <Content Include="cordovaApp\bootStrapper.js" />
     <Content Include="cordovadist\android\cordova-js-src\android\nativeapiprovider.js" />
     <Content Include="cordovadist\android\cordova-js-src\android\promptbasednativeapi.js" />
     <Content Include="cordovadist\android\cordova-js-src\exec.js" />

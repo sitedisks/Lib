@@ -14,7 +14,8 @@ var app = {
         // var targetUrl = "https://cordovahostedweb-redirect.azurewebsites.net/cordova/setPlatformCookie?platform=" + cordova.platformId;
         // var targetUrl = "http://cordovahostedweb-sleevesup.azurewebsites.net/cordova/setPlatformCookie?platform=" + cordova.platformId;
         // var targetUrl = "https://cordovahostedweb.azurewebsites.net/cordova/setPlatformCookie?platform=" + cordova.platformId;
-        var targetUrl = "http://hostedapp-001.azurewebsites.net/cordova/setPlatformCookie?platform=" + cordova.platformId;
+        // var targetUrl = "http://hostedapp-001.azurewebsites.net/cordova/setPlatformCookie?platform=" + cordova.platformId;
+        var targetUrl = "http://hostedapp-001.azurewebsites.net?platform=" + cordova.platformId;
 
         var bkpLink = document.getElementById("bkpLink");
         bkpLink.setAttribute("href", targetUrl);

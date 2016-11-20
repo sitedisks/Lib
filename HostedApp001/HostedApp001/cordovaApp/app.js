@@ -7,13 +7,17 @@
         // Handle the Cordova pause and resume events 
         document.addEventListener('pause', onPause, false);
         document.addEventListener('resume', onResume, false);
-        document.getElementsByClassName('btn-lg')[0].addEventListener('click', takePicture);
+
+        //document.getElementsByClassName('btn-lg')[0].addEventListener('click', takePicture);
+
+        $('#btnTakePicture').click(takePicture);
         $('#btnGetContacts').click(getContactList);
+
         var model = device.model;
         var uuId = device.uuid;
         var platform = device = device.platform;
 
-        alert('device model: ' + model + ', uuid: ' + uuId + ', platform: ' + platform);
+        alert('You browsing the App on device model: ' + model + ', uuid: ' + uuId + ', platform: ' + platform);
     }
 
     function onPause() {
@@ -68,7 +72,7 @@
 
     function getContactList() {
         //alert('function called');
-        navigator.vibrate(500);
+        navigator.vibrate(300);
         navigator.contacts.find(
 		[navigator.contacts.fieldType.displayName,
             navigator.contacts.fieldType.phoneNumbers,

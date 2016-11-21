@@ -22,10 +22,10 @@ namespace CordovaHostedWeb.Controllers
         }
         public ActionResult setPlatformCookie(string platform)
         {
+            // platform value getting from cordova.platformId
             if (!string.IsNullOrWhiteSpace(platform))
             {
-                HttpContext.Response.SetCookie(new
-                HttpCookie(platformCookieKey, platform));
+                HttpContext.Response.SetCookie(new HttpCookie(platformCookieKey, platform));
             }
             return RedirectToAction("index");
         }

@@ -6,11 +6,12 @@
 <h2>index</h2>
 
 @section Metas{
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://cordovahostedweb-starter.azurewebsites.net/ https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://cordovahostedweb-sleevesup.azurewebsites.net/ https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 }
 
 @if (platform == "android" || platform == "ios" || platform == "windows")
 {
+    // TODO: work out how to detect if the page is loaded from real device? then load the cordova.js
     @Scripts.Render("~/cordovadist/" + platform + "/cordova.js");
     <!-- cordova.js load the plugin by itself -->
     <!-- load the ngCordova first then cordova.js then the rest of angular app code -->

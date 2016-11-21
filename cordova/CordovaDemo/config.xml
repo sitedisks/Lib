@@ -17,7 +17,10 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
 	<!-- This is the hosted web app -->
-	<allow-navigation href="https://cordovahostedweb.azurewebsites.net" /> 
+	<!-- <allow-navigation href="https://cordovahostedweb.azurewebsites.net" /> -->
+	<!-- <allow-navigation href="http://cordovahostedweb-sleevesup.azurewebsites.net/" /> -->
+	<allow-navigation href="http://hostedapp-001.azurewebsites.net/" />
+	<allow-navigation href="*" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>

@@ -12,6 +12,15 @@
         },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "io.cordova.sleevesup"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "io.cordova.sleevesup"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "io.cordova.sleevesup"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "io.cordova.sleevesup"
         }
     },
     "dependent_plugins": {

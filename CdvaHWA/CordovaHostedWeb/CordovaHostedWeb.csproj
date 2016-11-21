@@ -145,9 +145,6 @@
     <Content Include="cordovadist\android\plugins\cordova-plugin-camera\www\CameraConstants.js" />
     <Content Include="cordovadist\android\plugins\cordova-plugin-camera\www\CameraPopoverHandle.js" />
     <Content Include="cordovadist\android\plugins\cordova-plugin-camera\www\CameraPopoverOptions.js" />
-    <Content Include="cordovadist\android\scripts\android2.3-jscompat.js" />
-    <Content Include="cordovadist\android\scripts\appBundle.js" />
-    <Content Include="cordovadist\android\scripts\platformOverrides.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

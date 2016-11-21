@@ -12,7 +12,7 @@ var app = {
         this.receivedEvent('deviceready');
 		
 		// var targetUrl = "http://hostedapp-001.azurewebsites.net?platform=" + cordova.platformId;
-		var targetUrl = "http://tally.co/thrivorwebtest/";
+		var targetUrl = "http://tally.co/thrivorwebtest?platform=" + cordova.platformId;
 
         var bkpLink = document.getElementById("bkpLink");
         bkpLink.setAttribute("href", targetUrl);

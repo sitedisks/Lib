@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="cordova.js"></script>
+    <script src="scripts/SleevesupNativeScripts.js"></script>
+
+    <h2>Take a Picture</h2>
+    <button onclick="capturePhotoWithData();">Take Picture</button>
+    <button onclick="BrowsePhoto();">Browse Image</button> <br>
+    <img style="display:block;"  id="preview" src="" />
+    <input type="submit" value="Upload Image" onclick="UploadImage();" />
+    <h2>Contacts List</h2>
+    <input id="searchPerson" type="text" placeholder="Contact name..." />
+    <button onclick="findContact();">Search</button><br />
+    <button onclick="getAllContacts();">Get All Contacts</button>
+    <button onclick="UploadContact();">Import Contact</button>
+    <button onclick="pushNoti();">Push Noti</button>
+    <ul data-role="listview" id="contactlist"></ul>
+    <div id="mobile"></div>
+    <div id="email"></div>
+
+    
+    
+</body>
+</html>

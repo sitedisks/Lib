@@ -1,0 +1,315 @@
+﻿@font-face {
+    font-family: "eesti";
+    src: url("/includes/GT-Eesti-Pro-Text-Trial-Book.otf") format("opentype");
+}
+body {
+    background-size: cover;
+}
+body, h1, h2, p, html {
+    font-family: eesti;
+    font-size: 100%;
+}
+.background {
+    background: rgba(0, 0, 0, 0) url("/images/tally_background.png") no-repeat fixed center center;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container-fluid {
+    display: table;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+}
+.row-fluid {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+}
+.centering {
+    float: none;
+    margin: 0 auto;
+}
+.splash-image {
+    content: url("/images/tally_splash.png");
+}
+.logo {
+    content: url('Images/TALLY_RGB_Logotype_Master_DarkGrey Reversed.png');
+    height: 30%;
+    width: 30%;
+}
+.logo-padding {
+    padding-bottom: 50px;
+}
+.ty-clr-dark-bg {
+    background-color: rgb(25, 29, 31);
+}
+.ty-clr-dark-half-bg, .ty-data-entry {
+    background-color: rgb(65, 65, 67);
+}
+.ty-clr-dark {
+    color: rgb(25, 29, 31);
+}
+.ty-clr-dark-half, .ty-subtitle {
+    color: rgb(65, 65, 67);
+}
+.ty-clr-light-bg, .ty-signup, .btn-default {
+    background-color: rgb(252, 212, 80);
+    border: 0 none;
+}
+.ty-clr-light {
+    color: rgb(252, 212, 80);
+}
+.ty-clr-white, .ty-signup {
+    color: white;
+}
+.ty-clr-dark2-bg {
+    background-color: rgb(30, 30, 30);
+}
+.ty-clr-dark2 {
+    color: rgb(30, 30, 30);
+}
+.ty-clr-dark3-bg {
+    background-color: rgb(224, 225, 221);
+}
+.ty-clr-dark3, .ty-data-entry {
+    color: rgb(224, 225, 221);
+}
+.ty-clr-light3-bg {
+    background-color: rgb(255, 219, 159);
+}
+.ty-clr-light3 {
+    color: rgb(255, 219, 159);
+}
+.ty-fontsize-lg {
+    font-family: eesti;
+    font-size: 400%;
+}
+.ty-subtitle {
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+.ty-data-entry {
+    font-size: 150%;
+    padding: 30px;
+}
+.ty-signup {
+    font-size: 150%;
+    padding: 30px;
+}
+.ty-rounded-top {
+    border-radius: 50px 7px 0 0;
+}
+.ty-rounded-bottom {
+    border-radius: 0 0 5px 5px;
+}
+.panel.panel-default {
+    background-color: rgb(65, 65, 67);
+    border: 0 none;
+    box-shadow: none;
+}
+.panel-default > .panel-body {
+    background-color: rgb(65, 65, 67);
+    background-image: none;
+    border-color: rgb(65, 65, 67);
+    color: white;
+}
+.panel-default > .panel-footer {
+    background-color: rgb(252, 212, 80);
+    background-image: none;
+    border-color: rgb(252, 212, 80);
+    color: white;
+}
+.panel-default > .panel-body > input {
+    background-color: rgb(65, 65, 67);
+    border: 0 none;
+}
+
+.panel-body > div.ty-data-entry > .form-control {
+    background-color:rgb(65,65,67);
+    border:none;
+}
+
+#license-scan {
+    text-align:center;
+    font-size:75%;
+    padding:0px;
+}
+
+input.btn.btn-default.ty-btn-yellow{
+    color:white;
+    font-weight:bold;
+}
+
+input.btn.btn.btn-default.ty-btn-white {
+   color:rgb(252,212,80);
+   background-color: rgb(255,255,255);
+   font-weight:bold;
+}
+
+.ty-box {
+  display:inline;
+  border:none;
+  height:100px;
+  text-align:center;
+  font-weight:bold;
+  font-size:2em;
+  color:white;
+  background-color:rgb(30,30,30);
+}
+
+#tandccard .panel.panel-body {
+    overflow-y:auto;
+}
+
+.ty-terms {
+    color: rgb(224, 225, 221);
+}
+
+.ty-tandcs {
+    color : white;
+}
+
+div.row {
+    height:100%;
+}
+
+input::-webkit-ouer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}
+
+a.ty-tandcLinks {
+    text-decoration:underline; 
+    color: white;
+}
+
+a.ty_tandcLinks:visited {
+    color: white;
+}
+
+.height-top-panel{
+    max-height: 20%;
+}
+
+.height-bottom-bill-section{
+    margin-top :10%;
+    max-height: 70%;
+    overflow: auto;
+}
+
+/*Menu bar*/
+/*.navbar {
+    background-color:rgb(255,255,255);
+}
+
+.navbar-header .navbar-toggle {
+    float:left;
+    border:none;
+}
+
+.navbar-toggle .icon-bar{
+    background-color :rgb(224,225,221);
+}
+
+.navbar-header .navbar-brand {
+    color:rgb(224,225,221);
+    text-align:center;  
+    float:none;
+    padding:0px;
+}*/  
+
+
+/*end Menu bar*/
+/*body {
+   padding-top:70px;
+   background-color: rgb(252,212,80);
+}
+
+.ty-main-content > p {
+    text-align:center;
+    padding-left:20px;
+    padding-right:20px;
+    font-weight:bold;  
+}
+
+.ty-total {
+  padding-top:10px;
+}
+
+.ty-total > p {
+    color:rgb(255,255,255);
+    display:inline;
+}
+
+.ty-total .ty-lbl-total {
+    float:left;
+    padding-left:20px;
+}
+
+.ty-total .ty-val-total {
+    float:right;
+    padding-right:20px;
+}
+
+.ty-main-content .panel  {
+    clear:right;
+}
+.ty-clr-light-bg, .ty-btn-bill, .btn-default {
+    width: 90%;
+    margin-left:20px;
+    color:rgb(224,225,221);
+}
+
+
+.panel .panel-default {
+  height:100%;
+}
+
+.panel-heading > header {
+     display:inline;
+}
+
+
+.panel-heading > p   {
+    text-align: center;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.panel-default > .panel-body.ty-bill-add {
+    background-color: white;
+}
+
+.panel-default > .panel-body.ty-bill-add-all {
+    background-color: rgb(25,29,31);
+}
+
+ div.panel-body {
+     border-radius :5px;
+ }
+
+div.ty-crd-total {
+    float:right;
+    padding-right:5px;
+ }
+
+ 
+.panel-body .ty-bill-add {
+    border: 1px solid lightgrey;
+    border-bottom:none;
+    display:inline;
+ }
+
+.bill-add-all {
+    background-color:black;
+}
+
+.logo-mono{
+    width:30px;
+   float:right;
+    right: 10px;
+}*/
+

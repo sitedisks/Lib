@@ -1,0 +1,63 @@
+﻿.row-cammera{
+   height: 100%;
+   width: 100%;
+}
+.corners {
+    height: 70%;
+    width: 100%;
+}
+.container-fluid-cammera{
+   display: table;
+   height: 100%;
+   width: 100%;
+   padding-right: 0px;
+   padding-left: 0px;
+   margin-right: 0px;
+   margin-left: 0px;
+}
+.dash-board{
+   height: 25%;
+}
+.top, .bottom {
+ position: absolute;
+ width: 45px;
+ height: 45px;
+}
+.top {
+ top: 0;
+ border-top: 5px solid orange;
+ margin-top: 35px;
+}
+
+.bottom {
+ bottom: 0;
+ border-bottom: 5px solid orange;
+ margin-bottom: 35px;
+}
+
+.left {
+ left: 0;
+ border-left: 5px solid orange;
+ margin-left: 35px;
+}
+
+.right {
+ right: 0;
+ border-right: 5px solid orange;
+ margin-right: 35px;
+}
+.div-top-panel{
+   max-width: 20%;
+   margin-top: 40%;
+   margin-bottom: 5%;
+}
+.div-take-picture{
+   max-width: 20%;
+   margin-top: 5%;
+   margin-bottom: 5%;
+}
+.height{
+    height: 15%;
+}
+#one{width:100px;float:left;height:100px;background:blue;}
+#two{width:100px;float:right;height:100px;background:green;}

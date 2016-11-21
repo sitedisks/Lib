@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+    <script src="cordova.js"></script>
+    <script src="scripts/CammeraControl.js"></script>
+    <link href="Content/Tally.css" rel="stylesheet" />
+    <link href="Content/CameraView.css" rel="stylesheet" />
+</head>
+<body style="background-color: transparent; position: absolute;">     
+    <div class="container-fluid-cammera">
+        <div class="row-cammera" id="container">
+            <!--Top Panel-->
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ty-clr-dark-bg height">
+                    <div class="div-top-panel">
+                        <img src="Content/Images/CameraView/Asset 18xxxhdpi.png" alt="flash-btn" style="width:50%" />
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ty-clr-dark-bg height">
+                    <div class="div-top-panel pull-right">
+                        <img src="Content/Images/CameraView/Asset 17xxxhdpi.png" alt="cancle-btn" style="width:50%" onclick="StartCammera()" />
+                    </div>
+                </div>
+                <!--Cammera View-->
+                <div id="CameraZone" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 corners" style="background-color: transparent;">
+                    <div style="background-color: transparent;">
+                        <div class="top left"><p class="centering text-center">[Place Bill Here]</p></div>
+                        <div class="top right"></div>
+                        <div class="bottom right"></div>
+                        <div class="bottom left"></div>
+                    </div>
+                    <div id="1" style="display:inline-block; position: relative;">
+                        <img id="previewPicture" />
+                    </div>
+                </div>
+                <!--Bottom Panel-->
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ty-clr-dark-bg height">
+                    <div class="div-take-picture center-block">
+                        <img src="Content/Images/CameraView/Asset 16xxxhdpi.png" alt="take picture image" style="width:100%" onclick="takePicture()" />
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>

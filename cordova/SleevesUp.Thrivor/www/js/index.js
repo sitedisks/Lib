@@ -10,9 +10,9 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
-		
+
 		// var targetUrl = "http://hostedapp-001.azurewebsites.net?platform=" + cordova.platformId;
-		var targetUrl = "http://tally.co/thrivorwebtest?platform=" + cordova.platformId;
+		var targetUrl = "http://www.tally.co/thrivorwebtest/";
 
         var bkpLink = document.getElementById("bkpLink");
         bkpLink.setAttribute("href", targetUrl);

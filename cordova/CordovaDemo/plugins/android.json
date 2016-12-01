@@ -7,9 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.sleevesup"
-        },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "io.cordova.sleevesup"
         },
@@ -20,6 +17,9 @@
             "PACKAGE_NAME": "io.cordova.sleevesup"
         },
         "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "io.cordova.sleevesup"
+        },
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.sleevesup"
         }
     },

@@ -28,24 +28,40 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://www.tally.co/ https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://apidev.thrivor.com https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="TELEPHONE=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>SleevesUp Thrivor</title>
     </head>
     <body>
-		Verifying connectivity.. Redirecting to Thrivor...
-		<a id="bkpLink" href="http://www.tally.co/">This will be replaced by js code. </a>
 
-        <div class="app">
+    		<a id="bkpLink" href="https://apidev.thrivor.com"></a>
+
+        <section class="onboarding-phase">
+            <div class="container">
+                <div class="row">
+                    <div class="shell">
+                        <div class="outer wt">
+                            <section class="header">
+                                <div class="content">
+                                    <img class="logo" src="img/thrivor_logo.svg" />
+                                    <p>Thrivor's mission is to help solve the everyday challenges for people living with cancer.</p>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
-        </div>
+        </div> -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>

@@ -17,7 +17,10 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
 	<allow-navigation href="http://tally.co" />
+	<allow-navigation href="https://apidev.thrivor.com" />
 	<allow-navigation href="*" />
+ 
+    <preference name="KeyboardShrinksView" value="true" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>

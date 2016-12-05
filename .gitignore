@@ -30,3 +30,7 @@ HostedApp001/HostedApp001/bin/
 cordova/Sleevesup.NativeWrapper/platforms/
 cordova/SleevesUp.Thrivor/platforms/
 cordova/SleevesUp.Thrivor/plugins/
+cordova/MyApp/bower_components/
+cordova/MyApp/platforms/
+HostedApp001/HostedApp001/Properties/PublishProfiles/
+

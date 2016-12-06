@@ -9,27 +9,12 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-
-		// var targetUrl = "http://hostedapp-001.azurewebsites.net?platform=" + cordova.platformId;
-		var targetUrl = "http://www.tally.co/thrivorwebtest/";
-
-        var bkpLink = document.getElementById("bkpLink");
-        bkpLink.setAttribute("href", targetUrl);
-        bkpLink.text = targetUrl;
-        window.location.replace(targetUrl);
-    },
-
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+  		// var targetUrl = "http://hostedapp-001.azurewebsites.net?platform=" + cordova.platformId;
+      // var targetUrl = "http://www.tally.co/thrivorwebtest/";
+  		// var targetUrl = "http://www.tally.co/thrivornativetest/";
+      // var targetUrl = "http://www.tally.co/test02/";
+      var targetUrl = "https://apidev.thrivor.com/thrivorwebtest/";
+      window.location.replace(targetUrl);
     }
 };
 

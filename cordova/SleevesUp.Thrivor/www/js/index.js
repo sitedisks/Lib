@@ -13,7 +13,7 @@ var app = {
       // var targetUrl = "http://www.tally.co/thrivorwebtest/";
   		// var targetUrl = "http://www.tally.co/thrivornativetest/";
       // var targetUrl = "http://www.tally.co/test02/";
-      var targetUrl = "https://apidev.thrivor.com/thrivorwebtest/";
+      var targetUrl = "https://apidev.thrivor.com/";
       window.location.replace(targetUrl);
     }
 };

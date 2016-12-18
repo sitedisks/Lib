@@ -9,10 +9,10 @@ namespace HostedApp001.Controllers
     public class HomeController : Controller
     {
         const string platformCookieKey = "cdva_platfrm";
-        public ActionResult Index(string platform)
+        public ActionResult Index()
         {
-            if (!string.IsNullOrWhiteSpace(platform))
-                ViewBag.Platform = platform;
+            //if (!string.IsNullOrWhiteSpace(platform))
+            //    ViewBag.Platform = platform;
             return View();
         }
 

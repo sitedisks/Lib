@@ -21,6 +21,21 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.sleevesup"
+        },
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "io.cordova.sleevesup"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "io.cordova.sleevesup"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "io.cordova.sleevesup"
+        },
+        "cordova-plugin-keyboard": {
+            "PACKAGE_NAME": "io.cordova.sleevesup"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "io.cordova.sleevesup"
         }
     },
     "dependent_plugins": {

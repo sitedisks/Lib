@@ -19,7 +19,7 @@
 *
 */
 
-/* global exports, cordova, FileTransfer, FileTransferError, FileUploadOptions, LocalFileSystem */
+/* global exports, cordova, FileTransfer, FileTransferError, FileUploadOptions, LocalFileSystem, WinJS */
 
 /* jshint jasmine: true */
 
@@ -42,18 +42,23 @@ exports.defineAutoTests = function () {
     var DATA_URI_CONTENT = "iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==";
     var DATA_URI_CONTENT_LENGTH = 85; // bytes. (This is the raw file size: used https://en.wikipedia.org/wiki/File:Red-dot-5px.png from https://en.wikipedia.org/wiki/Data_URI_scheme)
 
-    // config for upload test server
+    // upload test server address
     // NOTE:
     //      more info at https://github.com/apache/cordova-labs/tree/cordova-filetransfer
-    var SERVER                  = "http://cordova-vm.apache.org:5000";
-    var SERVER_WITH_CREDENTIALS = "http://cordova_user:cordova_password@cordova-vm.apache.org:5000";
+    // Will get it from the config
+    // you can specify it as a 'FILETRANSFER_SERVER_ADDRESS' variable upon test plugin installation
+    // or change the default value in plugin.xml
+    var SERVER = "";
+    var SERVER_WITH_CREDENTIALS = "";
 
     // flags
     var isWindows = cordova.platformId === "windows8" || cordova.platformId === "windows";
+    var isWindowsPhone81 = isWindows && WinJS.Utilities.isPhone;
     var isWP8 = cordova.platformId === "windowsphone";
     var isBrowser = cordova.platformId === "browser";
     var isIE = isBrowser && navigator.userAgent.indexOf("Trident") >= 0;
     var isIos = cordova.platformId === "ios";
+    var isIot = cordova.platformId === "android" && navigator.userAgent.indexOf("iot") >= 0;
 
     // tests
     describe("FileTransferError", function () {
@@ -202,6 +207,11 @@ exports.defineAutoTests = function () {
             }
         };
 
+        var setServerAddress = function (address) {
+            SERVER = address;
+            SERVER_WITH_CREDENTIALS = SERVER.replace('http://', 'http://cordova_user:cordova_password@');
+        };
+
         // NOTE:
         //      there are several beforeEach calls, one per async call; since calling done()
         //      signifies a completed async call, each async call needs its own done(), and
@@ -263,6 +273,22 @@ exports.defineAutoTests = function () {
 
             if (expectedCallbacks.unsupportedOperation.calls.any()) {
                 pending();
+            }
+        });
+
+        it ("util spec: get file transfer server url", function () {
+            try {
+                // attempt to synchronously load medic config
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "../fileTransferOpts.json", false);
+                xhr.send(null);
+                var parsedCfg = JSON.parse(xhr.responseText);
+                if (parsedCfg.serverAddress) {
+                    setServerAddress(parsedCfg.serverAddress);
+                }
+            } catch (ex) {
+                console.error('Unable to load file transfer server url: ' + ex);
+                fail(ex);
             }
         });
 
@@ -1051,7 +1077,10 @@ exports.defineAutoTests = function () {
                         }, GRACE_TIME_DELTA);
                     };
 
-                    writeFile(specContext.root, specContext.fileName, new Array(200000).join("aborttest!"), fileWin, done);
+                    // windows store and ios are too fast, win is called before we have a chance to abort
+                    // so let's get them busy - while not providing an extra load to the slow Android emulators
+                    var arrayLength = ((isWindows && !isWindowsPhone81) || isIos) ? 3000000 : isIot ? 150000 : 200000;
+                    writeFile(specContext.root, specContext.fileName, new Array(arrayLength).join("aborttest!"), fileWin, done);
                 }, UPLOAD_TIMEOUT);
 
                 it("filetransfer.spec.22 should get http status and body on failure", function (done) {
@@ -1477,7 +1506,9 @@ exports.defineAutoTests = function () {
                             obj = JSON.parse(uploadResult.response);
 
                             if (specContext.uploadOptions.chunkedMode) {
-                                expect(obj["content-length"]).not.toBeDefined("Expected Content-Length not to be defined");
+                                if (!isIos) {
+                                    expect(obj["content-length"]).not.toBeDefined("Expected Content-Length not to be defined");
+                                }
                                 expect(obj["transfer-encoding"].toLowerCase()).toEqual("chunked");
                             } else {
                                 expect(obj["content-length"]).toBeDefined("Expected Content-Length to be defined");

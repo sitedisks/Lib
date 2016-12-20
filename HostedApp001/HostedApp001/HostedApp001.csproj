@@ -272,6 +272,7 @@
     <Content Include="cordovadist\android\plugins\cordova-plugin-media\www\Media.js" />
     <Content Include="cordovadist\android\plugins\cordova-plugin-media\www\MediaError.js" />
     <Content Include="cordovadist\android\plugins\cordova-plugin-vibration\www\vibration.js" />
+    <Content Include="cordovadist\android\plugins\cordova-sms-plugin\www\sms.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

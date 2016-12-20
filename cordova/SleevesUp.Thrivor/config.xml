@@ -7,7 +7,8 @@
   <author email="peter@sleevesup.com.au" href="http://www.sleevesup.com.au">
         Thrivor Team
     </author>
-  <content src="index.html"/>
+  <!-- <content src="index.html"/> -->
+  <content src="https://apidev.thrivor.com/" />
   <plugin name="cordova-plugin-whitelist" spec="1"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
@@ -16,8 +17,6 @@
   <allow-intent href="sms:*"/>
   <allow-intent href="mailto:*"/>
   <allow-intent href="geo:*"/>
-  <allow-navigation href="http://tally.co"/>
-  <allow-navigation href="https://apidev.thrivor.com"/>
   <allow-navigation href="*"/>
   <platform name="android">
     <allow-intent href="market:*"/>

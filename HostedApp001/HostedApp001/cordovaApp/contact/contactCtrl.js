@@ -26,7 +26,9 @@
             }
 
             function contactFetchSuccess(contacts) {
-                $scope.contacts = contacts;
+                $scope.$apply(function () {
+                    $scope.contacts = contacts;
+                });
 
             }
 

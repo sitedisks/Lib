@@ -35,3 +35,6 @@ cordova/MyApp/platforms/
 cordova/MyApp/plugins/
 HostedApp001/HostedApp001/Properties/PublishProfiles/
 
+MessageBoard/packages/
+MessageBoard/MessageBoard/bin/
+MessageBoard/MessageBoard/obj/

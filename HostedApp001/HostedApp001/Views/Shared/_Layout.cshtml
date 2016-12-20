@@ -20,7 +20,7 @@
     </script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -39,7 +39,7 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
+    </div>*@
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -55,12 +55,28 @@
 
     @*@Scripts.Render("~/Scripts/vendor/ng-cordova.js");*@
 
-    @if (ViewBag.Platform == "android" || ViewBag.Platform == "ios" || ViewBag.Platform == "windows")
-    {
-        // load the cordova only platform is android/ios/windows
-        @Scripts.Render("~/cordovadist/" + ViewBag.Platform + "/cordova.js");
-        @*@Scripts.Render("~/cordovaApp/app.js"); // this will be the MobileWrapper*@
-
+    @{
+        var os = "unknownS";
+        bool isDevice = false;
+        if (Request.UserAgent.ToLower().Contains("android"))
+        {
+            os = "android";
+            isDevice = true;
+        }
+        if (Request.UserAgent.ToLower().Contains("windows"))
+        {
+            os = "windows";
+            //isDevice = true;
+        }
+        if (Request.UserAgent.ToLower().Contains("ios") || Request.UserAgent.ToLower().Contains("iphone") || Request.UserAgent.ToLower().Contains("ipad"))
+        {
+            os = "ios";
+            isDevice = true;
+        }
+        if (isDevice)
+        {
+            @Scripts.Render("~/cordovadist/" + os + "/cordova.js");
+        }
     }
 
     @RenderSection("scripts", required: false)

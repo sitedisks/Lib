@@ -7,74 +7,74 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
         "cordova-plugin-camera": {
             "CAMERA_USAGE_DESCRIPTION": " ",
             "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
         },
         "cordova-plugin-contacts": {
             "CONTACTS_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-plugin-battery-status": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
-        },
-        "cordova-sqlite-storage": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
         },
         "cordova-plugin-media": {
             "MICROPHONE_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "io.cordova.myapp1b5400"
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
         }
     }
 }

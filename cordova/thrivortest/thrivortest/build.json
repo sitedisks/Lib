@@ -1,0 +1,23 @@
+{
+  "android": {
+    "release": {
+      "keystore": "",
+      "storePassword": "",
+      "alias": "",
+      "password": "",
+      "keystoreType": ""
+    }
+  },
+  "ios": {
+    "debug": {
+      "developmentTeam": "CQR2W87DUX",
+      "codeSignIdentity": "iPhone Developer"
+
+
+    },
+    "release": {
+      "codeSignIdentity": "iPhone Developer",
+      "developmentTeam": "CQR2W87DUX"
+    }
+  }
+}

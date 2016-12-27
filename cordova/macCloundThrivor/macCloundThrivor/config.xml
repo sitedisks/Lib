@@ -118,4 +118,5 @@
   <plugin name="cordova-plugin-calendar" version="4.5.5" />
   <plugin name="cordova-plugin-compat" version="1.1.0" />
   <plugin name="cordova-plugin-background-push" version="2.1.5" />
+  <plugin name="cordova-plugin-filepath" version="1.0.2" />
 </widget>

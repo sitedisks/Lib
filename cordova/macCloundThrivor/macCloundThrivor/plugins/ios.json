@@ -43,6 +43,12 @@
         },
         "cordova-plugin-filepath": {
             "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-email": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-keyboard": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
         }
     },
     "dependent_plugins": {

@@ -6,7 +6,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ShowAllFiles>false</ShowAllFiles>
-    <ReferenceCachePath>C:\Users\Sahin Tilki\AppData\Local\Temp\thrivortest_refcache</ReferenceCachePath>
+    <ReferenceCachePath>C:\Users\user\AppData\Local\Temp\thrivortest_refcache</ReferenceCachePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|iOS'">
     <DebuggerFlavor>iOSEmulatoriPhone6</DebuggerFlavor>

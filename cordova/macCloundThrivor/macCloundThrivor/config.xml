@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myappd56a0f" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US">
-  <name>macCloundThrivor</name>
+<widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="com.Thrivor.Thrivor" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US">
+  <name>Thrivor</name>
   <description>A blank project that uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone.</description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Apache Cordova Team </author>
-  <content src="index.html" />
+  <content src="https://apidev.thrivor.com/" />
+  <allow-navigation href="*" />
   <access origin="*" />
   <vs:features />
   <preference name="SplashScreen" value="screen" />
   <preference name="windows-target-version" value="8.1" />
+  <preference name="StatusBarOverlaysWebView" value="true" />
   <!-- Support for Cordova 5.0.0 plugin system -->
   <plugin name="cordova-plugin-whitelist" version="1" />
   <allow-intent href="http://*/*" />
@@ -106,4 +108,15 @@
   <platform name="wp8">
     <splash src="res/screens/wp8/SplashScreenImage.png" width="768" height="1280" />
   </platform>
+  <plugin name="cordova-plugin-splashscreen" version="4.0.1" />
+  <plugin name="cordova-plugin-media" version="2.4.1" />
+  <plugin name="cordova-plugin-geolocation" version="2.4.1" />
+  <plugin name="cordova-plugin-file" version="4.3.1" />
+  <plugin name="cordova-plugin-file-transfer" version="1.6.1" />
+  <plugin name="cordova-plugin-device" version="1.1.4" />
+  <plugin name="cordova-plugin-contacts" version="2.2.1" />
+  <plugin name="cordova-plugin-calendar" version="4.5.5" />
+  <plugin name="cordova-plugin-compat" version="1.1.0" />
+  <plugin name="cordova-plugin-background-push" version="2.1.5" />
+  <plugin name="cordova-plugin-filepath" version="1.0.2" />
 </widget>

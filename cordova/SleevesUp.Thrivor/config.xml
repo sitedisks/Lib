@@ -8,7 +8,7 @@
         Thrivor Team
     </author>
   <!-- <content src="index.html"/> -->
-  <content src="https://apidev.thrivor.com/" />
+  <content src="https://apidev.thrivor.com/ui" />
   <plugin name="cordova-plugin-whitelist" spec="1"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>

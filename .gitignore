@@ -46,3 +46,7 @@ WebApiSignalRPush/WebApiSignalRPush/obj/
 WebApiSignalRPush/.vs/WebApiSignalRPush/v14/.suo
 cordova/macCloundThrivor/.vs/
 cordova/thrivortest/.vs/
+ThrivorUI/.vs/
+ThrivorUI/packages/
+ThrivorUI/ThrivorUI/obj/
+ThrivorUI/ThrivorUI/bin/

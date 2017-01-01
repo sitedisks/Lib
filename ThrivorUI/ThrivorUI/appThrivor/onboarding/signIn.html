@@ -1,0 +1,59 @@
+﻿<ion-view view-title="Main">
+    <ion-content scroll="false">
+        <div class="row">
+            <div class="shell">
+                <div class="outer slash">
+                    <section class="profile">
+                        <div class="hexagon" style="background-image: url({{userPhoto}});">
+                            <div class="face1"></div>
+                            <div class="face2"></div>
+                        </div>
+                        <div class="content">
+                            <h1>Welcome Back,</h1>
+                            <p>Enter your 4 digit passcode</p>
+                        </div>
+                    </section>
+                    <form id="sign-in" name="signIn" autocomplete="off" role="form" style="width: 100%;">
+                        <section class="sign-in-form">
+                            <div>
+                                <div class="col-xs-12 text-center">
+                                    <label for="first-digit">
+                                        <input type="password" id="first-digit" maxchar="1" ng-model="signInPasscodeFirstDigit" autocomplete required class="form-control digit" type="text" pattern="\d*" maxlength="1" />
+                                    </label>
+                                    <label for="second-digit">
+                                        <input type="password" id="second-digit" maxchar="1" ng-model="signInPasscodeSecondDigit" autocomplete required class="form-control digit" type="text" pattern="\d*" maxlength="1" />
+                                    </label>
+                                    <label for="third-digit">
+                                        <input type="password" id="third-digit" maxchar="1" ng-model="signInPasscodeThirdDigit" autocomplete required class="form-control digit" type="text" pattern="\d*" maxlength="1" />
+                                    </label>
+                                    <label for="fourth-digit">
+                                        <input type="password" id="fourth-digit" maxchar="1" ng-model="signInPasscodeFourthDigit" autocomplete required class="form-control digit" type="text" pattern="\d*" maxlength="1" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-xs-12">
+                                    <span data-ng-show="!signIn.$pristine && hasErrors(signIn)" class="error-msg">Passcode needs to be 4 digits</span>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="row">
+                            <div class="col-xs-12 text-center"> <a ng-click="signInFull()"><h4> Sign-in with username </h4></a> </div>
+                        </div>
+                        <div claas="row">
+                            <div class="col-xs-12  text-center">
+                                <i class="fa fa-spinner fa-spin fa-3x fa-fw" ng-show="processing"></i>
+                            </div>
+                        </div>
+                        <section class="footer-action">
+                            <button id="signInButton" ng-click="signInUser()" class="btn btn-primary text-uppercase">
+                                Continue
+                                <span class="pull-right"><img src="/img/icons/arrow_r_white.svg" /></span>
+                            </button>
+                        </section>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

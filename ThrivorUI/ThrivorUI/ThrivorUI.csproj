@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B81CDFD-5442-4B3F-A6BB-55AE8BCA672C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ThrivorUI</RootNamespace>
+    <AssemblyName>ThrivorUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <ApplicationInsightsResourceId>/subscriptions/92f1df89-780b-43ca-ae6f-59291d4816d7/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/ThrivorUI</ApplicationInsightsResourceId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.1.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.1.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.1.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.1.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.1.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.1.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="lib\ionic\fonts\ionicons.eot" />
+    <Content Include="lib\ionic\fonts\ionicons.ttf" />
+    <Content Include="lib\ionic\fonts\ionicons.woff" />
+    <Content Include="lib\ionic\scss\ionic.scss" />
+    <Content Include="lib\ionic\scss\ionicons\ionicons.scss" />
+    <Content Include="lib\ionic\scss\ionicons\_ionicons-font.scss" />
+    <Content Include="lib\ionic\scss\ionicons\_ionicons-icons.scss" />
+    <Content Include="lib\ionic\scss\ionicons\_ionicons-variables.scss" />
+    <Content Include="lib\ionic\scss\_action-sheet.scss" />
+    <Content Include="lib\ionic\scss\_animations.scss" />
+    <Content Include="lib\ionic\scss\_backdrop.scss" />
+    <Content Include="lib\ionic\scss\_badge.scss" />
+    <Content Include="lib\ionic\scss\_bar.scss" />
+    <Content Include="lib\ionic\scss\_button-bar.scss" />
+    <Content Include="lib\ionic\scss\_button.scss" />
+    <Content Include="lib\ionic\scss\_checkbox.scss" />
+    <Content Include="lib\ionic\scss\_form.scss" />
+    <Content Include="lib\ionic\scss\_grid.scss" />
+    <Content Include="lib\ionic\scss\_items.scss" />
+    <Content Include="lib\ionic\scss\_list.scss" />
+    <Content Include="lib\ionic\scss\_loading.scss" />
+    <Content Include="lib\ionic\scss\_menu.scss" />
+    <Content Include="lib\ionic\scss\_mixins.scss" />
+    <Content Include="lib\ionic\scss\_modal.scss" />
+    <Content Include="lib\ionic\scss\_platform.scss" />
+    <Content Include="lib\ionic\scss\_popover.scss" />
+    <Content Include="lib\ionic\scss\_popup.scss" />
+    <Content Include="lib\ionic\scss\_progress.scss" />
+    <Content Include="lib\ionic\scss\_radio.scss" />
+    <Content Include="lib\ionic\scss\_range.scss" />
+    <Content Include="lib\ionic\scss\_refresher.scss" />
+    <Content Include="lib\ionic\scss\_reset.scss" />
+    <Content Include="lib\ionic\scss\_scaffolding.scss" />
+    <Content Include="lib\ionic\scss\_select.scss" />
+    <Content Include="lib\ionic\scss\_slide-box.scss" />
+    <Content Include="lib\ionic\scss\_slides.scss" />
+    <Content Include="lib\ionic\scss\_spinner.scss" />
+    <Content Include="lib\ionic\scss\_tabs.scss" />
+    <Content Include="lib\ionic\scss\_toggle.scss" />
+    <Content Include="lib\ionic\scss\_transitions.scss" />
+    <Content Include="lib\ionic\scss\_type.scss" />
+    <Content Include="lib\ionic\scss\_util.scss" />
+    <Content Include="lib\ionic\scss\_variables.scss" />
+    <Content Include="lib\ionic\version.json" />
+    <Content Include="manifest.json" />
+    <Content Include="lib\ng-tags-input\.bower.json" />
+    <Content Include="lib\ng-tags-input\bower.json" />
+    <Content Include="lib\ng-tags-input\README" />
+    <Content Include="lib\angular-sanitize\angular-sanitize.min.js.map" />
+    <Content Include="lib\angular-animate\angular-animate.min.js.map" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="lib\font-awesome\css\font-awesome.css.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appThrivor\onboarding\dashboard.html" />
+    <Content Include="appThrivor\onboarding\main.html" />
+    <Content Include="appThrivor\onboarding\signIn.html" />
+    <Content Include="appThrivor\onboarding\signUp.html" />
+    <Content Include="appThrivor\onboarding\signUp1.html" />
+    <Content Include="appThrivor\onboarding\signUp2.html" />
+    <Content Include="appThrivor\onboarding\signUp3.html" />
+    <Content Include="appThrivor\onboarding\signUp4.html" />
+    <Content Include="css\main.css" />
+    <Content Include="css\style.css" />
+    <Content Include="img\bcare_logo.png" />
+    <Content Include="img\contact-avatar.png" />
+    <Content Include="img\hipages_logo.png" />
+    <Content Include="img\icons\arrow.svg" />
+    <Content Include="img\icons\arrow_r_grey.svg" />
+    <Content Include="img\icons\arrow_r_white.svg" />
+    <Content Include="img\icons\camera_white.svg" />
+    <Content Include="img\icons\car_green.svg" />
+    <Content Include="img\icons\car_grey.svg" />
+    <Content Include="img\icons\clock_green.svg" />
+    <Content Include="img\icons\cross_white.svg" />
+    <Content Include="img\icons\doctor_green.svg" />
+    <Content Include="img\icons\healthfiles\Camera_Blue-01.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_AZFilter.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_Diagnosis.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_Diagnosis_Small.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_Expenses.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_Expenses_Small.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_LabResults.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_LabResults_Small.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_Notes.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_Notes_Small.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_Prescriptions.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_Prescriptions_Small.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_Recording.svg" />
+    <Content Include="img\icons\healthfiles\HealthFiles_Recording_Small.svg" />
+    <Content Include="img\icons\home\appointment.svg" />
+    <Content Include="img\icons\home\calendar_inverse.svg" />
+    <Content Include="img\icons\home\calendar_white.svg" />
+    <Content Include="img\icons\home\expenses.svg" />
+    <Content Include="img\icons\home\forum.svg" />
+    <Content Include="img\icons\home\gifts.svg" />
+    <Content Include="img\icons\home\healthfiles.svg" />
+    <Content Include="img\icons\home\jobs.svg" />
+    <Content Include="img\icons\home\support.svg" />
+    <Content Include="img\icons\home\transport.svg" />
+    <Content Include="img\icons\home\wellbeing.svg" />
+    <Content Include="img\icons\jobs\cleaning.svg" />
+    <Content Include="img\icons\jobs\family.svg" />
+    <Content Include="img\icons\jobs\gardening.svg" />
+    <Content Include="img\icons\jobs\general.svg" />
+    <Content Include="img\icons\jobs\laundry.svg" />
+    <Content Include="img\icons\jobs\meals.svg" />
+    <Content Include="img\icons\jobs\pets.svg" />
+    <Content Include="img\icons\jobs\shopping.svg" />
+    <Content Include="img\icons\jobs\transport.svg" />
+    <Content Include="img\icons\location_green.svg" />
+    <Content Include="img\icons\pen_white.svg" />
+    <Content Include="img\icons\plus_blue.svg" />
+    <Content Include="img\icons\profile.svg" />
+    <Content Include="img\icons\record_red.svg" />
+    <Content Include="img\icons\search_green.svg" />
+    <Content Include="img\icons\transport\calendar_green.svg" />
+    <Content Include="img\icons\transport\clock_green.svg" />
+    <Content Include="img\icons\transport\location_green.svg" />
+    <Content Include="img\icons\transport\thumbsup.svg" />
+    <Content Include="img\icons\transport\uber_white.svg" />
+    <Content Include="img\ionic.png" />
+    <Content Include="img\mountains_3x.jpg" />
+    <Content Include="img\profile-sample.jpg" />
+    <Content Include="img\Thrivor_avatar.png" />
+    <Content Include="img\thrivor_inverse_logo.svg" />
+    <Content Include="img\thrivor_logo.svg" />
+    <Content Include="img\userAV_temp.png" />
+    <Content Include="index.html" />
+    <Content Include="appThrivor\app.js" />
+    <Content Include="appThrivor\controllers.js" />
+    <Content Include="lib\angular-animate\angular-animate.js" />
+    <Content Include="lib\angular-animate\angular-animate.min.js" />
+    <Content Include="lib\angular-sanitize\angular-sanitize.js" />
+    <Content Include="lib\angular-sanitize\angular-sanitize.min.js" />
+    <Content Include="lib\cordova\android\cordova-js-src\android\nativeapiprovider.js" />
+    <Content Include="lib\cordova\android\cordova-js-src\android\promptbasednativeapi.js" />
+    <Content Include="lib\cordova\android\cordova-js-src\exec.js" />
+    <Content Include="lib\cordova\android\cordova-js-src\platform.js" />
+    <Content Include="lib\cordova\android\cordova-js-src\plugin\android\app.js" />
+    <Content Include="lib\cordova\android\cordova.js" />
+    <Content Include="lib\cordova\android\cordova_plugins.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-background-push\www\PushNotification.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-calendar\www\Calendar.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-contacts\www\Contact.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-contacts\www\ContactAddress.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-contacts\www\ContactError.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-contacts\www\ContactField.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-contacts\www\ContactFieldType.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-contacts\www\ContactFindOptions.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-contacts\www\ContactName.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-contacts\www\ContactOrganization.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-contacts\www\contacts.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-contacts\www\convertUtils.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-device\www\device.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-email\www\email_composer.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file-transfer\www\FileTransfer.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file-transfer\www\FileTransferError.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-filepath\www\FilePath.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\android\FileSystem.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\browser\isChrome.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\DirectoryEntry.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\DirectoryReader.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\Entry.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\File.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\FileEntry.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\FileError.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\FileReader.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\FileSystem.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\fileSystemPaths.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\fileSystems-roots.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\fileSystems.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\FileUploadOptions.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\FileUploadResult.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\FileWriter.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\Flags.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\LocalFileSystem.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\Metadata.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\ProgressEvent.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\requestFileSystem.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-file\www\resolveLocalFileSystemURI.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-geolocation\www\android\geolocation.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-geolocation\www\PositionError.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-keyboard\www\keyboard.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-media\www\Media.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-media\www\MediaError.js" />
+    <Content Include="lib\cordova\android\plugins\cordova-plugin-splashscreen\www\splashscreen.js" />
+    <Content Include="lib\cordova\ios\cordova-js-src\exec.js" />
+    <Content Include="lib\cordova\ios\cordova-js-src\platform.js" />
+    <Content Include="lib\cordova\ios\cordova.js" />
+    <Content Include="lib\cordova\ios\cordova_plugins.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-background-push\www\PushNotification.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-calendar\www\Calendar.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\Contact.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\ContactAddress.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\ContactError.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\ContactField.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\ContactFieldType.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\ContactFindOptions.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\ContactName.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\ContactOrganization.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\contacts.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\convertUtils.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\ios\Contact.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-contacts\www\ios\contacts.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-device\www\device.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-email\www\email_composer.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file-transfer\www\FileTransfer.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file-transfer\www\FileTransferError.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\browser\isChrome.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\DirectoryEntry.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\DirectoryReader.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\Entry.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\File.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\FileEntry.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\FileError.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\FileReader.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\FileSystem.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\fileSystemPaths.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\fileSystems-roots.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\fileSystems.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\FileUploadOptions.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\FileUploadResult.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\FileWriter.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\Flags.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\ios\FileSystem.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\LocalFileSystem.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\Metadata.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\ProgressEvent.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\requestFileSystem.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-file\www\resolveLocalFileSystemURI.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-geolocation\www\Coordinates.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-geolocation\www\geolocation.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-geolocation\www\Position.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-geolocation\www\PositionError.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-keyboard\www\keyboard.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-media\www\Media.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-media\www\MediaError.js" />
+    <Content Include="lib\cordova\ios\plugins\cordova-plugin-splashscreen\www\splashscreen.js" />
+    <Content Include="lib\exif.js" />
+    <Content Include="lib\font-awesome\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\ionic\css\ionic.css" />
+    <Content Include="lib\ionic\css\ionic.min.css" />
+    <Content Include="lib\ionic\fonts\ionicons.svg" />
+    <Content Include="lib\ionic\js\angular-ui\angular-ui-router.js" />
+    <Content Include="lib\ionic\js\angular-ui\angular-ui-router.min.js" />
+    <Content Include="lib\ionic\js\angular\angular-animate.js" />
+    <Content Include="lib\ionic\js\angular\angular-animate.min.js" />
+    <Content Include="lib\ionic\js\angular\angular-resource.js" />
+    <Content Include="lib\ionic\js\angular\angular-resource.min.js" />
+    <Content Include="lib\ionic\js\angular\angular-sanitize.js" />
+    <Content Include="lib\ionic\js\angular\angular-sanitize.min.js" />
+    <Content Include="lib\ionic\js\angular\angular.js" />
+    <Content Include="lib\ionic\js\angular\angular.min.js" />
+    <Content Include="lib\ionic\js\ionic-angular.js" />
+    <Content Include="lib\ionic\js\ionic-angular.min.js" />
+    <Content Include="lib\ionic\js\ionic.bundle.js" />
+    <Content Include="lib\ionic\js\ionic.bundle.min.js" />
+    <Content Include="lib\ionic\js\ionic.js" />
+    <Content Include="lib\ionic\js\ionic.min.js" />
+    <Content Include="lib\jquery\jquery.js" />
+    <Content Include="lib\jquery\jquery.min.js" />
+    <Content Include="lib\mobile-detect\mobile-detect-modernizr.js" />
+    <Content Include="lib\mobile-detect\mobile-detect.js" />
+    <Content Include="lib\mobile-detect\mobile-detect.min.js" />
+    <Content Include="lib\modernizr\modernizr-2.8.3-respond-1.4.2.min.js" />
+    <Content Include="lib\moment.min.js" />
+    <Content Include="lib\ng-tags-input\ng-tags-input.bootstrap.css" />
+    <Content Include="lib\ng-tags-input\ng-tags-input.bootstrap.min.css" />
+    <Content Include="lib\ng-tags-input\ng-tags-input.css" />
+    <Content Include="lib\ng-tags-input\ng-tags-input.js" />
+    <Content Include="lib\ng-tags-input\ng-tags-input.min.css" />
+    <Content Include="lib\ng-tags-input\ng-tags-input.min.js" />
+    <Content Include="service-worker.js" />
+    <Content Include="templates\browse.html" />
+    <Content Include="templates\login.html" />
+    <Content Include="templates\menu.html" />
+    <Content Include="templates\playlist.html" />
+    <Content Include="templates\playlists.html" />
+    <Content Include="templates\search.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="appThrivor\shared\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4944</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4944/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

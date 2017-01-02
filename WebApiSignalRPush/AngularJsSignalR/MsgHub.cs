@@ -14,6 +14,8 @@
         {
             //Clients.Client(id).myClientFunc();
             //Server invocation of client method myClientFunc();
+            //'Server Push' - server code call out to client code 
+            //using Remote Procedure Calls (RPC)
             Clients.All.broadcastMessage(name, message); // all client or group them
         }
 

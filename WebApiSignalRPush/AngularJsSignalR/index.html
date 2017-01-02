@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body ng-app="chatApp">
+    <div ng-controller="chatCtrl">
+        <div>
+            Name: <input type="text" ng-model="name" /><br />
+            Message: <input type="text" ng-model="message" /><br />
+            <input type="button" value="Send" ng-click="newMessage()" />
+        </div>
+        <div>
+            <ul>
+                <li ng-repeat="chat in messages">
+                    <span ng-bind="chat"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="Scripts/jquery-1.6.4.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.1.min.js"></script>
+    <!--JavaScript proxy created by the SignalR to enables the clients to connect the server hub -->
+    <!--<script src="signalr/hubs"></script>-->
+    <script src="Scripts/angular.min.js"></script>
+    <!--<script src="Scripts/sampleChat.js"></script>-->
+    <script src="Scripts/sampleChatProxy.js"></script>
+</body>
+</html>

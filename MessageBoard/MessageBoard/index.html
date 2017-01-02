@@ -29,9 +29,9 @@
     <script type="text/javascript">
         $(function () {
             // Declare a proxy to reference the hub.
-            var chat = $.connection.chatHub;
+            var chat = $.connection.PHub;
             // Create a function that the hub can call to broadcast messages.
-            chat.client.broadcastMessage = function (name, message) {
+            chat.client.hello = function (name, message) {
                 // Html encode display name and message.
                 var encodedName = $('<div />').text(name).html();
                 var encodedMsg = $('<div />').text(message).html();

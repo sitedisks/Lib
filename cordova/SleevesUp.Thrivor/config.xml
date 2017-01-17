@@ -7,8 +7,7 @@
   <author email="peter@sleevesup.com.au" href="http://www.sleevesup.com.au">
         Thrivor Team
     </author>
-  <!-- <content src="index.html"/> -->
-  <content src="https://apidev.thrivor.com/ui" />
+  <content src="https://appuat.thrivor.com/ui/" />
   <plugin name="cordova-plugin-whitelist" spec="1"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
@@ -46,4 +45,5 @@
   <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="3000"/>
+  <preference name="ShowSplashScreenSpinner" value="false"/>
 </widget>

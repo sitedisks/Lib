@@ -1,0 +1,1 @@
+cordova app: jquery + angular + angular UI

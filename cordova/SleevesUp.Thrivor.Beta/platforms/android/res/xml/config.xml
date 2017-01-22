@@ -51,7 +51,7 @@
     <author email="peter@sleevesup.com.au" href="http://www.sleevesup.com.au">
         Thrivor Team
     </author>
-    <content src="http://app.dev.thrivor.com/ui/" />
+    <content src="https://appdev.thrivor.com/ui/" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

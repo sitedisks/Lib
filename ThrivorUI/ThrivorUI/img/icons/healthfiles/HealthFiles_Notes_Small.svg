@@ -1,1 +1,70 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 22"><defs><style>.cls-1{fill:#ffffff;}</style></defs><title>HealthFiles_Notes_Small</title><path class="cls-1" d="M35.5,3h-24a1.5,1.5,0,0,1,0-3h24a1.5,1.5,0,0,1,0,3Z"/><path class="cls-1" d="M5.5,3h-4a1.5,1.5,0,0,1,0-3h4a1.5,1.5,0,0,1,0,3Z"/><path class="cls-1" d="M35.5,12.81h-24a1.5,1.5,0,0,1,0-3h24a1.5,1.5,0,0,1,0,3Z"/><path class="cls-1" d="M5.5,12.81h-4a1.5,1.5,0,0,1,0-3h4a1.5,1.5,0,0,1,0,3Z"/><path class="cls-1" d="M35.5,22h-24a1.5,1.5,0,0,1,0-3h24a1.5,1.5,0,0,1,0,3Z"/><path class="cls-1" d="M5.5,22h-4a1.5,1.5,0,0,1,0-3h4a1.5,1.5,0,0,1,0,3Z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="29px" height="18px" viewBox="0 0 29 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>HealthFiles_Notes_Small</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M25.8181818,2.18181818 L8.36363636,2.18181818 C7.76114391,2.18181818 7.27272727,1.69340155 7.27272727,1.09090909 C7.27272727,0.488416637 7.76114391,1.10676068e-16 8.36363636,0 L25.8181818,0 C26.4206743,3.68920228e-17 26.9090909,0.488416637 26.9090909,1.09090909 C26.9090909,1.69340155 26.4206743,2.18181818 25.8181818,2.18181818 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="21.6363636" height="4.18181818">
+            <rect x="6.27272727" y="-1" width="21.6363636" height="4.18181818" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+        <path d="M4,2.18181818 L1.09090909,2.18181818 C0.488416637,2.18181818 7.37840456e-17,1.69340155 0,1.09090909 C-7.37840456e-17,0.488416637 0.488416637,1.10676068e-16 1.09090909,0 L4,0 C4.60249245,3.68920228e-17 5.09090909,0.488416637 5.09090909,1.09090909 C5.09090909,1.69340155 4.60249245,2.18181818 4,2.18181818 Z" id="path-3"></path>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="7.09090909" height="4.18181818">
+            <rect x="-1" y="-1" width="7.09090909" height="4.18181818" fill="white"></rect>
+            <use xlink:href="#path-3" fill="black"></use>
+        </mask>
+        <path d="M25.8181818,9.31636364 L8.36363636,9.31636364 C7.76114392,9.31636362 7.27272731,8.82794699 7.27272731,8.22545455 C7.27272731,7.6229621 7.76114392,7.13454547 8.36363636,7.13454545 L25.8181818,7.13454545 C26.4206743,7.13454545 26.9090909,7.62296209 26.9090909,8.22545455 C26.9090909,8.827947 26.4206743,9.31636364 25.8181818,9.31636364 L25.8181818,9.31636364 Z" id="path-5"></path>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="21.6363636" height="4.18181818">
+            <rect x="6.27272731" y="6.13454545" width="21.6363636" height="4.18181818" fill="white"></rect>
+            <use xlink:href="#path-5" fill="black"></use>
+        </mask>
+        <path d="M4,9.31636364 L1.09090909,9.31636364 C0.488416649,9.31636362 3.25117072e-08,8.82794699 3.25117071e-08,8.22545455 C3.2511707e-08,7.6229621 0.488416649,7.13454547 1.09090909,7.13454545 L4,7.13454545 C4.60249245,7.13454545 5.09090909,7.62296209 5.09090909,8.22545455 C5.09090909,8.827947 4.60249245,9.31636364 4,9.31636364 L4,9.31636364 Z" id="path-7"></path>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="7.09090906" height="4.18181818">
+            <rect x="-0.999999967" y="6.13454545" width="7.09090906" height="4.18181818" fill="white"></rect>
+            <use xlink:href="#path-7" fill="black"></use>
+        </mask>
+        <path d="M25.8181818,16 L8.36363636,16 C7.76114391,16 7.27272727,15.5115834 7.27272727,14.9090909 C7.27272727,14.3065985 7.76114391,13.8181818 8.36363636,13.8181818 L25.8181818,13.8181818 C26.4206743,13.8181818 26.9090909,14.3065985 26.9090909,14.9090909 C26.9090909,15.5115834 26.4206743,16 25.8181818,16 Z" id="path-9"></path>
+        <mask id="mask-10" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="21.6363636" height="4.18181818">
+            <rect x="6.27272727" y="12.8181818" width="21.6363636" height="4.18181818" fill="white"></rect>
+            <use xlink:href="#path-9" fill="black"></use>
+        </mask>
+        <path d="M4,16 L1.09090909,16 C0.488416637,16 7.37840456e-17,15.5115834 0,14.9090909 C-7.37840456e-17,14.3065985 0.488416637,13.8181818 1.09090909,13.8181818 L4,13.8181818 C4.60249245,13.8181818 5.09090909,14.3065985 5.09090909,14.9090909 C5.09090909,15.5115834 4.60249245,16 4,16 Z" id="path-11"></path>
+        <mask id="mask-12" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="7.09090909" height="4.18181818">
+            <rect x="-1" y="12.8181818" width="7.09090909" height="4.18181818" fill="white"></rect>
+            <use xlink:href="#path-11" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Health-Files" transform="translate(-20.000000, -326.000000)">
+            <g id="HealthFiles_Notes_Small" transform="translate(21.000000, 327.000000)">
+                <g id="Layer_1">
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-4)" stroke-width="2" xlink:href="#path-3"></use>
+                    </g>
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-6)" stroke-width="2" xlink:href="#path-5"></use>
+                    </g>
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-7"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-8)" stroke-width="2" xlink:href="#path-7"></use>
+                    </g>
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-9"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-10)" stroke-width="2" xlink:href="#path-9"></use>
+                    </g>
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-11"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-12)" stroke-width="2" xlink:href="#path-11"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

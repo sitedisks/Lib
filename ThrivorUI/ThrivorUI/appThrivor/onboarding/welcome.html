@@ -1,0 +1,47 @@
+﻿<ion-view view-title="Join">
+    
+    <!--Header-->
+    <ion-header-bar align-title="center" class="bar bar-positive">
+        <!--<div class="buttons">
+            <button class="button button-clear">Back</button>
+        </div>-->
+        <h1 class="title">Join</h1>
+        <div class="buttons">
+            <button class="button button-clear" ui-sref="dashboard.home">Start</button>
+        </div>
+    </ion-header-bar>
+
+    <ion-content scroll="false">
+
+
+        <div class="row row-fh">
+            <div class="col col-center">
+                <div class="row responsive-sm text-center">
+                    <div class="col col-33 col-offset-33">
+                        <img ng-src="{{userPhoto}}" class="user-photo" />
+                        <h3>Welcome {{firstName}}</h3>
+                        <p>Thrivor will help you build your support team, seek help, manage appointments and much more.</p>
+                        <!--<img src="./img/profile-sample.jpg" />-->
+                    </div>
+                </div>
+                <div class="row responsive-sm text-center">
+                    <div class="col-33 col-offset-33">
+                        <div ng-show="!isSupport">
+                            <p>Your unique patient code is</p>
+                            <p class="txt-code">{{inviteKey}}</p>
+                            <p>(share this with your supporters)</p>
+                            <!--<div class="button-group welcome-buttons">
+                                <button class="button button-small button-outline button-assertive">Share</button>
+                                <button class="button button-small button-outline button-assertive">Copy</button>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+    <ion-footer-bar class="bar-assertive bottom-button">
+        <button class="button button-full button-assertive" ui-sref="dashboard.home">Let's Get Started</button>
+    </ion-footer-bar>
+</ion-view>

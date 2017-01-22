@@ -1,59 +1,95 @@
-﻿<ion-view view-title="Main">
-    <ion-content scroll="false">
-        <div class="row">
-            <div class="shell">
-                <div class="outer slash">
-                    <section class="profile">
-                        <div class="hexagon" style="background-image: url({{userPhoto}});">
-                            <div class="face1"></div>
-                            <div class="face2"></div>
+﻿<ion-view view-title="Welcome back">
+
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button ng-show="!isDeviceKnowUser" ui-sref="signInEmail">Back
+        </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <!--<ion-nav-buttons side="primary">
+        <button class="button button-clear button-icon icon ion-ios-arrow-back" ng-show="!isDeviceKnowUser" ui-sref="signInEmail">
+            Email
+        </button>
+    </ion-nav-buttons>-->
+    <!--Subheader-->
+    <div class="bar bar-subheader text-center">
+        <span class="thrivor-logo">Thrivor</span>
+    </div>
+
+    <ion-content scroll="false" class="bg-stable has-header has-subheader">
+
+        <div class="signIn signin-pin row row-center" novalidate>
+
+            <div class="input-pin col">
+                <div class="row responsive-sm">
+                    <div class="col col-33 col-offset-33 col-bottom text-center">
+                        <label> {{signinFull.email}}</label>
+                        <div class="input-group">
+                            <input type="password" maxlength="1" value="{{signinFull.password.substring(0, 1)}}" readonly>
+                            <input type="password" maxlength="1" value="{{signinFull.password.substring(1, 2)}}" readonly>
+                            <input type="password" maxlength="1" value="{{signinFull.password.substring(2, 3)}}" readonly>
+                            <input type="password" maxlength="1" value="{{signinFull.password.substring(3, 4)}}" readonly>
                         </div>
-                        <div class="content">
-                            <h1>Welcome Back,</h1>
-                            <p>Enter your 4 digit passcode</p>
-                        </div>
-                    </section>
-                    <form id="sign-in" name="signIn" autocomplete="off" role="form" style="width: 100%;">
-                        <section class="sign-in-form">
-                            <div>
-                                <div class="col-xs-12 text-center">
-                                    <label for="first-digit">
-                                        <input type="password" id="first-digit" maxchar="1" ng-model="signInPasscodeFirstDigit" autocomplete required class="form-control digit" type="text" pattern="\d*" maxlength="1" />
-                                    </label>
-                                    <label for="second-digit">
-                                        <input type="password" id="second-digit" maxchar="1" ng-model="signInPasscodeSecondDigit" autocomplete required class="form-control digit" type="text" pattern="\d*" maxlength="1" />
-                                    </label>
-                                    <label for="third-digit">
-                                        <input type="password" id="third-digit" maxchar="1" ng-model="signInPasscodeThirdDigit" autocomplete required class="form-control digit" type="text" pattern="\d*" maxlength="1" />
-                                    </label>
-                                    <label for="fourth-digit">
-                                        <input type="password" id="fourth-digit" maxchar="1" ng-model="signInPasscodeFourthDigit" autocomplete required class="form-control digit" type="text" pattern="\d*" maxlength="1" />
-                                    </label>
-                                </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="onscreen-keypad col">
+                <div class="row responsive-sm">
+                    <div class="col col-33 col-offset-33 col-top">
+                        <div class="row button-row">
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(1)"><b>1</b></button>
                             </div>
-                            <div class="row text-center">
-                                <div class="col-xs-12">
-                                    <span data-ng-show="!signIn.$pristine && hasErrors(signIn)" class="error-msg">Passcode needs to be 4 digits</span>
-                                </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(2)"><b>2</b><span>abc</span></button>
                             </div>
-                        </section>
-                        <div class="row">
-                            <div class="col-xs-12 text-center"> <a ng-click="signInFull()"><h4> Sign-in with username </h4></a> </div>
-                        </div>
-                        <div claas="row">
-                            <div class="col-xs-12  text-center">
-                                <i class="fa fa-spinner fa-spin fa-3x fa-fw" ng-show="processing"></i>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(3)"><b>3</b><span>def</span></button>
                             </div>
                         </div>
-                        <section class="footer-action">
-                            <button id="signInButton" ng-click="signInUser()" class="btn btn-primary text-uppercase">
-                                Continue
-                                <span class="pull-right"><img src="/img/icons/arrow_r_white.svg" /></span>
-                            </button>
-                        </section>
-                    </form>
+                        <div class="row button-row">
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(4)"><b>4</b><span>ghi</span></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(5)"><b>5</b><span>jkl</span></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(6)"><b>6</b><span>mno</span></button>
+                            </div>
+                        </div>
+                        <div class="row button-row">
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(7)"><b>7</b><span>pqrs</span></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(8)"><b>8</b><span>tuv</span></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(9)"><b>9</b><span>wxyz</span></button>
+                            </div>
+                        </div>
+                        <div class="row button-row">
+                            <div class="col col-center">
+                                <button class="button-keypad button-keypad-text" ng-click="goRetrievePasscode()">I forgot</button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(0)"><b>0</b></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad button-keypad-text" ng-click="removePasscodeDigit()">delete</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="bar bar-footer bar-assertive no-padding">
+            <button class="button button-full button-assertive no-margin" ng-disabled="signIn.$invalid || signinFull.password.length < 4" ng-click="signInUser()">Continue</button>
+        </div>
+
+
     </ion-content>
 </ion-view>
+

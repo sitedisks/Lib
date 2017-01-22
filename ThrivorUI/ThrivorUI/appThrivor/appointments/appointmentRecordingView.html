@@ -1,0 +1,11 @@
+﻿<div class="card">
+    <div class="item item-text-wrap text-center">
+        <div ng-show="isPlay">
+            <button class="button button-full button-balanced" ng-model="pause" ng-click="endRecord()">Stop</button>
+            <h3>Recording started, press 'STOP' once you finish.</h3>
+        </div>
+        <h2 ng-show="isPlay == false">Hit 'RECORD' to start recording.</h2>
+        <button class="button button-full button-assertive" ng-show="!isPlay" ng-click="startRecord()">Record</button>
+        <span class="audio-filaname">Filename: {{name}}</span>
+    </div>
+</div>

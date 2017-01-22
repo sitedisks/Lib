@@ -1,0 +1,89 @@
+<ion-view view-title="Contacts">
+
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <div class="bar bar-subheader no-padding">
+    <div class="item item-input-inset input-stable">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" ng-model="searchText" class="form-control" placeholder="Enter crew member name">
+      </label>
+    </div>
+  </div>
+
+
+  <ion-content ng-init="initCrew()" class="has-header has-subheader has-tabs">
+
+    <ion-list ng-show="contactList">
+      <ion-item data-ng-repeat="contact in contactList | filter:searchText" class="item item-avatar" ng-click="getCrewLink(contact)">
+        <!--<a ng-click="getCrewLink(contact)" href="#" data-ng-if="contact.name.formatted!=null">-->
+        <img src="{{contact.contactPhoto}}" />
+        <!--{{contact.name.formatted}}-->
+        <h2 class="item-note-vcenter">{{contact.name.formatted}}</h2> <!--just for testing !!! Remove it for live!!!!-->
+        <p>{{contact.phoneNumbers[0].value}}</p>
+        <span class="item-note item-note-vcenter" ng-class="{'item-note-supporter' : isInvited(contact)}" ng-show="isInvited(contact)">Supporter</span>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+
+  <!--<div class="row" ng-init="initCrew()">
+      <div class="shell col-xs-12">
+          <div class="outer">
+              <section class="dashboard">
+                  <div class="content">
+                      <div>
+                          <div class="top-nav row">
+                              <div class="col-xs-12">
+                                  <h6 class="text-center text-uppercase ">Crew Members</h6>
+                                  <a class="nav-back" href="#" ui-sref="dashboard.home"><h4 class="text-uppercase">Close</h4></a>
+                              </div>
+                          </div>
+                          <div class="crew-view">
+                              <div class="tab-content clearfix">
+                                  <div class="row">
+                                      <div class="col-xs-12">
+                                          <div class="search-widget">
+                                              <h4>Add or edit crew members</h4>
+                                              <div class="input-group input-group-sm">
+                                                  <span class="input-group-addon"><img src="img/icons/search_green.svg"></span>
+                                                  <input type="text" ng-model="searchText" class="form-control" placeholder="Enter crew member name">
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <button class="button button-block button-assertive">Search</button>
+
+                                  <div class="row">
+                                      <div class="col-xs-12">
+
+                                          <ul class="crew-list list-group" ng-show="contactList">
+                                              <li class="list-group-item" data-ng-repeat="contact in contactList | filter:searchText">
+                                                  <a ng-click="getCrewLink(contact)" href="#" data-ng-if="contact.name.formatted!=null">-->
+  <!-- TODO work out how to access content:// local stored images -->
+  <!--<div class="hexagon hex-md YTemp" ng-class="{'grayscale' : isInvited(contact)}" style="background-image: url({{contact.contactPhoto}});">
+                                                          <div class="face1"></div>
+                                                          <div class="face2"></div>
+                                                      </div>
+                                                      <p class="text-center">{{contact.name.formatted}}</p>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </section>
+
+          </div>
+      </div>
+  </div>-->
+
+
+</ion-view>

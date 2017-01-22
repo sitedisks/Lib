@@ -1,0 +1,59 @@
+﻿<ion-view view-title="Appointments" ng-init="initialize()">
+
+
+    <!--Header-->
+    <ion-header-bar align-title="center" class="bar-positive">
+        <!--<div class="buttons">
+          <button class="button button-clear">Back</button>
+        </div>-->
+        <h1 class="title">Appointments</h1>
+    </ion-header-bar>
+
+    <!--Subheader-->
+    <div class="bar bar-subheader text-center">
+        <h2>{{today | date: 'EEEE'}} {{today | date: 'd'}}</h2>
+        <p>{{today | date: 'LLLL'}} {{today | date: 'yyyy'}}</p>
+    </div>
+
+    <!--Tabs-->
+    <div class="tabs tabs-top has-header has-subheader">
+        <a class="tab-item" ng-click="setTab(1)" ng-class="{'selected': tab==1}">coming up</a>
+        <a class="tab-item" ng-click="setTab(2)" ng-class="{'selected': tab==2}">past appointments</a>
+    </div>
+
+    <div class="bar-search item item-input-inset input-stable has-header has-subheader has-tabs has-tabs-top">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" ng-model="searchText" placeholder="Search">
+        </label>
+        <button class="button button-small">
+            Find
+        </button>
+    </div>
+
+    <!--Content-->
+    <ion-content class="has-header has-subheader has-tabs has-tabs-top has-search has-footer" scroll="true" overflow-scroll="true">
+
+        <div class="list colored-list" ng-show="isSet(1)">
+            <a class="item item-icon-right" ng-click="viewAppointment(appointment)" data-ng-repeat="appointment in upcomingList  | filter:searchText | orderBy: appointment.StartDateTime">
+                {{appointment.Title}}
+                <span class="item-note">{{appointment.StartDateTime | date :  "d MMM" }}</span>
+                <i class="icon ion-chevron-right"></i>
+            </a>
+        </div>
+        <div class="list colored-list" ng-show="isSet(2)">
+            <a class="item item-icon-right" ng-click="viewAppointment(appointment)" data-ng-repeat="appointment in pastList  | filter:searchText | orderBy: appointment.StartDateTime">
+                {{appointment.Title}}
+                <span class="item-note">{{appointment.StartDateTime | date :  "d MMM" }}</span>
+                <i class="icon ion-chevron-right"></i>
+            </a>
+        </div>
+
+    </ion-content>
+
+    <div class="bar bar-footer bar-assertive no-padding has-tabs">
+        <button class="button button-block button-assertive no-margin" ng-click="createNewAppointment()">New Appointment</button>
+    </div>
+
+
+</ion-view>

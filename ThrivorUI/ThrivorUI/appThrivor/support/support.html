@@ -1,0 +1,28 @@
+﻿<ion-view view-title="Support">
+    <!--Header-->
+    
+    <ion-header-bar align-title="center" class="bar-positive">
+        <h1 class="title">Support</h1>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+        <div class="list colored-list">
+            <a class="item item-icon-left item-avatar" ui-sref="comingSoon">
+                <i class="icon icon-coffee" aria-hidden="true"></i>
+                <h2>Chat</h2>
+                <p>Privately, with your supporters or the Thrivor communit. It's up to you.</p>
+            </a>
+            <a class="item item-icon-left item-avatar" ui-sref="dashboard.support.crew" ng-show="!isSupport">
+                <i class="icon icon-address-book" aria-hidden="true"></i>
+                <h2>Contacts</h2>
+                <p>View supporters.</p>
+            </a>
+            <a class="item item-icon-left item-avatar" ui-sref="comingSoon">
+                <i class="icon icon-gift" aria-hidden="true"></i>
+                <h2>Gift box</h2>
+                <p>Freebies ,discounts and other userful stuff.</p>
+            </a>
+        </div>
+    </ion-content>
+
+</ion-view>

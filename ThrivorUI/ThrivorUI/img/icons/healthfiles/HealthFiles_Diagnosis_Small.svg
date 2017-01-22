@@ -1,1 +1,34 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.56 32.99"><defs><style>.cls-1{fill:#ffffff;}</style></defs><title>HealthFiles_Diagnosis_Small</title><polygon class="cls-1" points="9.73 9.59 42.87 9.59 42.87 3.71 10.59 3.71 10.59 0 0 0 0 28.99 9.73 9.59"/><polygon class="cls-1" points="43.98 32.99 1.11 32.99 11.69 11.89 54.56 11.89 43.98 32.99"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="31px" height="20px" viewBox="0 0 31 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>HealthFiles_Diagnosis_Small</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="4.71757576 4.64969697 20.7854545 4.64969697 20.7854545 1.79878788 5.13454545 1.79878788 5.13454545 0 0 0 0 14.0557576"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="22.7854545" height="16.0557576">
+            <rect x="-1" y="-1" width="22.7854545" height="16.0557576" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+        <polygon id="path-3" points="21.3236364 15.9951515 0.538181818 15.9951515 5.66787879 5.76484848 26.4533333 5.76484848"></polygon>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="27.9151515" height="12.230303">
+            <rect x="-0.461818182" y="4.76484848" width="27.9151515" height="12.230303" fill="white"></rect>
+            <use xlink:href="#path-3" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Health-Files" transform="translate(-19.000000, -195.000000)">
+            <g id="HealthFiles_Diagnosis_Small" transform="translate(21.000000, 196.000000)">
+                <g id="Layer_1">
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-4)" stroke-width="2" xlink:href="#path-3"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

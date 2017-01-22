@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="26px" viewBox="0 0 22 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>HealthFiles_AZFilter Copy 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M16.0507317,0 L0,0 L0,23.7892683 L19.2234146,23.7892683 L19.2234146,3.97463415 L16.0507317,0 Z M17.4673171,22.0331707 L1.75609756,22.0331707 L1.75609756,1.75609756 L13.644878,1.75609756 L13.644878,6.5502439 L17.4673171,6.5502439 L17.4673171,22.0331707 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="21.2234146" height="25.7892683">
+            <rect x="-1" y="-1" width="21.2234146" height="25.7892683" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Health-Files-Category" transform="translate(-31.000000, -366.000000)">
+            <g id="HealthFiles_AZFilter-Copy-4" transform="translate(32.000000, 367.000000)">
+                <g id="Layer_1">
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,11 +1,84 @@
-﻿<ion-view view-title="SignUp 3">
-    <ion-content class="padding">
-        <p>
-            Sign Up Step 3
-        </p>
-        <p>
-            <a class="button button-balanced" ui-sref="signUp.step4">Next step</a>
-            <a class="button icon icon-right ion-chevron-right" href="/signup/step4">Step 4</a>
-        </p>
+﻿<ion-view view-title="Join">
+    
+    <div class="bar bar-subheader text-center">
+        <h2>Privacy</h2>
+        <p>Create a 4-digit passcode <br /> to protect your Thrivor account</p>
+    </div>
+    <ion-content scroll="false" class="bg-stable has-header has-subheader">
+
+        <div class="signIn signin-pin row row-center" novalidate>
+
+            <div class="input-pin col">
+                <div class="row responsive-sm">
+                    <div class="col col-33 col-offset-33 col-bottom text-center">
+                        <div class="input-group">
+                            <input type="password" maxlength="1" value="{{userDetails.password.substring(0, 1)}}" readonly>
+                            <input type="password" maxlength="1" value="{{userDetails.password.substring(1, 2)}}" readonly>
+                            <input type="password" maxlength="1" value="{{userDetails.password.substring(2, 3)}}" readonly>
+                            <input type="password" maxlength="1" value="{{userDetails.password.substring(3, 4)}}" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="onscreen-keypad col">
+                <div class="row responsive-sm">
+                    <div class="col col-33 col-offset-33 col-top">
+                        <div class="row button-row">
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(1)"><b>1</b></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(2)"><b>2</b><span>abc</span></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(3)"><b>3</b><span>def</span></button>
+                            </div>
+                        </div>
+                        <div class="row button-row">
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(4)"><b>4</b><span>ghi</span></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(5)"><b>5</b><span>jkl</span></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(6)"><b>6</b><span>mno</span></button>
+                            </div>
+                        </div>
+                        <div class="row button-row">
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(7)"><b>7</b><span>pqrs</span></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(8)"><b>8</b><span>tuv</span></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(9)"><b>9</b><span>wxyz</span></button>
+                            </div>
+                        </div>
+                        <div class="row button-row">
+                            <div class="col col-center">
+                                <button class="button-keypad button-keypad-text" ng-click="goRetrievePasscode()">I forgot</button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad" ng-click="enterPasscodeDigit(0)"><b>0</b></button>
+                            </div>
+                            <div class="col col-center">
+                                <button class="button-keypad button-keypad-text" ng-click="removePasscodeDigit()">delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bar bar-footer bar-assertive no-padding">
+            <button class="button button-full button-assertive no-margin" ng-disabled="userDetails.password.length < 4" ng-click="signUpUser()">Boom!</button>
+        </div>
+
     </ion-content>
+
+
+
 </ion-view>

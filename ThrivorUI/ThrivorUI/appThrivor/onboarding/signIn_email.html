@@ -1,0 +1,42 @@
+﻿<ion-view view-title="Email">
+
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <!--Header-->
+  <!--<ion-header-bar align-title="center" class="bar-positive">
+    <div class="buttons">
+      <button class="button button-clear">Back</button>
+    </div>
+    <h1 class="title">Sign In</h1>
+  </ion-header-bar>-->
+
+  <!--Subheader-->
+  <div class="bar bar-subheader text-center">
+    <h3>Login to Thrivor</h3>
+  </div>
+
+  <ion-content scroll="false" class="has-header has-subheader bg-stable">
+
+    <form name="signIn" novalidate>
+      <div class="list">
+        <label class="item item-input item-input-inline" ng-class="{'has-error': signIn.email.$invalid}">
+          <span class="input-label">Email</span>
+          <input type="email" placeholder="eg. name@gmail.com" ng-model="signinFull.email" required>
+          <p class="item-error" ng-show="signIn.email.$dirty && signIn.email.$invalid">Invalid Email</p>
+        </label>
+      </div>      
+
+      <div class="bar bar-footer no-padding">
+        <button class="button button-block button-assertive no-margin" ng-disabled="signIn.$invalid" ng-click="goSignIn()">Next</button>
+      </div>
+
+    </form>
+
+  </ion-content>
+  <!--<ion-footer-bar class="bar-assertive bottom-button">
+      <button class="button button-full button-assertive" ng-disabled="signIn.$invalid" ng-click="goSignIn()">Next</button>
+  </ion-footer-bar>-->
+</ion-view>

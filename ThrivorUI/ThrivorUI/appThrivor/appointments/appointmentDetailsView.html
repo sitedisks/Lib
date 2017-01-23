@@ -1,0 +1,32 @@
+﻿<div class="list">
+    <div class="item item-icon-left">
+        <i class="icon clock"></i>
+        <h2>{{currentAppointment.StartDateTime | date: 'h:mma'}} - {{currentAppointment.EndDateTime | date: 'h:mma'}}</h2>
+    </div>
+    <div class="item item-icon-left">
+        <i class="icon doctor"></i>
+        <h2>Specialist</h2>
+        <p>{{currentAppointment.AppointmentContact.Name}} {{currentAppointment.AppointmentContact.Department}}</p>
+    </div>
+    <div class="item item-icon-left">
+        <i class="icon location"></i>
+        <!--<h2>{{currentAppointment.Provider}}</h2>-->
+        <p>{{locationDetails}}</p>
+    </div>
+    <!--<div class="item item-icon-left">
+        <i class="icon car"></i>
+        <h2>Transport</h2>
+        <p>UBER ?</p>
+    </div>-->
+</div>
+
+<!--Removed Location from appointment module, Be safe side and commenting out-->
+<!--<div class="row">
+    <div class="col-xs-3">
+        <img class="pull-right" src="Content/img/icons/location_green.svg" />
+    </div>
+    <div class="col-xs-9">
+        <h6><strong>{{currentAppointment.Provider}}</strong></h6>
+        <p>{{getFormattedDestinationLocation()}}</p>
+    </div>
+</div>-->

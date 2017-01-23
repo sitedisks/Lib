@@ -1,0 +1,24 @@
+<ion-view view-title="Passcode Retrieve">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content scroll="false" class="bg-stable">
+        <form name="passcodeRetrieve" novalidate>
+            <div class="row-fill-height">
+                <section class="header">
+                    <img class="logo" src="img/thrivor_logo.svg" />
+                    <p>Have you forgotten your passcode? Please type your email here.</p>
+                    <div ng-class="{'has-error': passcodeRetrieve.email.$invalid}" class="input-row-wrap">
+                        <label class="item-input-wrapper item item-input" for="email">
+                            <input name="email" class="form-control" type="email" ng-model="data.email" placeholder="Enter your email address" required />
+                        </label>
+                    </div>
+                </section>
+            </div>
+        </form>
+        <div class="bar bar-footer bar-assertive bottom-button">
+            <button class="button button-full button-assertive" ng-disabled="passcodeRetrieve.$invalid" ng-click="retrievePasscode()">Retrieve my passcode</button>
+        </div>
+    </ion-content>
+</ion-view>

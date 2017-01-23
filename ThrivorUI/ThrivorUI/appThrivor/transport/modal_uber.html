@@ -1,0 +1,20 @@
+﻿<ion-modal-view>
+    <ion-header-bar align-title="center" class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeModal()">Close</button>
+        </div>
+        <h1 class="title">Select your Uber ride</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="pick-uber-option text-center">
+            <h2>Pick an option</h2>
+            <div class="list card text-center">
+                <a ng-click="selectUberProduct(product.product_id)" ng-repeat="product in products" class="item">
+                    <img class="img-responsive" data-ng-src="{{product.image}}" />
+                    <h4>{{product.display_name}}</h4>
+                    <p>{{product.description}}</p>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

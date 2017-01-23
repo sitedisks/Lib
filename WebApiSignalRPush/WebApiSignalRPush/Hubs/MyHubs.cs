@@ -20,6 +20,7 @@
         public void Subscribe(string customerId)
         {
             Groups.Add(Context.ConnectionId, customerId);
+            //Clients.Group(customerId);
         }
 
         /// <summary>

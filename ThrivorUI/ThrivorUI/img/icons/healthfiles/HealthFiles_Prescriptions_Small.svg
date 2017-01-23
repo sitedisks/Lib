@@ -1,1 +1,25 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37.35 37.35"><defs><style>.cls-1{fill:#ffffff;}</style></defs><title>HealthFiles_Prescriptions_Small</title><path class="cls-1" d="M34.61,2.73a9.35,9.35,0,0,0-13.2,0L2.74,21.41a9.34,9.34,0,0,0,13.2,13.2L34.61,15.93a9.34,9.34,0,0,0,0-13.2ZM33.22,14.54l-9.38,9.38L13.42,13.5,22.8,4.12A7.37,7.37,0,1,1,33.22,14.54Z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>HealthFiles_Prescriptions_Small</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M21.8589474,1.72421053 C19.5544625,-0.57231409 15.8265901,-0.57231409 13.5221053,1.72421053 L1.73052632,13.5221053 C-0.430869414,15.8469189 -0.364988801,19.4652778 1.87960356,21.7098701 C4.12419592,23.9544625 7.74255483,24.0203431 10.0673684,21.8589474 L21.8589474,10.0610526 C24.1589459,7.75800427 24.1589459,4.02725889 21.8589474,1.72421053 Z M20.9810526,9.18315789 L15.0568421,15.1073684 L8.47578947,8.52631579 L14.4,2.60210526 C15.5661826,1.38103346 17.3021736,0.887240795 18.9364304,1.31174366 C20.5706873,1.73624653 21.8469114,3.0124706 22.2714142,4.64672747 C22.6959171,6.28098434 22.2021244,8.01697529 20.9810526,9.18315789 L20.9810526,9.18315789 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="25.4321099" height="25.4358203">
+            <rect x="-0.848163692" y="-0.998182936" width="25.4321099" height="25.4358203" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Health-Files" transform="translate(-21.000000, -367.000000)">
+            <g id="HealthFiles_Prescriptions_Small" transform="translate(22.000000, 368.000000)">
+                <g id="Layer_1">
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

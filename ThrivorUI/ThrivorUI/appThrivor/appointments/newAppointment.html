@@ -1,0 +1,88 @@
+﻿<ion-modal-view>
+
+    <!--Header-->
+    <ion-header-bar align-title="center" class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear" ng-click="navigate()">Cancel</button>
+        </div>
+        <h1 class="title">New Appointment</h1>
+        <div class="buttons">
+            <button class="button button-clear" type="submit" ng-disabled="newAppointment.$invalid" ng-click="addAppointment()">Save</button>
+        </div>
+    </ion-header-bar>
+
+    <form name="newAppointment" ng-submit="addAppointment()" novalidate>
+
+        <ion-content scroll="true" overflow-scroll="true" class="has-header has-tabs bg-stable">
+            <div class="list">
+                <label class="item item-input" ng-class="{'has-error':newAppointment.title.$dirty && newAppointment.title.$error.required}">
+                    <span class="input-label">Title</span>
+                    <input type="text" id="title" name="title" ng-model="currentAppointment.Title" maxlength="50" placeholder="Title" required />
+                </label>
+                <span data-ng-show="newAppointment.title.$dirty && newAppointment.title.$error.required" class="error-msg">Title is required</span>
+
+                <label class="item item-input">
+                    <span class="input-label">Hospital/Provider</span>
+                    <input type="text" ng-model="currentAppointment.Provider" maxlength="50" placeholder="Hospital/Provider" />
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Specialist</span>
+                    <input type="text" ng-model="currentAppointment.AppointmentContact.Name" maxlength="50" placeholder="Specialist" />
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Room</span>
+                    <input type="text" ng-model="currentAppointment.AppointmentContact.Room" ng-maxlength="10" placeholder="Enter room number" />
+                </label>
+
+                <!-- mapping - currentAppointment.Origin-->
+                <label class="item item-input" ng-class="{'has-error': newAppointment.addressAutoComplete1.$dirty && newAppointment.addressAutoComplete1.$error.required}">
+                    <span class="input-label">Enter location</span>
+                    <input type="text" id="addressAutoComplete1" name="addressAutoComplete1" google-autocomplete-suggestion location="data.location" country-code="AU" on-selection="onAddressSelection(location)" ng-model="data.location.formatted_address" placeholder="Enter location" required />
+                </label>
+                <span data-ng-show="newAppointment.addressAutoComplete1.$dirty && newAppointment.addressAutoComplete1.$error.required" class="error-msg"> Location is required </span>
+
+                <div class="item item-input">
+                    <ion-checkbox ng-model="currentAppointment.IsAllDay"> All-day </ion-checkbox>
+                </div>
+
+                <label class="item item-input" ng-class="{'has-error': newAppointment.appointmentStartDate.$invalid}">
+                    <span class="input-label">* Starts</span>
+                    <input type="datetime-local" id="appointmentStartDate" name="appointmentStartDate" min="minDate" ng-model="currentAppointment.StartDateTime" ng-change="isStartOrEndDateTimeChanged()" placeholder="Enter start date" required />
+                </label>
+                <span data-ng-show="newAppointment.appointmentStartDate.$dirty && newAppointment.appointmentStartDate.$error.required" class="error-msg">start date is required</span>
+
+                <label class="item item-input" ng-class="{'has-error': newAppointment.appointmentStartDate.$invalid}">
+                    <span class="input-label">* Ends</span>
+                    <input type="datetime-local" id="appointmentEndDate" name="appointmentEndDate" min="minDate" ng-model="currentAppointment.EndDateTime" ng-change="isStartOrEndDateTimeChanged()" placeholder="Enter start date" required />
+                </label>
+                <span data-ng-show="newAppointment.appointmentEndDate.$dirty && newAppointment.appointmentEndDate.$error.required" class="error-msg">end date is required</span>
+
+                <label class="item item-input item-select">
+                    <span class="input-label">Repeat</span>
+                    <select id="optionRepeatItems" ng-model="currentAppointment.Repeat" ng-options="repeatItem.id as repeatItem.name for repeatItem in repeatItemList"></select>
+                </label>
+                <div class="item item-input isteven-multi-select row">
+                    <span class="input-label col">Alert</span>
+                    <div class="col col-75"
+                         isteven-multi-select
+                         input-model="alertList"
+                         output-model="currentAppointment.selectedAlertItems"
+                         item-label="name"
+                         max-labels="0"
+                         helper-elements=""
+                         max-height="150px"
+                         tick-property="ticked">
+                    </div>
+                </div>
+
+            </div>
+        </ion-content>
+
+        <ion-footer-bar class="bar-assertive bottom-button">
+            <button class="button button-full button-assertive" ng-disabled="newAppointment.$invalid">save</button>
+        </ion-footer-bar>
+    </form>
+</ion-modal-view>
+

@@ -1,0 +1,57 @@
+﻿<ion-view view-title="Audio Recordings">
+
+    <!--Header-->
+    <ion-header-bar align-title="center" class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear" ui-sref="dashboard.files">Back</button>
+        </div>
+        <h1 class="title">Audio Recordings</h1>
+        <div class="buttons">
+            <!--<button class="button button-clear">Add</button>-->
+        </div>
+    </ion-header-bar>
+
+    <!--Subheader-->
+    <div class="bar bar-subheader text-center">
+        
+        <div class="container player-container">
+            
+            <div class="row">
+                <audio id="audioPlayer"
+                       ng-show="audioFilesList.length > 0"
+                       style="width:100%"
+                       controls>
+                    <h5>Sorry, we are not able to play this recording</h5>
+                </audio>
+            </div>
+            <!--<div classs="row" data-ng-show="audioCurrentItem" data-ng-click="sendEmail(audioCurrentItem)">
+                <h5><i class="fa fa-envelope fa-1x" aria-hidden="true"></i>&nbsp;{{audioCurrentItem.DocumentName}}</h5>
+            </div>-->
+            <div class="row">
+                <div class="col col-md-12">
+                    <h5>{{interactionMessage}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Content-->
+    <ion-content class="has-header has-subheader has-tabs">
+
+        <!--File Categories-->
+        <div class="list">
+            <a class="item item-icon-left item-note-right" ng-repeat="item in audioFilesList" ng-click="playItem(item)">
+                <i class="icon ion-play icon-red" ng-if="item.playCaption == 'Play'"></i>
+                <i class="icon ion-pause icon-red" ng-if="item.playCaption == 'Pause'"></i>
+
+                <h2>{{item.DocumentName}}</h2>
+                <p>{{item.DateRecieved | date :  "mediumDate"}}</p>
+                <!--<span class="item-note item-note-vcenter"></span>-->
+            </a>
+
+        </div>
+
+
+    </ion-content>
+
+</ion-view>

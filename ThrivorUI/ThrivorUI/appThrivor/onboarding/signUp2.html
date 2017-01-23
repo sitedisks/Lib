@@ -1,11 +1,71 @@
-﻿<ion-view view-title="SignUp 2">
-    <ion-content class="padding">
-        <p>
-            Sign Up Step 2
-        </p>
-        <p>
-            <a class="button button-balanced" ui-sref="signUp.step3">Next step</a>
-            <a class="button icon icon-right ion-chevron-right" href="/signup/step3">Step 3</a>
-        </p>
+﻿<ion-view view-title="Join">
+
+    <!--Subheader-->
+    <div class="bar bar-subheader text-center">
+        <h3>Your personal details</h3>
+    </div>
+
+    <ion-content class="has-header has-subheader bg-stable" scroll="true" overflow-scroll="true">
+
+        <form name="signUp" novalidate>
+
+            <div class="list">
+
+                <label class="item item-input item-input-inline" ng-class="{'has-error': signUp.firstName.$dirty && signUp.firstName.$invalid}">
+                    <span class="input-label">First Name</span>
+                    <input type="text" name="firstName" ng-model="userDetails.firstName" ng-minlength="2" placeholder="Enter first name" required>
+                    <p ng-show="signUp.firstName.$dirty && signUp.firstName.$invalid" class="item-error">First name required</p>
+                </label>
+
+                <label class="item item-input item-input-inline" ng-class="{'has-error': signUp.lastName.$dirty && signUp.lastName.$invalid}">
+                    <span class="input-label">Last Name</span>
+                    <input type="text" name="lastName" ng-model="userDetails.lastName" ng-minlength="2" placeholder="Enter last name" required>
+                    <p ng-show="signUp.lastName.$dirty && signUp.lastName.$invalid" class="item-error">Last name required</p>
+                </label>
+
+                <label class="item item-input item-input-inline" ng-class="{'has-error': signUp.mobileNumber.$dirty && signUp.mobileNumber.$invalid}">
+                    <span class="input-label">Mobile</span>
+                    <input type="tel" name="mobileNumber" ng-model="userDetails.mobileNumber" ng-minlength="8" placeholder="eg. 4055997773" required>
+                    <p ng-show="signUp.mobileNumber.$dirty && signUp.mobileNumber.$invalid" class="item-error"> Invalid mobile number </p>
+                </label>
+
+
+                <label class="item item-input item-input-inline" ng-class="{'has-error': !signUp.email.$error.required && !signUp.email.$error.email && signUp.email.$error.userNameExists == true}">
+                    <span class="input-label">Email</span>
+                    <input type="email" name="email" ng-model="userDetails.email" ng-blur="doesUsernameExist(userDetails.email)" placeholder="eg. name@gmail.com" required>
+                    <p ng-show="signUp.email.$dirty && signUp.email.$error.required" class="item-error">Enter your email</p>
+                    <p ng-show="signUp.email.$dirty && !signUp.email.$error.required && signUp.email.$error.email" class="item-error">
+                        Please enter valid email
+                    </p>
+                    <p ng-show="!signUp.email.$error.required && !signUp.email.$error.email && signUp.email.$error.userNameExists == true" class="item-error">
+                        Sorry, this username is already taken
+                    </p>
+                </label>
+
+                <label class="item item-input item-input-inline" ng-if="showInviteCode" ng-class="{'has-error': signUp.uniqueKey.$dirty && signUp.uniqueKey.$invalid}">
+                    <span class="input-label">Invite Code</span>
+                    <input type="text" name="uniqueKey" ng-model="userDetails.uniqueKey" ng-change="isValidUniqueCode(userDetails.uniqueKey)"
+                           ng-minlength="5" ng-maxlength="6" placeholder="Invite Code" required>
+                    <p ng-show="signUp.uniqueKey.$dirty && signUp.uniqueKey.$invalid" class="item-error">Invalid invite code</p>
+                </label>
+
+                <div class="item item-checkbox terms-checkbox">
+                    <div class="checkbox">
+                        <input type="checkbox" ng-model="userDetails.tac">
+                    </div>
+                    I agree to Thrivor's <a href="#" stop-event ng-click="openModal()">Terms &amp; Conditions</a>
+                </div>
+
+            </div>
+
+            <div class="bar bar-footer no-padding">
+                <button class="button button-block button-assertive no-margin" ng-disabled="signUp.$invalid || !userDetails.tac" ng-click="goCreatePasscode()">
+                    Next
+                </button>
+            </div>
+
+        </form>
+
     </ion-content>
+
 </ion-view>

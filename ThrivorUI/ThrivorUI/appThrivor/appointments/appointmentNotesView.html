@@ -1,0 +1,15 @@
+﻿<div id="Notes">
+    <form name="apptNote" ng-submit="addNotesToAppointment(currentAppointment)" novalidate>
+        <div class="list">
+            <label class="item item-input item-input-inline item-stacked-label" ng-class="{'has-error': apptNote.note.$dirty && apptNote.note.$invalid}">
+                <textarea id="note" name="note" rows="10" cols="50" ng-model="currentAppointment.Notes" placeholder="Enter your notes" required></textarea>
+                <p class="item-error" data-ng-show="apptNote.note.$dirty && apptNote.note.$error.required" class="error-msg">Title is required</p>
+            </label>
+        </div>
+
+        <div class="bar bar-footer bar-assertive no-padding">
+            <button class="button button-block button-assertive no-margin" type="submit" ng-disabled="apptNote.$invalid">{{noteOperationCaption}}</button>
+        </div>
+
+    </form>
+</div>

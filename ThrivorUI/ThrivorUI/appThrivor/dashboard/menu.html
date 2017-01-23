@@ -1,0 +1,23 @@
+﻿<ion-tabs class="tabs-icon-top tabs-dark">
+    <ion-tab title="Home" class="tab tab-dashboard" ui-sref="dashboard.home">
+        <ion-nav-view name="tab-dashboard"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Support" class="tab tab-support" href="/support">
+        <ion-nav-view name="tab-support"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Transport" class="tab tab-transport" href="/transport">
+        <ion-nav-view name="tab-transport"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Files" ng-if="!isSupport" class="tab tab-files" href="/files">
+        <ion-nav-view name="tab-files"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Gifts" ng-if="isSupport" class="tab tab-gifts" ui-sref="comingSoon">
+        <ion-nav-view name="tab-gifts"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Jobs" class="tab tab-jobs" href="/jobs">
+        <ion-nav-view name="tab-jobs"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="Appointments" ng-if="!isSupport" class="tab tab-appointments" href="/appointments">
+        <ion-nav-view name="tab-appointments"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

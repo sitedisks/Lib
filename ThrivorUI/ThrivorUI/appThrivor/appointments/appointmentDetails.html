@@ -1,0 +1,35 @@
+﻿<ion-view view-title="Appointment details">
+    <!--Header-->
+    <ion-header-bar align-title="center" class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear" ui-sref="dashboard.appointments">Back</button>
+        </div>
+        <h1 class="title">Appointment Details </h1>
+    </ion-header-bar>
+
+    <!--Subheader-->
+    <div class="bar bar-subheader text-center">
+        <h2>{{currentAppointment.Title}}</h2>
+        <p>{{currentAppointment.StartDateTime | date: 'EEEE'}} {{currentAppointment.StartDateTime | date: 'd'}} {{currentAppointment.StartDateTime | date: 'LLLL'}} {{currentAppointment.StartDateTime | date: 'yyyy'}}</p>
+    </div>
+
+    <!--Tabs-->
+    <div class="tabs tabs-top has-header has-subheader">
+        <a class="tab-item" ng-click="setTab(1)" ng-class="{'selected': tab==1}">details</a>
+        <a class="tab-item" ng-click="setTab(2)" ng-class="{'selected': tab==2}">take notes</a>
+        <a class="tab-item" ng-click="setTab(3)" ng-class="{'selected': tab==3}">record</a>
+    </div>
+
+    <ion-content class="has-header has-subheader has-tabs has-tabs-top" scroll="true" overflow-scroll="true">
+        <div ng-show="isSet(1)">
+            <div ng-include="'appThrivor/appointments/appointmentDetailsView.html'"></div>
+        </div>
+        <div ng-show="isSet(2)">
+            <div ng-include="'appThrivor/appointments/appointmentNotesView.html'"></div>
+        </div>
+        <div ng-show="isSet(3)">
+            <div ng-include="'appThrivor/appointments/appointmentRecordingView.html'"></div>
+        </div>
+    </ion-content>
+
+</ion-view>

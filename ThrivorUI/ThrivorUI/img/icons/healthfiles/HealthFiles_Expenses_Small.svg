@@ -1,1 +1,25 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.8 31.03"><defs><style>.cls-1{fill:#ffffff;}</style></defs><title>HealthFiles_Expenses_Small</title><path class="cls-1" d="M7.08,27.32C3.2,26.48.64,24,0,20.24H7.56a2.61,2.61,0,0,0,2.72,1.56c1.08,0,2-.52,2-1.36,0-1-.68-1.2-1.88-1.48L6.4,18c-3.4-.8-6-2.56-6-6.84,0-3.92,2.72-6.68,6.72-7.56V0h6V3.72a8.19,8.19,0,0,1,6.4,6.92H12.32A2.57,2.57,0,0,0,9.84,9.2c-1.2,0-2,.52-2,1.28s.52,1,1.28,1.2l4.56,1.16c4.12,1.08,6.12,3.28,6.12,7.08,0,4-2.8,6.64-6.72,7.44V31h-6Z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="26px" viewBox="0 0 19 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>HealthFiles_Expenses_Small</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M5.48129032,21.1509677 C2.47741935,20.5006452 0.495483871,18.5806452 0,15.6696774 L5.85290323,15.6696774 C6.20784826,16.4960282 7.06621843,16.9883287 7.95870968,16.8774194 C8.79483871,16.8774194 9.50709677,16.4748387 9.50709677,15.8245161 C9.50709677,15.0503226 8.98064516,14.8954839 8.0516129,14.6787097 L4.95483871,13.9354839 C2.32258065,13.316129 0.309677419,11.9535484 0.309677419,8.64 C0.309677419,5.60516129 2.41548387,3.4683871 5.51225806,2.78709677 L5.51225806,0 L10.1574194,0 L10.1574194,2.88 C12.7741438,3.44119833 14.7567656,5.58490821 15.1122581,8.23741935 L9.53806452,8.23741935 C9.18416803,7.51008386 8.42517616,7.06937891 7.61806452,7.12258065 C6.68903226,7.12258065 6.06967742,7.52516129 6.06967742,8.11354839 C6.06967742,8.70193548 6.47225806,8.88774194 7.06064516,9.04258065 L10.5909677,9.94064516 C13.7806452,10.7767742 15.3290323,12.48 15.3290323,15.4219355 C15.3290323,18.5187097 13.1612903,20.5625806 10.1264516,21.1819355 L10.1264516,24 L5.48129032,24 L5.48129032,21.1509677 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="17.3290323" height="26">
+            <rect x="-1" y="-1" width="17.3290323" height="26" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Health-Files" transform="translate(-24.000000, -233.000000)">
+            <g id="HealthFiles_Expenses_Small" transform="translate(26.000000, 234.000000)">
+                <g id="Layer_1">
+                    <g id="Shape">
+                        <use fill="#27314D" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

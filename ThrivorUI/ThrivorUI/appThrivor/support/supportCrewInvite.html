@@ -1,0 +1,35 @@
+<ion-view view-title="Invite Contact">
+
+    <ion-header-bar align-title="center" class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear" ui-sref="dashboard.support.crew">Back</button>
+        </div>
+    </ion-header-bar>
+
+    <div class="bar bar-subheader text-center">
+        <h3>Crew Members</h3>
+    </div>
+
+    <ion-content class="bg-stable has-header has-subheader" ng-init="initCrewInvite()">
+
+        <div class="row responsive-sm">
+            <div class="col col-33 col-offset-33 padding">
+                <p>
+                    We couldn't find {{inviteeName}} on Thrivor so we'll need to send an invite. Here's the message
+                    he/she will see. It's also recommended you speak with {{inviteeName}} in person.
+                </p>
+                <p class="small">
+                    Review the message, make any changes and send the invite.
+                </p>
+                <textarea id="invite-msg" ng-model="inviteMsg" rows="18" cols="50" style="width: 80%;></textarea>
+            </div>
+        </div>
+
+
+
+    </ion-content>
+    <ion-footer-bar class="bar-assertive bar-footer no-padding">
+        <button class="button button-block button-assertive no-margin" ng-click="sendInvite()">Send Invite</button>
+    </ion-footer-bar>
+</ion-view>
+

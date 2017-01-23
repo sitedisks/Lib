@@ -7,8 +7,10 @@
     public class Complaint
     {
         [Key, Column("Id")]
-        public int ComplaintID { get; set; }
-        public string CustomerId { get; set; }
-        public string Description { get; set; }
+        public int COMPLAINT_ID { get; set; }
+        [Column("CustomerId")]
+        public string CUSTOMER_ID { get; set; }
+        [Column("Description")]
+        public string DESCRIPTION { get; set; }
     }
 }

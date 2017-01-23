@@ -1,0 +1,72 @@
+﻿<ion-view view-title="Jobs">
+
+  <!--Header-->
+  <ion-header-bar align-title="center" class="bar-positive">
+    <!--<div class="buttons">
+      <button class="button button-clear">Back</button>
+    </div>-->
+    <h1 class="title">Jobs</h1>
+    <div class="buttons" ng-show="userCapabilities.canCreateJobs">
+      <button class="button button-clear" ng-click="newJob('Other')">New</button>
+    </div>
+  </ion-header-bar>
+
+  <!--Subheader-->
+  <!--<div class="bar bar-subheader text-center">
+    Dismiss Me
+  </div>-->
+
+  <!--Tabs-->
+  <div class="tabs tabs-top has-header" >
+    <a class="tab-item" ng-click="setTab(1)" ng-show="userCapabilities.canCreateJobs" ng-class="{'selected': tab==1}">New</a>
+    <a class="tab-item" ng-click="setTab(2)" ng-class="{'selected': tab==2}">Oepn</a>
+    <a class="tab-item" ng-click="setTab(3)" ng-class="{'selected': tab==3}">Rostered</a>
+  </div>
+
+  <!--Content-->
+  <ion-content class="has-header has-tabs has-tabs-top">
+
+    <!--NEW-->
+    <div class="list colored-list" ng-show="isSet(1) && userCapabilities.canCreateJobs">
+      <a class="item item-icon-left" ng-repeat="job in jobs" ng-if="job.CategoryName != 'Other'" ng-click="newJob(job.CategoryName)">
+        <i class="icon icon-{{job.CategoryName}}"></i>
+        {{job.CategoryName}}
+      </a>
+    </div>
+
+
+    <!--OPEN-->
+    <div class="list colored-list" ng-show="isSet(2)">
+      <a class="item item-avatar item-icon-right" ng-show="jobList.length>0" ng-repeat="job in jobList | orderBy: '-TaskDetails.StartDateTime' " ng-click="openJob(job.Id)">
+        <img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=&w=200&h=200" class="avatar-job" />
+        <h2>{{job.Description}}</h2>
+        <p>Volunteer</p>
+        <small>{{rosteredJob.TaskDetails.StartDateTime | date :  "mediumDate" }}</small>
+        <i class="icon ion-chevron-right"></i>
+      </a>
+    </div>
+
+    <!--DONE-->
+
+    <div class="list colored-list" ng-show="isSet(3)">
+      <a class="item item-icon-right item-avatar" ng-click="jobDetails(rosteredJob.TaskDetails.Id)"
+         ng-repeat="rosteredJob in rosteredJobList | orderBy: '-TaskDetails.StartDateTime' ">
+        <img src="https://placeholdit.imgix.net/~text?txtsize=19&txt=&w=200&h=200" class="avatar-job" ng-if="rosteredJob.TaskVolunteer.UserPhoto == null" />
+        <img ng-src={{rosteredJob.TaskVolunteer.UserPhoto}} class="avatar-job" ng-if="rosteredJob.TaskVolunteer.UserPhoto != null" />
+        <h2>{{rosteredJob.TaskDetails.Description}}</h2>
+        <p>{{rosteredJob.TaskVolunteer.Name}}</p>
+        <small>{{rosteredJob.TaskDetails.StartDateTime | date :  "mediumDate" }}</small>
+        <i class="icon ion-android-done"></i>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>
+
+<!--<script type="text/javascript">
+  $(".bar-subheader").click(function () {
+    $(this).slideUp(100, function () {
+      $('ion-content, .tabs-top').removeClass('has-subheader');
+    });
+  });
+</script>-->

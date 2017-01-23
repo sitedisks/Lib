@@ -1,0 +1,75 @@
+﻿<ion-view view-title="Uber">
+
+    <!--Header-->
+    <ion-nav-bar class="bar-positive" align-title="center">
+        <ion-nav-back-button>Back</ion-nav-back-button>
+        <h1 class="title">Uber</h1>
+    </ion-nav-bar>
+
+    <!--Subheader-->
+    <div class="bar bar-subheader text-center">
+        <span class="logo-uber header-uber">Uber</span>
+    </div>
+
+    <ion-content class="has-header has-subheader has-tabs" scroll="true" overflow-scroll="true">
+
+        <!--{{current_result | json}}<br/>
+        {{address.current | json}} - {{address.currentGeolocation | json}}
+
+        {{destination_result | json}}<br/>
+        {{address.destination | json}} - {{address.destinationGelocation | json}}-->
+
+        <!-- ng-autocomplete -->
+        <div class="list list-inset" ng-class="{'confirm': requestEstimate}"  data-ng-show="!requestEstimate">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Where from?</span>
+                <input type="text" placeholder="Enter pickup location" data-ng-model="address.current"
+                       options="options" details="current_result"
+                       data-ng-change="resolveCurrentGeolocation()"
+                       data-ng-readonly="requestEstimate">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Where to?</span>
+                <input type="text" placeholder="Enter destination" data-ng-model="address.destination"
+                       options="options" details="destination_result"
+                       data-ng-change="resolveDestinationGeolocation()"
+                       data-ng-readonly="requestEstimate">
+            </label>
+        </div>
+
+        <div class="card" data-ng-show="requestEstimate">
+            <div class="item item-divider">
+                Estimated Time
+            </div>
+            <div class="item item-text-wrap">
+                <p>An Uber is around <strong>{{requestEstimate.estimate.minimum}}</strong>miles away</p>
+            </div>
+            <div class="item item-divider">
+                Estimated Cost
+            </div>
+            <div class="item item-text-wrap">
+                <p>{{requestEstimate.estimate.display}}</p>
+            </div>
+            <!--<div class="item item-text-wrap">
+                <div data-ng-repeat="item in requestEstimate.estimate.fare_breakdown">
+                    <p>
+                        {{requestEstimate.estimate.display}}
+                        {{requestEstimate.estimate.currency_code}}
+                    </p>
+                </div>
+            </div>-->
+        </div>
+
+    </ion-content>
+    
+    <ion-footer-bar class="bar bar-footer no-padding">
+        <button class="button button-block button-assertive no-margin" data-ng-show="!requestEstimate"
+                data-ng-disabled="address.currentGeolocation==null || address.destinationGelocation==null" data-ng-click="getUberProducts()">
+            Request Uber
+        </button>
+        <button class="button button-block button-assertive no-margin" data-ng-show="requestEstimate" data-ng-click="confirmUberRequest()">
+            Confirm Booking
+        </button>
+    </ion-footer-bar>
+
+</ion-view>

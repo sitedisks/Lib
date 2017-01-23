@@ -1,0 +1,88 @@
+﻿<ion-view>
+    <ion-nav-bar class="bar-positive"></ion-nav-bar>
+
+    <ion-nav-buttons side="primary">
+        <button class="button button-clear" ui-sref="settings">
+            Settings
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="secondary">
+        <button class="button button-clear" ng-show="!isSupport" ui-sref="dashboard.support.crew">Invite</button>
+    </ion-nav-buttons>
+    <ion-nav-title>
+        {{fullName}}
+    </ion-nav-title>
+
+    <div class="bar bar-subheader text-center" ng-show="!isSupport">
+        <h3>{{data.time | amDateFormat: 'dddd DD'}}</h3>
+        <p>{{data.time | amDateFormat: 'MMMM YYYY'}}</p>
+    </div>
+
+    <div class="bar bar-subheader text-center" ng-show="isSupport">
+        <!--<a class="item item-avatar item-no-border item-no-bg" href="#">
+            <img src="img/profile-sample.jpg">
+            <p>You are supporting</p>
+            <h2>Handy Andy</h2>
+        </a>-->
+        <h3>{{data.time | amDateFormat: 'dddd DD'}}</h3>
+        <p>{{data.time | amDateFormat: 'MMMM YYYY'}}</p>
+    </div>
+
+    <ion-content class="has-header has-subheader" scroll="true" overflow-scroll="true">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
+
+        <div class="list colored-list" ng-show="!isSupport">
+            
+            <div class="item item-divider">
+                Latest Chats
+            </div>
+            <a class="item empty-state-chat" ui-sref="comingSoon">
+                <i class="icon icon-48 icon-chat icon-accessory"></i>
+                <p class="padding">Tap the hands-up icon below to get chatting.</p>
+            </a>
+            
+            <div class="item item-divider">
+                Coming Up
+            </div>
+            <a class="item item-icon-right" ui-sref="dashboard.appointments"
+               ng-repeat="appointment in appointmentList | limitTo : 3 | orderBy: '-StartDateTime'" ng-if="appointmentList.length>0">
+                {{appointment.Title}}
+                <span class="item-note">{{appointment.StartDateTime | amDateFormat: 'DD MMMM' }}</span>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </a>
+            <a class="item empty-state-appointment" ui-sref="dashboard.appointments" ng-if="appointmentList.length<=0">
+                <i class="icon icon-48 icon-appointment icon-accessory"></i>
+                <p class="padding">Tap the calendar icon below to <br/> create an appointment.</p>
+            </a>
+
+            <!--<a class="item item-icon-right" ui-sref="dashboard.appointments" ng-if="appointmentList.length<=0">
+                Create New Appointment
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </a>-->
+
+        </div>
+
+        <div class="list colored-list" ng-show="isSupport">
+            <div class="item item-divider">
+                Latest Chats
+            </div>
+            <a class="item empty-state-job" ui-sref="comingSoon">
+                <i class="icon icon-48 icon-chat icon-accessory"></i>
+                <p class="padding">Tap the hands-up icon below to get chatting.</p>
+            </a>
+
+            <div class="item item-divider">
+                Recent Jobs
+            </div>
+            <a class="item empty-state-job" ui-sref="dashboard.jobs">
+                <i class="icon icon-48 icon-jobs icon-accessory"></i>
+                <p class="padding">Tap the hand shake icon below to see jobs.</p>
+            </a>
+        </div>
+
+
+
+    </ion-content>
+</ion-view>
+
+

@@ -1,0 +1,73 @@
+<div class="container" ng-init="initCrewView()">
+    <div class="row">
+        <div class="shell col-xs-12">
+            <div class="outer">
+                <section class="dashboard">
+                    <div class="content">
+                        <div>
+                            <div class="top-nav row">
+                                <div class="col-xs-12">
+                                    <h4 class="text-center text-uppercase ">Crew Member</h4>
+                                    <a class="nav-back" href="support"><h4 class="text-uppercase">Close</h4></a>
+                                </div>
+                            </div>
+                            <div class="crew-edit-view">
+                                <div class="row martop-5">
+                                    <div class="col-xs-2">
+                                        <!-- TODO fix hardcoding -->
+                                        <div class="hexagon hex-sm pull-left" style="background-image: url('../Content/img/profile-sample.jpg');">
+                                            <div class="face1"></div>
+                                            <div class="face2"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-10 details">
+                                        <h4>{{currentContact.displayName}}</h4>
+                                        <!--<h4>Materson</h4>-->
+                                        <h4>Support Crew</h4>
+                                        <h4>
+                                            <span>Primary support person</span>
+                                            <span>
+                                                <div class="switch pull-right" style="margin-top: -1.5vh;">
+                                                    <input id="primary-carer" class="cmn-toggle cmn-toggle-round" type="checkbox">
+                                                    <label for="primary-carer"></label>
+                                                </div>
+                                            </span>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="row martop-1 editable">
+                                    <div class="col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="border:none;background:transparent;">
+                                                <img src="Content/img/icons/plus_blue.svg" class="pull-left" style="width:2.5vw;margin-bottom:0.5vh;" />
+                                            </span>
+                                            <input type="text" class="form-control" ng-model="currentContact.primaryNumber" placeholder="add phone" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="border:none;background:transparent;">
+                                                <img src="Content/img/icons/plus_blue.svg" class="pull-left" style="width:2.5vw;margin-bottom:0.5vh;" />
+                                            </span>
+                                            <input type="text" class="form-control" ng-model="currentContact.primaryEmail" placeholder="add email" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="border:none;background:transparent;">
+                                                <img src="Content/img/icons/plus_blue.svg" class="pull-left" style="width:2.5vw;margin-bottom:0.5vh;" />
+                                            </span>
+                                            <input type="text" class="form-control" ng-model="currentContact.primaryAddress" placeholder="add address" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary">Update crew member</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div ng-include="'appThrivor/shared/globalnav.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Appointments_Clock_Grey</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.4">
+        <g id="0405_Patient-Job-Detail" transform="translate(-42.000000, -253.000000)" fill="#27324D">
+            <g id="Appointments_Clock_Grey" transform="translate(42.000000, 253.000000)">
+                <g id="Layer_1">
+                    <path d="M11.9136,0 C5.3339004,-4.02890402e-16 8.05780805e-16,5.3339004 0,11.9136 C-8.05780805e-16,18.4932996 5.3339004,23.8272 11.9136,23.8272 C18.4932996,23.8272 23.8272,18.4932996 23.8272,11.9136 C23.8272,8.75391683 22.5720207,5.72364605 20.3377873,3.48941265 C18.103554,1.25517925 15.0732832,1.93474794e-16 11.9136,0 Z M15.8832,7.8 L12.48,12.6096 L12.48,21.4176 C12.48,21.9477934 12.0501934,22.3776 11.52,22.3776 C10.9898066,22.3776 10.56,21.9477934 10.56,21.4176 L10.56,12 L14.3376,6.6912 C14.5320358,6.39735109 14.8718226,6.23363233 15.2228044,6.26468368 C15.5737863,6.29573502 15.879552,6.51656576 16.019378,6.83998679 C16.159204,7.16340782 16.1106169,7.53743741 15.8928,7.8144 L15.8832,7.8 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

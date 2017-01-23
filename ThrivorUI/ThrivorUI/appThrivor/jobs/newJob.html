@@ -1,0 +1,83 @@
+﻿<ion-modal-view>
+    <form name="newJob" ng-submit="createNewJob()" novalidate>
+        <ion-header-bar align-title="center" class="bar-positive">
+            <div class="buttons">
+                <button class="button button-clear" type="button" ng-click="closeModal()">Cancel</button>
+            </div>
+            <h1 class="title">NEW JOB</h1>
+            <div class="buttons">
+                <button class="button button-clear" type="submit" ng-disabled="newJob.$invalid">Send</button>
+            </div>
+        </ion-header-bar>
+        <ion-content scroll="true" overflow-scroll="true" class="has-header">
+
+            <div id="new-job" class="list">
+                <label class="item item-input">
+                    <span class="input-label">Type</span>
+                    <input type="text" ng-model="newJobDetails.selectedCategory" placeholder="Type" readonly>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Starts</span>
+                    <input id="newJobStartTime" name="newJobStartTime" ng-model="newJobDetails.startTime" type="datetime-local" placeholder="Starts">
+                    <span style="color: #ff1450">{{dateMessage}}</span>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Ends</span>
+                    <input id="newJobEndTime" name="newJobEndTime" ng-model="newJobDetails.endTime" type="datetime-local" placeholder="Ends">
+                </label>
+                <!--<label class="item item-input">
+                    <span class="input-label">Location</span>
+                    <input type="text" placeholder="Location" id="addressAutoComplete" name="addressAutoComplete" ng-model="autocomplete" ng-autocomplete-address options="options" details="details" filteredaddress="filteredAdd" ng-focus="onLocationChanged(this)">
+                </label>-->
+                <label class="item item-input">
+                    <span class="input-label">Location</span>
+                    <input type="text" placeholder="Location" google-autocomplete-suggestion location="data.location" country-code="AU" on-selection="onAddressSelection(location)" ng-model="data.location.formatted_address" readonly>
+                </label>
+                <label class="item item-input item-stacked-label" ng-hide="isEditRecord">
+                    <span class="input-label">Supporters</span>
+                    <div ng-hide="isCrewListEmpty">
+                        <tags-input id="supportCrewAutoComplete" name="supportCrewAutoComplete" ng-model="tags" key-property="Id" display-property="Name" placeholder="Add Support Crew" replace-spaces-with-dashes="false">
+                            <auto-complete source="supportCrewList()"
+                                           min-length="1"
+                                           load-on-focus="true"
+                                           load-on-empty="false"
+                                           max-results-to-show="5"
+                                           template="autocomplete-template"></auto-complete>
+                        </tags-input>
+                        <!--<span class="arrow-after"></span>
+                        <span data-ng-show="newJobForm.supportCrewAutoComplete.$dirty && newJobForm.supportCrewAutoComplete.$error.required" style="color: #ff1450">
+                            <span data-ng-show="newJobForm.supportCrewAutoComplete.$error.required">Support crew is required</span>
+                        </span>-->
+                        <div> <span style="color: #ff1450">{{crewMessage}}</span> </div>
+                        <div> <span style="color: #ff1450">{{invalidCrewMessage}}</span> </div>
+
+                        <script type="text/ng-template" id="autocomplete-template">
+                            <span ng-bind-html="$highlight($getDisplayText())"></span>
+                            <span>({{data.Name}})</span>
+                        </script>
+                    </div>
+                    <div class="col-xs-9" ng-show="isCrewListEmpty == true">
+                        You currently don't have any Support Crew to send Job request
+                    </div>
+                </label>
+                <label class="item item-input item-stacked-label" ng-class="{'has-error': newJob.description.$invalid}">
+                    <span class="input-label">Description</span>
+                    <textarea id="description" name="description" rows="5" ng-model="newJobDetails.description" required></textarea>
+                    <span data-ng-show="newJob.description.$dirty && newJob.description.$error.required" style="color: #ff1450">
+                        <span data-ng-show="newJob.description.$error.required" class="item-error">Description is required</span>
+                    </span>
+                </label>
+            </div>
+
+
+
+        </ion-content>
+
+        <ion-footer-bar class="bar bar-footer bar-assertive no-padding">
+            <button ng-show="new" type="submit" ng-disabled="newJob.$invalid" class="button button-assertive button-block no-margin">
+                Send Job Request
+            </button>
+        </ion-footer-bar>
+
+    </form>
+</ion-modal-view>

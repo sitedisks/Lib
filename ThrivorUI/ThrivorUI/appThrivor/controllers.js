@@ -1,4 +1,4 @@
-angular.module('thrivor.controllers', [])
+var ctrlThrivor =  angular.module('thrivor.controllers', [])
 
 .controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
 
@@ -51,6 +51,18 @@ angular.module('thrivor.controllers', [])
       { title: 'Cowbell', id: 6 }
     ];
 })
+.controller('TabController', ['$scope', function ($scope) {
+    $scope.tab = 1;
+    
+    $scope.setTab = function (newTab) {
+        $scope.tab = newTab;
+    };
 
+    $scope.isSet = function (tabNum) {
+        return $scope.tab === tabNum;
+    };
+}])
 .controller('PlaylistCtrl', function ($scope, $stateParams) {
 });
+
+ 

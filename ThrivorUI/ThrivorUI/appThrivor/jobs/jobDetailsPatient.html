@@ -1,0 +1,43 @@
+﻿<ion-view view-title="Job Requested">
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="buttons">
+      <a class="button button-clear" ui-sref="dashboard.jobs">Back</a>
+    </div>
+    <h1 class="title">Job Requested</h1>
+    <!--<div class="buttons">
+      <button class="button button-clear">Take Job</button>
+    </div>-->
+  </ion-header-bar>
+  <div class="bar bar-subheader text-center">
+    <h2>{{newJobDetails.categoryName}}</h2>
+    <p>{{newJobDetails.startTime | date: 'longDate'}}</p>
+  </div>
+  <div class="tabs tabs-top has-header has-subheader">
+    <a class="tab-item tab-item-active">Details</a>
+    <a class="tab-item">Chat</a>
+  </div>
+  <ion-content scroll="false" class="has-header has-subheader has-tabs has-tabs-top">
+
+    <div class="list">
+      <a class="item item-icon-left">
+        <i class="icon icon-time"></i>
+        <label class="item item-input item-no-border">
+          <input type="text" value="{{newJobDetails.startTime | date: 'h:mma'}} - {{newJobDetails.endTime | date: 'h:mma'}}" readonly>
+        </label>
+      </a>
+      <a class="item item-icon-left">
+        <i class="icon icon-location"></i>
+        <label class="item item-input item-no-border">
+          <input type="text" value="{{newJobDetails.location}}" readonly>
+        </label>
+      </a>
+      <a class="item item-icon-left">
+        <i class="icon icon-asterisk"></i>
+        <label class="item item-input item-no-border">
+          <textarea cols="30" rows="7" placeholder="Job Description" readonly>{{newJobDetails.description}}</textarea>
+        </label>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

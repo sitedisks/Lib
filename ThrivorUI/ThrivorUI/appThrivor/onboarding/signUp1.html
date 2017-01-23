@@ -1,11 +1,38 @@
-﻿<ion-view view-title="SignUp 1">
-    <ion-content class="padding">
-        <p>
-            Sign Up Step 1
-        </p>
-        <p>
-            <a class="button button-balanced" ui-sref="signUp.step2">Next step</a>
-            <a class="button icon icon-right ion-chevron-right" href="/signup/step2">Step 2</a>
-        </p>
+﻿<ion-view view-title="Join">
+
+    <!--Subheader-->
+    <div class="bar bar-subheader bar-white text-center">
+        <h3>Get started with Thrivor</h3>
+    </div>
+
+    <ion-content scroll="false" class="has-header has-subheader">
+
+        <div class="row row-fh">
+            <div class="col col-center">
+                <div class="row responsive-sm text-center">
+                    <div class="col col-33 col-offset-33">
+                        <img ng-src="{{userDetails.userImage}}" class="user-photo" />
+                        <!--<img src="./img/profile-sample.jpg" />-->
+                    </div>
+                </div>
+                <div class="row responsive-sm text-center">
+                    <div class="col-33 col-offset-33">
+                        <button class="file-upload button button-small button-outline button-assertive">
+                            <span>Add Photo</span>
+                            <input ng-model="userDetails.userImage" class="upload" type="file" onchange="angular.element(this).scope().onImageUploaded()" />
+                        </button>
+                        <p>This will make it easier for friends <br /> and family to recognise you.</p>
+                        <a ui-sref="signUp.step2" class="button button-clear button-small button-stable">SKIP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </ion-content>
+
+    <div class="bar bar-footer bar-assertive no-padding">
+        <button class="button button-block button-assertive no-margin" ui-sref="signUp.step2">Next</button>
+    </div>
+
 </ion-view>

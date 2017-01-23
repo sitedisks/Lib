@@ -1,35 +1,16 @@
 ﻿<ion-view view-title="Main">
     <ion-content scroll="false">
-        <div class="row">
-            <div class="shell col-xs-12">
-                <div class="outer wt">
-                    <section class="header">
-                        <div class="content">
-                            <img class="logo" src="/img/thrivor_logo.svg" />
-                            <div class="col-xs-12">
-                                <p>Thrivor's mission is to help solve the everyday challenges for people living with cancer.</p>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="register-btns">
-                        <button id="patientButton" ng-click="setUserType(1)" class="btn btn-primary text-uppercase">
-                            I'm the patient
-                            <span class="pull-right"><img src="/img/icons/arrow_r_white.svg" /></span>
-                        </button>
-                        <button id="supporterButton" ng-click="setUserType(5)" class="btn btn-default text-uppercase">
-                            I'm a support person
-                            <span class="pull-right"><img src="/img/icons/arrow_r_white.svg" /></span>
-                        </button>
-                    </section>
-                    <div class="content existing-member">
-                        <div class="col-xs-12">
-                            <a ng-click="signInExistingUser()">I’m already a member</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="bg-cover">
+            <section class="header">
+                <img class="logo" src="img/thrivor_logo.svg" />
+                <p>Thrivor's mission is to help solve the everyday challenges for people living with cancer.</p>
+                <!--<a ui-sref="comingSoon">Coming Soon</a>-->
+            </section>
+            <div class="list member-buttons-list">
+                <button class="button button-block member item" ng-click="goSignIn()">I'm already a member</button>
+                <button ng-click="setUserType(5)" class="button button-block supporter item">I'm a support person</button>
+                <button ng-click="setUserType(1)" class="button button-block patient item">I'm the patient</button>
             </div>
         </div>
     </ion-content>
-
-
 </ion-view>

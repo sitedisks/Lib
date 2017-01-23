@@ -7,8 +7,10 @@
 <body ng-app="myApp" ng-controller="myCtrl" ng-cloak>
     <div>
         <h2>Search customer complaints</h2>
-        <input type="text" ng-model="customerId" size="10" placeholder="Customer ID" />
-        <input type="button" value="Search" ng-click="getAllFromCustomer();" />
+        <input type="text" ng-model="customerId"
+               size="10" placeholder="Customer ID" />
+        <input type="button" value="Search"
+               ng-click="getAllFromCustomer();" />
         <p ng-show="errorToSearch">{{errorToSearch}}</p>
     </div>
     <div ng-show="toShow()">
@@ -19,13 +21,17 @@
             </thead>
             <tbody>
                 <tr ng-repeat="complaint in complaints | orderBy:orderProp">
-                    <td>{{complaint.ComplaintID}}</td>
-                    <td>{{complaint.Description}}</td>
+                    <td>{{complaint.COMPLAINT_ID}}</td>
+                    <td>{{complaint.DESCRIPTION}}</td>
                     <td>
-                        <button ng-click="editIt(complaint)">Edit</button>
+                        <button ng-click="editIt(complaint)">
+                            Edit
+                        </button>
                     </td>
                     <td>
-                        <button ng-click="deleteOne(complaint)">Delete</button>
+                        <button ng-click="deleteOne(complaint)">
+                            Delete
+                        </button>
                     </td>
                 </tr>
             </tbody>
@@ -33,14 +39,16 @@
     </div>
     <div>
         <h2>Add complaint</h2>
-        <input type="text" ng-model="descToAdd" size="40" placeholder="Description" />
+        <input type="text" ng-model="descToAdd"
+               size="40" placeholder="Description" />
         <input type="button" value="Add" ng-click="postOne();" />
         <p ng-show="errorToAdd">{{errorToAdd}}</p>
     </div>
     <div>
         <h2>Edit complaint</h2>
         <p>Complaint id: {{idToUpdate}}</p>
-        <input type="text" ng-model="descToUpdate" size="40" placeholder="Description" />
+        <input type="text" ng-model="descToUpdate"
+               size="40" placeholder="Description" />
         <input type="button" value="Save" ng-click="putOne();" />
         <p ng-show="errorToUpdate">{{errorToAdd}}</p>
     </div>

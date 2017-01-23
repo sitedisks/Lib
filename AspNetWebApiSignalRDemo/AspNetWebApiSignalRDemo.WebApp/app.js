@@ -7,6 +7,7 @@ angular.module("AspNetWebApiSignalRDemo", [])
 
     this.initialize = function () {
         $.connection.hub.logging = true;
+        $.connection.hub.url = 'http://localhost:12345/api/signalr';
         notificationHubProxy = $.connection.notificationHub;
 
         notificationHubProxy.client.hello = function () {

@@ -54,3 +54,8 @@ WebApiSignalRPush/.vs/
 WebApiSignalRPush/AngularJsSignalR/bin/
 WebApiSignalRPush/AngularJsSignalR/obj/
 MessageBoard/.vs/
+AspNetWebApiSignalRDemo/packages/
+AspNetWebApiSignalRDemo/AspNetWebApiSignalRDemo.WebApp/obj/
+AspNetWebApiSignalRDemo/AspNetWebApiSignalRDemo.WebApi/bin/
+AspNetWebApiSignalRDemo/AspNetWebApiSignalRDemo.WebApp/bin/
+AspNetWebApiSignalRDemo/AspNetWebApiSignalRDemo.WebApi/obj/

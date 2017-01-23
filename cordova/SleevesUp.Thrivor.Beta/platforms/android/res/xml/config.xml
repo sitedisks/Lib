@@ -46,11 +46,11 @@
     </feature>
     <name>Thrivor</name>
     <description>
-        Thrivor's mission is to help solve the everyday challenges for people living with cancer.
-    </description>
+	Thrivor's mission is to help solve the everyday challenges for people living with cancer.
+  </description>
     <author email="peter@sleevesup.com.au" href="http://www.sleevesup.com.au">
-        Thrivor Team
-    </author>
+	Thrivor Team
+  </author>
     <content src="https://appdev.thrivor.com/ui/" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

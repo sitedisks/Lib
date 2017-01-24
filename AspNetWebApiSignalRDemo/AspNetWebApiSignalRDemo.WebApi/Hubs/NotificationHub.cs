@@ -13,7 +13,7 @@ namespace AspNetWebApiSignalRDemo.WebApi.Hubs
 
         public static void SayHello()
         {
-            hubContext.Clients.All.hello();
+            hubContext.Clients.All.hello("Server push message");
         }
     }
 }

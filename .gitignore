@@ -61,9 +61,17 @@ AspNetWebApiSignalRDemo/AspNetWebApiSignalRDemo.WebApp/bin/
 AspNetWebApiSignalRDemo/AspNetWebApiSignalRDemo.WebApi/obj/
 AspNetWebApiSignalRDemo/AspNetWebApiSignalRDemo.WebUI/obj/
 AspNetWebApiSignalRDemo/AspNetWebApiSignalRDemo.WebUI/bin/
+WebApiAungularWithPushNoti/packages/
+WebApiAungularWithPushNoti/WebApiAungularWithPushNoti/bin/
+WebApiAungularWithPushNoti/WebApiAungularWithPushNoti/obj/
 AspNetWebApiSignalRDemo/.vs/
+<<<<<<< HEAD
 WebApiAungularWithPushNoti/WebApiAungularWithPushNoti/bin/
 WebApiAungularWithPushNoti/packages/
 WebApiAungularWithPushNoti/WebApiAungularWithPushNoti/obj/
 WebApiAungularWithPushNoti/.vs/
 cordova/macCloundThrivor.zip
+=======
+WebApiAungularWithPushNoti/.vs/
+
+>>>>>>> cc6390687e0f4ac527e1f9bde17d9ca9e5e8cf3e

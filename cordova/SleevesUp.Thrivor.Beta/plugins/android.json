@@ -1,0 +1,60 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-background-push": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-email": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-keyboard": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        }
+    },
+    "dependent_plugins": {}
+}

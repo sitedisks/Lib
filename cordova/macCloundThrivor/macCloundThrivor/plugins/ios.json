@@ -49,6 +49,12 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
         }
     },
     "dependent_plugins": {

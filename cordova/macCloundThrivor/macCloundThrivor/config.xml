@@ -112,5 +112,7 @@
   <preference name="ShowSplashScreenSpinner" value="false" />
   <preference name="windows-target-version" value="8.1" />
   <preference name="StatusBarOverlaysWebView" value="true" />
-  <preference name="StatusBarBackgroundColor" value="#000000"/>
+  <preference name="StatusBarBackgroundColor" value="#000000" />
+  <plugin name="cordova-plugin-inappbrowser" version="1.6.1" />
+  <plugin name="cordova-plugin-statusbar" version="2.2.1" />
 </widget>

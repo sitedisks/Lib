@@ -5,6 +5,6 @@
     <ShowAllFiles>false</ShowAllFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|iOS'">
-    <DebuggerFlavor>iOSEmulatoriPhone6</DebuggerFlavor>
+    <DebuggerFlavor>iOSEmulatoriPhone5S</DebuggerFlavor>
   </PropertyGroup>
 </Project>

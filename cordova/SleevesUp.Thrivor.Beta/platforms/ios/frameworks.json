@@ -1,0 +1,8 @@
+{
+    "EventKit.framework": 1,
+    "EventKitUI.framework": 1,
+    "AddressBook.framework": 1,
+    "AddressBookUI.framework": 1,
+    "MessageUI.framework": 1,
+    "CoreLocation.framework": 1
+}

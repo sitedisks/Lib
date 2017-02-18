@@ -42,6 +42,10 @@
 		4632F0A28974417690890B31 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 9144C1A988A545C5B75EF28C /* CDVSplashScreen.m */; };
 		79FFF124AC994F2797D32458 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE6562A01F2416CA3671BF1 /* CDVViewController+SplashScreen.m */; };
 		EC751046303C4C6F906DA6C6 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 135212E8E2F94E98907270E7 /* CDVStatusBar.m */; };
+		F65076D5D4504F5989866AF3 /* AppDelegate+APPAppEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A1E139AA20E487DB0CD967D /* AppDelegate+APPAppEvent.m */; };
+		AEFDA64EB98E4A249A070DDC /* CDVPlugin+APPAppEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9FF44B3DC649598E91D19B /* CDVPlugin+APPAppEvent.m */; };
+		945B384724A142A89172027B /* APPBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB6598D76964F08BF7DA4A4 /* APPBadge.m */; };
+		BC09005971F841AF9B2C4174 /* UIApplication+APPBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EB4A37AF7247D9B73795CF /* UIApplication+APPBadge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +132,15 @@
 		7DA0FE647C1443F283EAE438 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		135212E8E2F94E98907270E7 /* CDVStatusBar.m */ = {isa = PBXFileReference; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		5AF11B3B96634442931B0BB5 /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		3A1E139AA20E487DB0CD967D /* AppDelegate+APPAppEvent.m */ = {isa = PBXFileReference; name = "AppDelegate+APPAppEvent.m"; path = "cordova-plugin-app-event/AppDelegate+APPAppEvent.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		EA9FF44B3DC649598E91D19B /* CDVPlugin+APPAppEvent.m */ = {isa = PBXFileReference; name = "CDVPlugin+APPAppEvent.m"; path = "cordova-plugin-app-event/CDVPlugin+APPAppEvent.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		4570535CB7A04FEA9D295BFC /* AppDelegate+APPAppEvent.h */ = {isa = PBXFileReference; name = "AppDelegate+APPAppEvent.h"; path = "cordova-plugin-app-event/AppDelegate+APPAppEvent.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		7164AE4C150346C08661E73F /* CDVPlugin+APPAppEvent.h */ = {isa = PBXFileReference; name = "CDVPlugin+APPAppEvent.h"; path = "cordova-plugin-app-event/CDVPlugin+APPAppEvent.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		531A54448A9E407387A3C473 /* APPAppEventDelegate.h */ = {isa = PBXFileReference; name = "APPAppEventDelegate.h"; path = "cordova-plugin-app-event/APPAppEventDelegate.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		4FB6598D76964F08BF7DA4A4 /* APPBadge.m */ = {isa = PBXFileReference; name = "APPBadge.m"; path = "cordova-plugin-badge/APPBadge.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		48EB4A37AF7247D9B73795CF /* UIApplication+APPBadge.m */ = {isa = PBXFileReference; name = "UIApplication+APPBadge.m"; path = "cordova-plugin-badge/UIApplication+APPBadge.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		467601CC3A5849D1A5401394 /* APPBadge.h */ = {isa = PBXFileReference; name = "APPBadge.h"; path = "cordova-plugin-badge/APPBadge.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		08CA3CF8322E4F0F97C13913 /* UIApplication+APPBadge.h */ = {isa = PBXFileReference; name = "UIApplication+APPBadge.h"; path = "cordova-plugin-badge/UIApplication+APPBadge.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +296,15 @@
 				7DA0FE647C1443F283EAE438 /* CDVViewController+SplashScreen.h */,
 				135212E8E2F94E98907270E7 /* CDVStatusBar.m */,
 				5AF11B3B96634442931B0BB5 /* CDVStatusBar.h */,
+				3A1E139AA20E487DB0CD967D /* AppDelegate+APPAppEvent.m */,
+				EA9FF44B3DC649598E91D19B /* CDVPlugin+APPAppEvent.m */,
+				4570535CB7A04FEA9D295BFC /* AppDelegate+APPAppEvent.h */,
+				7164AE4C150346C08661E73F /* CDVPlugin+APPAppEvent.h */,
+				531A54448A9E407387A3C473 /* APPAppEventDelegate.h */,
+				4FB6598D76964F08BF7DA4A4 /* APPBadge.m */,
+				48EB4A37AF7247D9B73795CF /* UIApplication+APPBadge.m */,
+				467601CC3A5849D1A5401394 /* APPBadge.h */,
+				08CA3CF8322E4F0F97C13913 /* UIApplication+APPBadge.h */,
 			);
 			name = Plugins;
 			path = "Thrivor/Plugins";
@@ -415,6 +437,10 @@
 				4632F0A28974417690890B31 /* CDVSplashScreen.m in Sources */,
 				79FFF124AC994F2797D32458 /* CDVViewController+SplashScreen.m in Sources */,
 				EC751046303C4C6F906DA6C6 /* CDVStatusBar.m in Sources */,
+				F65076D5D4504F5989866AF3 /* AppDelegate+APPAppEvent.m in Sources */,
+				AEFDA64EB98E4A249A070DDC /* CDVPlugin+APPAppEvent.m in Sources */,
+				945B384724A142A89172027B /* APPBadge.m in Sources */,
+				BC09005971F841AF9B2C4174 /* UIApplication+APPBadge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -95,4 +95,7 @@
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
     <preference name="StatusBarStyle" value="lightcontent" />
+    <feature name="Badge">
+        <param name="ios-package" value="APPBadge" />
+    </feature>
 </widget>

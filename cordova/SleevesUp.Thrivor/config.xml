@@ -7,7 +7,7 @@
   <author email="peter@sleevesup.com.au" href="http://www.sleevesup.com.au">
         Thrivor Team
     </author>
-  <content src="https://appuat.thrivor.com/ui/"/>
+  <content src="https://www.thrivor.com/"/>
   <plugin name="cordova-plugin-whitelist" spec="1"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>

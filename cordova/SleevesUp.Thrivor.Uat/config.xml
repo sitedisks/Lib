@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.thrivor.uat" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Thrivor</name>
-  <description>&#xD;
-        Thrivor's mission is to help solve the everyday challenges for people living with cancer.&#xD;
+  <description>&#xD;&#xD;
+        Thrivor's mission is to help solve the everyday challenges for people living with cancer.&#xD;&#xD;
     </description>
-  <author email="peter@sleevesup.com.au" href="http://www.sleevesup.com.au">&#xD;
-        Thrivor Team&#xD;
+  <author email="peter@sleevesup.com.au" href="http://www.sleevesup.com.au">&#xD;&#xD;
+        Thrivor Team&#xD;&#xD;
     </author>
   <content src="https://appuat.thrivor.com/ui/"/>
   <plugin name="cordova-plugin-whitelist" spec="1"/>

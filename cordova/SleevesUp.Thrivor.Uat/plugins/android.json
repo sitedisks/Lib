@@ -63,6 +63,9 @@
         },
         "com.verso.cordova.clipboard": {
             "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.thrivor.uat"
         }
     },
     "dependent_plugins": {

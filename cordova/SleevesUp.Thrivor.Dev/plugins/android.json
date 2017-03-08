@@ -63,6 +63,9 @@
         },
         "com.verso.cordova.clipboard": {
             "PACKAGE_NAME": "com.thrivor.beta"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.thrivor.beta"
         }
     },
     "dependent_plugins": {

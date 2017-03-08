@@ -67,6 +67,9 @@
         },
         "cordova-plugin-vibration": {
             "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.thrivor"
         }
     },
     "dependent_plugins": {

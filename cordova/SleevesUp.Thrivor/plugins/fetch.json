@@ -129,9 +129,8 @@
     },
     "cordova-plugin-badge": {
         "source": {
-            "type": "git",
-            "url": "https://github.com/katzer/cordova-plugin-badge.git",
-            "subdir": "."
+            "type": "registry",
+            "id": "cordova-plugin-badge"
         },
         "is_top_level": true,
         "variables": {}
@@ -157,6 +156,14 @@
             "type": "git",
             "url": "https://github.com/VersoSolutions/CordovaClipboard",
             "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-android-permissions": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-android-permissions@0.10.0"
         },
         "is_top_level": true,
         "variables": {}

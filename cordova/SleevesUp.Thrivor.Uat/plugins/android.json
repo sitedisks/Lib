@@ -72,6 +72,9 @@
         },
         "cordova-plugin-inapppurchase": {
             "PACKAGE_NAME": "com.thrivor.uat"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.thrivor"
         }
     },
     "dependent_plugins": {

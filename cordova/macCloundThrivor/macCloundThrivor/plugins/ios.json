@@ -70,6 +70,12 @@
         },
         "cordova-plugin-android-permissions": {
             "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-cache-clear": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-inapppurchase": {
+            "PACKAGE_NAME": "com.thrivor"
         }
     },
     "dependent_plugins": {

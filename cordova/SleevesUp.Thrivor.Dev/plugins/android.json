@@ -66,6 +66,12 @@
         },
         "cordova-plugin-android-permissions": {
             "PACKAGE_NAME": "com.thrivor.beta"
+        },
+        "cordova-plugin-cache-clear": {
+            "PACKAGE_NAME": "com.thrivor.beta"
+        },
+        "cordova-plugin-inapppurchase": {
+            "PACKAGE_NAME": "com.thrivor.beta"
         }
     },
     "dependent_plugins": {

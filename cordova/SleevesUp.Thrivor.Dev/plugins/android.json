@@ -72,6 +72,9 @@
         },
         "cordova-plugin-inapppurchase": {
             "PACKAGE_NAME": "com.thrivor.beta"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.thrivor.beta"
         }
     },
     "dependent_plugins": {

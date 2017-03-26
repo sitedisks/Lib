@@ -64,6 +64,9 @@
         },
         "cordova-plugin-vibration": {
             "PACKAGE_NAME": "sleevesup.thrivor.beta"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.thrivor"
         }
     },
     "dependent_plugins": {

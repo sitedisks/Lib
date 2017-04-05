@@ -7,71 +7,83 @@
         "files": {}
     },
     "installed_plugins": {
+        "com.verso.cordova.clipboard": {
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
+        },
         "cordova-plugin-background-push": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
+        },
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
+        },
+        "cordova-plugin-cache-clear": {
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-calendar": {
             "CALENDAR_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-contacts": {
             "CONTACTS_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-email": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-filepath": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-geolocation": {
             "GEOLOCATION_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
+        },
+        "cordova-plugin-inapppurchase": {
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-keyboard": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-media": {
             "MICROPHONE_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
-        },
-        "cordova-plugin-badge": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         },
         "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.thrivor"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-app-event": {
-            "PACKAGE_NAME": "sleevesup.thrivor.beta"
+            "PACKAGE_NAME": "com.thrivor.thrivoruat"
         }
     }
 }

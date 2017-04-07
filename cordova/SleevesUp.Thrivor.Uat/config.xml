@@ -7,7 +7,7 @@
   <author email="peter@sleevesup.com.au" href="http://www.sleevesup.com.au">
         Thrivor Team
     </author>
-  <content src="https://app.thrivor.com/ui/"/>
+  <content src="https://appuat.thrivor.com/ui/"/>
   <plugin name="cordova-plugin-whitelist" version="1"/>
   <plugin name="cordova-plugin-background-push" version="2.1.5"/>
   <plugin name="cordova-plugin-calendar" version="4.5.5"/>

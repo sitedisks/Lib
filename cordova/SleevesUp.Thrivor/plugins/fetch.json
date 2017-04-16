@@ -61,9 +61,7 @@
             "id": "cordova-plugin-geolocation@2.4.1"
         },
         "is_top_level": true,
-        "variables": {
-            "GEOLOCATION_USAGE_DESCRIPTION": " "
-        }
+        "variables": {}
     },
     "cordova-plugin-keyboard": {
         "source": {

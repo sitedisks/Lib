@@ -8,82 +8,82 @@
     },
     "installed_plugins": {
         "com.verso.cordova.clipboard": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-android-permissions": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-background-push": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-badge": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-cache-clear": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-calendar": {
             "CALENDAR_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-contacts": {
             "CONTACTS_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-email": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-filepath": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-geolocation": {
             "GEOLOCATION_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-inapppurchase": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-keyboard": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-media": {
             "MICROPHONE_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-app-event": {
-            "PACKAGE_NAME": "com.thrivor.thrivordev"
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         }
     }
 }

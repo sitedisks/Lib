@@ -7,10 +7,19 @@
         "files": {}
     },
     "installed_plugins": {
+        "com.verso.cordova.clipboard": {
+            "PACKAGE_NAME": "com.thrivor.beta"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.thrivor.beta"
+        },
         "cordova-plugin-background-push": {
             "PACKAGE_NAME": "com.thrivor.beta"
         },
         "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.thrivor.beta"
+        },
+        "cordova-plugin-cache-clear": {
             "PACKAGE_NAME": "com.thrivor.beta"
         },
         "cordova-plugin-calendar": {
@@ -43,6 +52,9 @@
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.thrivor.beta"
         },
+        "cordova-plugin-inapppurchase": {
+            "PACKAGE_NAME": "com.thrivor.beta"
+        },
         "cordova-plugin-keyboard": {
             "PACKAGE_NAME": "com.thrivor.beta"
         },
@@ -59,18 +71,6 @@
             "PACKAGE_NAME": "com.thrivor.beta"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.thrivor.beta"
-        },
-        "com.verso.cordova.clipboard": {
-            "PACKAGE_NAME": "com.thrivor.beta"
-        },
-        "cordova-plugin-android-permissions": {
-            "PACKAGE_NAME": "com.thrivor.beta"
-        },
-        "cordova-plugin-cache-clear": {
-            "PACKAGE_NAME": "com.thrivor.beta"
-        },
-        "cordova-plugin-inapppurchase": {
             "PACKAGE_NAME": "com.thrivor.beta"
         }
     },

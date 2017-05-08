@@ -192,5 +192,14 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "com.instabug.cordova.plugin": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Instabug/instabug-cordova",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

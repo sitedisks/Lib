@@ -79,10 +79,16 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
+        },
+        "com.instabug.cordova.plugin": {
+            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
+        },
+        "me.tonny.cordova.plugins.multidex": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         }
     }

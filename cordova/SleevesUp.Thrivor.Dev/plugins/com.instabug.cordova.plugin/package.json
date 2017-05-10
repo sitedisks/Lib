@@ -1,80 +1,16 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "https://github.com/Instabug/instabug-cordova",
-        "scope": null,
-        "escapedName": null,
-        "name": null,
-        "rawSpec": "https://github.com/Instabug/instabug-cordova",
-        "spec": "git+https://github.com/Instabug/instabug-cordova.git",
-        "type": "hosted",
-        "hosted": {
-          "type": "github",
-          "ssh": "git@github.com:Instabug/instabug-cordova.git",
-          "sshUrl": "git+ssh://git@github.com/Instabug/instabug-cordova.git",
-          "httpsUrl": "git+https://github.com/Instabug/instabug-cordova.git",
-          "gitUrl": "git://github.com/Instabug/instabug-cordova.git",
-          "shortcut": "github:Instabug/instabug-cordova",
-          "directUrl": "https://raw.githubusercontent.com/Instabug/instabug-cordova/master/package.json"
-        }
-      },
-      "E:\\Dev\\Github\\Lib\\cordova\\SleevesUp.Thrivor.Dev\\node_modules"
-    ]
-  ],
-  "_from": "git+https://github.com/Instabug/instabug-cordova.git",
-  "_id": "instabug-cordova@1.0.0",
-  "_inCache": true,
-  "_location": "/instabug-cordova",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "https://github.com/Instabug/instabug-cordova",
-    "scope": null,
-    "escapedName": null,
-    "name": null,
-    "rawSpec": "https://github.com/Instabug/instabug-cordova",
-    "spec": "git+https://github.com/Instabug/instabug-cordova.git",
-    "type": "hosted",
-    "hosted": {
-      "type": "github",
-      "ssh": "git@github.com:Instabug/instabug-cordova.git",
-      "sshUrl": "git+ssh://git@github.com/Instabug/instabug-cordova.git",
-      "httpsUrl": "git+https://github.com/Instabug/instabug-cordova.git",
-      "gitUrl": "git://github.com/Instabug/instabug-cordova.git",
-      "shortcut": "github:Instabug/instabug-cordova",
-      "directUrl": "https://raw.githubusercontent.com/Instabug/instabug-cordova/master/package.json"
-    }
+  "name": "instabug-cordova",
+  "version": "1.0.0",
+  "description": "The purpose of this plugin is to simplify the process of integrating the Instabug SDK in a hybrid application, as well as to provide an interface to interfacing with the SDK through JavaScript.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Instabug/instabug-cordova"
   },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "git+https://github.com/Instabug/instabug-cordova.git#3cefdc0e95bd3063c2c9c0dc1241fc5de6bbf1d4",
-  "_shasum": "e1b7c2f536a09b778c9b52be63c28c68b47acb4d",
-  "_shrinkwrap": null,
-  "_spec": "https://github.com/Instabug/instabug-cordova",
-  "_where": "E:\\Dev\\Github\\Lib\\cordova\\SleevesUp.Thrivor.Dev\\node_modules",
-  "author": {
-    "name": "Instabug",
-    "email": "https://instabug.com"
-  },
+  "author": "Instabug <https://instabug.com>",
+  "license": "Apache 2.0 License",
   "bugs": {
     "url": "https://github.com/Instabug/instabug-cordova/issues"
   },
-  "dependencies": {},
-  "description": "The purpose of this plugin is to simplify the process of integrating the Instabug SDK in a hybrid application, as well as to provide an interface to interfacing with the SDK through JavaScript.",
-  "devDependencies": {},
-  "gitHead": "3cefdc0e95bd3063c2c9c0dc1241fc5de6bbf1d4",
-  "homepage": "https://github.com/Instabug/instabug-cordova#readme",
-  "license": "Apache 2.0 License",
-  "main": "index.js",
-  "name": "instabug-cordova",
-  "optionalDependencies": {},
-  "readme": "Cordova Instabug Plugin\r\n=================================\r\n\r\nThe purpose of this plugin is to simplify the process of integrating the Instabug SDK in a hybrid application, as well as to provide an interface to interfacing with the SDK through JavaScript.\r\n\r\n### Supported Platforms\r\n- __iOS__ (SDK >= ?)\r\n- __Android__ (SDK >= 10)\r\n\r\n### Installation\r\nCurrently, this plugin can only be installed via the Command-Line Interface.\r\n```\r\ncordova plugin add https://github.com/Instabug/instabug-cordova\r\n```\r\n## Usage\r\nTo initialize Instabug in your app, you only need to make one call to the plugin: __activate__. This method requires your app's token and your desired invocation event, and can take a wide range of optional parameters for configuration.\r\n\r\nYour app's token (available on your Instabug dashboard online) can be specified as a string or an object containing properties according to platform:\r\n\r\n```javascript\r\nvar token = 'YOUR_TOKEN_HERE';\r\n```\r\n\r\nor\r\n\r\n```javascript\r\nvar tokens = {\r\n  android: 'YOUR_ANDROID_TOKEN_HERE',\r\n  ios: 'YOUR_IOS_TOKEN_HERE'\r\n};\r\n```\r\n\r\nThe invocation event can be specified as one of the following values:\r\n\r\n\r\n| value | native equivalent | description | iOS only? |\r\n|:------------:|:-------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------:|\r\n| 'shake' | InstabugInvocationEvent.SHAKE | Shaking the device while in any screen to show the feedback form. |  |\r\n| 'button' | InstabugInvocationEvent.FLOATING_BUTTON | Shows a floating button on top of all views, when pressed it takes a screenshot. |  |\r\n| 'screenshot' | InstabugInvocationEvent.SCREENSHOT_GESTURE | Taking a screenshot using the Home+Lock buttons while in any screen to show the feedback form, substituted with IBGInvocationEventShake on iOS 6.1.3 and earlier. | √ |\r\n| 'swipe' | InstabugInvocationEvent.TWO_FINGER_SWIPE_LEFT | Swiping two fingers left while in any screen to show the feedback form. | √ |\r\n| 'none' | InstabugInvocationEvent.NONE | No event will be registered to show the feedback form, you'll need to code your own and call the method invoke. |  |\r\nLike the token, the value itself can be provided, or you can give an object with values according to platforms using the same syntax as above.\r\n\r\nThe final parameter to the activate method (besides success and error callback functions) is an optional object containing properties to set a variety of configurations. None of these configurations are required. See the table below for their specifications.\r\n\r\n| property | description | possible values | default value | Android? | iOS? |\r\n|--------------------------|-------------------------------------------------------------------------------------------|----------------------------------|---------------|----------|------|\r\n| emailRequired | Sets whether email field is required or not when submitting bug/feedback | true, false | true | √ | √ |\r\n| commentRequired | Sets whether comment field is required or not when submitting bug/feedback | true, false | false | √ | √ |\r\n| defaultInvocationMode | Sets which invocation mode should the SDK use by default when the invocation event occurs | 'bug','feedback', 'na' | 'na' | √ | √ |\r\n| shakingThresholdAndroid | Sets the threshold value of the shake gesture on the device | String representation of int | '11' | √ |  |\r\n| shakingThresholdIPhone | Sets the threshold value of the shake gesture on the device | String representation of double | '2.5' |  | √ |\r\n| shakingThresholdIPad | Sets the threshold value of the shake gesture on the device | String representation of double | '0.6' |  | √ |\r\n| floatingButtonEdge | Sets the default edge at which the floating button will be shown | 'right', 'left' | 'right' | √ | √ |\r\n| floatingButtonOffset | Sets the default offset of the floating button from the top of the screen | String representation of integer | '-1' | √ | √ |\r\n| enableDebug | Enable/Disable debug logs from Instabug SDK | true, false | false | √ |  |\r\n| enableConsoleLogs | Enable/disable console log to be added to reports | true, false | true | √ |  |\r\n| enableInstabugLogs | Enable/disable Instabug log to be added to reports | true, false | true | √ |  |\r\n| enableTrackingUserSteps* | Enable/disable automatic user steps tracking | true, false | true | √ | √ |\r\n| enableCrashReporting* | Enable/disable crash reporting | true, false | true | √ | √ |\r\n| enableInAppMessaging | Enable/Disable in-app messaging | true, false | true | √ |  |\r\n| enableConversationSounds | Set whether new messages received will trigger a small sound notification or not | true, false | false | √ |  |\r\n| enablePushNotifications | Enable/disable push notifications feature | true, false | true | √ | √ |\r\n| enableIntroDialog | Enable/disable intro dialog shown the first time app is opened | true, false | true | √ | √ |\r\n| enableUserData | Enable/disable user data to be added to reports | true, false | true | √ |  |\r\n| colorTheme | Set which color theme to use for the SDK's UI | 'light', 'dark' | 'light' | √ | √ |\r\n*Pro feature\r\n\r\n## Sample\r\nThe sample demonstrates how to initiate Instabug.\r\n\r\n```javascript\r\ncordova.plugins.instabug.activate(\r\n    {\r\n        android: 'MY_ANDROID_TOKEN',\r\n        ios: 'MY_IOS_TOKEN'\r\n    },\r\n    'shake',\r\n    {\r\n        commentRequired: true,\r\n        colorTheme: 'dark',\r\n        shakingThresholdIPhone: '1.5',\r\n        shakingThresholdIPad: '0.6',\r\n        enableIntroDialog: false\r\n    },\r\n    function () {\r\n        console.log('Instabug initialized.');\r\n    },\r\n    function (error) {\r\n        console.log('Instabug could not be initialized - ' + error);\r\n    }\r\n);\r\n```\r\n\r\n## Other actions\r\nAfter you've initialized Instabug, you can call a variety of other methods on the plugin object. Each of these methods takes success and error callback function parameters, specified *after* any parameters detailed in the table below. If a parameter is listed as optional and you do not wish to supply it, pass null instead, otherwise your callback functions won't run.\r\n\r\n| method | description | parameters | Android? | iOS? |\r\n|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|------|\r\n| invoke | Show the Instabug dialog so user can choose to report a bug, or submit feedback | optional: 'bug', 'feedback', or 'na' | √ | √ |\r\n| showIntro* | Display the discovery dialog explaining the shake gesture or the two finger swipe gesture | none | √ | √ |\r\n| setPrimaryColor | Set the primary color that the SDK will use to tint certain UI elements in the SDK | integer representation of a color . | √ | √ |\r\n| setUserEmail* | If your app already acquires the user's email address and you provide it to this method, Instabug will pre-fill the user email in reports | email address | √ | √ |\r\n| setUserName* | Sets the user name that is used in the dashboard's contact | name | √ | √ |\r\n| setUserData* | Adds specific user data that you need to be added to the reports | any string | √ | √ |\r\n| addFile* | Uploads file along upcoming reports | Path to desired file on device - can't use path of file relative to your application files. Can be specified as a string or an object with properties by platform. | √ | √ |\r\n| addLog* | Appends a log message to Instabug internal log. These logs are then sent along the next uploaded report. All log messages are timestamped. Logs aren't cleared per single application run. If you wish to reset the logs, use clearLog(). Note: logs passed to this method are NOT printed to Logcat. | any string | √ | √ |\r\n| clearLog | Clears Instabug internal log | none | √ |  |\r\n| changeInvocationEvent | Changes the event used to invoke Instabug SDK | 'shake', 'button', 'screenshot', 'swipe', or 'none' (see first table on page) | √ | √ |\r\n| disable | Disables all Instabug functionality | none | √ |  |\r\n| enable | Enables all Instabug functionality | none | √ |  |\r\n| isEnabled | Returns true if Instabug is enabled, false if it's disabled | none | √ |  |\r\n| isDebugEnabled | Returns if Instabug SDK debug logs will be added to LogCat logs or not | none | √ |  |\r\n| setLocale | Set the locale used to display the strings in the correct language | 'arabic', 'chineseSimplified', 'chineseTraditional',  'english', 'french', 'german', 'italian', 'japanese', 'korean', 'polish', 'portugueseBrazil', 'russian', 'spanish', 'swedish', or 'turkish' |  | √ |\r\n*Pro feature\r\n\r\n## Tips & tricks\r\n1. You should initialize Instabug as soon as you can in your app. For Ionic users, the best place is in the run method of your module.\r\n2. For Android, if you use other plugins that open dialogs (like InAppBrowser) that you will want included in your screenshots, you'll need to modify the plugin code itself to call Instabug.setDialog(Dialog dialog) when it is opened. See Instabug official documentation for more info on usage (or, you can always check out my <a href=\"https://github.com/elizabethrego/cordova-plugin-inappbrowser-instabug\">InAppBrowser fork</a>, which includes this functionality as well as other useful things like hiding an open browser).\r\n3. The Instabug SDK also offers a reportException method that is not accessible through JavaScript but may be useful for adding these exceptions to your reports if you modify plugins to call it.\r\n\r\n## Contributing (please do!)\r\n\r\n1. Fork this repo.\r\n2. Create your own branch. (`git checkout -b my-feature`)\r\n3. Commit your changes. (`git commit -am 'Add my awesome feature'`)\r\n4. Push to your branch. (`git push origin my-feature`)\r\n5. Create new pull request.\r\n\r\n\r\n## License\r\n\r\nThis software is released under the <a href=\"http://opensource.org/licenses/Apache-2.0\">Apache 2.0 License</a>.\r\n\r\n© 2016 Instabug. All rights reserved.\r\n\r\n",
-  "readmeFilename": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Instabug/instabug-cordova.git"
-  },
-  "version": "1.0.0"
+  "homepage": "https://github.com/Instabug/instabug-cordova#readme"
 }

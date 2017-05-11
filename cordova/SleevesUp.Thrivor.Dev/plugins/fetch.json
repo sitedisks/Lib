@@ -210,18 +210,18 @@
         "is_top_level": false,
         "variables": {}
     },
-    "cordova-plugin-media-capture": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-media-capture"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova.plugins.diagnostic": {
         "source": {
             "type": "registry",
             "id": "cordova.plugins.diagnostic"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-media-capture": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-media-capture@^1.4.3"
         },
         "is_top_level": true,
         "variables": {}

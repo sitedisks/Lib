@@ -3,9 +3,7 @@
     "version": "1.0.6",
     "displayName": "Thrivor",
     "cordova": {
-        "platforms": [
-            "android"
-        ],
+        "platforms": [],
         "plugins": {
             "com.verso.cordova.clipboard": {},
             "cordova-plugin-android-permissions": {},
@@ -29,12 +27,16 @@
             "cordova-plugin-statusbar": {},
             "cordova-plugin-vibration": {},
             "cordova-plugin-whitelist": {},
-            "cordova.plugins.diagnostic": {}
+            "cordova.plugins.diagnostic": {},
+            "cordova-plugin-media-capture": {
+                "CAMERA_USAGE_DESCRIPTION": " ",
+                "MICROPHONE_USAGE_DESCRIPTION": " ",
+                "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
+            }
         }
     },
     "dependencies": {
         "com.verso.cordova.clipboard": "0.1.0",
-        "cordova-android": "^6.2.3",
         "cordova-plugin-android-permissions": "0.10.0",
         "cordova-plugin-app-event": "1.2.0",
         "cordova-plugin-background-push": "2.1.5",
@@ -52,6 +54,7 @@
         "cordova-plugin-inappbrowser": "1.6.1",
         "cordova-plugin-keyboard": "1.1.4",
         "cordova-plugin-media": "2.4.1",
+        "cordova-plugin-media-capture": "^1.4.3",
         "cordova-plugin-splashscreen": "4.0.1",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-vibration": "2.1.3",

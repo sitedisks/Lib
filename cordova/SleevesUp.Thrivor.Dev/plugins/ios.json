@@ -68,12 +68,6 @@
             "MICROPHONE_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
-        "cordova-plugin-media-capture": {
-            "CAMERA_USAGE_DESCRIPTION": " ",
-            "MICROPHONE_USAGE_DESCRIPTION": " ",
-            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
-            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
-        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
@@ -90,6 +84,12 @@
             "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
         "cordova.plugins.diagnostic": {
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
+        },
+        "cordova-plugin-media-capture": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "MICROPHONE_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         }
     },

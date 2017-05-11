@@ -52,6 +52,7 @@
         "cordova-plugin-inappbrowser": "1.6.1",
         "cordova-plugin-keyboard": "1.1.4",
         "cordova-plugin-media": "2.4.1",
+        "cordova-plugin-multidex": "git+https://github.com/chris-armstrong/cordova-multidex.git",
         "cordova-plugin-splashscreen": "4.0.1",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-vibration": "2.1.3",

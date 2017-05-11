@@ -78,6 +78,9 @@
         },
         "com.instabug.cordova.plugin": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         }
     },
     "dependent_plugins": {

@@ -64,6 +64,9 @@
         "cordova-plugin-media": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
+        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
@@ -79,7 +82,7 @@
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         },
-        "cordova-plugin-media-capture": {
+        "cordova.plugins.diagnostic": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorDEV"
         }
     },

@@ -225,5 +225,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-plugin-multidex": {
+        "source": {
+            "type": "registry",
+            "id": "https://github.com/chris-armstrong/cordova-multidex"
+        },
+        "is_top_level": false,
+        "variables": {}
     }
 }

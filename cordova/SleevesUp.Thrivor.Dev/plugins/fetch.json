@@ -195,9 +195,8 @@
     },
     "com.instabug.cordova.plugin": {
         "source": {
-            "type": "git",
-            "url": "https://github.com/Instabug/instabug-cordova",
-            "subdir": "."
+            "type": "registry",
+            "id": "https://github.com/Instabug/instabug-cordova"
         },
         "is_top_level": true,
         "variables": {}

@@ -213,7 +213,7 @@
     "cordova-plugin-media-capture": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-media-capture"
+            "id": "cordova-plugin-media-capture@~1.4.3"
         },
         "is_top_level": true,
         "variables": {}

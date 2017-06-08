@@ -67,9 +67,9 @@
     <preference name="orientation" value="portrait" />
     <preference name="ShowSplashScreenSpinner" value="false" />
     <preference name="windows-target-version" value="8.1" />
+	<preference name="AllowInlineMediaPlayback" value="true"/>
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarBackgroundColor" value="#000000" />
-    <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
     <preference name="DisallowOverscroll" value="true" />

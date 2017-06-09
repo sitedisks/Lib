@@ -4,7 +4,8 @@
     "displayName": "Thrivor",
     "cordova": {
         "platforms": [
-            "android"
+            "android",
+            "ios"
         ],
         "plugins": {
             "com.verso.cordova.clipboard": {},
@@ -39,6 +40,7 @@
     "dependencies": {
         "com.verso.cordova.clipboard": "0.1.0",
         "cordova-android": "^6.2.3",
+        "cordova-ios": "^4.4.0",
         "cordova-plugin-android-permissions": "0.10.0",
         "cordova-plugin-app-event": "1.2.0",
         "cordova-plugin-background-push": "2.1.5",

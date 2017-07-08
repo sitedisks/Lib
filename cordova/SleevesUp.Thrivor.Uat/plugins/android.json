@@ -7,6 +7,9 @@
         "files": {}
     },
     "installed_plugins": {
+        "com.instabug.cordova.plugin": {
+            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
+        },
         "com.verso.cordova.clipboard": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         },
@@ -61,6 +64,9 @@
         "cordova-plugin-media": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
+        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         },
@@ -75,19 +81,16 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "com.instabug.cordova.plugin": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         }
     },
     "dependent_plugins": {
+        "me.tonny.cordova.plugins.multidex": {
+            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
+        },
         "cordova-plugin-app-event": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         },
-        "me.tonny.cordova.plugins.multidex": {
+        "cordova-plugin-multidex": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         }
     }

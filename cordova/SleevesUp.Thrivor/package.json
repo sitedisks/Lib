@@ -33,7 +33,11 @@
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-vibration": {},
-            "cordova-plugin-whitelist": {}
+            "cordova-plugin-whitelist": {},
+            "branch-cordova-sdk": {
+                "BRANCH_KEY": "key_live_oeFBV69HAC5TARsxF8tF4bgkyxgF8hxX",
+                "URI_SCHEME": "thrivor"
+            }
         }
     },
     "dependencies": {
@@ -60,6 +64,7 @@
         "cordova-plugin-splashscreen": "4.0.1",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-vibration": "2.1.3",
-        "cordova-plugin-whitelist": "1"
+        "cordova-plugin-whitelist": "1",
+        "branch-cordova-sdk": "^2.6.2"
     }
 }

@@ -209,5 +209,16 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "branch-cordova-sdk": {
+        "source": {
+            "type": "registry",
+            "id": "branch-cordova-sdk@^2.6.5"
+        },
+        "is_top_level": true,
+        "variables": {
+            "BRANCH_KEY": "key_test_jpvuG73Pzt3OCJsxE4vHbkonzras2dSd",
+            "URI_SCHEME": "thrivor"
+        }
     }
 }

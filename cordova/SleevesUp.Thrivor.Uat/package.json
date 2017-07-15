@@ -34,10 +34,15 @@
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
             "cordova-plugin-vibration": {},
-            "cordova-plugin-whitelist": {}
+            "cordova-plugin-whitelist": {},
+            "branch-cordova-sdk": {
+                "BRANCH_KEY": "key_test_jpvuG73Pzt3OCJsxE4vHbkonzras2dSd",
+                "URI_SCHEME": "thrivor"
+            }
         }
     },
     "dependencies": {
+        "branch-cordova-sdk": "^2.6.5",
         "com.verso.cordova.clipboard": "0.1.0",
         "cordova-android": "^6.2.3",
         "cordova-ios": "^4.4.0",

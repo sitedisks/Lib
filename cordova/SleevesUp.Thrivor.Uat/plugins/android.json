@@ -81,6 +81,9 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
+        },
+        "branch-cordova-sdk": {
+            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         }
     },
     "dependent_plugins": {

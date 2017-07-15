@@ -1,0 +1,143 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "branch-cordova-sdk",
+        "scope": null,
+        "escapedName": "branch-cordova-sdk",
+        "name": "branch-cordova-sdk",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "C:\\Dev\\GitHub\\Lib\\cordova\\SleevesUp.Thrivor.Uat\\node_modules"
+    ]
+  ],
+  "_from": "branch-cordova-sdk@latest",
+  "_id": "branch-cordova-sdk@2.6.5",
+  "_inCache": true,
+  "_location": "/branch-cordova-sdk",
+  "_nodeVersion": "6.11.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/branch-cordova-sdk-2.6.5.tgz_1499985257602_0.5159603680949658"
+  },
+  "_npmUser": {
+    "name": "ethanneff",
+    "email": "ethan.neff@eneff.com"
+  },
+  "_npmVersion": "2.15.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "branch-cordova-sdk",
+    "scope": null,
+    "escapedName": "branch-cordova-sdk",
+    "name": "branch-cordova-sdk",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/branch-cordova-sdk/-/branch-cordova-sdk-2.6.5.tgz",
+  "_shasum": "199c0b5a184c1083ed4b6e2dea88fa01b6650033",
+  "_shrinkwrap": null,
+  "_spec": "branch-cordova-sdk",
+  "_where": "C:\\Dev\\GitHub\\Lib\\cordova\\SleevesUp.Thrivor.Uat\\node_modules",
+  "bugs": {
+    "url": "https://github.com/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking/issues"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": "conventional-commit-types"
+    }
+  },
+  "dependencies": {
+    "mkpath": "^1.0.0",
+    "node-version-compare": "^1.0.1",
+    "plist": "^2.1.0",
+    "request": "^2.81.0",
+    "xml2js": "^0.4.17"
+  },
+  "description": "Branch Metrics Cordova SDK",
+  "devDependencies": {
+    "cordova": "^7.0.1",
+    "gulp": "^3.9.1",
+    "gulp-standard": "^10.0.0",
+    "husky": "^0.14.3",
+    "mkpath": "^1.0.0",
+    "node-version-compare": "^1.0.1",
+    "npm-check": "^5.4.4",
+    "plist": "^2.1.0",
+    "semantic-release": "^6.3.6",
+    "validate-commit-msg": "^2.12.2",
+    "xml2js": "^0.4.17"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "199c0b5a184c1083ed4b6e2dea88fa01b6650033",
+    "tarball": "https://registry.npmjs.org/branch-cordova-sdk/-/branch-cordova-sdk-2.6.5.tgz"
+  },
+  "gitHead": "76c3fc2d3bfd5e630cf78cb15d0ea7245709cebc",
+  "homepage": "https://github.com/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking",
+  "keywords": [
+    "ecosystem:cordova",
+    "ecosystem:phonegap",
+    "ecosystem:ionic",
+    "cordova-ios",
+    "cordova-android",
+    "branch",
+    "linking",
+    "deep links",
+    "deep linking",
+    "universal links",
+    "app links",
+    "deferred deep linking"
+  ],
+  "license": "MIT",
+  "main": "src/branch.js",
+  "maintainers": [
+    {
+      "name": "dmitrig01",
+      "email": "dmitrig01@gmail.com"
+    },
+    {
+      "name": "ethanneff",
+      "email": "ethan.neff@eneff.com"
+    },
+    {
+      "name": "jdee",
+      "email": "jgvdthree@gmail.com"
+    },
+    {
+      "name": "jsaleigh",
+      "email": "john@branch.io"
+    },
+    {
+      "name": "maephet",
+      "email": "alexjaustin@gmail.com"
+    }
+  ],
+  "name": "branch-cordova-sdk",
+  "optionalDependencies": {},
+  "platforms": [
+    "android",
+    "ios"
+  ],
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BranchMetrics/cordova-ionic-phonegap-branch-deep-linking.git"
+  },
+  "scripts": {
+    "changelog": "node ./src/scripts/npm/updateChangeLog -reset=true",
+    "commitmsg": "validate-commit-msg",
+    "postcommit": "semantic-release pre --verifyRelease='./src/scripts/npm/updateNpmVersion' || true",
+    "precommit": "npm-check --skip-unused && gulp prod",
+    "prerelease": "gulp prod",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "version": "2.6.5"
+}

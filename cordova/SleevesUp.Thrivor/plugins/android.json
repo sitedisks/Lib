@@ -1,0 +1,88 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-keyboard": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "branch-cordova-sdk": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "com.verso.cordova.clipboard": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-background-push": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-cache-clear": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-email": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "sleevesup.thrivor"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        }
+    }
+}

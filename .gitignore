@@ -28,8 +28,7 @@ HostedApp001/packages/
 HostedApp001/HostedApp001/obj/
 HostedApp001/HostedApp001/bin/
 cordova/Sleevesup.NativeWrapper/platforms/
-cordova/SleevesUp.Thrivor/platforms/
-cordova/SleevesUp.Thrivor/plugins/
+
 cordova/MyApp/bower_components/
 cordova/MyApp/platforms/
 cordova/MyApp/plugins/
@@ -50,7 +49,6 @@ ThrivorUI/packages/
 ThrivorUI/ThrivorUI/obj/
 ThrivorUI/ThrivorUI/bin/
 WebApiSignalRPush/.vs/
-
 WebApiSignalRPush/AngularJsSignalR/bin/
 WebApiSignalRPush/AngularJsSignalR/obj/
 MessageBoard/.vs/
@@ -71,9 +69,7 @@ WebApiAungularWithPushNoti/packages/
 WebApiAungularWithPushNoti/WebApiAungularWithPushNoti/obj/
 WebApiAungularWithPushNoti/.vs/
 cordova/macCloundThrivor.zip
-=======
 WebApiAungularWithPushNoti/.vs/
-
->>>>>>> cc6390687e0f4ac527e1f9bde17d9ca9e5e8cf3e
+cordova/SleevesUp.Thrivor/platforms/
 cordova/SleevesUp.Thrivor.Uat/platforms/
 cordova/SleevesUp.Thrivor.Dev/platforms/

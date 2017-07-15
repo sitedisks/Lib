@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "com.verso.cordova.clipboard@0.1.0",
+        "scope": null,
+        "escapedName": "com.verso.cordova.clipboard",
+        "name": "com.verso.cordova.clipboard",
+        "rawSpec": "0.1.0",
+        "spec": "0.1.0",
+        "type": "version"
+      },
+      "C:\\Dev\\GitHub\\Lib\\cordova\\SleevesUp.Thrivor\\node_modules"
+    ]
+  ],
+  "_from": "com.verso.cordova.clipboard@0.1.0",
+  "_id": "com.verso.cordova.clipboard@0.1.0",
+  "_inCache": true,
+  "_location": "/com.verso.cordova.clipboard",
+  "_nodeVersion": "7.5.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/com.verso.cordova.clipboard-0.1.0.tgz_1494867944377_0.6417081146501005"
+  },
+  "_npmUser": {
+    "name": "rteran",
+    "email": "rafaelterantorralbo@gmail.com"
+  },
+  "_npmVersion": "4.1.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "com.verso.cordova.clipboard@0.1.0",
+    "scope": null,
+    "escapedName": "com.verso.cordova.clipboard",
+    "name": "com.verso.cordova.clipboard",
+    "rawSpec": "0.1.0",
+    "spec": "0.1.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/com.verso.cordova.clipboard/-/com.verso.cordova.clipboard-0.1.0.tgz",
+  "_shasum": "11314dcfd869a4385802443deefe45eb1b921c0d",
+  "_shrinkwrap": null,
+  "_spec": "com.verso.cordova.clipboard@0.1.0",
+  "_where": "C:\\Dev\\GitHub\\Lib\\cordova\\SleevesUp.Thrivor\\node_modules",
+  "author": {
+    "name": "RTeran"
+  },
+  "bugs": {
+    "url": "https://github.com/RTeran/CordovaClipboard/issues"
+  },
+  "cordova": {
+    "id": "com.verso.cordova.clipboard",
+    "platforms": [
+      "ios",
+      "android",
+      "wp8"
+    ]
+  },
+  "dependencies": {},
+  "description": "Clipboard management plugin for Cordova/PhoneGap",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "11314dcfd869a4385802443deefe45eb1b921c0d",
+    "tarball": "https://registry.npmjs.org/com.verso.cordova.clipboard/-/com.verso.cordova.clipboard-0.1.0.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "gitHead": "03fe48b62411cbff22229ca13cc3ac8b282f7945",
+  "homepage": "https://github.com/RTeran/CordovaClipboard#readme",
+  "keywords": [
+    "clipboard",
+    "copy",
+    "paste",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "cordova-wp8"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "rteran",
+      "email": "rafaelterantorralbo@gmail.com"
+    }
+  ],
+  "name": "com.verso.cordova.clipboard",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://RTeran@github.com/RTeran/CordovaClipboard.git"
+  },
+  "scripts": {},
+  "version": "0.1.0"
+}

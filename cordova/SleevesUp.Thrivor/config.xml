@@ -81,7 +81,7 @@
         <ios-team-release value="5D6HTEQ2BW" />
         <host name="thrivor.app.link" scheme="https" />
     </branch-config>
-    <engine name="android" spec="~6.2.3" />
+    <engine name="android" spec="^6.2.3" />
     <plugin name="branch-cordova-sdk" spec="^2.6.2">
         <variable name="BRANCH_KEY" value="key_live_oeFBV69HAC5TARsxF8tF4bgkyxgF8hxX" />
         <variable name="URI_SCHEME" value="thrivor" />

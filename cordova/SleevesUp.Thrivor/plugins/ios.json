@@ -1,0 +1,104 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.instabug.cordova.plugin": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "com.verso.cordova.clipboard": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-app-event": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-background-push": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-badge": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-cache-clear": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-calendar": {
+            "CALENDAR_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-contacts": {
+            "CONTACTS_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-email": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-filepath": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-geolocation": {
+            "GEOLOCATION_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-inapppurchase": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-keyboard": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-media": {
+            "MICROPHONE_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.thrivor"
+        },
+        "cordova-plugin-media-capture": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "MICROPHONE_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        },
+        "branch-cordova-sdk": {
+            "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        }
+    },
+    "dependent_plugins": {
+        "me.tonny.cordova.plugins.multidex": {
+            "PACKAGE_NAME": "com.thrivor"
+        }
+    }
+}

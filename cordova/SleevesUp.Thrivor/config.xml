@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.thrivor" version="1.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.Thrivor.Thrivor" version="1.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Thrivor</name>
     <description>
         Thrivor's mission is to help solve the everyday challenges for people living with cancer.
@@ -73,7 +73,19 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <engine name="android" spec="~6.2.3" />
+    <preference name="AndroidLaunchMode" value="singleInstance" />
+    <branch-config>
+        <branch-key value="key_live_oeFBV69HAC5TARsxF8tF4bgkyxgF8hxX" />
+        <uri-scheme value="thrivor" />
+        <link-domain value="thrivor.app.link" />
+        <ios-team-release value="5D6HTEQ2BW" />
+        <host name="thrivor.app.link" scheme="https" />
+    </branch-config>
+    <engine name="android" spec="^6.2.3" />
+    <plugin name="branch-cordova-sdk" spec="^2.6.2">
+        <variable name="BRANCH_KEY" value="key_live_oeFBV69HAC5TARsxF8tF4bgkyxgF8hxX" />
+        <variable name="URI_SCHEME" value="thrivor" />
+    </plugin>
     <plugin name="com.verso.cordova.clipboard" spec="0.1.0" />
     <plugin name="cordova-plugin-android-permissions" spec="0.10.0" />
     <plugin name="cordova-plugin-app-event" spec="1.2.0" />

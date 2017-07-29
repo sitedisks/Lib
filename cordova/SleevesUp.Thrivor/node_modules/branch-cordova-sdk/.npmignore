@@ -1,0 +1,9 @@
+node_modules
+.installed
+tests/
+testbed/
+plugin.template.xml
+gulpfile.js
+CONTRIBUTING.md
+travis_after_all.py
+yarn.lock

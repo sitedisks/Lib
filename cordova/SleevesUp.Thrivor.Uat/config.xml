@@ -73,8 +73,20 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="AndroidLaunchMode" value="singleInstance" />
+    <branch-config>
+        <branch-key value="key_test_jpvuG73Pzt3OCJsxE4vHbkonzras2dSd" />
+        <uri-scheme value="thrivor" />
+        <link-domain value="thrivor.test-app.link" />
+        <ios-team-release value="5D6HTEQ2BW" />
+        <host name="thrivor.test-app.link" scheme="https" />
+    </branch-config>
     <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.4.0" />
+    <plugin name="branch-cordova-sdk" spec="^2.6.5">
+        <variable name="BRANCH_KEY" value="key_test_jpvuG73Pzt3OCJsxE4vHbkonzras2dSd" />
+        <variable name="URI_SCHEME" value="thrivor" />
+    </plugin>
     <plugin name="com.verso.cordova.clipboard" spec="0.1.0" />
     <plugin name="cordova-plugin-android-permissions" spec="0.10.0" />
     <plugin name="cordova-plugin-app-event" spec="1.2.0" />

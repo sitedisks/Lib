@@ -1,0 +1,97 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-android-permissions@0.10.0",
+        "scope": null,
+        "escapedName": "cordova-plugin-android-permissions",
+        "name": "cordova-plugin-android-permissions",
+        "rawSpec": "0.10.0",
+        "spec": "0.10.0",
+        "type": "version"
+      },
+      "C:\\Dev\\GitHub\\Lib\\cordova\\SleevesUp.Thrivor\\node_modules"
+    ]
+  ],
+  "_from": "cordova-plugin-android-permissions@0.10.0",
+  "_id": "cordova-plugin-android-permissions@0.10.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-android-permissions",
+  "_nodeVersion": "5.9.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-android-permissions-0.10.0.tgz_1470018138246_0.756320244865492"
+  },
+  "_npmUser": {
+    "name": "jasonyang",
+    "email": "jason760924@gmail.com"
+  },
+  "_npmVersion": "3.7.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-android-permissions@0.10.0",
+    "scope": null,
+    "escapedName": "cordova-plugin-android-permissions",
+    "name": "cordova-plugin-android-permissions",
+    "rawSpec": "0.10.0",
+    "spec": "0.10.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-android-permissions/-/cordova-plugin-android-permissions-0.10.0.tgz",
+  "_shasum": "c62726f3248c4c61d1f1e9242f9cdb5ebf0a711a",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-android-permissions@0.10.0",
+  "_where": "C:\\Dev\\GitHub\\Lib\\cordova\\SleevesUp.Thrivor\\node_modules",
+  "author": {
+    "name": "Jason Yang"
+  },
+  "bugs": {
+    "url": "https://github.com/NeoLSN/cordova-plugin-android-permission/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-android-permissions",
+    "platforms": [
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "Android 6.0 permissions check.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "c62726f3248c4c61d1f1e9242f9cdb5ebf0a711a",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-android-permissions/-/cordova-plugin-android-permissions-0.10.0.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=5.0.0"
+    }
+  ],
+  "gitHead": "ea573ee41202359e481b287d4da6cb56932472e4",
+  "homepage": "https://github.com/NeoLSN/cordova-plugin-android-permission#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "BSD",
+  "maintainers": [
+    {
+      "name": "jasonyang",
+      "email": "jason760924@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-android-permissions",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeoLSN/cordova-plugin-android-permission.git"
+  },
+  "scripts": {},
+  "version": "0.10.0"
+}

@@ -220,5 +220,21 @@
             "BRANCH_KEY": "key_test_jpvuG73Pzt3OCJsxE4vHbkonzras2dSd",
             "URI_SCHEME": "thrivor"
         }
+    },
+    "cordova-plugin-intercom": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-intercom"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-multidex": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-multidex@~0.1.1"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

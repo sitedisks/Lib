@@ -7,94 +7,12 @@
         "files": {}
     },
     "installed_plugins": {
-        "com.instabug.cordova.plugin": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "com.verso.cordova.clipboard": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-android-permissions": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-background-push": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-badge": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-cache-clear": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-calendar": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-compat": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-email": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-filepath": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-inapppurchase": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-keyboard": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-x-socialsharing": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
         "branch-cordova-sdk": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        }
-    },
-    "dependent_plugins": {
-        "me.tonny.cordova.plugins.multidex": {
-            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
-        },
-        "cordova-plugin-app-event": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         },
         "cordova-plugin-multidex": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         }
-    }
+    },
+    "dependent_plugins": {}
 }

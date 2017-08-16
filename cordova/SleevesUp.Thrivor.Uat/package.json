@@ -3,10 +3,7 @@
     "version": "1.0.7",
     "displayName": "Thrivor",
     "cordova": {
-        "platforms": [
-            "android",
-            "ios"
-        ],
+        "platforms": [],
         "plugins": {
             "com.verso.cordova.clipboard": {},
             "cordova-plugin-android-permissions": {},
@@ -38,14 +35,15 @@
             "branch-cordova-sdk": {
                 "BRANCH_KEY": "key_test_jpvuG73Pzt3OCJsxE4vHbkonzras2dSd",
                 "URI_SCHEME": "thrivor"
-            }
+            },
+            "cordova-plugin-intercom": {},
+            "cordova-plugin-multidex": {}
         }
     },
     "dependencies": {
         "branch-cordova-sdk": "^2.6.5",
         "com.verso.cordova.clipboard": "0.1.0",
         "cordova-android": "^6.2.3",
-        "cordova-ios": "^4.4.0",
         "cordova-plugin-android-permissions": "0.10.0",
         "cordova-plugin-app-event": "1.2.0",
         "cordova-plugin-background-push": "2.1.5",
@@ -61,9 +59,11 @@
         "cordova-plugin-filepath": "1.0.2",
         "cordova-plugin-geolocation": "2.4.1",
         "cordova-plugin-inappbrowser": "1.6.1",
+        "cordova-plugin-intercom": "^3.2.2",
         "cordova-plugin-keyboard": "1.1.4",
         "cordova-plugin-media": "2.4.1",
         "cordova-plugin-media-capture": "~1.4.3",
+        "cordova-plugin-multidex": "~0.1.1",
         "cordova-plugin-splashscreen": "4.0.1",
         "cordova-plugin-statusbar": "2.2.1",
         "cordova-plugin-vibration": "2.1.3",

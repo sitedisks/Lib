@@ -61,6 +61,9 @@
         "cordova-plugin-inapppurchase": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         },
+        "cordova-plugin-intercom": {
+            "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
+        },
         "cordova-plugin-keyboard": {
             "PACKAGE_NAME": "com.Thrivor.ThrivorUAT"
         },

@@ -74,9 +74,6 @@
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="AndroidLaunchMode" value="singleInstance" />
-    <preference name="intercom-app-id" value="cv4tecd0" />
-    <preference name="intercom-ios-api-key" value="ios_sdk-97ebff2852eeac4f49233e153377697d1689854b" />
-    <preference name="intercom-android-api-key" value="android_sdk-ab3f0ddf291401a345a25b5ebd39fc52a2f8ea2e" />
     <branch-config>
         <branch-key value="key_test_jpvuG73Pzt3OCJsxE4vHbkonzras2dSd" />
         <uri-scheme value="thrivor" />
@@ -84,6 +81,8 @@
         <ios-team-release value="5D6HTEQ2BW" />
         <host name="thrivor.test-app.link" scheme="https" />
     </branch-config>
+    <engine name="android" spec="^6.2.3" />
+    <engine name="ios" spec="^4.4.0" />
     <plugin name="branch-cordova-sdk" spec="^2.6.5">
         <variable name="BRANCH_KEY" value="key_test_jpvuG73Pzt3OCJsxE4vHbkonzras2dSd" />
         <variable name="URI_SCHEME" value="thrivor" />
@@ -104,7 +103,6 @@
     <plugin name="cordova-plugin-filepath" spec="1.0.2" />
     <plugin name="cordova-plugin-geolocation" spec="2.4.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="1.6.1" />
-    <plugin name="cordova-plugin-intercom" spec="^3.2.2" />
     <plugin name="cordova-plugin-keyboard" spec="1.1.4" />
     <plugin name="cordova-plugin-media" spec="2.4.1" />
     <plugin name="cordova-plugin-media-capture" spec="~1.4.3">
@@ -112,7 +110,6 @@
         <variable name="MICROPHONE_USAGE_DESCRIPTION" value=" " />
         <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value=" " />
     </plugin>
-    <plugin name="cordova-plugin-multidex" spec="~0.1.1" />
     <plugin name="cordova-plugin-splashscreen" spec="4.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="2.2.1" />
     <plugin name="cordova-plugin-vibration" spec="2.1.3" />

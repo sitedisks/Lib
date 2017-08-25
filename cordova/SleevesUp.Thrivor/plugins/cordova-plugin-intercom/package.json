@@ -1,0 +1,128 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-intercom",
+        "scope": null,
+        "escapedName": "cordova-plugin-intercom",
+        "name": "cordova-plugin-intercom",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "E:\\Dev\\Github\\Lib\\cordova\\SleevesUp.Thrivor\\node_modules"
+    ]
+  ],
+  "_from": "cordova-plugin-intercom@latest",
+  "_id": "cordova-plugin-intercom@3.2.2",
+  "_inCache": true,
+  "_location": "/cordova-plugin-intercom",
+  "_nodeVersion": "6.1.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/cordova-plugin-intercom-3.2.2.tgz_1495107004499_0.5640711965970695"
+  },
+  "_npmUser": {
+    "name": "conorintercom",
+    "email": "conor.odonnell@intercom.io"
+  },
+  "_npmVersion": "3.8.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-intercom",
+    "scope": null,
+    "escapedName": "cordova-plugin-intercom",
+    "name": "cordova-plugin-intercom",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-intercom/-/cordova-plugin-intercom-3.2.2.tgz",
+  "_shasum": "68e7cd3097b4492c22676ccbb5a970207fdfbd0e",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-intercom",
+  "_where": "E:\\Dev\\Github\\Lib\\cordova\\SleevesUp.Thrivor\\node_modules",
+  "author": {
+    "name": "Intercom"
+  },
+  "bugs": {
+    "url": "https://github.com/intercom/intercom-cordova/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-intercom",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "Official Cordova/PhoneGap plugin for Intercom",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "68e7cd3097b4492c22676ccbb5a970207fdfbd0e",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-intercom/-/cordova-plugin-intercom-3.2.2.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=6.4.0"
+    },
+    {
+      "name": "cordova-android",
+      "version": ">=4.0.0"
+    },
+    {
+      "name": "cordova-ios",
+      "version": ">=4.3.1"
+    }
+  ],
+  "homepage": "https://github.com/intercom/intercom-cordova#readme",
+  "keywords": [
+    "intercom",
+    "intercom-cordova",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "MIT License",
+  "maintainers": [
+    {
+      "name": "bboyle18",
+      "email": "brian.boyle@intercom.io"
+    },
+    {
+      "name": "conorintercom",
+      "email": "conor.odonnell@intercom.io"
+    },
+    {
+      "name": "dale-intercom",
+      "email": "dale@intercom.io"
+    },
+    {
+      "name": "harkin",
+      "email": "hfglarkin@gmail.com"
+    },
+    {
+      "name": "jtreanor",
+      "email": "james@intercom.io"
+    },
+    {
+      "name": "ronocod",
+      "email": "mrconor@gmail.com"
+    }
+  ],
+  "name": "cordova-plugin-intercom",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intercom/intercom-cordova.git"
+  },
+  "scripts": {},
+  "version": "3.2.2"
+}

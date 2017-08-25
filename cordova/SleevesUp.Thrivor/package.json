@@ -37,7 +37,8 @@
             "branch-cordova-sdk": {
                 "BRANCH_KEY": "key_live_oeFBV69HAC5TARsxF8tF4bgkyxgF8hxX",
                 "URI_SCHEME": "thrivor"
-            }
+            },
+            "cordova-plugin-intercom": {}
         }
     },
     "dependencies": {
@@ -59,6 +60,7 @@
         "cordova-plugin-filepath": "1.0.2",
         "cordova-plugin-geolocation": "2.4.1",
         "cordova-plugin-inappbrowser": "1.6.1",
+        "cordova-plugin-intercom": "^3.2.2",
         "cordova-plugin-keyboard": "1.1.4",
         "cordova-plugin-media": "2.4.1",
         "cordova-plugin-media-capture": "~1.4.3",

@@ -73,6 +73,9 @@
     <preference name="StatusBarStyle" value="lightcontent" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="intercom-app-id" value="cv4tecd0" />
+    <preference name="intercom-ios-api-key" value="ios_sdk-97ebff2852eeac4f49233e153377697d1689854b" />
+    <preference name="intercom-android-api-key" value="android_sdk-ab3f0ddf291401a345a25b5ebd39fc52a2f8ea2e" />
     <preference name="AndroidLaunchMode" value="singleInstance" />
     <branch-config>
         <branch-key value="key_live_oeFBV69HAC5TARsxF8tF4bgkyxgF8hxX" />
@@ -102,6 +105,7 @@
     <plugin name="cordova-plugin-filepath" spec="1.0.2" />
     <plugin name="cordova-plugin-geolocation" spec="2.4.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="1.6.1" />
+    <plugin name="cordova-plugin-intercom" spec="^3.2.2" />
     <plugin name="cordova-plugin-keyboard" spec="1.1.4" />
     <plugin name="cordova-plugin-media" spec="2.4.1" />
     <plugin name="cordova-plugin-media-capture" spec="~1.4.3">

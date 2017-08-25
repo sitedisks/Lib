@@ -87,6 +87,9 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.Thrivor.Thrivor"
+        },
+        "cordova-plugin-intercom": {
+            "PACKAGE_NAME": "com.thrivor"
         }
     },
     "dependent_plugins": {

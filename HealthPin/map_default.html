@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Default Google Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaUDbQW19GxmsfpFN-rsmrxYFm7TMm1lo"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script>
+        function initMap() {
+
+            var lat = -37.813611,
+                lng = 144.963056;
+            // {lat: -37.813611, lng: 144.963056}
+            var melbourne_center = new google.maps.LatLng(lat, lng);
+
+            var mapOptions = {
+                center: melbourne_center,
+                zoom: 13,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            var geocoder = new google.maps.Geocoder();
+
+            var infowindow = new google.maps.InfoWindow();
+
+            var content = document.createElement('div');
+
+            // dynamic json
+            var health_list = [{
+                    name: 'Victoria Street Acupuncture & Medical Clinic Pty Ltd',
+                    address: '436  Victoria St, North Melbourne, VIC, 3051'
+                },
+                {
+                    name: 'the acupuncture IVF support clinic',
+                    address: 'Suite 8 / 228 Clarendon St, East Melbourne, VIC, 3002'
+                }
+            ];
+
+            health_list.forEach(function (health) {
+                geocodeAddress(health);
+            })
+
+            function geocodeAddress(health) {
+                geocoder.geocode({
+                    'address': health.address
+                }, function (results, status) {
+                    if (status === 'OK') {
+                        var marker = new google.maps.Marker({
+                            position: results[0].geometry.location,
+                            map: map
+                        });
+
+                        var content = document.createElement('div');
+                        content.innerHTML = '<i class="fas fa-clinic-medical" style="font-size: 1em; color: Tomato;"></i> &nbsp;' + health.name;
+
+                        google.maps.event.addListener(marker, 'click', function () {
+                            infowindow.close();
+                            infowindow.setContent(content);
+                            infowindow.open(map, marker);
+                        })
+
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                })
+
+            }
+
+            
+        }
+        initMap();
+    </script>
+</body>
+
+</html>

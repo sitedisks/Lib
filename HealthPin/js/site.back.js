@@ -2,21 +2,19 @@
 
 function initialize() {
 
-    /* map var  */
     var currentLat = -37.813611,
         currentLng = 144.963056;
-    var pinColor = "0073e5";
-    var latlng = new google.maps.LatLng(currentLat, currentLng); // initial melbourne
-    var markersArray = [];
-
-    /* login info */
     var UserId = 88888,
         Token = 'cwancwancwancwan0';
+    // current pin blue
+    var pinColor = "0073e5";
 
-    /* endpoint constant  */
+    var latlng = new google.maps.LatLng(currentLat, currentLng); // initial melbourne
+    var howclose = 1000;
+    //var endpoint = "http://localhost:2325";
+    //var mysqlpoint = "http://localhost:9113";
     var endpoint = "http://pinpieceapi.azurewebsites.net";
     var mysqlpoint = "http://geogoapi.azurewebsites.net";
-
 
     var mapOptions = {
         zoom: 13,
@@ -26,7 +24,9 @@ function initialize() {
 
     var map = new google.maps.Map($('#map')[0], mapOptions);
     var infowindow = new google.maps.InfoWindow();
+    var markersArray = [];
     var bounds = new google.maps.LatLngBounds();
+
 
     var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
         null, /* size is determined at runtime */
@@ -57,14 +57,15 @@ function initialize() {
     });
     // end webapi button
 
-    // marker click event
     google.maps.event.addListener(meMarker, 'click', function () {
         this.infowindow.setContent(content);
         this.infowindow.open(map, this);
     });
 
 
-    // marker drag event
+    // end current pin blue
+
+    // drag - relocation
     google.maps.event.addListener(meMarker, "dragend", function (event) {
         bounds = new google.maps.LatLngBounds();
         currentLat = event.latLng.lat();

@@ -7,7 +7,7 @@
 
     <meta charset="utf-8">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-
+    <link href="css/toastr.min.css" rel="stylesheet" />
     <style>
         /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -33,6 +33,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/fontawesome.min.js"></script>
+    <script src="js/toastr.min.js"></script>
     <script>
         function initMap() {
 
@@ -56,23 +57,36 @@
             var content = document.createElement('div');
 
             // dynamic json
+
             var health_list = [{
-                    name: 'Victoria Street Acupuncture & Medical Clinic Pty Ltd',
-                    address: '436  Victoria St, North Melbourne, VIC, 3051'
+                    s_clinic_name: 'Victoria Street Acupuncture & Medical Clinic Pty Ltd',
+                    s_address: '436  Victoria St, North Melbourne, VIC, 3051'
                 },
                 {
-                    name: 'the acupuncture IVF support clinic',
-                    address: 'Suite 8 / 228 Clarendon St, East Melbourne, VIC, 3002'
+                    s_clinic_name: 'the acupuncture IVF support clinic',
+                    s_address: 'Suite 8 / 228 Clarendon St, East Melbourne, VIC, 3002'
                 }
             ];
 
             health_list.forEach(function (health) {
-                geocodeAddress(health);
-            })
+                //geocodeAddress(health);
+            });
+
+            var counter = 0;
+            $.getJSON("data/healthengine.json", function (data) {
+
+                data.forEach(function (item) {
+                    if (item.data_type === "Practice" && counter < 14) {
+                        geocodeAddress(item);
+                        counter++;
+                    };
+
+                })
+            });
 
             function geocodeAddress(health) {
                 geocoder.geocode({
-                    'address': health.address
+                    'address': health.s_address
                 }, function (results, status) {
                     if (status === 'OK') {
                         var marker = new google.maps.Marker({
@@ -81,7 +95,9 @@
                         });
 
                         var content = document.createElement('div');
-                        content.innerHTML = '<i class="fas fa-clinic-medical" style="font-size: 1em; color: Tomato;"></i> &nbsp;' + health.name;
+                        content.innerHTML =
+                            '<i class="fas fa-clinic-medical" style="font-size: 1em; color: Tomato;"></i> &nbsp;' +
+                            health.s_clinic_name;
 
                         google.maps.event.addListener(marker, 'click', function () {
                             infowindow.close();
@@ -90,13 +106,12 @@
                         })
 
                     } else {
-                        alert('Geocode was not successful for the following reason: ' + status);
+                        toastr.warning('Geocode was not successful for the following reason: ' + status);
                     }
                 })
 
             }
 
-            
         }
         initMap();
     </script>

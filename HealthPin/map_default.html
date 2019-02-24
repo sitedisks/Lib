@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Default Google Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+    <meta charset="utf-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/toastr.min.css" rel="stylesheet" />
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="floating-panel">
+        <button id="btnClear" type="button" class="btn btn-primary">Clear</button>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaUDbQW19GxmsfpFN-rsmrxYFm7TMm1lo"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/toastr.min.js"></script>
+    <script>
+        function initMap() {
+
+            var apikey = 'AIzaSyCr5tneICjc77TVKJMVUr0rVw0uryDy4gI';
+
+            var lat = -37.813611,
+                lng = 144.963056;
+            // {lat: -37.813611, lng: 144.963056}
+            var melbourne_center = new google.maps.LatLng(lat, lng);
+
+            var mapOptions = {
+                center: melbourne_center,
+                zoom: 13,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            var geocoder = new google.maps.Geocoder();
+
+            var infowindow = new google.maps.InfoWindow();
+
+            var content = document.createElement('div');
+
+            var markersArray = [];
+
+            /*
+            var health_list = [{
+                    s_clinic_name: 'Victoria Street Acupuncture & Medical Clinic Pty Ltd',
+                    s_address: '436  Victoria St, North Melbourne, VIC, 3051'
+                },
+                {
+                    s_clinic_name: 'the acupuncture IVF support clinic',
+                    s_address: 'Suite 8 / 228 Clarendon St, East Melbourne, VIC, 3002'
+                }
+            ];
+
+            health_list.forEach(function (item) {
+                //geocodeAPI(item);
+            });
+            */
+
+            $.getJSON("data/healthengine.json", function (data) {
+                data.forEach(function (item) {
+                    if (item.data_type === "Practice") {
+                        //geocodeAddress(item);
+                        geocodeAPI(item);
+                    };
+
+                })
+            });
+
+            function geocodeAPI(item) {
+                var geocodeAPIUrl = 'https://maps.googleapis.com/maps/api/geocode/json'
+                var query = geocodeAPIUrl + '?address=' + item.s_address + '&key=' + apikey;
+                $.getJSON(query, function (data) {
+                    if (data.status === 'OK') {
+                        createMarker(data.results[0], item);
+                    } else {
+                        toastr.warning('Geocode was not successful for the following reason: ' + status);
+                    }
+                })
+            }
+
+            // This has limitation!
+            function geocodeAddress(item) {
+                geocoder.geocode({
+                    'address': item.s_address
+                }, function (results, status) {
+                    if (status === 'OK') {
+                        createMarker(results[0], item);
+                    } else {
+                        toastr.warning('Geocode was not successful for the following reason: ' + status);
+                    }
+                })
+            }
+
+            function createMarker(geodata, item) {
+                var marker = new google.maps.Marker({
+                    position: geodata.geometry.location,
+                    map: map
+                });
+
+                var content = document.createElement('div');
+
+                content.innerHTML =
+                    '<h6>' + item.s_clinic_name + '</h6>' +
+                    '<div><i class="fas fa-clinic-medical" style="font-size: 1em; color: Tomato;"></i> &nbsp;' +
+                    geodata.formatted_address +
+                    '</div>' +
+                    '<div><i class="fas fa-phone" style="font-size: 1em; color: Tomato;"></i> &nbsp;' +
+                    item.s_phone +
+                    '</div>';
+
+                google.maps.event.addListener(marker, 'click', function () {
+                    infowindow.close();
+                    infowindow.setContent(content);
+                    infowindow.open(map, marker);
+                })
+
+                markersArray.push(marker);
+            }
+
+            // clean markers
+            function clearOverlays() {
+                for (var i = 0; i < markersArray.length; i++) {
+                    markersArray[i].setMap(null);
+                }
+                markersArray.length = 0;
+            }
+        }
+
+        $(document).ready(initMap);
+    </script>
+</body>
+
+</html>

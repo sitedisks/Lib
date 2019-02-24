@@ -2,159 +2,88 @@
 
 function initialize() {
 
-    /* map var  */
-    var currentLat = -37.813611,
-        currentLng = 144.963056;
-    var pinColor = "0073e5";
-    var latlng = new google.maps.LatLng(currentLat, currentLng); // initial melbourne
-    var markersArray = [];
+    var apikey = 'AIzaSyCr5tneICjc77TVKJMVUr0rVw0uryDy4gI';
 
-    /* login info */
-    var UserId = 88888,
-        Token = 'cwancwancwancwan0';
-
-    /* endpoint constant  */
-    var endpoint = "http://pinpieceapi.azurewebsites.net";
-    var mysqlpoint = "http://geogoapi.azurewebsites.net";
-
+    var lat = -37.813611,
+        lng = 144.963056;
+    // {lat: -37.813611, lng: 144.963056}
+    var melbourne_center = new google.maps.LatLng(lat, lng);
 
     var mapOptions = {
+        center: melbourne_center,
         zoom: 13,
-        center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
+    }
 
-    var map = new google.maps.Map($('#map')[0], mapOptions);
+    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+    var geocoder = new google.maps.Geocoder();
+
     var infowindow = new google.maps.InfoWindow();
-    var bounds = new google.maps.LatLngBounds();
 
-    var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
-        null, /* size is determined at runtime */
-        null, /* origin is 0,0 */
-        null, /* anchor is bottom center of the scaled image */
-        new google.maps.Size(31.5, 51)
-    );
-
-    var meMarker = new google.maps.Marker({
-        position: latlng,
-        map: map,
-        draggable: true,
-        icon: pinImage,
-        infowindow: infowindow
-    });
-
-    // webapi add button to infowindow
     var content = document.createElement('div');
-    content.innerHTML = '<h4>Move me and Pin Message : ></h4><br/><textarea class="form-control" id="pin_message" rows="4" cols="50"></textarea><br/>';
-    var button = content.appendChild(document.createElement('input'));
-    button.type = 'button';
-    button.value = 'Pin It!';
-    button.classList.add('btn');
-    button.classList.add('btn-success');
 
-    google.maps.event.addDomListener(button, 'click', function () {
-        postPin();
-    });
-    // end webapi button
+    var markersArray = [];
 
-    // marker click event
-    google.maps.event.addListener(meMarker, 'click', function () {
-        this.infowindow.setContent(content);
-        this.infowindow.open(map, this);
+    $.getJSON("data/healthengine.json", function (data) {
+        data.forEach(function (item) {
+            if (item.data_type === "Practice") {
+                //geocodeAddress(item);
+                geocodeAPI(item);
+            };
+
+        })
     });
 
-
-    // marker drag event
-    google.maps.event.addListener(meMarker, "dragend", function (event) {
-        bounds = new google.maps.LatLngBounds();
-        currentLat = event.latLng.lat();
-        currentLng = event.latLng.lng();
-        toastr.success('Lat: ' + currentLat + ', Lng:' + currentLng);
-
-        clearOverlays(); // clean markers
-
-        var reload = {
-            "UserId": UserId,
-            "Token": Token,
-            "Coord": {
-                "lng": currentLng,
-                "lat": currentLat
+    function geocodeAPI(item) {
+        var geocodeAPIUrl = 'https://maps.googleapis.com/maps/api/geocode/json'
+        var query = geocodeAPIUrl + '?address=' + item.s_address + '&key=' + apikey;
+        $.getJSON(query, function (data) {
+            if (data.status === 'OK') {
+                createMarker(data.results[0], item);
+            } else {
+                toastr.warning('Geocode was not successful for the following reason: ' + status);
             }
-        };
+        })
+    }
 
-        $.post(endpoint + "/pins/reload", reload, function (data) {
-
-            if (data.length > 0) {
-                for (i = 0; i < data.length; i++) {
-                    addMarker(data[i]);
-                }
-                map.setCenter(bounds.getCenter());
-                //map.fitBounds(bounds);
-                // map.setZoom(map.getZoom() - 1);
+    // This has limitation!
+    function geocodeAddress(item) {
+        geocoder.geocode({
+            'address': item.s_address
+        }, function (results, status) {
+            if (status === 'OK') {
+                createMarker(results[0], item);
+            } else {
+                toastr.warning('Geocode was not successful for the following reason: ' + status);
             }
+        })
+    }
 
+    function createMarker(geodata, item) {
+        var marker = new google.maps.Marker({
+            position: geodata.geometry.location,
+            map: map
         });
 
-    });
+        var content = document.createElement('div');
 
-    // initial screen 
-
-    $.get(endpoint + "/pins/all", function (data) {
-        for (i = 0; i < data.length; i++) {
-            addMarker(data[i]);
-        }
-    });
-
-
-    // add markers (pin)
-    function addMarker(pin) {
-        var readPinColor = '5cb85c';
-        var readPinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + readPinColor,
-            null, /* size is determined at runtime */
-            null, /* origin is 0,0 */
-            null, /* anchor is bottom center of the scaled image */
-            new google.maps.Size(31.5, 51)
-        );
-
-        var markerLatLng = new google.maps.LatLng(pin.Latitude, pin.Longitude);
-        bounds.extend(markerLatLng);
-
-        var tipHtml = "<h5>Pin Piece:</h5> User:" + pin.UserId + "<h5>Token:" + pin.Token + "</h5><br/>What been told: " + pin.Text;
-        if (pin.Distance) {
-            if (pin.IsReadable)
-                tipHtml += "<h4>Readable</h4>";
-            else {
-                tipHtml += "<h4>Too far wasy, distance: " + pin.Distance + " M</h4>";
-            }
-        }
-
-        if (pin.IsReadable) {
-
-            var marker = new google.maps.Marker({
-                position: markerLatLng,
-                map: map,
-                title: pin.Token,
-                icon: readPinImage,
-                infowindow: infowindow
-            });
-        } else {
-            var marker = new google.maps.Marker({
-                position: markerLatLng,
-                map: map,
-                title: pin.Token,
-
-                infowindow: infowindow
-            });
-        }
-
+        content.innerHTML =
+            '<h6>' + item.s_clinic_name + '</h6>' +
+            '<div><i class="fas fa-clinic-medical" style="font-size: 1em; color: Tomato;"></i> &nbsp;' +
+            geodata.formatted_address +
+            '</div>' +
+            '<div><i class="fas fa-phone" style="font-size: 1em; color: Tomato;"></i> &nbsp;' +
+            item.s_phone +
+            '</div>';
 
         google.maps.event.addListener(marker, 'click', function () {
-            this.infowindow.setContent(tipHtml);
-            this.infowindow.open(map, this);
-        });
+            infowindow.close();
+            infowindow.setContent(content);
+            infowindow.open(map, marker);
+        })
 
         markersArray.push(marker);
-
     }
 
     // clean markers
@@ -163,41 +92,6 @@ function initialize() {
             markersArray[i].setMap(null);
         }
         markersArray.length = 0;
-    }
-
-    function postPin() {
-        var message = $('#pin_message').val();
-        //toastr.warning('Lat: ' + currentLat + ', Lng:' + currentLng, message);
-        var pin = {
-            //"PinId": randomPinId(),
-            //"UserId": UserId,
-            "Token": Token,
-            "Longitude": currentLng,
-            "Latitude": currentLat,
-            "Text": message,
-            "IsPrivate": false
-        };
-
-        $.post(mysqlpoint + "/pin", pin, function (data) {
-
-            toastr.success('New Pin Added!');
-            addMarker(data);
-        });
-
-    }
-
-
-    // random values
-    function randomPinId() {
-        return parseInt(Math.random() * 1000000);
-    }
-
-    function randomGender() {
-        if (parseInt(Math.random() * 10 % 2) == 1) {
-            return 'F';
-        } else {
-            return 'M';
-        }
     }
 
 }

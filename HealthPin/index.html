@@ -21,9 +21,9 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#"><img src="img/icons/favicon-32x32.png">&nbsp;健康海外</a>
+            <a class="navbar-brand" href="#"><img src="img/icons/favicon-32x32.png">&nbsp;{{logo_text}}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,14 +31,16 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about"><i class="fas fa-laptop-medical"></i>&nbsp;关于平台</a>
+                        <a class="nav-link" href="#about"><i class="fas fa-laptop-medical"></i>&nbsp;平台</a>
                     </li>
 
                 </ul>
-                <!-- <form class="form-inline mt-2 mt-md-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form> -->
+               
+                <form class="form-inline mt-2 mt-md-0">
+                    <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
+                    <button class="btn btn-link my-2 my-sm-0">注册</button> |
+                    <button class="btn btn-link my-2 my-sm-0">登陆</button>
+                </form>
             </div>
         </nav>
     </header>
@@ -47,77 +49,82 @@
         <div id="map"></div>
     </div>
 
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-            <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-                <div class="my-3 py-3">
-                    <h2 class="display-5">健康消费者</h2>
-                    <p class="lead">海外健康平台致力于为您和您的家庭添加一份信心和保障。</p>
-                </div>
-                <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+    <!-- <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+        <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+            <div class="my-3 py-3">
+                <h2 class="display-5">健康消费者</h2>
+                <p class="lead">海外健康平台致力于为您和您的家庭添加一份信心和保障。</p>
             </div>
-            <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 p-3">
-                    <h2 class="display-5">服务提供者</h2>
-                    <p class="lead">无论您经营的是诊所，药店或者您是个人健康从业者，我们都欢迎您加入我们。</p>
-                </div>
-                <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+            <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
             </div>
         </div>
+        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 p-3">
+                <h2 class="display-5">服务提供者</h2>
+                <p class="lead">无论您经营的是诊所，药店或者您是个人健康从业者，我们都欢迎您加入我们。</p>
+            </div>
+            <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+            </div>
+        </div>
+    </div> -->
 
     <div class="container marketing pt-5 mt-3">
-        <!-- Three columns of text below the carousel -->
         <div class="row">
             <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                    aria-label="Placeholder: 140x140">
                     <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                        dy=".3em">140x140</text>
                 </svg>
-                <h2>医生</h2>
-                <p>我们致力于建立完善的可以为您提供中文服务，特别是讲普通话的医生资料。</p>
+                <h2>发现</h2>
+                <p>我们致力于建立完善的可以为您提供中文服务，特别可以提供普通话服务的诊所和医生。</p>
                 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
+            </div>
             <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                    aria-label="Placeholder: 140x140">
                     <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                        dy=".3em">140x140</text>
                 </svg>
-                <h2>诊所</h2>
-                <p>发现您身边的更懂得您的诊所。</p>
+                <h2>测评</h2>
+                <p>通过真实透明的反馈，您将更有清楚地了解并选择您的健康服务。</p>
                 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
+            </div>
             <div class="col-lg-4">
-                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg"
-                    preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 140x140">
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"
+                    aria-label="Placeholder: 140x140">
                     <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+                    <rect width="100%" height="100%" fill="#777" /><text x="50%" y="50%" fill="#777"
+                        dy=".3em">140x140</text>
                 </svg>
-                <h2>药品</h2>
-                <p>从建议到药品配送。</p>
+                <h2>咨询</h2>
+                <p>远程问诊使得您足不出户获得相应的健康咨询。</p>
                 <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
-
+            </div>
+        </div>
         <!-- START THE FEATURETTES -->
 
         <hr class="featurette-divider">
 
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow your
-                        mind.</span></h2>
+                <h2 class="featurette-heading">健康消费者<span class="text-muted">您从哪里寻求医疗咨询？</span></h2>
                 <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta
                     felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce
                     dapibus, tellus ac cursus commodo.</p>
             </div>
             <div class="col-md-5">
                 <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                    role="img" aria-label="Placeholder: 500x500">
+                    height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                    focusable="false" role="img" aria-label="Placeholder: 500x500">
                     <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
+                        dy=".3em">500x500</text>
                 </svg>
             </div>
         </div>
@@ -126,41 +133,25 @@
 
         <div class="row featurette">
             <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+                <h2 class="featurette-heading">服务提供者<span class="text-muted">医生，诊所，药店</span></h2>
                 <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta
                     felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce
                     dapibus, tellus ac cursus commodo.</p>
             </div>
             <div class="col-md-5 order-md-1">
                 <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                    role="img" aria-label="Placeholder: 500x500">
+                    height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                    focusable="false" role="img" aria-label="Placeholder: 500x500">
                     <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
+                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
+                        dy=".3em">500x500</text>
                 </svg>
             </div>
         </div>
 
         <hr class="featurette-divider">
 
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta
-                    felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce
-                    dapibus, tellus ac cursus commodo.</p>
-            </div>
-            <div class="col-md-5">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                    role="img" aria-label="Placeholder: 500x500">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-                </svg>
-            </div>
-        </div>
 
-        <hr class="featurette-divider">
 
         <!-- /END THE FEATURETTES -->
 
@@ -181,42 +172,40 @@
         <div class="row">
             <div class="col-12 col-md">
                 <img src="img/icons/favicon-32x32.png">
-                <small class="d-block mb-3 text-muted">&copy; 2017-2019</small>
+                <small class="d-block mb-3 text-muted">&copy; 2018 - 2019</small>
             </div>
             <div class="col-6 col-md">
-                <h5>Features</h5>
+                <h5>特色</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Cool stuff</a></li>
-                    <li><a class="text-muted" href="#">Random feature</a></li>
-                    <li><a class="text-muted" href="#">Team feature</a></li>
-                    <li><a class="text-muted" href="#">Stuff for developers</a></li>
-                    <li><a class="text-muted" href="#">Another one</a></li>
-                    <li><a class="text-muted" href="#">Last time</a></li>
+                    <li><a class="text-muted" href="#">澳大利亚诊所</a></li>
+                    <li><a class="text-muted" href="#">医生集团</a></li>
+                    <li><a class="text-muted" href="#">用户中心</a></li>
+                    <li><a class="text-muted" href="#">招聘</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
-                <h5>Resources</h5>
+                <h5>社交</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Resource</a></li>
-                    <li><a class="text-muted" href="#">Resource name</a></li>
-                    <li><a class="text-muted" href="#">Another resource</a></li>
-                    <li><a class="text-muted" href="#">Final resource</a></li>
+                    <li><a class="text-muted" href="#">微信</a></li>
+                    <li><a class="text-muted" href="#">微博</a></li>
+                    <li><a class="text-muted" href="#">Facebook</a></li>
+                    <li><a class="text-muted" href="#">Twitter</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
-                <h5>Resources</h5>
+                <h5>资源</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Business</a></li>
-                    <li><a class="text-muted" href="#">Education</a></li>
-                    <li><a class="text-muted" href="#">Government</a></li>
-                    <li><a class="text-muted" href="#">Gaming</a></li>
+                    <li><a class="text-muted" href="#">商业合作</a></li>
+                    <li><a class="text-muted" href="#">投资</a></li>
+                    <li><a class="text-muted" href="#">教育教学</a></li>
+                    <li><a class="text-muted" href="#">政府</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">
-                <h5>About</h5>
+                <h5>关于</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Team</a></li>
-                    <li><a class="text-muted" href="#">Locations</a></li>
+                    <li><a class="text-muted" href="#">公司</a></li>
+                    <li><a class="text-muted" href="#">团队</a></li>
                     <li><a class="text-muted" href="#">Privacy</a></li>
                     <li><a class="text-muted" href="#">Terms</a></li>
                 </ul>
@@ -227,10 +216,12 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaUDbQW19GxmsfpFN-rsmrxYFm7TMm1lo"></script>
     <script src="js/markerclusterer.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/fontawesome.min.js"></script>
     <script src="js/toastr.min.js"></script>
     <script src="js/site.js"></script>
+    <script src="js/vue_driven.js"></script>
 
 </body>
 

@@ -1,12 +1,19 @@
-﻿$(document).ready(initialize);
+﻿$(document).ready(loadlocation);
 
-function initialize() {
+function loadlocation(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            initialize(position.coords.latitude, position.coords.longitude);
+        })
+    } else {
+        initialize(-37.813611, 144.963056);
+    }
+}
+
+function initialize(lat, lng) {
 
     var apikey = 'AIzaSyCr5tneICjc77TVKJMVUr0rVw0uryDy4gI';
 
-    var lat = -37.813611,
-        lng = 144.963056;
-    // {lat: -37.813611, lng: 144.963056}
     var melbourne_center = new google.maps.LatLng(lat, lng);
 
     var mapOptions = {

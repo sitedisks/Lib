@@ -1,6 +1,6 @@
 ﻿$(document).ready(loadlocation);
 
-function loadlocation(){
+function loadlocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             initialize(position.coords.latitude, position.coords.longitude);
@@ -32,14 +32,15 @@ function initialize(lat, lng) {
 
     var markersArray = [];
 
+    var counter = 0;
+
     $.getJSON("data/healthengine.json", function (data) {
-        data.forEach(function (item) {
+        var promise = data.map(function (item) {
             if (item.data_type === "Practice") {
-                //geocodeAddress(item);
+                counter++;
                 geocodeAPI(item);
             };
-
-        })
+        });
     });
 
     function geocodeAPI(item) {
@@ -48,21 +49,17 @@ function initialize(lat, lng) {
         $.getJSON(query, function (data) {
             if (data.status === 'OK') {
                 createMarker(data.results[0], item);
-            } else {
-                toastr.warning('Geocode was not successful for the following reason: ' + status);
-            }
-        })
-    }
 
-    // This has limitation!
-    function geocodeAddress(item) {
-        geocoder.geocode({
-            'address': item.s_address
-        }, function (results, status) {
-            if (status === 'OK') {
-                createMarker(results[0], item);
             } else {
                 toastr.warning('Geocode was not successful for the following reason: ' + status);
+
+            }
+        }).always(function () {
+            counter--;
+            if (counter == 0) {
+                var markerCluster = new MarkerClusterer(map, markersArray, {
+                    imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+                });
             }
         })
     }

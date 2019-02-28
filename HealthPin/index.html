@@ -17,12 +17,16 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/toastr.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
-    <!-- <link href="css/product.css" rel="stylesheet"> -->
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <header id="header">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary" v-cloak>
             <a class="navbar-brand" href="#"><img src="img/icons/favicon-32x32.png">&nbsp;{{logo_text}}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,12 +39,13 @@
                     </li>
 
                 </ul>
-               
-                <form class="form-inline mt-2 mt-md-0">
-                    <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
-                    <button class="btn btn-link my-2 my-sm-0">注册</button> |
-                    <button class="btn btn-link my-2 my-sm-0">登陆</button>
-                </form>
+
+
+                <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
+                <button class="btn btn-primary my-2 my-sm-0" data-toggle="modal"
+                    data-target="#exampleModalCenter">注册</button>
+                <button class="btn btn-info my-2 my-sm-0">登陆</button>
+
             </div>
         </nav>
     </header>
@@ -119,13 +124,7 @@
                     dapibus, tellus ac cursus commodo.</p>
             </div>
             <div class="col-md-5">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
-                    focusable="false" role="img" aria-label="Placeholder: 500x500">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                        dy=".3em">500x500</text>
-                </svg>
+                <img src="https://placeimg.com/500/500/tech">
             </div>
         </div>
 
@@ -139,18 +138,19 @@
                     dapibus, tellus ac cursus commodo.</p>
             </div>
             <div class="col-md-5 order-md-1">
-                <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                    height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
-                    focusable="false" role="img" aria-label="Placeholder: 500x500">
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                        dy=".3em">500x500</text>
-                </svg>
+                <img src="https://picsum.photos/500/500">
             </div>
         </div>
 
-        <hr class="featurette-divider">
-
+        <!-- <hr class="featurette-divider"> -->
+        <div id="marker_card">
+            <div class="card" style="width: 18rem;">
+                <img src="img/rsz_doctor.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  __placeholder__
+                </div>
+              </div>
+        </div>
 
 
         <!-- /END THE FEATURETTES -->
@@ -212,6 +212,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaUDbQW19GxmsfpFN-rsmrxYFm7TMm1lo"></script>
     <script src="js/markerclusterer.js"></script>

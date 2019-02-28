@@ -71,7 +71,6 @@ function initialize(lat, lng) {
         });
 
         var content = document.createElement('div');
-
         content.innerHTML =
             '<h6>' + item.s_clinic_name + '</h6>' +
             '<div><i class="fas fa-clinic-medical" style="font-size: 1em; color: Tomato;"></i> &nbsp;' +
@@ -81,9 +80,11 @@ function initialize(lat, lng) {
             item.s_phone +
             '</div>';
 
+        var html_card = $('div#marker_card').html().replace('__placeholder__', content.innerHTML);
+
         google.maps.event.addListener(marker, 'click', function () {
             infowindow.close();
-            infowindow.setContent(content);
+            infowindow.setContent(html_card);
             infowindow.open(map, marker);
         })
 

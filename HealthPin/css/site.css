@@ -102,6 +102,9 @@ body {
     user-select: none;
 }
 
+#marker_card{
+    display: none; 
+}
 
 /* RESPONSIVE CSS
   -------------------------------------------------- */

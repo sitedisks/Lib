@@ -67,6 +67,7 @@ function initialize(lat, lng) {
     function createMarker(geodata, item) {
         var marker = new google.maps.Marker({
             position: geodata.geometry.location,
+            label: 'B',
             map: map
         });
 

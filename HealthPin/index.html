@@ -35,16 +35,16 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about"><i class="fas fa-laptop-medical"></i>&nbsp;平台</a>
+                        <a class="nav-link" href="#about"><i class="fas fa-desktop"></i>&nbsp;平台</a>
                     </li>
 
                 </ul>
 
 
                 <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
-                <button class="btn btn-primary my-2 my-sm-0" data-toggle="modal"
-                    data-target="#exampleModalCenter">注册</button>
-                <button class="btn btn-info my-2 my-sm-0">登陆</button>
+                <button class="btn btn-primary my-2 my-sm-0" data-toggle="modal" data-target="#exampleModalCenter"><i
+                        class="fas fa-user-plus"></i></button>
+                <button class="btn btn-info my-2 my-sm-0"><i class="fas fa-sign-in-alt"></i></button>
 
             </div>
         </nav>
@@ -76,19 +76,19 @@
     <div class="container marketing pt-5 mt-3">
         <div class="row">
             <div class="col-lg-4">
-                <i class="fas fa-info-circle fa-5x" style="color: #78C2AD"></i>
+                <i class="fas fa-info-circle fa-5x" style="color: #6CC3D5"></i>
                 <h2>咨询发现</h2>
                 <p>我们致力于建立完善的可以为您提供中文服务，特别可以提供普通话服务的诊所和医生。</p>
                 <p><a class="btn btn-info" href="#" role="button">View details &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-                <i class="fab fa-rocketchat fa-5x" style="color: #78C2AD"></i>
+                <i class="fab fa-rocketchat fa-5x" style="color: #FFCE67"></i>
                 <h2>测评点评</h2>
                 <p>通过真实透明的反馈，您将更有清楚地了解并选择您的健康服务。</p>
                 <p><a class="btn btn-warning" href="#" role="button">View details &raquo;</a></p>
             </div>
             <div class="col-lg-4">
-                <i class="fas fa-mobile-alt fa-5x" style="color: #78C2AD"></i>
+                <i class="fas fa-mobile-alt fa-5x" style="color: #FF7851"></i>
                 <h2>视频咨询</h2>
                 <p>远程问诊使得您足不出户获得相应的健康咨询。</p>
                 <p><a class="btn btn-danger" href="#" role="button">View details &raquo;</a></p>
@@ -106,7 +106,7 @@
                     dapibus, tellus ac cursus commodo.</p>
             </div>
             <div class="col-md-5">
-                <img src="https://placeimg.com/500/500/tech">
+                <img src="img/medical-concierge.png" class="img-fluid">
             </div>
         </div>
 
@@ -120,18 +120,40 @@
                     dapibus, tellus ac cursus commodo.</p>
             </div>
             <div class="col-md-5 order-md-1">
-                <img src="https://picsum.photos/500/500">
+                <img src="img/medical-doctor-check.png" class="img-fluid">
             </div>
         </div>
 
         <hr class="featurette-divider">
         <div id="marker_card">
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <img src="img/rsz_doctor.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                  __placeholder__
+                    __placeholder__
                 </div>
-              </div>
+            </div>
+        </div>
+        <div style="width:18rem;">
+            <div class="card border-success">
+                <img src="img/rsz_doctor.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <table>
+                        <tr>
+                            <td width="20%"><i class="fas fa-hospital-symbol" style="font-size: 1em; color: #78C2AD;"></i></td>
+                            <td width="80%">Chinese Medicine</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-clinic-medical" style="font-size: 1em; color: #78C2AD;"></i></td>
+                            <td>Unit 1/3 Wellington St, Kew VIC 3101, Australia</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fas fa-phone" style="font-size: 1em; color: #78C2AD;"></i></td>
+                            <td>+61398535577</td>
+                        </tr>
+                    
+                    </table>
+                </div>
+            </div>
         </div>
 
 
@@ -146,8 +168,14 @@
                 充分发挥中国医生丰富诊疗经验的优势的同时沟通先进的西方医疗技术资源；取长补短平衡效率和质量，通过学术交流，综合会诊，咨询互通等达到中西方医疗优势互补。</p>
             <a class="btn btn-outline-secondary" href="#">了解更多</a>
         </div>
-        <div class="product-device shadow-sm d-none d-md-block"></div>
-        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+        <div>
+
+        </div>
+        <div class="product-device d-none d-md-block">
+            <img src="img/devices/Apple iPhone X/Device/Apple iPhone X Silver.png" class="img-fluid" alt="iphone"></div>
+        <div class="product-device d-none d-md-block product-device-2">
+            <img src="img/devices/Samsung Galaxy S8/Device/Samsung Galaxy S8 Midnight Black.png" class="img-fluid"
+                alt="samsung"></div>
     </div>
 
     <footer class="container py-5">
@@ -168,10 +196,10 @@
             <div class="col-6 col-md">
                 <h5>社交</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">微信</a></li>
-                    <li><a class="text-muted" href="#">微博</a></li>
-                    <li><a class="text-muted" href="#">Facebook</a></li>
-                    <li><a class="text-muted" href="#">Twitter</a></li>
+                    <li><a class="text-muted" href="#"><i class="fab fa-weixin"></i>&nbsp;微信</a></li>
+                    <li><a class="text-muted" href="#"><i class="fab fa-weibo"></i>&nbsp;微博</a></li>
+                    <li><a class="text-muted" href="#"><i class="fab fa-facebook"></i>&nbsp;Facebook</a></li>
+                    <li><a class="text-muted" href="#"><i class="fab fa-twitter"></i>&nbsp;Twitter</a></li>
                 </ul>
             </div>
             <div class="col-6 col-md">

@@ -2,9 +2,19 @@
 
 function loadlocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            initialize(position.coords.latitude, position.coords.longitude);
-        })
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                //do succes handling
+                initialize(position.coords.latitude, position.coords.longitude);
+            },
+            function errorCallback(error) {
+                //do error handling
+            },
+            {
+                maximumAge:Infinity,
+                timeout:5000
+            }
+        );
     } else {
         initialize(-37.813611, 144.963056);
     }

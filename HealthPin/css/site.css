@@ -105,11 +105,11 @@ body {
 }
 
 #marker_card {
-    display: none; 
+    display: none;
 }
 
-#marker_card div.card {
-    width:18rem;
+.marker-divider {
+    margin: 8px 0;
 }
 
 

@@ -21,31 +21,14 @@ function loadlocation() {
 }
 
 function initialize(lat, lng) {
-
     var apikey = 'AIzaSyCr5tneICjc77TVKJMVUr0rVw0uryDy4gI'; //Google Geocoding API Key
 
-    var center_point = new google.maps.LatLng(lat, lng);
-
-    var mapOptions = {
-        center: center_point,
-        zoom: 13,
-        zoomControl: false,
-        mapTypeControl: false,
-        fullscreenControl: false,
-        streetViewControl: false,
-        rotateControl: true,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-
-    var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    var map = new BMap.Map('map');
+    var point = new BMap.Point(lng, lat);
+    map.centerAndZoom(point, 13);
+    map.enableScrollWheelZoom(true);
 
     var geocoder = new google.maps.Geocoder();
-
-    var infowindow = new google.maps.InfoWindow();
-
-    var content = document.createElement('div');
-
-    var markersArray = [];
 
     var counter = 0;
 
@@ -71,21 +54,18 @@ function initialize(lat, lng) {
             }
         }).always(function () {
             counter--;
-            if (counter == 0) {
-                var markerCluster = new MarkerClusterer(map, markersArray, {
-                    imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-                });
-            }
+            // Baidu marker cluster todo
+
         })
     }
 
-    function createMarker(geodata, item) {
-        var marker = new google.maps.Marker({
-            position: geodata.geometry.location,
-        });
+    var infowindow = new BMap.InfoWindow();
 
-        marker.setMap(map)
-        
+    function createMarker(geodata, item) {
+        var markerPoint = new BMap.Point(geodata.geometry.location.lng, geodata.geometry.location.lat);
+        var marker = new BMap.Marker(markerPoint);
+        map.addOverlay(marker);
+        var content = document.createElement('div');
         content.innerHTML = '<h5>' + item.s_clinic_name + '</h5>'
             + '<hr class="marker-divider">'
             + '<table>'
@@ -122,13 +102,12 @@ function initialize(lat, lng) {
 
         var html_card = $('div#marker_card').html().replace('__placeholder__', content.innerHTML);
 
-        google.maps.event.addListener(marker, 'click', function () {
-            infowindow.close();
+        marker.addEventListener('click', function () {
+            infowindow.setTitle('<div style="padding:6px;"></div>');
             infowindow.setContent(html_card);
-            infowindow.open(map, marker);
-        })
-
-        markersArray.push(marker);
+            map.openInfoWindow(infowindow, markerPoint);
+        });
     }
+
 
 }

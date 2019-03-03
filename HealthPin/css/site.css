@@ -1,5 +1,6 @@
 ﻿/* GLOBAL STYLES
 -------------------------------------------------- */
+
 /* Padding below the footer and lighter body text */
 
 body {
@@ -20,6 +21,7 @@ body {
   -------------------------------------------------- */
 
 /* Center align the text within the three columns below the carousel */
+
 .marketing .col-lg-4 {
     margin-bottom: 1.5rem;
     text-align: center;
@@ -34,7 +36,6 @@ body {
     margin-left: .75rem;
 }
 
-
 /* Featurettes
   ------------------------- */
 
@@ -44,6 +45,7 @@ body {
 }
 
 /* Thin out the marketing headings */
+
 .featurette-heading {
     font-weight: 300;
     line-height: 1;
@@ -85,8 +87,6 @@ body {
     /* background-color: #e5e5e5; */
 }
 
-
-
 /*
    * Extra utilities
    */
@@ -111,7 +111,6 @@ body {
 .marker-divider {
     margin: 8px 0;
 }
-
 
 /* RESPONSIVE CSS
   -------------------------------------------------- */

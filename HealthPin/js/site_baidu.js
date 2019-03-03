@@ -22,12 +22,12 @@ function loadlocation() {
 
 function initialize(lat, lng) {
 
-    var apikey = 'AIzaSyCr5tneICjc77TVKJMVUr0rVw0uryDy4gI';
+    var apikey = 'AIzaSyCr5tneICjc77TVKJMVUr0rVw0uryDy4gI'; //Google Geocoding API Key
 
-    var melbourne_center = new google.maps.LatLng(lat, lng);
+    var center_point = new google.maps.LatLng(lat, lng);
 
     var mapOptions = {
-        center: melbourne_center,
+        center: center_point,
         zoom: 13,
         zoomControl: false,
         mapTypeControl: false,
@@ -85,7 +85,7 @@ function initialize(lat, lng) {
         });
 
         marker.setMap(map)
-
+        
         content.innerHTML = '<h5>' + item.s_clinic_name + '</h5>'
             + '<hr class="marker-divider">'
             + '<table>'
@@ -129,14 +129,6 @@ function initialize(lat, lng) {
         })
 
         markersArray.push(marker);
-    }
-
-    // clean markers
-    function clearOverlays() {
-        for (var i = 0; i < markersArray.length; i++) {
-            markersArray[i].setMap(null);
-        }
-        markersArray.length = 0;
     }
 
 }

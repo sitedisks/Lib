@@ -39,8 +39,6 @@ function initialize(lat, lng) {
 
     var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-    var geocoder = new google.maps.Geocoder();
-
     var infowindow = new google.maps.InfoWindow();
 
     var content = document.createElement('div');

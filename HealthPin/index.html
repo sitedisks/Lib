@@ -146,8 +146,7 @@
         <div class="product-device d-none d-md-block">
             <img src="img/devices/Apple iPhone X/Device/Apple iPhone X Silver.png" class="img-fluid" alt="iphone"></div>
         <div class="product-device d-none d-md-block product-device-2">
-            <img src="img/devices/Samsung Galaxy S8/Device/Samsung Galaxy S8 Midnight Black.png" class="img-fluid"
-                alt="samsung"></div>
+            <img src="img/devices/Samsung Galaxy S8/Device/Samsung Galaxy S8 Midnight Black.png" class="img-fluid" alt="samsung"></div>
     </div>
 
     <footer class="container py-5">
@@ -196,8 +195,8 @@
     </footer>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -217,8 +216,32 @@
         </div>
     </div>
 
+    <script type="text/javascript" href="//cdnjs.cloudflare.com/ajax/libs/userinfo/1.0.0/userinfo.min.js"></script>
+    <script type="text/javascript">
+        UserInfo.getInfo(function (data) {
+            // the "data" object contains the info
+            if (data.country.code == 'CN') {
+                // load your fallback fonts
+                alert('you are in China')
+            } else {
+                // Load your google fonts
+            }
+        }, function (err) {
+            // the "err" object contains useful information in case of an error
+        });
+
+        function loadJsOnTheFly() {
+            var fileref = document.createElement('script');
+            fileref.setAttribute('type', 'text/javascript');
+            fileref.setAttribute('src', '');
+            document.getElementsByTagName('head')[0].appendChild(fileref);
+        }
+    </script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaUDbQW19GxmsfpFN-rsmrxYFm7TMm1lo"></script>
     <script src="js/markerclusterer.js"></script>
+    <!-- <script src="js/baidu//TextIconOverlay_min.js"></script>
+    <script src="js/baidu//MarkerClusterer_min.js"></script> -->
     <script src="js/jquery.min.js"></script>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>

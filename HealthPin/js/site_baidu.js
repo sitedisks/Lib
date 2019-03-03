@@ -21,6 +21,7 @@ function loadlocation() {
 }
 
 function initialize(lat, lng) {
+
     var apikey = 'AIzaSyCr5tneICjc77TVKJMVUr0rVw0uryDy4gI'; //Google Geocoding API Key
 
     var map = new BMap.Map('map');
@@ -28,7 +29,9 @@ function initialize(lat, lng) {
     map.centerAndZoom(point, 13);
     map.enableScrollWheelZoom(true);
 
-    var geocoder = new google.maps.Geocoder();
+    var infowindow = new BMap.InfoWindow();
+
+    var markersArray = [];
 
     var counter = 0;
 
@@ -55,16 +58,17 @@ function initialize(lat, lng) {
         }).always(function () {
             counter--;
             // Baidu marker cluster todo
-
+            var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markersArray});
         })
     }
 
-    var infowindow = new BMap.InfoWindow();
+    
 
     function createMarker(geodata, item) {
         var markerPoint = new BMap.Point(geodata.geometry.location.lng, geodata.geometry.location.lat);
         var marker = new BMap.Marker(markerPoint);
         map.addOverlay(marker);
+
         var content = document.createElement('div');
         content.innerHTML = '<h5>' + item.s_clinic_name + '</h5>'
             + '<hr class="marker-divider">'
@@ -107,6 +111,8 @@ function initialize(lat, lng) {
             infowindow.setContent(html_card);
             map.openInfoWindow(infowindow, markerPoint);
         });
+
+        markersArray.push(marker);
     }
 
 

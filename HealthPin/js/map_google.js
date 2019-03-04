@@ -47,12 +47,16 @@ function initialize(lat, lng) {
 
     var counter = 0;
 
-    $.getJSON("data/healthengine.json", function (data) {
+    $.getJSON("data/healthengine_geo.json", function (data) {
         var promise = data.map(function (item) {
             if (item.data_type === "Practice") {
                 counter++;
-                geocodeAPI(item);
+                // geocodeAPI(item);
+                createMarker(item);
             };
+        });
+        var markerCluster = new MarkerClusterer(map, markersArray, {
+            imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
         });
     });
 
@@ -61,7 +65,7 @@ function initialize(lat, lng) {
         var query = geocodeAPIUrl + '?address=' + item.s_address + '&key=' + apikey;
         $.getJSON(query, function (data) {
             if (data.status === 'OK') {
-                createMarker(data.results[0], item);
+                createMarker(item, data.results[0]);
 
             } else {
                 toastr.warning('Geocode was not successful for the following reason: ' + status);
@@ -77,11 +81,17 @@ function initialize(lat, lng) {
         })
     }
 
-    function createMarker(geodata, item) {
-        var marker = new google.maps.Marker({
-            position: geodata.geometry.location,
-        });
+    function createMarker(item, geodata) {
+        var markerPoint;
+        if(geodata){
+            markerPoint = geodata.geometry.location;
+        }else {
+            markerPoint = new google.maps.LatLng(item.lat, item.lng)
+        }
 
+        var marker = new google.maps.Marker({
+            position: markerPoint,
+        });
         marker.setMap(map)
 
         content.innerHTML = '<h5>' + item.s_clinic_name + '</h5>'

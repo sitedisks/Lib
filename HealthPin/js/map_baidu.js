@@ -37,15 +37,15 @@ function initialize(lat, lng) {
 
     var counter = 0;
 
-    $.getJSON("data/healthengine.1.json", function (data) {
+    $.getJSON("data/healthengine_geo.json", function (data) {
         var promise = data.map(function (item) {
             if (item.data_type === "Practice") {
                 counter++;
                 // geocodeAPI(item);
                 createMarker(item);
-                var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markersArray});
             };
         });
+        var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markersArray});
     });
 
     function geocodeAPI(item) {

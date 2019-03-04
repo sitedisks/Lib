@@ -1,6 +1,8 @@
 ﻿$(document).ready(loadlocation);
 
 function loadlocation() {
+    initialize(-37.813611, 144.963056);
+    /*
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             function (position) {
@@ -17,7 +19,7 @@ function loadlocation() {
         );
     } else {
         initialize(-37.813611, 144.963056);
-    }
+    }*/
 }
 
 function initialize(lat, lng) {
@@ -39,7 +41,9 @@ function initialize(lat, lng) {
         var promise = data.map(function (item) {
             if (item.data_type === "Practice") {
                 counter++;
-                geocodeAPI(item);
+                // geocodeAPI(item);
+                createMarker(item);
+                var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markersArray});
             };
         });
     });
@@ -49,8 +53,7 @@ function initialize(lat, lng) {
         var query = geocodeAPIUrl + '?address=' + item.s_address + '&key=' + apikey;
         $.getJSON(query, function (data) {
             if (data.status === 'OK') {
-                createMarker(data.results[0], item);
-
+                createMarker(item, data.results[0]);
             } else {
                 toastr.warning('Geocode was not successful for the following reason: ' + status);
 
@@ -62,10 +65,12 @@ function initialize(lat, lng) {
         })
     }
 
-    
+    function createMarker(item, geodata) {
+        if(geodata)
+            var markerPoint = new BMap.Point(geodata.geometry.location.lng, geodata.geometry.location.lat);
+        else 
+            var markerPoint = new BMap.Point(item.lng, item.lat);
 
-    function createMarker(geodata, item) {
-        var markerPoint = new BMap.Point(geodata.geometry.location.lng, geodata.geometry.location.lat);
         var marker = new BMap.Marker(markerPoint);
         map.addOverlay(marker);
 

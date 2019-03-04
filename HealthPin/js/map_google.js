@@ -47,7 +47,7 @@ function initialize(lat, lng) {
 
     var counter = 0;
 
-    $.getJSON("data/healthengine.1.json", function (data) {
+    $.getJSON("data/healthengine.json", function (data) {
         var promise = data.map(function (item) {
             if (item.data_type === "Practice") {
                 counter++;

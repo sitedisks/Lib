@@ -13,6 +13,7 @@
     <link rel="mask-icon" href="img/icons/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/toastr.min.css" rel="stylesheet" />
@@ -22,6 +23,14 @@
             display: none;
         }
     </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaUDbQW19GxmsfpFN-rsmrxYFm7TMm1lo"></script>
+    <script src="https://api.map.baidu.com/api?v=2.0&ak=nwFFOTy9YaK6gN4hqLahI6K2qlksjoqF"></script>
+    <!-- Google Map Cluster -->
+    <script src="js/markerclusterer.js"></script>
+    <!-- Baidu Map Cluster -->
+    <script src="js/baidu//TextIconOverlay_min.js"></script>
+    <script src="js/baidu//MarkerClusterer_min.js"></script>
 </head>
 
 <body>
@@ -43,7 +52,6 @@
                 <button class="btn btn-primary my-2 my-sm-0" data-toggle="modal" data-target="#exampleModalCenter"><i
                         class="fas fa-user-plus"></i></button>
                 <button class="btn btn-primary my-2 my-sm-0"><i class="fas fa-sign-in-alt"></i></button>
-
             </div>
         </nav>
     </header>
@@ -146,7 +154,8 @@
         <div class="product-device d-none d-md-block">
             <img src="img/devices/Apple iPhone X/Device/Apple iPhone X Silver.png" class="img-fluid" alt="iphone"></div>
         <div class="product-device d-none d-md-block product-device-2">
-            <img src="img/devices/Samsung Galaxy S8/Device/Samsung Galaxy S8 Midnight Black.png" class="img-fluid" alt="samsung"></div>
+            <img src="img/devices/Samsung Galaxy S8/Device/Samsung Galaxy S8 Midnight Black.png" class="img-fluid"
+                alt="samsung"></div>
     </div>
 
     <footer class="container py-5">
@@ -195,8 +204,8 @@
     </footer>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -215,39 +224,28 @@
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" href="//cdnjs.cloudflare.com/ajax/libs/userinfo/1.0.0/userinfo.min.js"></script>
-    <script type="text/javascript">
-        UserInfo.getInfo(function (data) {
-            // the "data" object contains the info
-            if (data.country.code == 'CN') {
-                // load your fallback fonts
-                alert('you are in China')
-            } else {
-                // Load your google fonts
-            }
-        }, function (err) {
-            // the "err" object contains useful information in case of an error
-        });
-
-        function loadJsOnTheFly() {
-            var fileref = document.createElement('script');
-            fileref.setAttribute('type', 'text/javascript');
-            fileref.setAttribute('src', '');
-            document.getElementsByTagName('head')[0].appendChild(fileref);
-        }
-    </script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaUDbQW19GxmsfpFN-rsmrxYFm7TMm1lo"></script>
-    <script src="js/markerclusterer.js"></script>
-    <!-- <script src="js/baidu//TextIconOverlay_min.js"></script>
-    <script src="js/baidu//MarkerClusterer_min.js"></script> -->
-    <script src="js/jquery.min.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/fontawesome.min.js"></script>
     <script src="js/toastr.min.js"></script>
-    <script src="js/site.js"></script>
+    <script>
+        function loadMapJS(mapfile) {
+            $.getScript(mapfile)
+                .done(function (script, textStatus) {
+                    console.log('Map file [' + mapfile + '] loaded ' + textStatus);
+                })
+                .fail(function (jqxhr, settings, exception) {
+                    console.log("Triggered ajaxError handler.");
+                });
+        }
+        if (google && google.maps) {
+            console.log('Google maps loaded');
+            loadMapJS('js/map_google.js');
+        } else {
+            console.log('Baidu maps loaded');
+            loadMapJS('js/map_baidu.js');
+        }
+    </script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="js/vue_driven.js"></script>
 
 </body>

@@ -22,6 +22,11 @@
             display: none;
         }
     </style>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://api.map.baidu.com/api?v=2.0&ak=nwFFOTy9YaK6gN4hqLahI6K2qlksjoqF"></script>
+    <!-- Baidu Map Cluster -->
+    <script src="js/baidu//TextIconOverlay_min.js"></script>
+    <script src="js/baidu//MarkerClusterer_min.js"></script>
 </head>
 
 <body>
@@ -146,7 +151,8 @@
         <div class="product-device d-none d-md-block">
             <img src="img/devices/Apple iPhone X/Device/Apple iPhone X Silver.png" class="img-fluid" alt="iphone"></div>
         <div class="product-device d-none d-md-block product-device-2">
-            <img src="img/devices/Samsung Galaxy S8/Device/Samsung Galaxy S8 Midnight Black.png" class="img-fluid" alt="samsung"></div>
+            <img src="img/devices/Samsung Galaxy S8/Device/Samsung Galaxy S8 Midnight Black.png" class="img-fluid"
+                alt="samsung"></div>
     </div>
 
     <footer class="container py-5">
@@ -195,8 +201,8 @@
     </footer>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -215,18 +221,11 @@
             </div>
         </div>
     </div>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaUDbQW19GxmsfpFN-rsmrxYFm7TMm1lo"></script>
-    <script src="http://api.map.baidu.com/api?v=2.0&ak=nwFFOTy9YaK6gN4hqLahI6K2qlksjoqF"></script>
-    <script src="js/markerclusterer.js"></script>   
-    <script src="js/baidu//TextIconOverlay_min.js"></script>
-    <script src="js/baidu//MarkerClusterer_min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/fontawesome.min.js"></script>
     <script src="js/toastr.min.js"></script>
-    <script src="js/site_baidu.js"></script>
+    <script src="js/map_baidu.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="js/vue_driven.js"></script>
 
 </body>

@@ -80,3 +80,5 @@ SimpleCrawler/SimpleCrawler/obj/
 SimpleCrawler/SimpleCrawler/bin/
 cordova/emptyCO/node_modules/
 cordova/emptyCO/platforms/
+cordova/GoogleMapOne/node_modules/
+cordova/GoogleMapOne/platforms/

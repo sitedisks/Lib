@@ -1,9 +1,15 @@
 #map {
-    height:calc(100% - 49px);
+    height: calc(100% - 49px);
+}
+
+.avatar img.image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
 }
 
 .container {
-    height:calc(100% - 93px);
+    height: calc(100% - 93px);
     overflow-y: scroll;
 }
 

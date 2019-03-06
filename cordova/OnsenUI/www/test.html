@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>健康海外-澳大利亚</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
+    <link rel="manifest" href="img/icons/site.webmanifest">
+    <link rel="mask-icon" href="img/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <link rel="stylesheet" href="css/onsenui.css">
+    <link rel="stylesheet" href="css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="js/onsenui.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="toolbar">
+        <div class="toolbar__left">
+            <span class="toolbar-button">
+                <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
+            </span>
+        </div>
+
+        <div class="toolbar__center">
+            王查理
+        </div>
+
+        <div class="toolbar__right">
+            <span class="toolbar-button">
+                <i class="far fa-edit fa-lg"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="avatar">
+            <img class="image" src="img/man.png" />
+        </div>
+        <ons-list>
+            <ons-list-header>Default</ons-list-header>
+            <ons-list-item>Item A</ons-list-item>
+            <ons-list-item>Item B</ons-list-item>
+
+            <ons-list-header>Expandable</ons-list-header>
+            <ons-list-item expandable>
+                Tap to expand
+                <div class="expandable-content">Expandable content</div>
+            </ons-list-item>
+
+            <ons-list-header>Tappable / Ripple</ons-list-header>
+            <ons-list-item tappable>Tap me</ons-list-item>
+
+            <ons-list-header>Chevron</ons-list-header>
+            <ons-list-item modifier="chevron" tappable>Chevron</ons-list-item>
+
+            <ons-list-header>Thumbnails and titles</ons-list-header>
+            <ons-list-item>
+                <div class="left">
+                    <img class="list-item__thumbnail" src="https://placekitten.com/g/40/40">
+                </div>
+                <div class="center">
+                    <span class="list-item__title">Cutest kitty</span><span class="list-item__subtitle">On the
+                        Internet</span>
+                </div>
+            </ons-list-item>
+
+            <ons-list-header>Icons</ons-list-header>
+            <ons-list-item>
+                <div class="left">
+                    <ons-icon icon="md-face" class="list-item__icon"></ons-icon>
+                </div>
+                <div class="center">
+                    Icon
+                </div>
+            </ons-list-item>
+
+            <ons-list-header>Switch</ons-list-header>
+            <ons-list-item>
+                <div class="center">
+                    Turn it on
+                </div>
+                <div class="right">
+                    <ons-switch></ons-switch>
+                </div>
+            </ons-list-item>
+
+            <ons-list-header>Switch and icon</ons-list-header>
+            <ons-list-item>
+                <div class="left">
+                    <ons-icon icon="md-face" class="list-item__icon"></ons-icon>
+                </div>
+                <div class="center">
+                    Icon and switch
+                </div>
+                <div class="right">
+                    <ons-switch></ons-switch>
+                </div>
+            </ons-list-item>
+       
+
+            <ons-list-header>No divider</ons-list-header>
+            <ons-list-item modifier="nodivider">Item A</ons-list-item>
+            <ons-list-item modifier="nodivider">Item B</ons-list-item>
+
+            <ons-list-header>Long divider</ons-list-header>
+            <ons-list-item modifier="longdivider">Item A</ons-list-item>
+            <ons-list-item modifier="longdivider">Item B</ons-list-item>
+        </ons-list>
+        <button class="button--large--cta" style="width: 95%; margin: 0 auto;">Button</button>
+        <br/>
+    </div>
+    <div class="tabbar">
+        <label class="tabbar__item home">
+            <input type="radio" name="tabbar-a">
+            <button class="tabbar__button">
+                <i class="tabbar_icon fa fa-home fa-lg"></i>
+
+            </button>
+        </label>
+
+        <label class="tabbar__item info">
+            <input type="radio" name="tabbar-a">
+            <button class="tabbar__button fa-lg">
+                <i class="fas fa-hands-helping fa-lg"></i>
+            </button>
+        </label>
+
+        <label class="tabbar__item me">
+            <input type="radio" name="tabbar-a" checked="checked">
+            <button class="tabbar__button">
+                <i class="fas fa-user fa-lg"></i>
+            </button>
+        </label>
+    </div>
+</body>
+
+</html>

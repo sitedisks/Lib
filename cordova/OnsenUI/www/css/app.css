@@ -1,0 +1,22 @@
+#map {
+    height:calc(100% - 49px);
+}
+
+.container {
+    height:calc(100% - 93px);
+    overflow-y: scroll;
+}
+
+.marketing .col-lg-4 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.marketing h2 {
+    font-weight: 400;
+}
+
+.marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+}

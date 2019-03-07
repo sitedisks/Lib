@@ -1,11 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>健康海外-澳大利亚</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
-
     <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
@@ -15,244 +14,58 @@
     <meta name="theme-color" content="#ffffff">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/toastr.min.css" rel="stylesheet" />
-    <link href="css/site.css" rel="stylesheet" />
-    <style>
-        [v-cloak] {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/onsenui.css">
+    <link rel="stylesheet" href="css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/app.css">
 
     <script src="cordova.js"></script>
 
+    <script src="js/onsenui.min.js"></script>
     <script src="js/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaUDbQW19GxmsfpFN-rsmrxYFm7TMm1lo"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Baidu Map -->
     <script src="https://api.map.baidu.com/api?v=2.0&ak=nwFFOTy9YaK6gN4hqLahI6K2qlksjoqF"></script>
-    <!-- Google Map Cluster -->
-    <script src="js/markerclusterer.js"></script>
     <!-- Baidu Map Cluster -->
     <script src="js/baidu/TextIconOverlay_min.js"></script>
     <script src="js/baidu/MarkerClusterer_min.js"></script>
+    <script src="js/map_baidu.js"></script>
+
 </head>
 
 <body>
-    <header id="header">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary" v-cloak>
-            <a class="navbar-brand" href="#"><img src="img/icons/favicon-32x32.png">&nbsp;{{logo_text}}</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+    <div id="map"></div>
+    <div class="tabbar">
+        <label class="tabbar__item home">
+            <input type="radio" name="tabbar-a" checked="checked">
+            <button class="tabbar__button">
+                <i class="tabbar_icon fa fa-home fa-lg"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about"><i class="fas fa-desktop"></i>&nbsp;平台</a>
-                    </li>
+        </label>
 
-                </ul>
-                <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
-                <button class="btn btn-primary my-2 my-sm-0" data-toggle="modal" data-target="#exampleModalCenter"><i
-                        class="fas fa-user-plus"></i></button>
-                <button class="btn btn-primary my-2 my-sm-0"><i class="fas fa-sign-in-alt"></i></button>
-            </div>
-        </nav>
-    </header>
+        <label class="tabbar__item info">
+            <input type="radio" name="tabbar-a">
+            <button class="tabbar__button" id="btnInfo">
+                <i class="fas fa-hands-helping fa-lg"></i>
+            </button>
+        </label>
 
-    <div class="position-relative overflow-hidden p-1 pb-3 text-center bg-light">
-        <div id="map"></div>
+        <label class="tabbar__item me">
+            <input type="radio" name="tabbar-a">
+            <button class="tabbar__button">
+                <i class="fas fa-user fa-lg"></i>
+            </button>
+        </label>
     </div>
-
-    <!-- <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-        <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-            <div class="my-3 py-3">
-                <h2 class="display-5">健康消费者</h2>
-                <p class="lead">海外健康平台致力于为您和您的家庭添加一份信心和保障。</p>
-            </div>
-            <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-            </div>
-        </div>
-        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-            <div class="my-3 p-3">
-                <h2 class="display-5">服务提供者</h2>
-                <p class="lead">无论您经营的是诊所，药店或者您是个人健康从业者，我们都欢迎您加入我们。</p>
-            </div>
-            <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-            </div>
-        </div>
-    </div> -->
-
-    <div class="container marketing pt-5 mt-3" id="features">
-        <div class="pt-5">
-            <div class="row">
-                <div class="col-lg-4">
-                    <i class="fas fa-info-circle fa-5x pb-3" style="color: #6CC3D5"></i>
-                    <h2>咨询发现</h2>
-                    <p>建立完善的，特别是可以提供普通话服务的诊所和医生数据库。</p>
-                    <p><a class="btn btn-info" href="#features" role="button">了解更多 &raquo;</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <i class="fab fa-rocketchat fa-5x pb-3" style="color: #FFCE67"></i>
-                    <h2>测评点评</h2>
-                    <p>来自用户的真实反馈，您将更有信心选择您需要的健康服务。</p>
-                    <p><a class="btn btn-warning" href="#features" role="button">了解更多 &raquo;</a></p>
-                </div>
-                <div class="col-lg-4">
-                    <i class="fas fa-mobile-alt fa-5x pb-3" style="color: #FF7851"></i>
-                    <h2>视频咨询</h2>
-                    <p>远程问诊使得您足不出户获得相关的健康咨询。</p>
-                    <p><a class="btn btn-danger" href="#features" role="button">了解更多 &raquo;</a></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- START THE FEATURETTES -->
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7">
-                <h2 class="featurette-heading">健康消费者<span class="text-muted" style="font-size:36px">哪里寻医问药？</span></h2>
-                <p class="lead">无论您身在何处，发现在您身边可以提供中文服务的诊所，医疗中心和医生。您可以通过手机直接预约您需要的健康服务或者通过视频的方式获得咨询。</p>
-            </div>
-            <div class="col-md-5">
-                <img src="img/medical-concierge.png" class="img-fluid">
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">健康提供者<span class="text-muted" style="font-size:36px">医生，诊所和药店</span></h2>
-                <p class="lead">平台通过大数据人群精准细分，为你的客户推送您能够提供的服务并且增加您的知名度。</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img src="img/medical-doctor-check.png" class="img-fluid">
-            </div>
-        </div>
-        <hr class="featurette-divider">
-        <div id="marker_card">
-            <div class="card" style="width:18rem;">
-                <img src="img/rsz_doctor.png" class="card-img-top" alt="...">
-                <div class="card-body" style="text-align: left !important; font-size: 1rem !important;">
-                    __placeholder__
-                </div>
-            </div>
-        </div>
-        <!-- /END THE FEATURETTES -->
-
-    </div><!-- /.container -->
-
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" id="about">
-        <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-4 font-weight-normal">关于平台</h1>
-            <p class="lead font-weight-normal">华人在海外就医面临的诸如效语言沟通，信息咨询渠道有限等问题。平台致力利用移动互联网架起医疗信息咨询的桥梁，
-                充分发挥中国医生丰富诊疗经验的优势的同时沟通先进的西方医疗技术资源；取长补短平衡效率和质量，通过学术交流，综合会诊，咨询互通等达到中西方医疗优势互补。</p>
-            <a class="btn btn-outline-secondary" href="#">了解更多</a>
-        </div>
-        <div>
-
-        </div>
-        <div class="product-device d-none d-md-block">
-            <img src="img/devices/Apple iPhone X/Device/Apple iPhone X Silver.png" class="img-fluid" alt="iphone"></div>
-        <div class="product-device d-none d-md-block product-device-2">
-            <img src="img/devices/Samsung Galaxy S8/Device/Samsung Galaxy S8 Midnight Black.png" class="img-fluid"
-                alt="samsung"></div>
-    </div>
-
-    <footer class="container py-5">
-        <div class="row">
-            <div class="col-12 col-md">
-                <img src="img/icons/favicon-32x32.png">
-                <small class="d-block mb-3 text-muted">&copy; 2018 - 2019</small>
-            </div>
-            <div class="col-6 col-md">
-                <h5>特色</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">澳大利亚诊所</a></li>
-                    <li><a class="text-muted" href="#">医生集团</a></li>
-                    <li><a class="text-muted" href="#">用户中心</a></li>
-                    <li><a class="text-muted" href="#">招聘</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>社交</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#"><i class="fab fa-weixin"></i>&nbsp;微信</a></li>
-                    <li><a class="text-muted" href="#"><i class="fab fa-weibo"></i>&nbsp;微博</a></li>
-                    <li><a class="text-muted" href="#"><i class="fab fa-facebook"></i>&nbsp;Facebook</a></li>
-                    <li><a class="text-muted" href="#"><i class="fab fa-twitter"></i>&nbsp;Twitter</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>资源</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">商业合作</a></li>
-                    <li><a class="text-muted" href="#">投资</a></li>
-                    <li><a class="text-muted" href="#">教育教学</a></li>
-                    <li><a class="text-muted" href="#">政府</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md">
-                <h5>关于</h5>
-                <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">公司</a></li>
-                    <li><a class="text-muted" href="#">团队</a></li>
-                    <li><a class="text-muted" href="#">Privacy</a></li>
-                    <li><a class="text-muted" href="#">Terms</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">海外健康平台</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    网站功能还在进一步完善中，请期待...
-                </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
-
-                </div> -->
+    <div id="marker_card" style="display: none;">
+        <div class="card">
+            <img src="img/rsz_doctor.png" class="card-img-top" alt="practice card">
+            <div class="card-body" style="text-align: left !important; font-size: 1rem !important;">
+                __placeholder__
             </div>
         </div>
     </div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/fontawesome.min.js"></script>
-    <script src="js/toastr.min.js"></script>
-    <!-- <script src="js/map_google.js"></script> -->
-    <script src="js/map_baidu.js"></script>
-    <!-- <script>
-        function loadMapJS(mapfile) {
-            $.getScript(mapfile)
-                .done(function (script, textStatus) {
-                    console.log('Map file [' + mapfile + '] loaded ' + textStatus);
-                })
-                .fail(function (jqxhr, settings, exception) {
-                    console.log("Triggered ajaxError handler.");
-                });
-        }
-        if (google && google.maps) {
-            console.log('Google maps loaded');
-            loadMapJS('js/map_google.js');
-        } else {
-            console.log('Baidu maps loaded');
-            loadMapJS('js/map_baidu.js');
-        }
-    </script> -->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="js/vue_driven.js"></script>
-
 </body>
 
 </html>

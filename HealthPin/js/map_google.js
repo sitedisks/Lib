@@ -2,20 +2,17 @@
 
 function loadlocation() {
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            function (position) {
-                //do succes handling
-                initialize(position.coords.latitude, position.coords.longitude);
-            },
-            function errorCallback(error) {
-                //do error handling
-            },
-            {
-                maximumAge: Infinity,
-                timeout: 5000
-            }
-        );
+        navigator.geolocation.getCurrentPosition(function (position) {
+            initialize(position.coords.latitude, position.coords.longitude);
+        }, function errorCallback(error) {
+            console.log('navigator.geolocation.getCurrentPosition failed');
+            defaultMap();
+        }, { maximumAge: 0, timeout: 5000, enableHighAccuracy: true });
     } else {
+        defaultMap();
+    }
+
+    function defaultMap(){
         initialize(-37.813611, 144.963056);
     }
 }
@@ -83,9 +80,9 @@ function initialize(lat, lng) {
 
     function createMarker(item, geodata) {
         var markerPoint;
-        if(geodata){
+        if (geodata) {
             markerPoint = geodata.geometry.location;
-        }else {
+        } else {
             markerPoint = new google.maps.LatLng(item.lat, item.lng)
         }
 

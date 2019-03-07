@@ -46,6 +46,7 @@ function initialize(lat, lng) {
             };
         });
         var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markersArray});
+        map.reset();
     });
 
     function geocodeAPI(item) {

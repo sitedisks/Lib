@@ -3,10 +3,8 @@
 
 <head>
     <title>健康海外-澳大利亚</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="utf-8">
-
     <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
@@ -16,31 +14,178 @@
     <meta name="theme-color" content="#ffffff">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/toastr.min.css" rel="stylesheet" />
-    <link href="css/menu.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/onsenui.css">
+    <link rel="stylesheet" href="css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/app.css">
 
+    <script src="cordova.js"></script>
+
+    <script src="js/onsenui.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/app.js"></script>
 </head>
 
 <body>
-    <div id="container">
-        <h3>Me page</h3>
+    <div class="toolbar">
+        <div class="toolbar__left">
+            <span class="toolbar-button">
+                <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
+            </span>
+        </div>
+
+        <div class="toolbar__center">
+            王查理
+        </div>
+
+        <div class="toolbar__right">
+            <span class="toolbar-button">
+                <i class="far fa-envelope fa-lg"></i>
+
+            </span>
+        </div>
     </div>
-    <div class="icon-bar">
-        <a href="home.html"><i class="fas fa-home"></i></a>
-        <a href="list.html"><i class="fas fa-list"></i></a>
-        <a href="intro.html"><i class="fas fa-hands-helping"></i></a>
-        <a class="active" href="#"><i class="fas fa-user"></i></a>
+
+    <div class="container">
+        <div class="avatar">
+            <img class="image" src="img/man.png" />
+        </div>
+        <ons-list>
+            <ons-list-header>个人资料</ons-list-header>
+            <ons-list-item>
+                <div class="left">
+                    性别
+                </div>
+                <div class="right">
+                    男性 <ons-icon icon="md-face" class="list-item__icon"></ons-icon>
+                </div>
+            </ons-list-item>
+            <ons-list-item>
+                <div class="left">
+                    年龄
+                </div>
+                <div class="right">
+                    37
+                </div>
+            </ons-list-item>
+            <ons-list-item>
+                <div class="left">
+                    会员级别
+                </div>
+                <div class="right" style="color:#FFCE67">
+                    <ons-icon icon="md-star" class="list-item__icon"></ons-icon>
+                    <ons-icon icon="md-star" class="list-item__icon"></ons-icon>
+                    <ons-icon icon="md-star" class="list-item__icon"></ons-icon>
+                    <ons-icon icon="md-star" class="list-item__icon"></ons-icon>
+                    <ons-icon icon="md-star" class="list-item__icon"></ons-icon>
+                </div>
+            </ons-list-item>
+            <ons-list-item>
+                <div class="left">
+                    地址
+                </div>
+                <div class="right">
+                    889 White horse Rd, Boxhill, VIC
+                </div>
+            </ons-list-item>
+            <ons-list-header>订单</ons-list-header>
+            <ons-list-item expandable>
+                <i class="fas fa-file-invoice-dollar"></i>&nbsp;全部订单
+                <div class="expandable-content">
+                    <ons-list-item modifier="chevron" tappable><i class="fas fa-user-md"></i>&nbsp;专家专科</ons-list-item>
+                    <ons-list-item modifier="chevron" tappable><i class="fas fa-shipping-fast"></i>&nbsp;快速GP
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron" tappable><i class="fas fa-cart-plus"></i>&nbsp;商城</ons-list-item>
+                    <ons-list-item modifier="chevron" tappable><i class="far fa-frown-open"></i>&nbsp;投诉</ons-list-item>
+                </div>
+            </ons-list-item>
+            <ons-list-header>私人医生</ons-list-header>
+            <ons-list-item>
+                <div class="left">
+                    <img class="list-item__thumbnail" src="img/doctor_girl.png">
+                </div>
+                <div class="center">
+                    <span class="list-item__title">李芬妮</span>
+                    <span class="list-item__subtitle"><span class="dot"></span> 当前在线</span>
+                </div>
+            </ons-list-item>
+            <ons-list-header>绑定账号</ons-list-header>
+            <ons-list-item>
+                <div class="left">
+                    <i class="fab fa-weixin" style="color:#78C2AD"></i>
+                </div>
+                <div class="center">
+                    微信
+                </div>
+            </ons-list-item>
+            <ons-list-item>
+                <div class="left">
+                    <i class="fab fa-weibo" style="color:#FF7851"></i>
+                </div>
+                <div class="center">
+                    微博
+                </div>
+            </ons-list-item>
+            <ons-list-item>
+                <div class="left">
+                    <i class="fab fa-facebook" style="color:#6CC3D8"></i>
+                </div>
+                <div class="center">
+                    Facebook
+                </div>
+            </ons-list-item>
+
+            <ons-list-header>消息与订阅</ons-list-header>
+            <ons-list-item>
+                <div class="left">
+                    <i class="fab fa-pushed"></i>
+                </div>
+                <div class="center">
+                    接受推送
+                </div>
+                <div class="right">
+                    <ons-switch checked></ons-switch>
+                </div>
+            </ons-list-item>
+            <ons-list-item>
+                <div class="left">
+                    <i class="fas fa-link"></i>
+                </div>
+                <div class="center">
+                    订阅
+                </div>
+                <div class="right">
+                    <ons-switch></ons-switch>
+                </div>
+            </ons-list-item>
+
+        </ons-list>
+        <button class="button--large--cta" style="width: 95%; margin: 0 auto;">注销</button>
+        <br />
     </div>
+    <div class="tabbar">
+        <label class="tabbar__item home">
+            <input type="radio" name="tabbar-a">
+            <button class="tabbar__button">
+                <i class="tabbar_icon fa fa-home fa-lg"></i>
 
+            </button>
+        </label>
 
+        <label class="tabbar__item info">
+            <input type="radio" name="tabbar-a">
+            <button class="tabbar__button fa-lg">
+                <i class="fas fa-hands-helping fa-lg"></i>
+            </button>
+        </label>
 
-    <script src="js/jquery.min.js"></script>
-
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/fontawesome.min.js"></script>
-    <script src="js/toastr.min.js"></script>
-
+        <label class="tabbar__item me">
+            <input type="radio" name="tabbar-a" checked="checked">
+            <button class="tabbar__button">
+                <i class="fas fa-user fa-lg"></i>
+            </button>
+        </label>
+    </div>
 </body>
 
 </html>

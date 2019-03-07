@@ -45,7 +45,9 @@ function initialize(lat, lng) {
                 createMarker(item);
             };
         });
+        
         var markerClusterer = new BMapLib.MarkerClusterer(map, {markers:markersArray});
+        map.reset();
     });
 
     function geocodeAPI(item) {
@@ -75,8 +77,8 @@ function initialize(lat, lng) {
         map.addOverlay(marker);
 
         var content = document.createElement('div');
-        content.innerHTML = '<h5>' + item.s_clinic_name + '</h5>'
-            + '<hr class="marker-divider">'
+        content.innerHTML = '<h4>' + item.s_clinic_name + '</h4>'
+            // + '<hr class="marker-divider">'
             + '<table>'
             + '<tr>'
             + '<td><i class="fas fa-clinic-medical" style="font-size: 1em; color: #78C2AD;"></i></td>'
@@ -93,21 +95,21 @@ function initialize(lat, lng) {
             + '</table>'
             + '<hr class="marker-divider">'
             + '<div class="star-rating py-1" style="color: #FFCE67">'
-            + '<span class="fas fa-star"></span>'
-            + '<span class="fas fa-star"></span>'
-            + '<span class="fas fa-star"></span>'
-            + '<span class="fas fa-star"></span>'
+            + '<span class="fas fa-star" style="padding-right: 5px"></span>'
+            + '<span class="fas fa-star" style="padding-right: 5px"></span>'
+            + '<span class="fas fa-star" style="padding-right: 5px"></span>'
+            + '<span class="fas fa-star" style="padding-right: 5px"></span>'
             + '<span class="far fa-star"></span>'
             + '</div>'
-            + '<small class="text-muted pr-3">'
+            + '<span class="text-muted" style="padding-right: 10px">'
             + '<i class="far fa-share-square"></i> 34'
-            + '</small>'
-            + '<small class="text-muted pr-3">'
+            + '</span>'
+            + '<span class="text-muted" style="padding-right: 10px">'
             + '<i class="far fa-comment-dots"></i> 87'
-            + '</small>'
-            + '<small class="text-muted pr-3">'
+            + '</span>'
+            + '<span class="text-muted">'
             + '<i class="far fa-thumbs-up"></i> 28'
-            + '</small>'
+            + '</span>'
 
         var html_card = $('div#marker_card').html().replace('__placeholder__', content.innerHTML);
 

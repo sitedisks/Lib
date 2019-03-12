@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Hello, World</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/toastr.min.css" rel="stylesheet" />
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #map {
+            height: 100%
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBaUDbQW19GxmsfpFN-rsmrxYFm7TMm1lo"></script>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=nwFFOTy9YaK6gN4hqLahI6K2qlksjoqF">
+        //v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/toastr.min.js"></script>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="marker_card" style="display: none;">
+        <div class="card" style="width:18rem;">
+            <img src="img/rsz_doctor.png" class="card-img-top" alt="...">
+            <div class="card-body" style="text-align: left !important; font-size: 1rem !important;">
+                __placeholder__
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    //do succes handling
+                    initialize(position.coords.latitude, position.coords.longitude);
+                },
+                function errorCallback(error) {
+                    //do error handling
+                }, {
+                    maximumAge: Infinity,
+                    timeout: 5000
+                }
+            );
+        } else {
+            initialize(-37.813611, 144.963056);
+        }
+
+        function initialize(lat, lng) {
+
+            var apikey = 'AIzaSyCr5tneICjc77TVKJMVUr0rVw0uryDy4gI'; //Google Geocoding API Key
+
+            var map = new BMap.Map('map');
+            var point = new BMap.Point(lng, lat);
+            map.centerAndZoom(point, 13);
+            map.enableScrollWheelZoom(true);
+
+            var geocoder = new google.maps.Geocoder();
+
+            var counter = 0;
+
+            $.getJSON("data/healthengine.1.json", function (data) {
+                var promise = data.map(function (item) {
+                    if (item.data_type === "Practice") {
+                        counter++;
+                        geocodeAPI(item);
+                    };
+                });
+            });
+
+            function geocodeAPI(item) {
+                var geocodeAPIUrl = 'https://maps.googleapis.com/maps/api/geocode/json'
+                var query = geocodeAPIUrl + '?address=' + item.s_address + '&key=' + apikey;
+                $.getJSON(query, function (data) {
+                    if (data.status === 'OK') {
+                        createMarker(data.results[0], item);
+
+                    } else {
+                        toastr.warning('Geocode was not successful for the following reason: ' + status);
+
+                    }
+                }).always(function () {
+                    counter--;
+                    // Baidu marker cluster todo
+
+                })
+            }
+
+            var infowindow = new BMap.InfoWindow();
+
+            function createMarker(geodata, item) {
+                var markerPoint = new BMap.Point(geodata.geometry.location.lng, geodata.geometry.location.lat);
+                var marker = new BMap.Marker(markerPoint);
+                map.addOverlay(marker);
+                var content = document.createElement('div');
+                content.innerHTML = '<h5>' + item.s_clinic_name + '</h5>'
+                    + '<hr class="marker-divider">'
+                    + '<table>'
+                    + '<tr>'
+                    + '<td><i class="fas fa-clinic-medical" style="font-size: 1em; color: #78C2AD;"></i></td>'
+                    + '<td>' + item.s_address + '</td>'
+                    + '</tr>'
+                    + '<tr>'
+                    + '<td><i class="fas fa-phone" style="font-size: 1em; color: #78C2AD;"></i></td>'
+                    + '<td>' + item.s_phone + '</td>'
+                    + '</tr>'
+                    + '<tr>'
+                    + '<td style="width: 20%; padding-top: 10px"><i class="fas fa-hospital-symbol" style="font-size: 1em; color: #78C2AD;"></i></td>'
+                    + '<td style="width: 80%; padding-top: 10px">' + item.s_specialties + '</td>'
+                    + '</tr>'
+                    + '</table>'
+                    + '<hr class="marker-divider">'
+                    + '<div class="star-rating py-1" style="color: #FFCE67">'
+                    + '<span class="fas fa-star"></span>'
+                    + '<span class="fas fa-star"></span>'
+                    + '<span class="fas fa-star"></span>'
+                    + '<span class="fas fa-star"></span>'
+                    + '<span class="far fa-star"></span>'
+                    + '</div>'
+                    + '<small class="text-muted pr-3">'
+                    + '<i class="far fa-share-square"></i> 34'
+                    + '</small>'
+                    + '<small class="text-muted pr-3">'
+                    + '<i class="far fa-comment-dots"></i> 87'
+                    + '</small>'
+                    + '<small class="text-muted pr-3">'
+                    + '<i class="far fa-thumbs-up"></i> 28'
+                    + '</small>'
+
+                var html_card = $('div#marker_card').html().replace('__placeholder__', content.innerHTML);
+
+                marker.addEventListener('click', function () {
+                    infowindow.setTitle('<div style="padding:6px;"></div>');
+                    infowindow.setContent(html_card);
+                    map.openInfoWindow(infowindow, markerPoint);
+                });
+            }
+
+        }
+    </script>
+</body>
+
+</html>

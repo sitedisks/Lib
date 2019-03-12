@@ -1,0 +1,27 @@
+{
+    "ip": "194.193.182.181",
+    "country_code": "AU",
+    "country_name": "Australia",
+    "is_in_european_union": false,
+    "region_name": "Victoria",
+    "region_code": "VIC",
+    "city": "Melbourne",
+    "zip_code": "3000",
+    "time_zone": "Australia/Melbourne",
+    "latitude": -37.8071,
+    "longitude": 144.9516,
+    "metro_code": 0,
+    "organisation": "TPG Telecom Limited",
+    "flagUrl": "https://ip-api.io/images/flags/au.svg",
+    "emojiFlag": "🇦🇺",
+    "currencySymbol": "$",
+    "currency": "AUD",
+    "callingCode": "61",
+    "countryCapital": "Canberra",
+    "suspiciousFactors": {
+        "isProxy": false,
+        "isTorNode": false,
+        "isSpam": false,
+        "isSuspicious": false
+    }
+}

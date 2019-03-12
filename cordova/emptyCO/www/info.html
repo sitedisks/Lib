@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>健康海外-澳大利亚</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
+    <link rel="manifest" href="img/icons/site.webmanifest">
+    <link rel="mask-icon" href="img/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <link rel="stylesheet" href="css/onsenui.css">
+    <link rel="stylesheet" href="css/onsen-css-components.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="cordova.js"></script>
+
+    <script src="js/onsenui.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fontawesome.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div class="toolbar">
+        <div class="toolbar__left">
+            <span class="toolbar-button">
+                <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
+            </span>
+        </div>
+
+        <div class="toolbar__center">
+            我们的服务
+        </div>
+
+        <div class="toolbar__right">
+            <span class="toolbar-button idea">
+                <i class="far fa-lightbulb fa-lg"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="container marketing">
+        <div class="row">
+            <div class="col-lg-4">
+                <i class="fas fa-info-circle fa-5x" style="color: #6CC3D5"></i>
+                <h2>咨询发现</h2>
+                <p>建立完善的，特别是可以提供普通话服务的诊所和医生数据库。</p>
+                <p><button class="button button--outline more"
+                        style="border: 1px solid #6CC3D5; color:#6CC3D5;">了解更多</button></p>
+            </div>
+            <div class="col-lg-4">
+                <i class="fab fa-rocketchat fa-5x" style="color: #FFCE67"></i>
+                <h2>测评点评</h2>
+                <p>来自用户的真实反馈，您将更有信心选择您需要的健康服务。</p>
+                <p><button class="button button--outline more"
+                        style="border: 1px solid #FFCE67; color:#FFCE67;">了解更多</button></p>
+            </div>
+            <div class="col-lg-4">
+                <i class="fas fa-mobile-alt fa-5x" style="color: #FF7851"></i>
+                <h2>视频咨询</h2>
+                <p>远程问诊使得您足不出户获得相关的健康咨询。</p>
+                <p><button class="button button--outline more"
+                        style="border: 1px solid #FF7851; color:#FF7851;">了解更多</button></p>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="tabbar">
+        <label class="tabbar__item home">
+            <input type="radio" name="tabbar-a">
+            <button class="tabbar__button">
+                <i class="tabbar_icon fa fa-home fa-lg"></i>
+            </button>
+        </label>
+
+        <label class="tabbar__item info">
+            <input type="radio" name="tabbar-a" checked="checked">
+            <button class="tabbar__button">
+                <i class="fas fa-hands-helping fa-lg"></i>
+            </button>
+        </label>
+
+        <label class="tabbar__item me">
+            <input type="radio" name="tabbar-a">
+            <button class="tabbar__button">
+                <i class="fas fa-user fa-lg"></i>
+            </button>
+        </label>
+    </div>
+
+    <div id="info_dialog" style="display:none;">
+        <div class="alert-dialog-mask alert-dialog-mask--material"></div>
+        <div class="alert-dialog alert-dialog--material">
+            <div class="alert-dialog-container alert-dialog-container--material">
+                <ul class="list">
+                    <li class="list-item">
+                        <div class="list-item__left">
+                            <img class="list-item__thumbnail" src="img/icons/android-chrome-192x192.png"
+                                alt="Cute kitten">
+                        </div>
+
+                        <div class="list-item__center">
+                            <div class="list-item__title">海外健康</div>
+                            <div class="list-item__subtitle">请留下您的电子邮件地址：</div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="alert-dialog-content alert-dialog-content--material">
+                    <div><input type="text" class="text-input text-input--underbar" id="sub_email" placeholder="电子邮件" value=""></div>
+                </div>
+
+                <ul class="list list--material">
+                    <li class="list-item list-item--material">
+                        <div class="list-item__left list-item--material__left">
+                            <label class="checkbox checkbox--material">
+                                <input type="checkbox" id="checkbox3" class="checkbox__input checkbox--material__input">
+                                <div class="checkbox__checkmark checkbox--material__checkmark"></div>
+                            </label>
+                        </div>
+
+                        <label for="checkbox3" class="list-item__center list-item--material__center">
+                            <div class="list-item__title list-item--material__title">订阅我们</div>
+                            <div class="list-item__subtitle list-item--material__subtitle">即时获取更多动态</div>
+                        </label>
+                    </li>
+                </ul>
+                <div class="alert-dialog-footer alert-dialog-footer--material">
+                    <button class="alert-dialog-button alert-dialog-button--material subscription">订阅</button>
+                    <button class="alert-dialog-button alert-dialog-button--material cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <ons-modal direction="up">
+        <div style="text-align: center">
+            <p>
+                <ons-icon icon="md-spinner" size="28px" spin></ons-icon>
+                
+            </p>
+        </div>
+    </ons-modal>
+
+</body>
+
+</html>

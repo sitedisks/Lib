@@ -75,3 +75,12 @@ cordova/SleevesUp.Thrivor.Uat/platforms/
 cordova/SleevesUp.Thrivor.Dev/platforms/
 apii/node_modules/
 yuyan/.vs/yuyan/v15/
+SimpleCrawler/.vs/
+SimpleCrawler/SimpleCrawler/obj/
+SimpleCrawler/SimpleCrawler/bin/
+cordova/emptyCO/node_modules/
+cordova/emptyCO/platforms/
+cordova/GoogleMapOne/node_modules/
+cordova/GoogleMapOne/platforms/
+cordova/OnsenUI/node_modules/
+cordova/OnsenUI/platforms/

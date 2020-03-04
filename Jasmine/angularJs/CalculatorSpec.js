@@ -2,9 +2,11 @@ describe("Unit: calculatorController tests", function () {
 
     // setup code for testing this unit
     var controller;
-    beforeEach(function () {
-        module('testingApp');
 
+    beforeEach(module('app'));
+
+    beforeEach(function () {
+        
         inject(function ($controller) {
             controller = $controller('calculatorController');
         });
@@ -12,6 +14,7 @@ describe("Unit: calculatorController tests", function () {
     });
 
     it("PASSING TEST - should be able to display a title", function () {
+
         expect(controller.message).toBe('I am a simple calculator');
     });
 
@@ -20,6 +23,7 @@ describe("Unit: calculatorController tests", function () {
     // });
 
     it("PASSING TEST - should add 2+2 and get result of 4", function () {
+
         controller.firstNumber = 2;
         controller.secondNumber = 2;
         controller.result = 0;

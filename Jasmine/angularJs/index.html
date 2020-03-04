@@ -1,47 +1,38 @@
 <!DOCTYPE html>
-<html ng-app="testingApp">
+<html ng-app="app">
 
 <head>
     <!-- <link href="node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
     <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
     <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
     <script src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script> -->
-    <script data-require="jasmine@*" data-semver="2.0.0" src="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine.js"></script>
-    <link data-require="jasmine@*" data-semver="2.0.0" rel="stylesheet"
-        href="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine.css" />
-    <script data-require="jasmine@*" data-semver="2.0.0"
-        src="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine-html.js"></script>
-    <script data-require="jasmine@*" data-semver="2.0.0" src="//cdn.jsdelivr.net/jasmine/2.0.0/boot.js"></script> 
-    
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine.css" />
+    <script src="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine.js"></script>
+    <script src="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine-html.js"></script>
+    <script src="//cdn.jsdelivr.net/jasmine/2.0.0/boot.js"></script>
+
     <!-- Add AngularJS -->
     <script src="node_modules/angular/angular.min.js"></script>
     <!-- AngularJS testing helpers -->
     <script src="node_modules/angular-mocks/angular-mocks.js"></script>
 </head>
 
-<body ng-controller="calculatorController as vm">
+<body ng-controller="calculatorController">
     <!-- display our message from the controller -->
-    <h1>{{vm.message}}</h1>
+    <h1>{{message}}</h1>
     <!-- Setup number inputs and a button for our calculator -->
-    <form>
+    <!-- <form>
         <input id="firstNumber" type="number" ng-model="vm.firstNumber" />
         <span>+</span>
         <input id="secondNumber" type="number" ng-model="vm.secondNumber" />
 
         <button ng-click="vm.addNumber()">Do it</button>
     </form>
-    <!-- Display the result -->
-    <span>{{vm.result}}</span>
-
-    <hr>
-    <p>AngularJs script</p>
-    <!-- This is our Angular app, keeping it simple -->
-    <script src="CalculatorCtrl.js"></script>
-    <p>Jasmine spec:</p>
-    <!-- This is our test spec -->
+    <span>{{vm.result}}</span> -->
  
-    <script src="CalculatorSpec.js"></script>
-
 </body>
+<script src="CalculatorCtrl.js"></script>
+<script src="CalculatorSpec2.js"></script>
 
 </html>

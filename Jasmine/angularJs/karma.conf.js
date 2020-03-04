@@ -16,7 +16,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: ['node_modules/angular/angular.min.js',
     'node_modules/angular-mocks/angular-mocks.js',
-    'CalculatorCtrl.js', 'CalculatorSpec.js'
+    'CalculatorCtrl.js', 'CalculatorSpec2.js'
     ],
 
 

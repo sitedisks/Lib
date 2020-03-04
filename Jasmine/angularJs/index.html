@@ -2,20 +2,21 @@
 <html ng-app="testingApp">
 
 <head>
-  
+    <!-- <link href="node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script> -->
     <script data-require="jasmine@*" data-semver="2.0.0" src="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine.js"></script>
-   
     <link data-require="jasmine@*" data-semver="2.0.0" rel="stylesheet"
         href="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine.css" />
     <script data-require="jasmine@*" data-semver="2.0.0"
         src="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine-html.js"></script>
-    <script data-require="jasmine@*" data-semver="2.0.0" src="//cdn.jsdelivr.net/jasmine/2.0.0/boot.js"></script>
+    <script data-require="jasmine@*" data-semver="2.0.0" src="//cdn.jsdelivr.net/jasmine/2.0.0/boot.js"></script> 
+    
     <!-- Add AngularJS -->
-    <script data-require="angular.js@1.2.25" data-semver="1.2.25"
-        src="https://code.angularjs.org/1.2.25/angular.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
     <!-- AngularJS testing helpers -->
-    <script data-require="angular-mocks@*" data-semver="1.2.16"
-        src="https://code.angularjs.org/1.2.16/angular-mocks.js"></script>
+    <script src="node_modules/angular-mocks/angular-mocks.js"></script>
 </head>
 
 <body ng-controller="calculatorController as vm">
@@ -32,67 +33,15 @@
     <!-- Display the result -->
     <span>{{vm.result}}</span>
 
-    <hr> 
+    <hr>
     <p>AngularJs script</p>
     <!-- This is our Angular app, keeping it simple -->
-    <script type="text/javascript">
-        angular
-            .module('testingApp', [])
-            .controller('calculatorController', calculatorController);
-
-        function calculatorController() {
-            var vm = this;
-            vm.message = 'I am a simple calculator';
-            vm.result = 0;
-            vm.firstNumber = 0;
-            vm.secondNumber = 0;
-            vm.addNumber = addNumber;
-
-            function addNumber() {
-                vm.result = vm.firstNumber + vm.secondNumber;
-            }
-
-        };
-    </script>
+    <script src="CalculatorCtrl.js"></script>
     <p>Jasmine spec:</p>
     <!-- This is our test spec -->
-    
-    <script type="text/javascript">
+ 
+    <script src="CalculatorSpec.js"></script>
 
-        describe("Unit: calculatorController tests", function () {
-
-            // setup code for testing this unit
-            var controller;
-            beforeEach(function () {
-                module('testingApp');
-
-                inject(function ($controller) {
-                    controller = $controller('calculatorController');
-                });
-
-            });
-
-            it("PASSING TEST - should be able to display a title", function () {
-                expect(controller.message).toBe('I am a simple calculator');
-            });
-
-            // it("FAILING TEST - should be able to display a title", function () {
-            //     expect(controller.message).toBe('fail fail fail');
-            // });
-
-            it("PASSING TEST - should add 2+2 and get result of 4", function () {
-                controller.firstNumber = 2;
-                controller.secondNumber = 2;
-                // controller.result = 0;
-                controller.addNumber()
-                expect(controller.result).toEqual(4);
-            });
-
-        });
-
-    </script>
-
-   
 </body>
 
 </html>

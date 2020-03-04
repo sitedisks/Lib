@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <!-- <link href="node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+    <script src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script> -->
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine.css" />
+    <script src="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine.js"></script>
+    <script src="//cdn.jsdelivr.net/jasmine/2.0.0/jasmine-html.js"></script>
+    <script src="//cdn.jsdelivr.net/jasmine/2.0.0/boot.js"></script>
+
+    <!-- Add AngularJS -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <!-- AngularJS testing helpers -->
+    <script src="node_modules/angular-mocks/angular-mocks.js"></script>
+</head>
+
+<body ng-controller="calculatorController">
+    <!-- display our message from the controller -->
+    <h1>{{message}}</h1>
+    <!-- Setup number inputs and a button for our calculator -->
+    <!-- <form>
+        <input id="firstNumber" type="number" ng-model="vm.firstNumber" />
+        <span>+</span>
+        <input id="secondNumber" type="number" ng-model="vm.secondNumber" />
+
+        <button ng-click="vm.addNumber()">Do it</button>
+    </form>
+    <span>{{vm.result}}</span> -->
+ 
+</body>
+<script src="CalculatorCtrl.js"></script>
+<script src="CalculatorSpec2.js"></script>
+
+</html>

@@ -1,0 +1,1 @@
+CoronaVirus data: https://docs.corona.lmao-xd.wtf/

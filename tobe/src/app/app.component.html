@@ -1,28 +1,61 @@
 <div class="container">
   <div class="jumbotron">
-    <h1 class="display-4">TOBE</h1>
-    <p class="lead">Coronavirus world live updates</p>
-  
+    <h1 class="display-4" (click)="handleClick()">TOBE</h1>
+    <h3>{{ time | date: 'hh:mm:ss a' }}</h3>
+    <p class="lead">Coronavirus world live status</p>
+
+    <hr>
+
+    <p>Coronavirus : <span class="text-warning">{{status.cases | number}}</span>,
+      Deaths: <span class="text-danger">{{status.deaths | number}}</span>,
+      Recovered: <span class="text-success">{{status.recovered | number}}</span>,
+      Updated: <span class="text-info">{{status.updated | number}}</span>,
+      Active: <span class="text-secondary">{{status.active | number}}</span>.
+    </p>
+
+    <!-- <div class="spinner-border text-info" role="status" *ngIf="isLoading">
+      <span class="sr-only">Loading...</span>
+    </div> -->
+    <!-- <button class="btn btn-outline-info" (click)="handleClick()" *ngIf="!isLoading">
+      <svg class="bi bi-arrow-repeat" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M2.854 7.146a.5.5 0 00-.708 0l-2 2a.5.5 0 10.708.708L2.5 8.207l1.646 1.647a.5.5 0 00.708-.708l-2-2zm13-1a.5.5 0 00-.708 0L13.5 7.793l-1.646-1.647a.5.5 0 00-.708.708l2 2a.5.5 0 00.708 0l2-2a.5.5 0 000-.708z"
+          clip-rule="evenodd" />
+        <path fill-rule="evenodd"
+          d="M8 3a4.995 4.995 0 00-4.192 2.273.5.5 0 01-.837-.546A6 6 0 0114 8a.5.5 0 01-1.001 0 5 5 0 00-5-5zM2.5 7.5A.5.5 0 013 8a5 5 0 009.192 2.727.5.5 0 11.837.546A6 6 0 012 8a.5.5 0 01.501-.5z"
+          clip-rule="evenodd" />
+      </svg>
+    </button> -->
+
   </div>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col" class="table-info">Country</th>
-        <th scope="col" class="table-warning">Cases</th>
-        <th scope="col" class="table-danger">Deaths</th>
-        <th scope="col" class="table-success">Recoverd</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of cases">
-        <td><img [src]="item.countryInfo.flag" style="width: 20px;"/> {{item.country}}</td>
-        <td>{{item.cases}}</td>
-        <td>{{item.deaths}}</td>
-        <td>{{item.recovered}}</td>
-      </tr>
-    
-    </tbody>
-  </table>
+  <div *ngIf="isLoading">
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"
+        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+    </div>
+  </div>
+  <div *ngIf="!isLoading" class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col" class="table-info text-secondary">Country</th>
+          <th scope="col" class="table-warning text-secondary">Cases</th>
+          <th scope="col" class="table-danger text-secondary">Deaths</th>
+          <th scope="col" class="table-success text-secondary">Recoverd</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cases">
+          <td><img [src]="item.countryInfo.flag" style="width: 20px;" />&nbsp;
+            <span class="text-secondary">{{item.country}}</span></td>
+          <td><span class="text-warning">{{item.cases | number}}</span></td>
+          <td><span class="text-danger">{{item.deaths | number}}</span></td>
+          <td><span class="text-success">{{item.recovered | number}}</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>

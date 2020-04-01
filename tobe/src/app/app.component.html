@@ -1,8 +1,23 @@
 <div class="container">
   <div>&nbsp;&nbsp;</div>
+  <!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">TOBE</h1>
+    <img src="../assets/img/icons/android-chrome-192x192.png" style="width: 150px;"> 
+    <h1 class="display-4">
+      <small class="text-muted">{{ time | date: 'hh:mm:ss a' }}</small></h1>
+    <p class="lead">Coronavirus world live status</p>
+    <p>Coronavirus : <span class="badge badge-warning">{{status.cases | number}}</span>
+      Deaths: <span class="badge badge-danger">{{status.deaths | number}}</span>
+      Recovered: <span class="badge badge-success">{{status.recovered | number}}</span>
+      Updated: <span class="badge badge-info">{{status.updated | number}}</span>
+      Active: <span class="badge badge-secondary">{{status.active | number}}</span>
+    </p>
+  </div> -->
+
   <div class="jumbotron">
     <h1 class="display-4" (click)="handleClick()">TOBE</h1>
-    <h3>{{ time | date: 'hh:mm:ss a' }}</h3>
+    <h3>
+      <span class="text-muted">{{ time | date: 'hh:mm:ss a' }}</span></h3>
     <p class="lead">Coronavirus world live status</p>
 
     <hr>
@@ -13,22 +28,6 @@
       Updated: <span class="badge badge-info">{{status.updated | number}}</span>
       Active: <span class="badge badge-secondary">{{status.active | number}}</span>
     </p>
-
-    <!-- <div class="spinner-border text-info" role="status" *ngIf="isLoading">
-      <span class="sr-only">Loading...</span>
-    </div> -->
-    <!-- <button class="btn btn-outline-info" (click)="handleClick()" *ngIf="!isLoading">
-      <svg class="bi bi-arrow-repeat" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-        xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd"
-          d="M2.854 7.146a.5.5 0 00-.708 0l-2 2a.5.5 0 10.708.708L2.5 8.207l1.646 1.647a.5.5 0 00.708-.708l-2-2zm13-1a.5.5 0 00-.708 0L13.5 7.793l-1.646-1.647a.5.5 0 00-.708.708l2 2a.5.5 0 00.708 0l2-2a.5.5 0 000-.708z"
-          clip-rule="evenodd" />
-        <path fill-rule="evenodd"
-          d="M8 3a4.995 4.995 0 00-4.192 2.273.5.5 0 01-.837-.546A6 6 0 0114 8a.5.5 0 01-1.001 0 5 5 0 00-5-5zM2.5 7.5A.5.5 0 013 8a5 5 0 009.192 2.727.5.5 0 11.837.546A6 6 0 012 8a.5.5 0 01.501-.5z"
-          clip-rule="evenodd" />
-      </svg>
-    </button> -->
-
   </div>
 
   <div *ngIf="isLoading">
@@ -48,12 +47,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of cases">
-          <td><img [src]="item.countryInfo.flag" style="width: 20px;" />&nbsp;
+        <tr *ngFor="let item of cases" (click)="countryStatus(item.country)">
+          <td data-toggle="modal" data-target="#countryModal"><img [src]="item.countryInfo.flag"
+              style="width: 20px;" />&nbsp;
             <h4 class="badge badge-secondary">{{item.country}}</h4>
-
-            <button class="btn btn-sm" data-toggle="modal" data-target="#countryModal"
-              (click)="countryStatus(item.country)">
+            <button class="btn btn-sm">
               <svg class="bi bi-bar-chart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg">
                 <rect width="4" height="5" x="1" y="10" rx="1" />
@@ -61,11 +59,13 @@
                 <rect width="4" height="14" x="11" y="1" rx="1" />
               </svg>
             </button>
-
           </td>
-          <td><span class="badge badge-warning">{{item.cases | number}}</span></td>
-          <td><span class="badge badge-danger">{{item.deaths | number}}</span></td>
-          <td><span class="badge badge-success">{{item.recovered | number}}</span></td>
+          <td data-toggle="modal" data-target="#countryModal">
+            <span class="badge badge-warning">{{item.cases | number}}</span></td>
+          <td data-toggle="modal" data-target="#countryModal">
+            <span class="badge badge-danger">{{item.deaths | number}}</span></td>
+          <td data-toggle="modal" data-target="#countryModal">
+            <span class="badge badge-success">{{item.recovered | number}}</span></td>
         </tr>
       </tbody>
     </table>
@@ -176,4 +176,6 @@
     </div>
   </div>
 
+
+  <app-footer></app-footer>
 </div>

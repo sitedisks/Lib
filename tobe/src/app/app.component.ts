@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { CoronaService } from './service/corona.service';
 import { Corona } from './model/corona.interface';
 import { CStatus } from './model/cstatus.interface';
+import { History } from './model/history.interface';
 import { ToastrService } from 'ngx-toastr';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent implements OnInit {
   title = 'tobe';
 
@@ -39,8 +42,50 @@ export class AppComponent implements OnInit {
     "deathsPerOneMillion": 0,
     "updated": 0
   };
+  dates: string[] = [];
+  cases_count: number[] = [];
+  deaths_count: number[] = [];
+  recovered_count: number[] = [];
+  chart = [];
 
   constructor(private data: CoronaService, private toastr: ToastrService) { }
+
+  renderChart() {
+    this.chart = new Chart('corona', {
+      type: 'line',
+      data: {
+        labels: this.dates,
+        datasets: [
+          {
+            label: 'Cases',
+            data: this.cases_count,
+            borderColor: '#ffc107',
+            fill: false
+          },
+          {
+            label: 'Deaths',
+            data: this.deaths_count,
+            borderColor: '#dc3545',
+            fill: false
+          },
+          {
+            label: 'Recovered',
+            data: this.recovered_count,
+            borderColor: '#28a745',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        legend: { display: false },
+        scales: {
+          xAxes: [{ display: true }],
+          yAxes: [{ display: false }]
+        }
+      }
+    });
+  }
 
   reload() {
     // this.isLoading = true;
@@ -49,6 +94,31 @@ export class AppComponent implements OnInit {
       result => {
         // this.isLoading = false;
         this.cases = result;
+      }
+    );
+
+    this.dates = [];
+    this.cases_count = [];
+    this.deaths_count = [];
+    this.recovered_count = [];
+
+    this.data.getHistoryStatus().subscribe(
+      (result: History) => {
+
+        for (const [date, count] of Object.entries(result.cases)) {
+          this.dates.push(date);
+          this.cases_count.push(count);
+        }
+
+        for (const [date, count] of Object.entries(result.deaths)) {
+          this.deaths_count.push(count);
+        }
+
+        for (const [date, count] of Object.entries(result.recovered)) {
+          this.recovered_count.push(count);
+        }
+
+        this.renderChart();
       }
     );
   };

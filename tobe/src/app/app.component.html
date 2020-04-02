@@ -1,8 +1,8 @@
 <div class="container">
   <div>&nbsp;&nbsp;</div>
-  <!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
     <h1 class="display-4">TOBE</h1>
-    <img src="../assets/img/icons/android-chrome-192x192.png" style="width: 150px;"> 
+    <!-- <img src="../assets/img/icons/android-chrome-192x192.png" style="width: 150px;"> -->
     <h1 class="display-4">
       <small class="text-muted">{{ time | date: 'hh:mm:ss a' }}</small></h1>
     <p class="lead">Coronavirus world live status</p>
@@ -12,9 +12,14 @@
       Updated: <span class="badge badge-info">{{status.updated | number}}</span>
       Active: <span class="badge badge-secondary">{{status.active | number}}</span>
     </p>
-  </div> -->
+    <div>&nbsp;</div>
 
-  <div class="jumbotron">
+    <div *ngIf="chart" style="width: 100%;">
+      <canvas id="corona">{{chart}}</canvas>
+    </div>
+  </div>
+
+  <!-- <div class="jumbotron">
     <h1 class="display-4" (click)="handleClick()">TOBE</h1>
     <h3>
       <span class="text-muted">{{ time | date: 'hh:mm:ss a' }}</span></h3>
@@ -28,7 +33,12 @@
       Updated: <span class="badge badge-info">{{status.updated | number}}</span>
       Active: <span class="badge badge-secondary">{{status.active | number}}</span>
     </p>
-  </div>
+    <div>&nbsp;</div>
+    <div *ngIf="chart" style="width: 100%;">
+      <canvas id="corona">{{chart}}</canvas>
+    </div>
+
+  </div> -->
 
   <div *ngIf="isLoading">
     <div class="progress">
@@ -75,7 +85,7 @@
   <div class="modal fade" id="countryModal" tabindex="-1" role="dialog" aria-labelledby="countryModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content" data-dismiss="modal">
         <!-- <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel"><img [src]="cStatus.countryInfo.flag"
               style="width: 40px;" />&nbsp;{{cStatus.country}}</h5>
@@ -157,7 +167,7 @@
         </div>
         <div class="modal-footer">
           <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-          <div data-dismiss="modal">
+          <div>
             Updated <svg class="bi bi-clock-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"

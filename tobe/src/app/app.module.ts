@@ -23,7 +23,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     CommonModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), FontAwesomeModule // ToastrModule added
+    ToastrModule.forRoot(), // ToastrModule added
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }), 
+    FontAwesomeModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class CoronaService {
 
+  // https://corona.lmao.ninja/
   readonly ALL_URL = environment.CORONA_API + 'all';
   readonly COUNTRIES_URL = environment.CORONA_API + 'countries'; // /countries/australia
   readonly HISTORY_URL = environment.CORONA_API + 'v2/historical/all'; // v2/historical/all

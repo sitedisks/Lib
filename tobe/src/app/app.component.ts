@@ -5,6 +5,7 @@ import { CStatus } from './model/cstatus.interface';
 import { History } from './model/history.interface';
 import { ToastrService } from 'ngx-toastr';
 import { Chart } from 'chart.js';
+import { PwaService } from './service/pwa.service';
 
 @Component({
   selector: 'app-root',
@@ -48,7 +49,14 @@ export class AppComponent implements OnInit {
   recovered_count: number[] = [];
   chart = [];
 
-  constructor(private data: CoronaService, private toastr: ToastrService) { }
+  constructor(
+    private data: CoronaService,
+    private toastr: ToastrService,
+    private pwa: PwaService) { }
+
+  installPwa(): void {
+    this.pwa.promptEvent.prompt();
+  }
 
   renderChart() {
     this.chart = new Chart('corona', {

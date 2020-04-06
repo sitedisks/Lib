@@ -38,6 +38,12 @@
       "purpose": "maskable"
     },
     {
+      "src": "assets/icons/Assets.xcassets/AppIcon.appiconset/180.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
       "src": "assets/icons/Assets.xcassets/AppIcon.appiconset/196.png",
       "sizes": "196x196",
       "type": "image/png",

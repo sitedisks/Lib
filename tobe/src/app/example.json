@@ -1,0 +1,21 @@
+{
+    "country": "USA",
+    "countryInfo": {
+        "_id": 840,
+        "country": "USA",
+        "iso2": "US",
+        "iso3": "USA",
+        "lat": 38,
+        "long": -97,
+        "flag": "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags/us.png"
+    },
+    "cases": 123781,
+    "todayCases": 203,
+    "deaths": 2229,
+    "todayDeaths": 8,
+    "recovered": 3238,
+    "active": 118314,
+    "critical": 2666,
+    "casesPerOneMillion": 374,
+    "deathsPerOneMillion": 7
+}

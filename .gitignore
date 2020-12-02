@@ -86,3 +86,5 @@ cordova/OnsenUI/node_modules/
 cordova/OnsenUI/platforms/
 Jasmine/Jasmine/node_modules/
 Jasmine/angularJs/node_modules/
+winService/zedTechService/.vs/
+winService/zedTechService/obj/
